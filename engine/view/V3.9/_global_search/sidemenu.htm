@@ -1,0 +1,19 @@
+<ul class="snb_link">
+	<li <!--{? categoryInfo == "TOTAL"}-->class="first-child focus"<!--{/}-->><a href="javascript:goCategory('TOTAL');">통합검색</a></li>
+	<li <!--{? categoryInfo == 'review'}-->class="first_child focus"<!--{/}-->><a href="javascript:goCategory('review');">리뷰</a></li>
+	<!--<li <!--{? categoryInfo == 'style'}-->class="first_child focus"<!--{/}-->><a href="javascript:goCategory('style');">스타일</a></li>-->
+	<li <!--{? categoryInfo == 'frontier'}-->class="first_child focus"<!--{/}-->><a href="javascript:goCategory('frontier');">프론티어</a></li>
+	<li <!--{? categoryInfo == 'blogger'}-->class="first_child focus"<!--{/}-->><a href="javascript:goCategory('blogger');">블로거</a></li>
+	<li <!--{? categoryInfo == 'blog'}-->class="first_child focus"<!--{/}-->><a href="javascript:goCategory('blog');">블로그</a></li>
+</ul>
+
+<form name="historyForm" method="get">
+<input type="hidden" name="category" value="{categoryInfo}"/>
+<input type="hidden" name="kwd" value="{keyword}"/>
+<input type="hidden" name="pageNum" value="{pageNum}"/>
+<input type="hidden" name="pageSize" value="{pageSize}"/>
+<input type="hidden" name="reSrchFlag" value="{reSrchFlag}"/>
+<input type="hidden" name="sort" value="{sort}"/>
+{preKwdValues}
+</form>
+

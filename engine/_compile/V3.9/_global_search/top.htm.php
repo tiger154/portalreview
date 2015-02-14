@@ -1,0 +1,58 @@
+<?php /* Template_ 2.2.4 2012/06/22 16:33:08 /www/revu39/engine/view/V3.9/_global_search/top.htm 000003315 */ ?>
+<script type="text/javascript">
+<!--
+$(document).ready( function() {
+	$('#AKCKwd').focus();
+});
+//-->
+</script>
+
+<div class="header_wrap">
+	<h1><a href="http://www.revu.co.kr"><img src="/images/search/search_logo.gif" alt="레뷰" title="레뷰"></a></h1>
+
+	<form name="searchForm" id="AKCFrm" method="get" onSubmit="return searchKwd(this);">
+		<fieldset class="search_input">
+			<legend>검색</legend>
+			<div class="search_input_box">
+				<span>
+					<input type="text" title="검색" name="kwd" id="AKCKwd" maxlength="255" class="box_window" accesskey="s" autocomplete="off" value="<?php echo $TPL_VAR["keyword"]?>">
+					<a href="#" onfocus="this.blur();"><img id="AKCArrow" src="/images/search/btn_atcmp_on.gif" alt="자동완성 펼치기" width="13" height="10" title="자동완성 펼치기"></a>
+				</span>
+			</div>
+			<input type="image" src="/images/search/btn_submit_search.gif" alt="검색">
+			<span class="research_check"><input type="checkbox" name="reSrchFlag" id="reSrchFlag" <?php echo $TPL_VAR["reSrchChkValue"]?> title="결과내 재검색" onClick="javascript:reSearchKwd(this);"><label for="re_search">결과 내 재검색</label></span>
+			
+		<!--<div id="nautocomplete">
+			<span class="btn_arw"><a href="#"><img class="triangleImg" id="AKCArrow" src="/images/search/btn_atcmp_on.gif" alt="자동완성 펼치기" width="13" height="10" title="자동완성 펼치기"></a></span>
+			</div>-->
+<!-- 닫을때 btn_atcmp_off.gif -->
+			
+			<!--<div class="ly_atcmp">
+			<iframe id="atcm" title="자동완성" src="atcm_iframe.html" frameborder="0" width="334" height="169" marginwidth="0" marginheight="0" scrolling="no" style="display: none;"></iframe>
+			</div>-->
+<!-- display:block로 변경하여 사용 -->
+		<input type="hidden" name="category" value="<?php echo $TPL_VAR["categoryInfo"]?>"/>
+		<input type="hidden" name="pageSize" value="<?php echo $TPL_VAR["pageSize"]?>"/>
+		<input type="hidden" name="sort" value="<?php echo $TPL_VAR["sort"]?>"/>
+		<?php echo $TPL_VAR["preKwdValues"]?>
+
+		</fieldset>
+	</form>
+
+	<ul class="gnb">
+		<li class="first-child"><a href="#" title="홈"><img src="/images/search/sgnb01.gif" alt="홈"></a></li>
+		<li><a href="http://www.revu.co.kr/review" title="리뷰"><img src="/images/search/sgnb02.gif" alt="리뷰"></a></li>
+		<!--<li><a href="#" title="스타일"><img src="/images/search/sgnb03.gif" alt="스타일"></a></li>-->
+		<li><a href="http://www.revu.co.kr/frontier" title="프론티어"><img src="/images/search/sgnb04.gif" alt="프론티어"></a></li>
+		<li><a href="http://www.revu.co.kr/myrevu" title="마이레뷰"><img src="/images/search/sgnb05.gif" alt="마이레뷰"></a></li>
+		<li><a href="http://blog.revu.co.kr" target="_blank" title="공지사항"><img src="/images/search/sgnb06.gif" alt="공지사항"></a></li>
+	</ul>
+
+</div>
+
+<!-- 자동완성 레이어-->
+<div id="AKCDiv" style="display:none;z-index:300;position:absolute;">
+	<iframe id="AKCIfrm" style="width:100%;height:0px" name="AKCIfrm" marginwidth="0" marginheight="0" src="http://www.revu.co.kr/search/akc" frameborder="0" scrolling="no">
+	</iframe>
+</div>
+<!-- //자동완성 레이어-->

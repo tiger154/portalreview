@@ -1,0 +1,67 @@
+<script type="text/javascript" src="{JS}/_global/input.js"></script>
+<script type="text/javascript">
+<!--
+	function add_item(){
+		// pre_set 에 있는 내용을 읽어와서 처리..
+		var div = document.createElement('div');
+		div.innerHTML = document.getElementById('pre_set').innerHTML;
+		document.getElementById('field').appendChild(div);
+	}
+
+	function remove_item(obj){
+		// obj.parentNode 를 이용하여 삭제
+		document.getElementById('field').removeChild(obj.parentNode);
+	}
+//-->
+</script>
+<form name="RevUform" id="RevUform" method="post" enctype="multipart/form-data"  action="">
+<input type="hidden" name="frno" id="frno" value="{frno}" />
+	<!-- 상단 -->
+	<table border="0" width="489" cellpadding="5" cellspacing="0" align="center">
+		<tr>
+			<!--본문-->
+			<table width="460"  border="1" cellpadding="2" cellspacing="0" bgcolor="#C0C0C0">
+
+
+
+			<table width="460"  border="1" cellpadding="2" cellspacing="0" bgcolor="#C0C0C0">
+				<tr>
+					<th>프론티어 옵션수정</th>
+				</tr>
+				<tr>
+					<td>
+						<div id="pre_set" style="display:none">
+						 <input type="text" name="option[]" value="" style="width:200px"><input type="button" value="삭제" onclick="remove_item(this)"><br>
+						</div>
+						<input type="button" value="추가" onclick="add_item()"><div id="field"><input type="text" name="option[]" value="" style="width:200px"></div><br>						
+					</td>
+				</tr>
+			</table>
+
+
+			</td>
+			<!-- 본문 끝 -->
+		</tr>
+	</table>
+
+	<!-- 버튼 -->
+	<table width="100%" border="0">
+		<tr>
+			<td width="100%">&nbsp;
+				<center>
+				<input type="button" id="modifyCheck_option" value="변경"/>
+				</center>
+			</td>
+		</tr>
+	</table>
+	<!-- 버튼 끝 -->
+
+	<table width="560" border="0">
+		<tr>
+			<td width="560">&nbsp;<!-- 공백 -->
+			</td>
+		</tr>
+	</table>
+
+
+</form>

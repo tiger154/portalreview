@@ -1,0 +1,112 @@
+/* =============================================================
+공통
+==============================================================*/
+#wrap { 
+	margin: 20px auto; 	
+	padding: 20px;
+	width: 980px;	
+	overflow: hidden;
+	border: 5px solid #DDD;
+	/*
+	background-image:url('/images/common/bg.gif'); 
+	background-repeat:repeat-x; 
+	background-position:left top;
+	*/
+}
+
+/* =============================================================
+상단 
+==============================================================*/
+#top {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	/*overflow: hidden;*/
+	text-align: left;
+}
+
+#top-logo {
+	margin: 0;
+	padding: 0;
+}
+
+#top-link {	
+	margin: 0;
+	padding: 0;
+}
+
+/* =============================================================
+컨텐츠
+==============================================================*/
+#middle {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+#middle-container {
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+}
+
+#sidemenu {
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 180px;
+	overflow: hidden;
+	/* border: 1px solid #FF0000; */
+}
+
+#container {
+	float: left;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	/*width: 100%;*/
+	width: 980px;
+	
+}
+
+/* =============================================================
+하단
+==============================================================*/
+#footer {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	overflow: hidden;
+}
+
+#footer-link {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	text-align: center;	
+}
+
+#footer-copy {	
+	float: right;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+}
+
+/* =============================================================
+context-menu
+==============================================================*/
+#context-user { display: none; overflow: hidden; position: absolute; z-index: 10; width:130px; height:206px; background:url(/images/myrevu/bg_pop_blog.gif) no-repeat; }
+.pop_myblog { width:130px; height:206px; background:url(/images/myrevu/bg_pop_blog.gif) no-repeat;}
+.pop_myblog_thumbox {width:80px; height:109px; padding:22px 25px 0 25px;}
+.pop_myblog_thum{width:80px; height:80px; overflow:hidden;}
+.pop_myblog_thum_text{width:80px; height:15px; margin:8px 0;overflow:hidden;}
+.pop_myblog_text_line{width:80px; height:25px;}
+
+/* =============================================================
+socialbar
+==============================================================*/
+#socialbar { display: none; position: absolute; z-index: 7; margin:0 ; padding: 0; width: 100%; height: 50px; background-color: #00FF00; }
+#socialbar-frame { display: none; position: absolute; z-index: 5; margin: 50px 0 0 0; padding: 0; width: 100%; height: auto; background-color: #FF0000; }
+#popuplayer { display: none; position: absolute; z-index: 9; margin: 0; padding: 10px; width: 400px; height: auto; background-color: #00CC00; }

@@ -1,0 +1,48 @@
+<style type="text/css">@import "{EXTENDS}/js.jquery.datepick/jquery.datepick.css";</style>
+<script type="text/javascript" src="{EXTENDS}/js.jquery.datepick/jquery.datepick.js"></script> 
+<script type="text/javascript" src="{EXTENDS}/js.jquery.datepick/jquery.datepick-ko.js"></script> 
+<script type="text/javascript" src="{JS}/_global/input.js"></script>
+<script type="text/javascript" src="{JS}/manager.cash.js"></script>
+<h2>캐시합계내역</h2>
+<hr />
+<h3><font color="red">부하가 많이 걸리는 페이지입니다. 대도록이면 유저접속이 많은 시간을 피해주세요.</font></h3>
+<form name="form1" id="form1">
+<hr />
+<h3>
+{sdate_text} ~ {edate_text} - 총 적립캐시 : <font color="red">{=number_format(cashsum0)}</font> 원 /  
+총 지급캐시 :  <font color="blue">{=number_format(cashsum1)}</font>원 
+</h3>
+<input type="text" name="sdate" id="sdate" size="10" maxlength="10" value="{sdate}" /> 
+~
+<input type="text" name="edate" id="edate" size="10" maxlength="10" value="{edate}" />
+<input type="button" value="검색" id="searchCashSumBtn" />
+<hr />
+<table width="100%">
+	<tr>
+		<th>회원번호</th> 
+		<th>닉네임</th>
+		<th>설명</th>
+		<th>적립/지급</th>
+		<th>캐시</th>	
+		<th>프론티어<br />일련번호</th>
+		<th>리뷰일련번호</th>
+		<th>리뷰제목</th>
+		<th>적립/지급일</th>
+	</tr>
+	{@list}
+	<tr align="center">
+		<td>{.userno}</td>		
+		<td><a href="javascript:manager.user({.userno});">{.user.nickname}</a></td>
+		<td>{.state_explain}</td>
+		<td>{.flag_sign}</td>
+		<td>{=number_format(.cash)} 캐시</td>		
+		<td>{.frno}</td>
+		<td>{.rno}</td>
+		<td align="left" width="280">{.title}</td>
+		<td>{.regdate}</td>		
+	</tr>
+	{/}
+</table>
+
+<div class="pageno">{link}</div>
+</form>

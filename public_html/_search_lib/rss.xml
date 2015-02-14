@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<rss version="2.0">
+<channel>
+	<title>아이헬퍼스</title>
+	<link>http://www.ihelpers.co.kr</link>
+	<description>아이헬퍼스</description>
+	<language>ko</language>
+	<lastBuildDate>Nov, 17 2004 06:51:58 GMT</lastBuildDate>
+	<webMaster>smson@ihelpers.co.kr</webMaster>
+		<item>
+			<title>RSS 강좌 - RSSWriter Class 제작 및 활용</title>
+			<link>http://www.ihelpers.co.kr/programming/lec.php?CMD=view&amp;TYPE=1&amp;IDX=247</link>
+			<author>손상모</author>
+			<pubDate>Nov, 17 2004 06:51:58 GMT</pubDate>
+			<category>강좌</category>
+		</item>
+		<item>
+			<title>RSS 강좌 - RSS 0.9x,2.0 그리고 1.0</title>
+			<link>http://www.ihelpers.co.kr/programming/lec.php?CMD=view&amp;TYPE=1&amp;IDX=246</link>
+			<author>손상모</author>
+			<pubDate>Nov, 16 2004 09:59:12 GMT</pubDate>
+			<category>강좌</category>
+		</item>
+		<item>
+			<title>RSS 강좌 - RSS에 대하여</title>
+			<link>http://www.ihelpers.co.kr/programming/lec.php?CMD=view&amp;TYPE=1&amp;IDX=245</link>
+			<author>손상모</author>
+			<pubDate>Nov, 15 2004 08:13:29 GMT</pubDate>
+			<category>강좌</category>
+		</item>
+		<item>
+			<title>게시판의 조회수를 정확하게 측정하자</title>
+			<link>http://www.ihelpers.co.kr/programming/tipntech.php?CMD=view&amp;TYPE=0&amp;IDX=458</link>
+			<author>손상모</author>
+			<pubDate>Nov, 13 2004 01:33:48 GMT</pubDate>
+			<category>Tip&amp;Tech</category>
+		</item>
+		<item>
+			<title>글자와 이미지에 Blink 효과주기</title>
+			<link>http://www.ihelpers.co.kr/programming/tipntech.php?CMD=view&amp;TYPE=0&amp;IDX=457</link>
+			<author>손상모</author>
+			<pubDate>Nov, 12 2004 19:36:07 GMT</pubDate>
+			<category>Tip&amp;Tech</category>
+		</item>
+</channel>
+</rss>

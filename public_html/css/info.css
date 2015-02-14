@@ -1,0 +1,42 @@
+ /* info_body */  
+.title990_line {width:990px; height:29px;border-bottom:#666666 solid 2px;}
+
+.gray990_box {width:980px; height:auto;padding:20px 5px; background:#f8f8f8;border-top:#cccccc solid 1px;border-bottom:#cccccc solid 1px; margin-bottom:20px;}
+.gray990_box_linel { width:480px;height:14px;padding:6px 0; margin-left:50px; letter-spacing:-2px;background:url(/images/common/ico/dot_grayb.gif) no-repeat 8px 12px; float:left; display:inline;}
+.gray990_box_liner { width:442px;height:14px;padding:6px 0; letter-spacing:-2px;background:url(/images/common/ico/dot_grayb.gif) no-repeat 8px 10px; float:left; display:inline;}
+
+.common990_box {width:966px; padding:12px;}
+
+.gray905_box {width:845px; height:auto;padding:30px; background:#f8f8f8;border-top:#cccccc solid 1px;border-bottom:#cccccc solid 1px; margin:0 auto;}
+
+.revu_guide {width:990px; height:539px; background:url(/images/info/img_revuguide.gif) no-repeat;}
+.revu_guide li {width:500px; height:32px; padding:395px 0 0 50px; text-align:left;}
+
+/*----- 2012.01.12 서비스추가(수정) HEE.START ----------------------------------------------------------------------------------------------------------------------*/
+.guide_box {padding:0 0 0 0px; width:990px; float:left; display:inline;}
+.guide1_frontier {width:330px; height:254px; background:url(/images/info/bg_guide1.gif) no-repeat; float:left; display:inline;}
+.guide2_cash {width:330px; height:254px; background:url(/images/info/bg_guide2.gif) no-repeat; float:left; display:inline;}
+.guide3_myrevu {width:330px; height:254px; background:url(/images/info/bg_guide3.gif) no-repeat; float:left; display:inline;}
+.guide4_review {width:330px; height:460px; background:url(/images/info/bg_guide4.gif) no-repeat; float:left; display:inline;}
+.guide5_accounts {width:330px; height:460px; background:url(/images/info/bg_guide5.gif) no-repeat; float:left; display:inline;}
+.guide6_social {width:330px; height:460px; background:url(/images/info/bg_guide6.gif) no-repeat; float:left; display:inline;}
+
+.guide_text_box { margin:210px 0 0 55px; padding:0px 0 0 5px; float:left; display:inline;}
+.guide_text_box li { height:14px;padding:6px 0 0 15px;background:url(/images/common/ico/dot_black.gif) no-repeat 8px 12px; letter-spacing:-1px;}
+
+.pop_info {width:767px;}
+.title_guidesocial1 {width:767px; height:72px; background:url(/images/info/title_guidesocial1.gif) no-repeat;}
+.title_guidesocial2 {width:767px; height:72px; background:url(/images/info/title_guidesocial2.gif) no-repeat;}
+/*----- 2012.01.12 서비스추가(수정) HEE.END -----------------------------------------------------------------------------------------------------------------------*/
+
+.title_guidereview1 {width:767px; height:72px; background:url(/images/info/title_guidereview1.gif) no-repeat;}
+.title_guidereview7 {width:767px; height:72px; background:url(/images/info/title_guidereview7.gif) no-repeat;}
+.title_guidemyrevu1 {width:767px; height:72px; background:url(/images/info/title_guidemyrevu1.gif) no-repeat;}
+.title_guidefrontier1 {width:767px; height:72px; background:url(/images/info/title_guidefrontier1.gif) no-repeat;}
+.bg_guidefrontier1 {width:748px; height:491px; background:url(/images/info/img1_guidefrotier1.gif) no-repeat;}
+
+.title_guidecash1 {width:767px; height:72px; background:url(/images/info/title_guidecash1.gif) no-repeat;}
+.bg_guidecash1 {width:748px; height:449px; background:url(/images/info/img1_guidecash1.gif) no-repeat;}
+
+.title_guidesocial1 {width:767px; height:72px; background:url(/images/info/title_guidesocial1.gif) no-repeat;}
+.title_guidesocial2 {width:767px; height:72px; background:url(/images/info/title_guidesocial2.gif) no-repeat;}

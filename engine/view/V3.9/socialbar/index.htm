@@ -1,0 +1,157 @@
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<script type="text/javascript" src="{JS}/_global/api.js"></script>
+<script>
+//var iconType = "{iconType}"; 
+var loginFlag = new Array();
+var shortUrl = "{shortUrl}";
+var reviewTitle = "{=addslashes(review.title)}";
+loginFlag['R'] = "{login.R}";
+loginFlag['T'] = "{login.T}";
+loginFlag['F'] = "{login.F}"; 
+loginFlag['FFFF'] = "{login.FFFF}"; 
+socialbar._tno = "{tno}";
+socialbar._rno = "{rno}";
+</script>
+<div id="socialbar">
+	<div class="content">
+		<!-- 레뷰추천버튼 / 오버시class="bar_but_over"로 표시 -->
+		<div id="recom_btn" class="recom_on btn">
+			<div class="recom_box" onClick="{? review.flag_cand == true}socialbar.candRecom({review.wno},{review.rno});{:}socialbar.recom({review.rno});{/}">				
+				<span id="recom_cnt"><!--{*? review.flag_cand == true}{review.best_recom_cnt}{:}{review.recom_cnt}{/*}--> {review.recom_cnt}</span>
+			</div>
+		</div>
+		<div id="review-position"></div>
+		<div class="review">
+			<ul>
+				<li class="title">
+					<span class="gray_d_text btn" onClick="socialbar.review({user.userno});" >
+						<strong>{review.title}</strong>
+					</span>
+				</li>
+				<li class="user">
+					{? review.flag_best == "1"}<img src="{IMAGES}/common/ico/ico_bestreview.gif" alt="베스트리뷰" title="베스트리뷰" />&nbsp;{/}
+					{? user.flag_powerblog == "1"}<img src="{IMAGES}/common/ico/ico_revupower.gif" alt="파워블로거" title="파워블로거" />&nbsp;{/}
+					<!--<span class="common11_text btn" onClick="context.load({user.userno});">{user.nickname}</span>&nbsp;-->
+					<a href="javascript:context.load({user.userno});">{user.nickname}</a>&nbsp;
+					<span class="gray11_l_text"> ㅣ&nbsp;{review.regdate}&nbsp;ㅣ&nbsp;{review.catedesc}</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="close">
+		<img src="{IMAGES}/socialbar/socialbar_close.gif" onClick="socialbar.close('{review.url}');" class="btn" alt="닫기" title="닫기" />
+	</div>
+	<div class="talk" id="talk-location">
+		<!--소셜댓글 카운터 박스 -->
+		<div class="talk_box">
+			<ul>
+				<li id="talk_cnt">{review.talk_cnt}</li>
+				<li>
+					<img src="{IMAGES}/common/space.gif" width="66" height="25" onClick="socialbar.viewTalk();" class="btn" alt="소셜토크" title="소셜토크"/>
+				</li>
+			</ul>
+		</div>
+		<!-- 소셜플러그인-->
+		<div class="talk_textbox">
+			<ul>
+				<li class="talk_sns">
+					{*}
+					<div class="fl">
+						<!--
+						<div id="fb-root"></div>
+						<div class="fb-like" data-href="{review.url}" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+						<div class="fb-like" data-href="{shortUrl}" data-send="true" data-layout="button_count" data-width="100" data-show-faces="true"></div>
+						-->						
+						<iframe src="http://www.facebook.com/plugins/like.php?href={shortUrl}&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;colorscheme=light&amp;height=65" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:20px;" allowTransparency="true"></iframe>
+					</div>
+					<div class="fl">
+						<!--<a href="https://twitter.com/share" class="twitter-share-button" data-url="{shortUrl}" data-via="revulove" data-lang="ko" data-relate="revu" data-count="horizon" data-text="{review.title}">Tweet</a>-->
+						<a href="https://twitter.com/share" class="twitter-share-button" data-url="{review.url}" data-lang="ko" data-relate="revu" data-via="revulove" data-count="horizon" data-text="{review.title}">Tweet</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+						
+					</div>
+					{/*}
+					{*}
+					<img src="{IMAGES}/common/but/but_b_tweet.gif" onClick="twitter.todo('tweet', {review.rno});" class="btn" />
+					<img src="{IMAGES}/common/but/but_b_facebook.gif" onClick="facebook.todo('wall', {review.rno});" class="btn" />
+					{/*}
+					<img src="{IMAGES}/common/but/but_b_tweet.gif" onClick="socialbar.setTalk('T');" class="btn" />
+					<img src="{IMAGES}/common/but/but_b_facebook.gif" onClick="socialbar.setTalk('F');" class="btn" />
+				</li>
+				<li class="talk_msg">
+					<span class="talk_msg_last">
+						<strong>최신토크 : </strong><span id="talk-last" class="common11_text"></span>
+					</span>
+				</li>
+			</ul>
+		</div>
+	</div>	
+</div>
+
+<div id="socialbar-talk">
+	<div class="list_box">
+		<div class="list_tbox">
+			<img src="{IMAGES}/socialbar/title_pop_social.gif" />
+			<div class="fl">
+				<textarea id="msg" onkeydown="common.setTextLimit('msg', 'msgnum', 150);" onkeypress="common.setTextLimit('msg', 'msgnum', 150);" class="msg"></textarea>
+			</div>
+			<div class="fl">				
+				<img src="{IMAGES}/common/but/but_big_reply.gif" onClick="socialbar.talk();" class="btn" alt="댓글쓰기" title="댓글쓰기" />
+			</div>
+			<div class="clear"></div>
+			<div class="pa05">	
+				<ul class="iconlist">
+					<li class="fl">
+						<img src="{IMAGES}/common/ico/ico_check.png" id="checkR" class="check" />
+						<img src="{IMAGES}/common/ico/ico_R{? login.R != true}2{/}.gif" id="iconR" onClick="socialbar.todoIcon('R');" class="w_space h_space btn" />						
+					</li>
+					<li class="fl">
+						<img src="{IMAGES}/common/ico/ico_check.png" id="checkT" class="check" />
+						<img src="{IMAGES}/common/ico/ico_T{? login.T != true}2{/}.gif" id="iconT" onClick="socialbar.todoIcon('T');" class="w_space h_space btn" />
+					</li>
+					<li class="fl">
+						<img src="{IMAGES}/common/ico/ico_check.png" id="checkF" class="check" />
+						<img src="{IMAGES}/common/ico/ico_F{? login.F != true}2{/}.gif" id="iconF" onClick="socialbar.todoIcon('F');" class="w_space h_space btn" />
+					</li>
+				</ul>
+				<span class="gray11_l_text">
+					<span id="msgnum">0</span>/150 byte 
+					<a href="javascript:socialbar.logout();" class="w_space"><strong>전체로그아웃</strong></a>
+				</span>
+			</div>	
+			<div class="pt05"></div>
+			<div class="list">
+				<table id="talk-list" width="370" border="0" cellspacing="0" cellpadding="0">
+					<tbody>
+					<tr>
+						<td width="30" height="0"></td>
+						<td width="340" height="0"></td>
+					</tr>
+					{@talk}
+					<tr id="talk{.tno}">
+						<td align="center" class="line" valign="top">
+							<img src="{.icon}" />
+						</td>
+						<td class="line">
+							<div class="gray11_l_text text_overlay17">
+								{.ref} <img src="{IMAGES}/common/ico/ico_del.gif" onClick="socialbar.deleteTalk({.tno});" class="btn" align="absmiddle" />
+							</div>
+							<div class="common11_text"><strong>{.talk}</strong></div>
+						</td>
+					</tr>
+					{/}
+					</tbody>
+				</table>
+			</div>
+			{? tno != ""}
+			<div id="talk-more">
+				<img src="{IMAGES}/common/but/but_morebar.gif" onClick="socialbar.moreTalk();" class="btn" alt="더보기" title="더보기" />
+			</div>
+			{/}
+		</div>
+	</div>
+	<div class="close">
+		<img src="{IMAGES}/common/ico/ico_g_arrowbox.gif" onClick="socialbar.closeTalk();" class="btn" alt="닫기" title="닫기" />
+	</div>
+</div>
+<iframe id="socialbar-frame" name="socialbar-frame" width="100%" src="{review.url}" frameborder="0"></iframe>

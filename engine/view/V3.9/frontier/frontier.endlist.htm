@@ -1,0 +1,70 @@
+      <div class="title_line gray_l_text"><img src="/images/frontier/title_frontier_end.gif"  align="left"/></div>
+      <!-- 스페셜 박스 시작  / 있으면 최소 2개-->
+
+        <!-- 리스트 묶음 박스 시작 -->
+        
+  		<!--{@mainlist}-->   
+       <div class="clear"> </div>
+		 <div class="frontier_cbox">
+			<div class="frontier_list">
+				<!-- <div class="thum110_box" style="background:url({.listimg}) no-repeat; float:left; display:inline;">
+					<div  class="them_text_g white11_text" style="text-align:center;">{.b_cate}
+					</div> -->
+
+				 <div class="thum110_nbox">
+					 <div class="them_text_ng white11_text" style="text-align:center;">{.b_cate}</div>
+					<img src="{.listimg}" width="110" height="110" />
+					</div>
+
+				<div class="frontier_revw_box" style="float:left; display:inline;">
+					<div class="gray_title list_title_line2"><a href="/frontier/detailview/1/{.frno}/C/">{.subject}</a>
+					</div>
+					<div class="list_count_line2"><span class="orange11_text">등록리뷰 {.reviewcnt} 건&nbsp;
+		{? .reviewcnt < 1 }
+		
+		{:}
+					<a href="/frontier/detailview/1/{.frno}/C//M"><img src="/images/common/ico/frontier_more.gif"></a>
+		{/}			
+					</span>
+					</div>
+					<div class="clear"></div>
+					
+		{? .view == "Y"} 
+					<div class="frontier_revw_text">
+					<ul>
+					<li class="frontier_revw_titleline"><span class="common_text pl20"><a href="javascript:common.socialbar({.rno})"><strong>{=htmlspecialchars(.content.title)}</strong></a>&nbsp;|&nbsp;</span><span class="gray11_l_text"><a href="javascript:context.load({.userno})">{.review_nickname}</a></span> </li>
+					<li style="height:8px;"></li>
+					<li class="frontier_revw_textline common_text">{=strip_tags(.content.content)} </li>
+					</ul>
+					</div>
+		{:}
+
+					<div class="frontier_revw_text">
+					<ul>
+					<li style="height:8px;"></li>
+					<li class="frontier_revw_textline common_text "><font color="#977EB6">등록된 리뷰가 없습니다.</font></li>
+					</ul>
+					</div>
+
+		{/}
+
+				</div>
+			</div>
+        <div class="clear"></div>
+        <div  class="cbox_line_endfrontier"></div>
+      </div>
+	 
+		<!--{/}-->
+
+
+
+
+     <!-- 페이지 넘버링 박스 시작 -->
+		  {? size > 0} 
+		<div class="pageno">{link}</div>
+		{:}
+		<div class="nolist"></div>
+		{/}
+	<!-- 페이지 넘버링 박스 끝 -->
+
+

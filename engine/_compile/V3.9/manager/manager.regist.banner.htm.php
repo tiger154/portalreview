@@ -1,0 +1,135 @@
+<?php /* Template_ 2.2.4 2011/10/21 21:09:29 /www/revu39/engine/view/V3.9/manager/manager.regist.banner.htm 000004712 */ ?>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>
+
+<script type="text/javascript" src="<?php echo $TPL_VAR["JS"]?>/_global/category.js"></script>
+<script type="text/javascript" src="<?php echo $TPL_VAR["JS"]?>/_global/zipcode.js"></script>
+<script type="text/javascript" src="<?php echo $TPL_VAR["JS"]?>/_global/input.js"></script>
+<!-- <script type="text/javascript" src="<?php echo $TPL_VAR["EXTENDS"]?>/editor.htmlarea/config/htmlarea.js"></script> -->
+<!-- <script type="text/javascript" src="<?php echo $TPL_VAR["EXTENDS"]?>/editor.htmlarea/config/htmlarea2.js"></script>-->
+<!-- <script type="text/javascript" src="<?php echo $TPL_VAR["EXTENDS"]?>/editor.htmlarea/config/editor_init.js"></script> -->
+<!-- <script type="text/javascript" src="<?php echo $TPL_VAR["EXTENDS"]?>/editor.htmlarea/config/editor_init2.js"></script> -->
+
+<script type="text/javascript" src="<?php echo $TPL_VAR["EXTENDS"]?>/editor.htmlarea/config/button_action.js"></script>
+<!-- <script type="text/javascript" src="<?php echo $TPL_VAR["EXTENDS"]?>/editor.htmlarea/config/button_action2.js"></script> -->
+
+<input type="hidden" name="tmp_img" id="tmp_img" value="" />
+<form name="RevUform" id="RevUform" method="post" enctype="multipart/form-data" action="">
+	<!-- 상단 -->
+	<table border="0" width="980" cellpadding="5" cellspacing="0" >
+		<tr>
+			<!--본문-->
+			<td valign="top" bgcolor="#FFFFFF">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" height="35" border="0" bgcolor="#D2A6FF">
+							<font color="#330000">&nbsp;<img src="<?php echo $TPL_VAR["IMAGES"]?>/admin/lyr_tit_bu.gif">&nbsp;화면관리><b>배너등록</b></font>&nbsp;
+						</td>
+					</tr>
+				</table>
+
+				<table>
+					<!-- 프론티어 타입 선택 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#99CC66">
+							&nbsp;배너타입&nbsp;<br>
+						</td>
+						<td>
+							<div align="left">
+								<input type="radio" name="btype" value="M" border="0" checked> 메인배너
+								<input type="radio" name="btype" value="L" border="0"> 우측배너
+							</div>
+						</td>
+					</tr>
+					<!-- 출처 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#99CC66">
+							&nbsp;링크타입&nbsp;<br>
+						</td>
+						<td>
+							<div align="left">
+								<input type="radio" name="link" value="T" border="0" checked> 새창
+								<input type="radio" name="link" value="P" border="0"> 현재창
+							</div>
+						</td>
+					</tr>
+					<!-- 배너캠페인 명-->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#99CC66">
+							&nbsp;배너 캠페인명&nbsp;<br>
+						</td>
+						<td>
+							<input type="text" name="subject" id="subject" value="" size="80">
+						</td>
+					</tr>
+				
+					<!-- 광고주명 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#99CC66">
+							&nbsp;광고주명&nbsp;<br>
+						</td>
+						<td>
+							<input type="text" name="spon" id="spon" value="" size="80">
+						</td>
+					</tr>
+
+
+					<!-- 링크 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#AAAAAA">
+							&nbsp;링크주소&nbsp;<br>
+						</td>
+						<td>
+							<input type="text" name="homepage" id="homepage" value="" size="50">&nbsp;&nbsp;<input type="button" value="홈피 찾기" id="homepageBtn">&nbsp;http;// 를 입력바랍니다. 
+						</td>
+					</tr>
+
+					<!-- 배너이미지 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#99CC66">
+							&nbsp;배너 이미지<br><font color="#7D7D7D">(노출될 배너 이미지)</font>&nbsp;<br>
+						</td>
+						<td>
+							<input type="file" name="file1" id="file1" value=""><br>
+							<input type="hidden" name="topimage" id="topimage" value="">
+							<font color="#9933FF">▶gif 이미지 등록(이미지는 gif 로 확장자가 치환됨)</font>
+						</td>
+					</tr>
+					
+
+				</table>			
+			</td>
+			<!-- 본문 끝 -->
+		</tr>
+	</table>
+	<!-- 버튼 -->
+	<table width="800" border="0">
+		<tr>
+			<td width="800">&nbsp;
+				<center>
+				<input type="button" id="registCheckbanner" value="등록"/>
+				<input type="button" id="cancelBtn" value="취소"/>
+				</center>
+			</td>
+		</tr>
+	</table>
+	<!-- 버튼 끝 -->
+
+
+	<table width="800" border="0">
+		<tr>
+			<td width="800">&nbsp;<!-- 공백 -->
+			</td>
+		</tr>
+	</table>
+
+
+
+
+<!-- <script type="text/javascript">HTMLArea.init();</script> -->
+<!-- <script type="text/javascript">HTMLArea2.init();</script> -->
+
+</form>

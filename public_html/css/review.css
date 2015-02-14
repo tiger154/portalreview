@@ -1,0 +1,61 @@
+ /* review */
+.review_best_box {padding:0 30px 40px 30px; width:655px; height:352px; background:#222222; }
+.review_best_title {margin: 0; padding: 0 0 25px 0; width:655px; height:103px; background:url('/images/review/title_reviewbest.gif') no-repeat; }
+.review_best_week {width:200px; height:14px; padding:79px 0 12px 0; font-weight:bold; text-align:right;float:right; display:inline;}
+.review_best_thum {float:left; margin:0 0 0 26px; width:222px; height:222px; border:#666666 solid 1px; }
+.review_best_layer {position:absolute; margin: 0; padding: 0; }
+.review_best_list {float:left; margin:0; padding:0; width:404px; height:224px;}
+.review_best_line1 { margin:14px 0 0 0; width:404px; height:23px; background:url(/images/review/bg_review_best1.gif) no-repeat;}
+.review_best_line2 { margin:14px 0 0 0; width:404px; height:23px; margin-top:15px; background:url(/images/review/bg_review_best2.gif) no-repeat;}
+.review_best_line3 { margin:14px 0 0 0; width:404px; height:23px; margin-top:15px; background:url(/images/review/bg_review_best3.gif) no-repeat;}
+.review_best_line4 { margin:14px 0 0 0; width:404px; height:23px; margin-top:15px; background:url(/images/review/bg_review_best4.gif) no-repeat;}
+.review_best_line5 { margin:14px 0 0 0; width:404px; height:23px; margin-top:15px; background:url(/images/review/bg_review_best5.gif) no-repeat;}
+.review_best_line6 { margin:14px 0 0 0; width:404px; height:23px; margin-top:14px; background:url(/images/review/bg_review_best6.gif) no-repeat;}
+.review_best_text1 {width:260px; height:14px; padding: 0 0 0 20px; overflow:hidden; float:left; display:inline;}
+.review_best_text2 {width:77px; height:14px; padding: 0 10px 0 0; text-align:center; overflow:hidden; float:left; display:inline;}
+.review_best_text3 {width:21px; height:14px; padding: 0 0 0 16px; font-weight:bold; overflow:hidden; float:left; display:inline;}
+
+.review_category {width:715px; height:35px; padding-bottom:20px; border-bottom:#666666 solid 2px;}
+.review_category ul {margin:0; padding:0;}
+.review_category li {float: left;}
+
+.category_select_box {width:714px; height:19px; padding:8px 0 12px 0; border-bottom:#8f8f8f solid 1px; margin-bottom:30px; }
+.category_select_box ul {margin:0; padding: 0;}
+.category_select_box li {float: left;} 
+
+.review_list {margin:0; padding:0;}
+.review_list ul {margin:0; padding:0; width:715px;}
+.review_list li {float:left; height:110px;}
+.thum110_box {float:left; width:110px; height:110px; padding-right:15px;}
+.review_text_box {width:416px; height:110px; padding-left:20px;}
+.review_text_bbox {width:546px; height:110px;}
+.review_sns_box {width:132px; height:110px; padding-left:20px; border-left:#eeeeee solid 1px; vertical-align: top;}
+.revu_hit_box { width:89px; height:20px;}
+.revu_hit_boxl {width:49px; height:20px; float:left; display:inline;}
+.revu_hit_boxr {width:40px; height:20px; background:url(/images/common/but/bg_revuhit.gif) no-repeat; float:left; display:inline;}
+.revu_hit_text { width:24px; height:12px; padding: 2px 4px 6px 12px; text-align:center;}
+
+.review_title_line{ width:380px;height:24px;padding-bottom:8px;overflow:hidden; float:left; display:inline;}
+.review_title_talk{ width:36px;height:14px;padding: 5px 0 8px 0;float:left; display:inline;}
+.review_text_line { width:408px; height:38px; padding:0 8px 10px 0; overflow:hidden;}
+.review_text_line2 { width:408px; height:15px; padding:10px 8px 0 0; overflow:hidden;}
+.review_text_bline { width:538px; height:38px; padding:0 8px 10px 0; overflow:hidden;}
+.review_text_bline2 { width:538px; height:15px; padding:10px 8px 0 0; overflow:hidden;}
+
+.them_text_r { width:40px; height:15px; background:#ee382d; overflow:hidden; margin-top:95px;}
+.them_text_g { width:40px; height:15px; background:#333333;filter:alpha(opacity=60);-moz-opacity: 0.60; opacity:0.60; overflow:hidden; margin-top:95px;}
+
+.review_notext_box {width:541px; height:110px; padding-right:20px;}
+.review_notitle_line{ width:380px;height:24px;padding-bottom:8px;overflow:hidden; float:left; display:inline;}
+.review_notitle_talk{ width:36px;height:14px;padding: 5px 0 8px 0;float:left; display:inline;}
+.review_notext_line { width:541px; height:38px; padding-bottom:10px; overflow:hidden;}
+.review_notext_line2 { width:541px; height:15px; padding-top:10px; overflow:hidden;}
+
+.text_sr_150 { width:150px; height:15px; overflow:hidden;padding-bottom:2px;}
+
+/* 베스트리뷰 */
+.week_best_box { width:715px; height:20px; padding-bottom:10px; }
+.week_best_box .best_count {width:61px; height:20px; margin-right:20px; background:url(/images/common/but/but_bestcount.gif) no-repeat; text-align:center; float:left; display:inline;}
+.week_best_box .best_post1 {width:380px; height:15px; margin-right:20px; padding-top:5px; font-weight:bold;overflow:hidden;float:left; display:inline;}
+.week_best_box .best_post2 {width:163px; height:15px; margin-right:20px; padding-top:5px; text-align:right;overflow:hidden;float:left; display:inline;}
+.week_best_box .ico_blog {width:50px; height:14px; padding-top:6px; float:left; display:inline;}

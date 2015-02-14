@@ -1,0 +1,225 @@
+<link type="text/css" rel="stylesheet" href="{CSS}/_global/_style_manager.css" />
+<script type="text/javascript" src="{JS}/manager.user.js"></script>
+<h2>{user.nickname}님의 회원정보</h2>
+<form name="form1" id="form1">
+<input type="hidden" id="user_email" value="{user.email}" />
+<div id="tabs" style="height: 590px;">
+	<ul>
+		<li><a href="#tabs-1">기본정보</a></li>
+		<li><a href="#tabs-2">블로그정보</a></li>
+		<li><a href="#tabs-3">리뷰정보</a></li>
+		<li><a href="#tabs-4">베스트리뷰정보</a></li>
+		<li><a href="#tabs-5">메모내역</a></li>
+		<li><a href="#tabs-8">캐시적립내역</a></li>
+		<li><a href="#tabs-9">포인트로그</a></li>
+	</ul>
+	<div id="tabs-1">
+		<table width="100%" class="table-user">
+			<tr>
+				<th width="120">가입일</th>
+				<td width="260">{user.regdate}</td>
+				<th width="120">이메일</th>
+				<td width="260">{user.email} / {user.flag_email_text}</td>
+			</tr>
+			<tr>
+				<th>ID / 회원번호</th>
+				<td>{user.userid} / {user.userno}</td>
+				<th>ID 소속</th>
+				<td><img src="{IMAGES}/common/ico/ico_{user.type}.gif" /></td>
+			</tr>
+			<tr>
+				<th>닉네임 / 이름</th>
+				<td>{user.nickname} / {user.username}</td>
+				<th>회원이미지</th>
+				<td><img src="{userimage}" width="80" height="80" /></td>
+			</tr>
+			<tr>
+				<th>포인트 </th>
+				<td>{=number_format(point.point)}</td>
+				<th>캐시</th>
+				<td>{=number_format(cash.cash)}</td>
+			</tr>
+			<tr>
+				<th>파워블로그</th>
+				<td>
+					{? user.flag_powerblog == "1"}
+						<img src="{IMAGES}/common/ico/ico_revupower.gif" />
+					{/} 
+					{user.flag_powerblog_text}
+					{? powerblog.cate1 != ""}<br />{powerblog.cate_desc1}{/}
+					{? powerblog.cate2 != ""}<br />{powerblog.cate_desc2}{/}
+					{? powerblog.cate3 != ""}<br />{powerblog.cate_desc3}{/}
+					{? powerblog.cate4 != ""}<br />{powerblog.cate_desc4}{/}
+					{? powerblog.cate5 != ""}<br />{powerblog.cate_desc5}{/}
+				</td>
+				<th>블랙리스트</th>
+				<td>{user.flag_black_text}</td>
+			</tr>
+			<tr>
+				<th>성별</th>
+				<td>{extra.gender_text}/{extra.gender}</td>
+				<th>생년월일</th>
+				<td>{extra.birthday}({extra.flag_lunar_text})</td>
+			</tr>
+			<tr>
+				<th>휴대폰</th>
+				<td>{extra.cell}</td>
+				<th>전화번호</th>
+				<td>{extra.tel}</td>
+			</tr>
+			<tr>
+				<th>주소지</th>
+				<td colspan="3">{extra.addr1} {extra.addr2}</td>
+			</tr>
+			<tr>
+				<th>관심분야</th>
+				<td>{@cate_desc}{.desc}<br />{/}</td>
+				<th>관심지역</th>
+				<td>{@area_desc}{.desc}<br />{/}</td>
+			</tr>
+			<tr>
+				<th>리뷰수</th>
+				<td>{=number_format(stats.review_cnt)}</td>
+				<th>토크수</th>
+				<td>{=number_format(stats.talk_cnt)}</td>
+			</tr>
+			<tr>
+				<th>포인트</th>
+				<td>{=number_format(point.point)}</td>
+				<th>캐시</th>
+				<td>{=number_format(cash.cash)}</td>
+			</tr>
+			<tr>
+				<th>로그인 횟수</th>
+				<td>{=number_format(stats.login_cnt)}</td>
+				<th>최근로그인</th>
+				<td>{stats.login_regdate}</td>
+			</tr>
+			<tr>
+				<th>총 리뷰 수</th>
+				<td>{=number_format(stats.review_cnt)}</td>
+				<th>총 추천 수</th>
+				<td>{=number_format(stats.recom_cnt)}</td>
+			</tr>
+			<tr>
+				<th>총 토크 수</th>
+				<td>{=number_format(stats.talk_cnt)}</td>
+				<th>총 메세지 수(X)</th>
+				<td>{=number_format(stats.message_cnt)}</td>
+			</tr>
+		</table>
+	</div>
+	<div id="tabs-2">
+		<table width="100%" class="table-user">			
+			<tr>
+				<th width="100">파워블로거</th>
+				<td>
+					{? user.flag_powerblog == "1"}
+						<img src="{IMAGES}/common/ico/ico_revupower.gif" />
+					{/}
+					{user.flag_powerblog_text}
+				</td>
+			</tr>
+			<tr>
+				<th>분야</th>
+				<td>
+				{? powerblog.cate1 != ""}{powerblog.cate_desc1}<br />{/}
+				{? powerblog.cate2 != ""}{powerblog.cate_desc2}<br />{/}
+				{? powerblog.cate3 != ""}{powerblog.cate_desc3}<br />{/}
+				{? powerblog.cate4 != ""}{powerblog.cate_desc4}<br />{/}
+				{? powerblog.cate5 != ""}{powerblog.cate_desc5}<br />{/}
+				</td>
+			</tr>
+			<tr>
+				<th>등록된 블로그 수</th>
+				<td>{=number_format(blog_cnt)}</td>
+			</tr>
+			<tr>
+				<th>블로그 리스트</th>
+				<td valign="top">
+					<table width="100%">
+						<tr>
+							<th>블로그번호</th>
+							<th>타이틀/URL</th>
+							<th>사용유무</th>
+							<th>리뷰수</th>
+							<th>토크수</th>
+							<th>캐시</th>
+							<th>등록일</th>
+						</tr>
+						{@blog}
+						<tr align="center">
+							<td>{.blogno}</td>
+							<td>{.name}<br /><a href="{.url}" target="_blank">{.url}</a></td>							
+							<td>{.flag_activated}</td>
+							<td>{.review_cnt}</td>
+							<td>{.talk_cnt}</td>
+							<td>{.cash}</td>
+							<td>{.regdate}</td>
+						</tr>
+						{/}
+					</table>
+				</td>
+			</tr>			
+		</table>
+	</div>
+	<div id="tabs-3">
+		<iframe width="760" height="540" src="/manager/user.info.review/{user.userno}" frameborder="0"></iframe> 
+	</div>
+	<div id="tabs-4">
+		<table width="100%" class="table-user">
+			<tr>
+				<th width="100">총 베스트리뷰 수</th>
+				<td>{=number_format(reviewbestCnt)}</td>
+			</tr>
+			<tr>
+				<th>베스트리뷰 <br />리스트<br />(최근10건)</th>
+				<td valign="top">
+					<table width="100%">
+						<tr>
+							<th>베스트기간</th>
+							<th>랭킹</th>
+							<th>제목</th>
+							<th>추천수</th>							
+							<th>등록일</th>
+						</tr>
+						{@reviewbest}
+						<tr align="center">
+							<td>{.sdate}~{.edate}</td>
+							<td>{.rank}</td>
+							<td align="left" width="300"><a href="javascript:common.socialbar({.rno});">{.review.title}</a></td>
+							<td>{.best_recom_cnt}</td>
+							<td>{.regdate}</td>
+						</tr>
+						{/}
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="tabs-5">
+		<iframe width="760" height="540" src="/manager/user.info.memo/{user.userno}" frameborder="0"></iframe> 
+	</div>
+	<div id="tabs-8">
+		<iframe width="760" height="540" src="/manager/user.info.cash/{user.userno}" frameborder="0"></iframe>	
+	</div>
+	<div id="tabs-9">
+		<iframe width="760" height="540" src="/manager/user.info.point/{user.userno}" frameborder="0"></iframe>
+	</div>
+<br />
+</div>
+<center>
+	<input type="button" value="메모" onClick="mnguser.confirmMemo({user.userno});" />
+	<input type="button" value="개별메일 보내기" onClick="mnguser.confirmSendMail('{user.email}');" />
+	{? _SESSION.grade > 105}	
+	<input type="button" value="뉴스레터 수신거부" onClick="mnguser.confirmReceiveEmail({user.userno});" />
+	<input type="button" value="캐시 지급/차감" onClick="mnguser.confirmCash({user.userno});" />
+	<input type="button" value="파워블로거" onClick="mnguser.confirmPowerblog({user.userno});" />
+	<input type="button" value="블랙리스트" onClick="mnguser.confirmBlackList({user.userno});" />	
+	<input type="button" value="탈퇴처리" onClick="mnguser.confirmSecede({user.userno});" />	
+	{/}	
+	<br /><br />
+	<input type="button" value="닫기" onClick="common.popupClose();" />
+</center>
+</form>
+<br />

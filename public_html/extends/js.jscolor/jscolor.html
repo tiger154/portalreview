@@ -1,0 +1,223 @@
+<script type="text/javascript" src="jscolor.js"></script>
+<p> This field can be left empty: <input class="color {required:false}">
+<p> This field accepts any value: <input class="color {adjust:false}">
+<p> Hash symbol:                  <input class="color {hash:true}">
+<p> Hash symbol, lowercase:       <input class="color {hash:true,caps:false}">
+
+
+<h2 id="tweaking"><a href="#tweaking">1. Basic</a></h2>
+<!-- EXAMPLE -->
+<form class="example" id="example1">
+<!-- <iframe id="example1_frame" src="example/basic.html" frameborder="0"></iframe> -->
+<div class="code"><textarea name="code" cols="80" rows="10">&lt;script type=&quot;text/javascript&quot; src=&quot;jscolor/jscolor.js&quot;&gt;&lt;/script&gt;
+ 
+Click here: &lt;input class=&quot;color&quot; value=&quot;66ff00&quot;&gt;</textarea></div>
+</form>
+<!-- /EXAMPLE -->
+
+
+
+
+<h2 id="tweaking"><a href="#tweaking">2. Tweaking</a></h2>
+<!-- EXAMPLE -->
+<form class="example" id="example2">
+<!-- <iframe id="example2_frame" src="example/tweaking.html" frameborder="0"></iframe> -->
+<div class="code"><textarea name="code" cols="80" rows="10">&lt;script type=&quot;text/javascript&quot; src=&quot;jscolor/jscolor.js&quot;&gt;&lt;/script&gt;
+ 
+&lt;p&gt; This field can be left empty: &lt;input class=&quot;color {required:false}&quot;&gt;
+&lt;p&gt; This field accepts any value: &lt;input class=&quot;color {adjust:false}&quot;&gt;
+&lt;p&gt; Hash symbol:                  &lt;input class=&quot;color {hash:true}&quot;&gt;
+&lt;p&gt; Hash symbol, lowercase:       &lt;input class=&quot;color {hash:true,caps:false}&quot;&gt;</textarea></div>
+</form>
+<!-- /EXAMPLE -->
+
+
+
+<h2 id="modes"><a href="#modes">3. Picker modes HSV/HVS</a></h2>
+<!-- EXAMPLE -->
+<form class="example" id="example3">
+<!-- <iframe id="example3_frame" src="example/modes.html" frameborder="0"></iframe> -->
+<div class="code"><textarea name="code" cols="80" rows="10">&lt;script type=&quot;text/javascript&quot; src=&quot;jscolor/jscolor.js&quot;&gt;&lt;/script&gt;
+ 
+HSV mode: &lt;input class=&quot;color {pickerMode:'HSV'}&quot;&gt;
+HVS mode: &lt;input class=&quot;color {pickerMode:'HVS'}&quot;&gt;</textarea></div>
+</form>
+
+
+
+<!-- /EXAMPLE -->
+<h2 id="position"><a href="#position">4. Picker position</a></h2>
+<!-- EXAMPLE -->
+<form class="example" id="example4">
+<!-- <iframe id="example4_frame" src="example/position.html" frameborder="0"></iframe> -->
+<div class="code"><textarea name="code" cols="80" rows="10">&lt;script type=&quot;text/javascript&quot; src=&quot;jscolor/jscolor.js&quot;&gt;&lt;/script&gt;
+ 
+&lt;p style=&quot;margin-left:210px&quot;&gt;Left:  &lt;input class=&quot;color {pickerPosition:'left'}&quot;&gt;
+&lt;p style=&quot;margin-left:90px&quot;&gt; Right: &lt;input class=&quot;color {pickerPosition:'right'}&quot;&gt;
+&lt;p style=&quot;margin-top:65px&quot;&gt;  Top:   &lt;input class=&quot;color {pickerPosition:'top'}&quot;&gt;</textarea></div>
+</form>
+<!-- /EXAMPLE -->
+
+
+
+<h2 id="sizes"><a href="#sizes">5. Picker borders &amp; face</a></h2>
+<!-- EXAMPLE -->
+<form class="example" id="example5">
+<!-- <iframe id="example5_frame" src="example/sizes.html" frameborder="0"></iframe> -->
+<div class="code"><textarea name="code" cols="80" rows="10">&lt;script type=&quot;text/javascript&quot; src=&quot;jscolor/jscolor.js&quot;&gt;&lt;/script&gt;
+ 
+&lt;p&gt; Stronger borders: &lt;input class=&quot;color {pickerBorder:3,pickerInset:10}&quot;&gt;
+&lt;p&gt; Stronger face:    &lt;input class=&quot;color {pickerFace:20}&quot;&gt;</textarea></div>
+</form>
+<!-- /EXAMPLE -->
+
+
+
+<h2 id="colors"><a href="#colors">6. Picker color scheme</a></h2>
+<!-- EXAMPLE -->
+<form class="example" id="example6">
+<!-- <iframe id="example6_frame" src="example/colors.html" frameborder="0"></iframe> -->
+<div class="code"><textarea name="code" cols="80" rows="10">&lt;script type=&quot;text/javascript&quot; src=&quot;jscolor/jscolor.js&quot;&gt;&lt;/script&gt;
+ 
+&lt;p&gt; Colour outer border:  &lt;input class=&quot;color {pickerBorderColor:'red green blue yellow'}&quot;&gt;
+&lt;p&gt; Colour inset borders: &lt;input class=&quot;color {pickerInsetColor:'#9F9 #090 #090 #9F9'}&quot;&gt;
+&lt;p&gt; Colour picker face:   &lt;input class=&quot;color {pickerFaceColor:'#01BABE'}&quot;&gt;
+&lt;p&gt; Transparent picker:   &lt;input class=&quot;color {pickerFaceColor:'transparent',pickerFace:3,pickerBorder:0,pickerInsetColor:'black'}&quot;&gt;</textarea></div>
+</form>
+<!-- /EXAMPLE -->
+
+
+
+<h2 id="showing-hiding"><a href="#showing-hiding">7. Showing/hiding the picker</a></h2>
+<!-- EXAMPLE -->
+<form class="example" id="example7">
+<!-- <iframe id="example7_frame" src="example/showing-hiding.html" frameborder="0"></iframe> -->
+<div class="code"><textarea name="code" cols="80" rows="10">&lt;script type=&quot;text/javascript&quot; src=&quot;jscolor/jscolor.js&quot;&gt;&lt;/script&gt;
+ 
+&lt;input class=&quot;color {pickerOnfocus:false}&quot; id=&quot;myColor&quot;&gt; this field has disabled automatic showing/hiding of a picker
+ 
+&lt;p&gt; Move the mouse over these buttons:
+ 
+&lt;input type=&quot;button&quot; value=&quot;Show&quot;
+	onmousemove=&quot;document.getElementById('myColor').color.showPicker()&quot;&gt;
+&lt;input type=&quot;button&quot; value=&quot;Hide&quot;
+	onmousemove=&quot;document.getElementById('myColor').color.hidePicker()&quot;&gt;</textarea></div>
+</form>
+<!-- /EXAMPLE -->
+
+
+
+<h2 id="onchange"><a href="#onchange">8. Onchange event</a></h2>
+<!-- EXAMPLE -->
+<form class="example" id="example8">
+<!-- <iframe id="example8_frame" src="example/onchange.html" frameborder="0"></iframe> -->
+<div class="code"><textarea name="code" cols="80" rows="10">&lt;script type=&quot;text/javascript&quot; src=&quot;jscolor/jscolor.js&quot;&gt;&lt;/script&gt;
+ 
+&lt;p&gt; Change background: &lt;input class=&quot;color&quot;
+	onchange=&quot;document.getElementsByTagName('BODY')[0].style.backgroundColor = '#'+this.color&quot;&gt;</textarea></div>
+</form>
+<!-- /EXAMPLE -->
+
+
+
+<h2 id="getting-color"><a href="#getting-color">9. Getting the color</a></h2>
+<!-- EXAMPLE -->
+<form class="example" id="example9">
+<!-- <iframe id="example9_frame" src="example/getting-color.html" frameborder="0"></iframe> -->
+<div class="code"><textarea name="code" cols="80" rows="10">&lt;script type=&quot;text/javascript&quot; src=&quot;jscolor/jscolor.js&quot;&gt;&lt;/script&gt;
+ 
+R&lt;input id=&quot;red&quot; size=&quot;5&quot;&gt;  G&lt;input id=&quot;grn&quot; size=&quot;5&quot;&gt;  B&lt;input id=&quot;blu&quot; size=&quot;5&quot;&gt;  - - -
+H&lt;input id=&quot;hue&quot; size=&quot;5&quot;&gt;  S&lt;input id=&quot;sat&quot; size=&quot;5&quot;&gt;  V&lt;input id=&quot;val&quot; size=&quot;5&quot;&gt;
+ 
+&lt;p&gt; Choose any color: &lt;input class=&quot;color&quot; id=&quot;myColor&quot; onchange=&quot;
+	document.getElementById('red').value = this.color.rgb[0]*100 + '%';
+	document.getElementById('grn').value = this.color.rgb[1]*100 + '%';
+	document.getElementById('blu').value = this.color.rgb[2]*100 + '%';
+	document.getElementById('hue').value = this.color.hsv[0]* 60 + '&amp;deg;';
+	document.getElementById('sat').value = this.color.hsv[1]*100 + '%';
+	document.getElementById('val').value = this.color.hsv[2]*100 + '%';&quot;&gt;</textarea></div>
+</form>
+<!-- /EXAMPLE -->
+
+
+
+<h2 id="setting-color"><a href="#setting-color">10. Setting the color</a></h2>
+<!-- EXAMPLE -->
+<form class="example" id="example10">
+<!-- <iframe id="example10_frame" src="example/setting-color.html" frameborder="0"></iframe> -->
+<div class="code"><textarea name="code" cols="80" rows="10">&lt;script type=&quot;text/javascript&quot; src=&quot;jscolor/jscolor.js&quot;&gt;&lt;/script&gt;
+ 
+&lt;input class=&quot;color&quot; id=&quot;myColor&quot;&gt;
+ 
+&lt;input type=&quot;submit&quot; value=&quot;Move mouse&quot;
+	onmouseover=&quot;document.getElementById('myColor').color.fromString('F2C80A')&quot;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Move mouse&quot;
+	onmouseover=&quot;document.getElementById('myColor').color.fromRGB(0.8, 1, 0.2)&quot;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Move mouse&quot;
+	onmouseover=&quot;document.getElementById('myColor').color.fromHSV(4, 0.8, 0.5)&quot;&gt;</textarea></div>
+</form>
+<!-- /EXAMPLE -->
+
+
+
+<h2 id="linking-foreign-elements"><a href="#linking-foreign-elements">11. Linking foreign elements</a></h2>
+<!-- EXAMPLE -->
+<form class="example" id="example11">
+<!-- <iframe id="example11_frame" src="example/linking-foreign-elements.html" frameborder="0"></iframe> -->
+<div class="code"><textarea name="code" cols="80" rows="10">&lt;script type=&quot;text/javascript&quot; src=&quot;jscolor/jscolor.js&quot;&gt;&lt;/script&gt;
+ 
+&lt;p&gt; Redirect value: &lt;input class=&quot;color {valueElement:'myValue'}&quot;&gt; &lt;input id=&quot;myValue&quot;&gt;
+ 
+&lt;p&gt; Redirect style: &lt;input class=&quot;color {styleElement:'myStyle'}&quot;&gt; &lt;input id=&quot;myStyle&quot;&gt;
+ 
+&lt;p&gt; Redirect both:  &lt;input class=&quot;color {valueElement:'myBoth',styleElement:'myBoth'}&quot;&gt; &lt;input id=&quot;myBoth&quot;&gt;
+ 
+&lt;p&gt; Wow ;-)  &lt;input class=&quot;color {valueElement:null}&quot; type=&quot;button&quot; value=&quot;Choose color&quot;&gt;</textarea></div>
+</form>
+<!-- /EXAMPLE -->
+
+
+
+<h2 id="manual-binding"><a href="#manual-binding">12. Manual binding - useful for AJAX applications</a></h2>
+<!-- EXAMPLE -->
+<form class="example" id="example12">
+<!-- <iframe id="example12_frame" src="example/manual-binding.html" frameborder="0"></iframe> -->
+<div class="code"><textarea name="code" cols="80" rows="10">&lt;script type=&quot;text/javascript&quot; src=&quot;jscolor/jscolor.js&quot;&gt;&lt;/script&gt;
+ 
+&lt;input id=&quot;myField1&quot;&gt;
+ 
+&lt;script type=&quot;text/javascript&quot;&gt;
+var myPicker = new jscolor.color(document.getElementById('myField1'), {})
+myPicker.fromString('99FF33')  // now you can access API via 'myPicker' variable
+&lt;/script&gt;</textarea></div>
+</form>
+<!-- /EXAMPLE -->
+
+
+
+<h2 id="performance-test"><a href="#performance-test">13. Performance test</a></h2>
+<!-- EXAMPLE -->
+<form class="example" id="example13">
+<!-- <iframe id="example13_frame" src="example/performance-test.html" frameborder="0"></iframe> -->
+<div class="code"><textarea name="code" cols="80" rows="10">&lt;script type=&quot;text/javascript&quot; src=&quot;jscolor/jscolor.js&quot;&gt;&lt;/script&gt;
+ 
+&lt;p&gt; &lt;input onclick=&quot;add()&quot; type=&quot;button&quot; value=&quot;Add 100 pickers&quot;&gt;
+ 
+&lt;script type=&quot;text/javascript&quot;&gt;
+function add() {
+	var count = 100
+ 
+	for(var i=0; i&lt;count; i++) {
+		var input = document.createElement('INPUT')
+		input.style.width = '5em'
+ 
+		// bind jscolor
+		var col = new jscolor.color(input)
+		col.fromHSV(6/count*i, 1, 1)
+ 
+		document.getElementsByTagName('BODY')[0].appendChild(input)
+	}
+}
+&lt;/script&gt;</textarea></div>
+</form>
+<!-- /EXAMPLE --> 

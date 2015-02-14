@@ -1,0 +1,98 @@
+<script type="text/javascript" src="{JS}/_global/category.js"></script>
+<form name="RevUform" id="RevUform" method="post" enctype="multipart/form-data"  action="">
+<input type="hidden" name="frno" id="frno" value="{frno}" />
+	<!-- 상단 -->
+	<table border="0" width="520" cellpadding="5" cellspacing="0" align="center">
+		<tr>
+			<!--본문-->
+			<table width="520"  border="1" cellpadding="2" cellspacing="0" bgcolor="#C0C0C0">
+
+				
+			<table width="520"  border="1" cellpadding="2" cellspacing="0" bgcolor="#C0C0C0">
+				<tr>
+					<th>모집기간</th>
+				</tr>
+					<tr>
+						<table>
+							<td border="0">
+								<select name="sdate1" id="startyear">
+								<option value="">----</option>
+								{@ startyear}<option value="{.value_}">{.value_}</option>{/}
+								</select>년
+							</td>
+							<td>
+								<select name="sdate2" id="startmonth">
+									<option value="">--</option>
+									{@ startmonth}<option value="{.value_}">{.value_}</option>{/}
+								</select>월
+							</td>
+							<td>
+									<select name="sdate3" id="startday">
+										<option value="">--</option>
+										{@ startday}<option value="{.value_}">{.value_}</option>{/}
+									</select>일
+							</td>
+							<td>		
+									<select name="sdate4" id="starttime">
+										<option value="">--</option>
+										{@ starttime}<option value="{.value_}">{.value_}</option>{/}
+									</select>시			
+							</td>
+							<td>		
+									<img src="{IMAGES}/admin/calender_next2.gif">&nbsp;
+							</td>
+							<td>		
+									<select name="edate1" id="endyear">
+										<option value="">----</option>
+										{@ endyear}<option value="{.value_}">{.value_}</option>{/}
+									</select>년
+							</td>
+							<td>
+									<select name="edate2" id="endmonth">
+										<option value="">--</option>
+										{@ endmonth}<option value="{.value_}">{.value_}</option>{/}
+									</select>월
+							</td>		
+							<td>		
+									<select name="edate3" id="endday">
+										<option value="">--</option>
+										{@ endday}<option value="{.value_}">{.value_}</option>{/}
+									</select>일
+							</td>		
+							<td>		
+									<select name="edate4" id="endtime">
+										<option value="">--</option>
+										{@ endtime}<option value="{.value_}">{.value_}</option>{/}
+									</select>시			
+							</td>
+						</table>
+					</tr>
+			</table>
+
+
+			</td>
+			<!-- 본문 끝 -->
+		</tr>
+	</table>
+
+	<!-- 버튼 -->
+	<table width="100%" border="0">
+		<tr>
+			<td width="100%">&nbsp;
+				<center>
+				<input type="button" id="modifyCheck_jdate" value="변경"/>
+				</center>
+			</td>
+		</tr>
+	</table>
+	<!-- 버튼 끝 -->
+
+	<table width="560" border="0">
+		<tr>
+			<td width="560">&nbsp;<!-- 공백 -->
+			</td>
+		</tr>
+	</table>
+
+
+</form>

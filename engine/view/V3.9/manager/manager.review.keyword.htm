@@ -1,0 +1,57 @@
+<script type="text/javascript" src="{JS}/_global/input.js"></script>
+<script type="text/javascript" src="{JS}/manager.review.js"></script>
+<h2>메인 키워드 리뷰</h2>
+<hr>
+<table width="100%">
+	<tr>
+		<td width="400" valign="top">
+			<h3>노출키워드</h3>			
+			<p>
+				<input type="button" value="↑" id="upKeywordBtn" />
+				<input type="button" value="↓" id="downKeywordBtn" />				
+				<input type="button" value="삭제" id="removeKeywordBtn" />				
+				<input type="button" value="적용" id="appKeywordBtn" />
+			</p>
+			<select id="seq" size="10" style="width:400px;height:400px" >
+				{@seq}
+				<option value="{.kno}">{.keyword.keyword}</option>
+				{/}
+			</select>
+			<input name="kno" id="kno" type="hidden" value="">
+			<script>combobox.resultOption('seq','kno');</script>
+		</td>
+		<td valign="top">
+			<h3>키워드목록</h3>
+			<table width="100%">
+				<tr>
+					<th width="50">등록</th>
+					<th width="70">일련번호</th>
+					<th>키워드</th>
+					<th>키워드링크</th>
+					<th width="100">등록일</th>
+				</tr>
+				{@list}
+				<tr align="center">
+					<td><input type="button" value="<<" onClick="combobox.addOption('seq', '{.kno}', '{.keyword}');combobox.resultOption('seq','kno');" /></td>
+					<td>{.kno}</td>
+					<td align="left">{.keyword}</td>
+					<td><input type="button" value="보기" onClick="mngreview.getKeywordLinkSimple({.kno});" /></td>
+					<td>{.regdate}</td>
+				</tr>
+				{/}
+			</table>
+			<center>{link}</center>
+			<hr>
+			<h3>키워드 리뷰  - <span id='keyword-title'>선택한 키워드 없음</span></h3>
+			<table id="reviewList" width="100%">
+				<tr align="center">
+					<th width="80">일련번호</th>
+					<th width="60">이미지</th>
+					<th>제목</th>
+					<th width="100">등록일</th>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<hr>

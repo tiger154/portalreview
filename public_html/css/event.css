@@ -1,0 +1,13 @@
+ /* event */  
+#event_view_warp {width:714px;}
+#event_view_warp .event_view_img {width:712;border:#999999 solid 1px;} 
+
+.scrap_box {width:680px; height:auto; background-color:#ffffff; border:#cccccc solid 3px; margin:25px 12px;}
+.scrap_inputbox {width:638px; height:auto;margin:40px 25px 70px 25px;}
+.scrap_inputline {width:638px; height:35px; margin-bottom:20px;}
+.scrap_inputline li {height:35px; float:left; display:inline;}
+.input_scrap_url {width:427px; height:29px; padding: 2px 0 0 5px; font-size:12px;color:#666666; line-height:1.4;border:#cc3333 solid 2px;background:#ffffff;}
+.scrap_img_box {width:638px; height:auto;margin:20px;}
+
+.pop_scrap_list {width:480px; height:auto; margin:10px;}
+.pop_scrap_list li {height:18px; line-height:2.2; overflow:hidden;}

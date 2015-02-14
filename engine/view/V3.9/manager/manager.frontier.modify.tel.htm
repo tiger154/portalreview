@@ -1,0 +1,63 @@
+<script type="text/javascript" src="{JS}/_global/input.js"></script>
+<form name="RevUform" id="RevUform" method="post" enctype="multipart/form-data"  action="">
+<input type="hidden" name="frno" id="frno" value="{frno}" />
+	<!-- 상단 -->
+	<table border="0" width="489" cellpadding="5" cellspacing="0" align="center">
+		<tr>
+			<!--본문-->
+			<table width="460"  border="1" cellpadding="2" cellspacing="0" bgcolor="#C0C0C0">
+
+				
+			<table width="460"  border="1" cellpadding="2" cellspacing="0" bgcolor="#C0C0C0">
+				<tr>
+					<th>프론티어 전화번호/휴대폰 번호변경</th>
+				</tr>
+					<tr>
+						<td>
+							전화번호 : <select name="tel1" id="tel_number">
+								{@ tel_number}<option value="{.value_}">{.value_}</option>{/}
+							</select>
+							<input type="text" name="tel2" value="" size="5" maxlength="4">
+							<input type="text" name="tel3" value="" size="5" maxlength="4">&nbsp;&nbsp;&nbsp;&nbsp;
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							휴대폰 번호 : <select name="mobile1" id="phone_number">
+								{@ phone_number}<option value="{.value_}">{.value_}</option>{/}
+							</select>
+							<input type="text" name="mobile2" value="" size="5" maxlength="4">
+							<input type="text" name="mobile3" value="" size="5" maxlength="4">
+						</td>
+					</tr>
+
+			</table>
+
+
+			</td>
+			<!-- 본문 끝 -->
+		</tr>
+	</table>
+
+	<!-- 버튼 -->
+	<table width="100%" border="0">
+		<tr>
+			<td width="100%">&nbsp;
+				<center>
+				<input type="button" id="modifyCheck_tel" value="변경"/>
+				</center>
+			</td>
+		</tr>
+	</table>
+	<!-- 버튼 끝 -->
+
+	<table width="560" border="0">
+		<tr>
+			<td width="560">&nbsp;<!-- 공백 -->
+			</td>
+		</tr>
+	</table>
+
+
+</form>

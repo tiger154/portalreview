@@ -1,0 +1,52 @@
+<script type="text/javascript">
+
+        function copyHtml(text) {
+            if( window.clipboardData && clipboardData.setData )
+            {
+             
+             clipboardData.setData("Text", text);
+             alert("복사완료");
+            }
+        }
+
+</script> 
+
+
+<!-- 당첨자팝업 /사이즈500가변 -->
+
+<div class="pop_frontier_box">당첨자는 <font color='blue'>{cnt}</font>명 입니다.
+<div class="pop_frontier_tbox">
+<ul>
+<li class="pop_frontier_title1">
+<div class="pop_frontier_titlebox1 gray_d_text">{subject}&nbsp;&nbsp;&nbsp;</div>
+<div  class="fr" style="width:19px; height:26px; padding-bottom:9px;"><!-- <img src="/images/common/but/but_xclose.gif" align="right" alt="닫기" title="닫기" onclick="common.closeLayer('entrylayer')"> --></div>
+</li>
+<li class="pb25"></li>
+<!-- 이벤트일때는 / img_event_winner 로 변경 -->
+<li class="img_frontier_winner"></li>
+<li class="pb25"></li>
+<li class="pop_winner_box">
+<!-- 당첨자 명단 테이블 -->
+<table width="400" border="0" cellspacing="0" cellpadding="0"  class="gray_d_text">
+  <tr>
+  
+  <!--{@list}-->
+    <td class="pop_winner_tableline">{.nickname}</td>
+
+	{? .index_%4 == 3}
+	</tr>	<tr>
+	{/}
+
+ <!--{/}-->
+  </tr>
+</table>
+</li>
+<li class="pb25"></li>
+<li class="img_bancode"></li>
+<li class="pb25">
+<div class="bancode_box">{bannercode}</div>
+</li>
+<li style="width:448px; height:30px; text-align:center;">{codecopy}</li>
+</ul>
+</div>
+</div>

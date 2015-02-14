@@ -1,0 +1,55 @@
+<script type="text/javascript" src="{JS}/_global/input.js"></script>
+<script type="text/javascript" src="{JS}/manager.user.js"></script>
+<h2>전체회원</h2>
+<form name="form1" id="form1">
+<input type="radio" name="flag" value="all" {?param[1]=='all' || param[1]==''}checked{/} />전체
+<input type="radio" name="flag" value="powerblog" {?param[1]=='powerblog'}checked{/} />파워블로그
+<input type="radio" name="flag" value="black" {?param[1]=='black'}checked{/} />블랙리스트
+<input type="radio" name="flag" value="email" {?param[1]=='email'}checked{/} />이메일수신
+<select name="opt" id="opt">
+	<option value="">==검색==</option>
+	<option value="nickname" {? param[2]=='nickname'}selected{/}>닉네임</option>
+	<option value="userid" {? param[2]=='userid'}selected{/}>아이디</option>
+	<option value="username" {? param[2]=='username'}selected{/}>이름</option>
+	<option value="email" {? param[2]=='email'}selected{/}>이메일</option>
+</select>
+<input type="text" name="keyword" id="keyword" value="{param[3]}" />
+<input type="button" value="검색" id="searchBtn" />
+&nbsp;
+<strong>| 총 <font color="red">{=number_format(cnt)}</font>명의 회원이 검색되었습니다.</strong>
+<hr />
+<table width="100%">
+	<tr align="center">
+		<th>가입일</th> 
+		<th>회원번호</th> 
+		<th>타입</th>
+		<th>아이디</th>
+		<th>닉네임</th>
+		<th>이름</th>
+		<th>이메일</th>
+		<th>포인트</th>
+		<th>캐시</th>
+		<th>파워블로그</th>
+		<th>이메일수신</th>
+		<th>블랙리스트</th>
+	</tr>
+	{@list}
+	<tr align="center">
+		<td>{.regdate}</td>
+		<td>{.userno}</td>
+		<td><img src="{IMAGES}/common/ico/ico_{.type}.gif" /></td>
+		<td>{.userid}</td>
+		<td>{? .flag_powerblog == "1"}<img src="{IMAGES}/common/ico/ico_revupower.gif" /> {/}<a href="javascript:manager.user({.userno});">{.nickname}</a></td>
+		<td>{.username}</td>
+		<td>{.email}</td>
+		<td>{=number_format(.point.point)}</td>
+		<td>{=number_format(.cash.cash)}</td>
+		<td>{.flag_powerblog_text}</td>
+		<td>{.flag_email_text}</td>
+		<td>{.flag_black_text}</td>
+	</tr>
+	{/}
+</table>
+
+<div class="pageno">{link}</div>
+</form>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>파일 첨부</title> 
+<script src="../../js/popup.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="../../css/popup.css" type="text/css"  charset="utf-8"/>
+<link type="text/css" rel="stylesheet" href="/extends/js.jquery.ui/css/blitzer/jquery-ui-1.8.13.custom.css">
+<script type="text/javascript" src="/extends/js.jquery/jquery.js"></script>
+<script type="text/javascript" src="/extends/js.jquery.ui/jquery-ui-1.8.13.custom.min.js"></script>
+<script type="text/javascript" src="/js/_global/common.js"></script>
+<script type="text/javascript" src="/js/_global/input.js"></script>
+<script type="text/javascript" src="/js/_global/validation.js"></script>
+<script type="text/javascript" src="/js/_global/jquery.init.js"></script>
+</head>
+<body>
+<iframe name="frmFile" id="frmFile" width="0" height="0" frameborder="0"></iframe>
+<div id="dialog"></div>
+<div id="dialog2"></div>
+<div id="dialog-modal"></div>
+<div id="progressbar"></div>
+<div class="wrapper">
+	<div class="header">
+		<h1>파일 첨부</h1>
+	</div>	
+	<div class="body">
+		<form name="form1" id="form1" enctype="multipart/form-data">		
+		<div class="upload-form">
+			파일을 첨부하세요.<br /><br />
+			<input type="file" name="file1" id="file1" value="" />
+		</div>
+		</form>
+	</div>
+	<div class="footer">
+		<p><a href="#" onclick="closeWindow();" title="닫기" class="close">닫기</a></p>
+		<ul>
+			<li class="submit"><a href="#" onclick="popup.done();" title="등록" class="btnlink">등록</a> </li>
+			<li class="cancel"><a href="#" onclick="closeWindow();" title="취소" class="btnlink">취소</a></li>
+		</ul>
+	</div>
+</div>
+<script src="../../js/file.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

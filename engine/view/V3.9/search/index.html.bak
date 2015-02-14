@@ -1,0 +1,283 @@
+<!-- // review -->
+<!--{? categoryInfo == 'review' || categoryInfo == 'TOTAL'}-->
+<div class="section revu_list">
+	<div class="section_title">
+		<h2>리뷰</h2>
+		<p class="section_tit_desc">(<strong>{keyword}</strong>으로 {reviewResultCnt}건의 리뷰가 검색 되었습니다.)</p>
+	</div>
+	<!-- icon img_list
+	daum - http://www.revu.co.kr/images/common/ico/ico_daum.gif
+	naver - http://www.revu.co.kr/images/common/ico/ico_naver.gif
+	tistory - http://www.revu.co.kr/images/common/ico/ico_tistory.gif
+	etc - http://www.revu.co.kr/images/common/ico/ico_etc.gif			-->
+
+	<ul class="search_list">
+		<!--{@reviewList}-->
+		<li>
+			<div class="thumnail"><a href="#"><img src="http://file.revu.co.kr/review/2012/05/12/4fadef933f19c_110.jpg" alt="제목"></a></div>
+			<dl>
+				<!--<dt><a href="#">2만원으로 풍성했던 크리스마스데이트</a></dt>-->
+				<dt><a href="#">{.title}</a></dt>
+				<!--<dd class="desc_txt"><strong>크리스마스</strong>이브날.나름 평소에 아껴두었던 비상금을 지갑에 넣일산라페스타거리로 나가봤습니다.뭐먹을래? 먹고싶은것 있으면 말해.확 쏜다~!!음...저쪽으로 가면 고 아내와 함께 스시집있는데 거기가고싶어~응..그럼 스시집으로 고고~그런데 스시집쪽으로 이동하던..</dd>-->
+				<dd class="desc_txt">{.contents}..</dd>
+				<dd class="tag">
+					<span class="tag_ico">tag</span>
+					<span class="tag_link"><a href="#">비비드</a>, <a href="#">봄</a>, <a href="#">크리스마스</a>, <a href="#">눈</a></span>
+				</dd>
+				<dd class="info">
+					<span class="friend  friend1"><a href="#">서로친구</a></span>
+					<span>티런친구</span>
+					<!--<span>2011.07.04 </span>-->
+					<span>{.regdate}</span>
+					<!--<span class="category_link"><a href="#">라이프</a> &gt; <a href="#">기타</a> &gt; <a href="#">행동양식/일상</a></span>-->
+					<span class="category_link"><a href="#">{.category}</a></span>
+					<em><img src="{.blog_type}" alt="NAVER"></em>
+				</dd>
+			</dl>
+		</li>
+		<!--{/}-->
+	</ul>
+	<div class="search_more"><a href="#">결과 더보기</a></div>
+</div>
+<!-- // review -->
+<hr>
+<!--{/}-->
+
+<!-- style -->
+<!--{? categoryInfo == 'style' || categoryInfo == 'TOTAL'}-->
+<div class="section style_list">
+	<div class="section_title">
+		<h2>스타일</h2>
+		<p class="section_tit_desc">(<strong>크리스마스</strong>으로 1,211건의 컨텐츠가 검색 되었습니다.)</p>
+	</div>
+	<ul class="search_list">
+		<li>
+			<div class="thumnail"><a href="#"><img src="http://file.revu.co.kr/review/2012/05/12/4fadef933f19c_110.jpg" alt="제목"></a></div>
+			<dl>
+				<dt><a href="#">2만원으로 풍성했던 크리스마스데이트</a></dt>
+				<dd class="desc_txt"><strong>크리스마스</strong>이브날.나름 평소에 아껴두었던 비상금을 지갑에 넣일산라페스타거리로 나가봤습니다.뭐먹을래? 먹고싶은것 있으면 말해.확 쏜다~!!음...저쪽으로 가면 고 아내와 함께 스시집있는데 거기가고싶어~응..그럼 스시집으로 고고~그런데 스시집쪽으로 이동하던..</dd>
+				<dd class="tag_info">
+					<span class="info">Trend Now</span>
+					<span class="info">2011.07.04 </span>
+					<span class="tag_ico">tag</span>
+					<span class="tag_link"><a href="#">비비드</a>, <a href="#">봄</a>, <a href="#">크리스마스</a>, <a href="#">눈</a></span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<div class="thumnail"><a href="#"><img src="http://file.revu.co.kr/review/2012/05/12/4fadef933f19c_110.jpg" alt="제목"></a></div>
+			<dl>
+				<dt><a href="#">2만원으로 풍성했던 크리스마스데이트</a></dt>
+				<dd class="desc_txt"><strong>크리스마스</strong>이브날.나름 평소에 아껴두었던 비상금을 지갑에 넣일산라페스타거리로 나가봤습니다.뭐먹을래? 먹고싶은것 있으면 말해.확 쏜다~!!음...저쪽으로 가면 고 아내와 함께 스시집있는데 거기가고싶어~응..그럼 스시집으로 고고~그런데 스시집쪽으로 이동하던..</dd>
+				<dd class="tag_info">
+					<span class="info">Trend Now</span>
+					<span class="info">2011.07.04 </span>
+					<span class="tag_ico">tag</span>
+					<span class="tag_link"><a href="#">비비드</a>, <a href="#">봄</a>, <a href="#">크리스마스</a>, <a href="#">눈</a></span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<div class="thumnail"><a href="#"><img src="http://file.revu.co.kr/review/2012/05/12/4fadef933f19c_110.jpg" alt="제목"></a></div>
+			<dl>
+				<dt><a href="#">2만원으로 풍성했던 크리스마스데이트</a></dt>
+				<dd class="desc_txt"><strong>크리스마스</strong>이브날.나름 평소에 아껴두었던 비상금을 지갑에 넣일산라페스타거리로 나가봤습니다.뭐먹을래? 먹고싶은것 있으면 말해.확 쏜다~!!음...저쪽으로 가면 고 아내와 함께 스시집있는데 거기가고싶어~응..그럼 스시집으로 고고~그런데 스시집쪽으로 이동하던..</dd>
+				<dd class="tag_info">
+					<span class="info">Trend Now</span>
+					<span class="info">2011.07.04 </span>
+					<span class="tag_ico">tag</span>
+					<span class="tag_link"><a href="#">비비드</a>, <a href="#">봄</a>, <a href="#">크리스마스</a>, <a href="#">눈</a></span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<div class="thumnail"><a href="#"><img src="http://file.revu.co.kr/review/2012/05/12/4fadef933f19c_110.jpg" alt="제목"></a></div>
+			<dl>
+				<dt><a href="#">2만원으로 풍성했던 크리스마스데이트</a></dt>
+				<dd class="desc_txt"><strong>크리스마스</strong>이브날.나름 평소에 아껴두었던 비상금을 지갑에 넣일산라페스타거리로 나가봤습니다.뭐먹을래? 먹고싶은것 있으면 말해.확 쏜다~!!음...저쪽으로 가면 고 아내와 함께 스시집있는데 거기가고싶어~응..그럼 스시집으로 고고~그런데 스시집쪽으로 이동하던..</dd>
+				<dd class="tag_info">
+					<span class="info">Trend Now</span>
+					<span class="info">2011.07.04 </span>
+					<span class="tag_ico">tag</span>
+					<span class="tag_link"><a href="#">비비드</a>, <a href="#">봄</a>, <a href="#">크리스마스</a>, <a href="#">눈</a></span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<div class="thumnail"><a href="#"><img src="http://file.revu.co.kr/review/2012/05/12/4fadef933f19c_110.jpg" alt="제목"></a></div>
+			<dl>
+				<dt><a href="#">2만원으로 풍성했던 크리스마스데이트</a></dt>
+				<dd class="desc_txt"><strong>크리스마스</strong>이브날.나름 평소에 아껴두었던 비상금을 지갑에 넣일산라페스타거리로 나가봤습니다.뭐먹을래? 먹고싶은것 있으면 말해.확 쏜다~!!음...저쪽으로 가면 고 아내와 함께 스시집있는데 거기가고싶어~응..그럼 스시집으로 고고~그런데 스시집쪽으로 이동하던..</dd>
+				<dd class="tag_info">
+					<span class="info">Trend Now</span>
+					<span class="info">2011.07.04 </span>
+					<span class="tag_ico">tag</span>
+					<span class="tag_link"><a href="#">비비드</a>, <a href="#">봄</a>, <a href="#">크리스마스</a>, <a href="#">눈</a></span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<div class="thumnail"><a href="#"><img src="http://file.revu.co.kr/review/2012/05/12/4fadef933f19c_110.jpg" alt="제목"></a></div>
+			<dl>
+				<dt><a href="#">2만원으로 풍성했던 크리스마스데이트</a></dt>
+				<dd class="desc_txt"><strong>크리스마스</strong>이브날.나름 평소에 아껴두었던 비상금을 지갑에 넣일산라페스타거리로 나가봤습니다.뭐먹을래? 먹고싶은것 있으면 말해.확 쏜다~!!음...저쪽으로 가면 고 아내와 함께 스시집있는데 거기가고싶어~응..그럼 스시집으로 고고~그런데 스시집쪽으로 이동하던..</dd>
+				<dd class="tag_info">
+					<span class="info">Trend Now</span>
+					<span class="info">2011.07.04 </span>
+					<span class="tag_ico">tag</span>
+					<span class="tag_link"><a href="#">비비드</a>, <a href="#">봄</a>, <a href="#">크리스마스</a>, <a href="#">눈</a></span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<div class="thumnail"><a href="#"><img src="http://file.revu.co.kr/review/2012/05/12/4fadef933f19c_110.jpg" alt="제목"></a></div>
+			<dl>
+				<dt><a href="#">2만원으로 풍성했던 크리스마스데이트</a></dt>
+				<dd class="desc_txt"><strong>크리스마스</strong>이브날.나름 평소에 아껴두었던 비상금을 지갑에 넣일산라페스타거리로 나가봤습니다.뭐먹을래? 먹고싶은것 있으면 말해.확 쏜다~!!음...저쪽으로 가면 고 아내와 함께 스시집있는데 거기가고싶어~응..그럼 스시집으로 고고~그런데 스시집쪽으로 이동하던..</dd>
+				<dd class="tag_info">
+					<span class="info">Trend Now</span>
+					<span class="info">2011.07.04 </span>
+					<span class="tag_ico">tag</span>
+					<span class="tag_link"><a href="#">비비드</a>, <a href="#">봄</a>, <a href="#">크리스마스</a>, <a href="#">눈</a></span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<div class="thumnail"><a href="#"><img src="http://file.revu.co.kr/review/2012/05/12/4fadef933f19c_110.jpg" alt="제목"></a></div>
+			<dl>
+				<dt><a href="#">2만원으로 풍성했던 크리스마스데이트</a></dt>
+				<dd class="desc_txt"><strong>크리스마스</strong>이브날.나름 평소에 아껴두었던 비상금을 지갑에 넣일산라페스타거리로 나가봤습니다.뭐먹을래? 먹고싶은것 있으면 말해.확 쏜다~!!음...저쪽으로 가면 고 아내와 함께 스시집있는데 거기가고싶어~응..그럼 스시집으로 고고~그런데 스시집쪽으로 이동하던..</dd>
+				<dd class="tag_info">
+					<span class="info">Trend Now</span>
+					<span class="info">2011.07.04 </span>
+					<span class="tag_ico">tag</span>
+					<span class="tag_link"><a href="#">비비드</a>, <a href="#">봄</a>, <a href="#">크리스마스</a>, <a href="#">눈</a></span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<div class="thumnail"><a href="#"><img src="http://file.revu.co.kr/review/2012/05/12/4fadef933f19c_110.jpg" alt="제목"></a></div>
+			<dl>
+				<dt><a href="#">2만원으로 풍성했던 크리스마스데이트</a></dt>
+				<dd class="desc_txt"><strong>크리스마스</strong>이브날.나름 평소에 아껴두었던 비상금을 지갑에 넣일산라페스타거리로 나가봤습니다.뭐먹을래? 먹고싶은것 있으면 말해.확 쏜다~!!음...저쪽으로 가면 고 아내와 함께 스시집있는데 거기가고싶어~응..그럼 스시집으로 고고~그런데 스시집쪽으로 이동하던..</dd>
+				<dd class="tag_info">
+					<span class="info">Trend Now</span>
+					<span class="info">2011.07.04 </span>
+					<span class="tag_ico">tag</span>
+					<span class="tag_link"><a href="#">비비드</a>, <a href="#">봄</a>, <a href="#">크리스마스</a>, <a href="#">눈</a></span>
+				</dd>
+			</dl>
+		</li>
+		<li>
+			<div class="thumnail"><a href="#"><img src="http://file.revu.co.kr/review/2012/05/12/4fadef933f19c_110.jpg" alt="제목"></a></div>
+			<dl>
+				<dt><a href="#">2만원으로 풍성했던 크리스마스데이트</a></dt>
+				<dd class="desc_txt"><strong>크리스마스</strong>이브날.나름 평소에 아껴두었던 비상금을 지갑에 넣일산라페스타거리로 나가봤습니다.뭐먹을래? 먹고싶은것 있으면 말해.확 쏜다~!!음...저쪽으로 가면 고 아내와 함께 스시집있는데 거기가고싶어~응..그럼 스시집으로 고고~그런데 스시집쪽으로 이동하던..</dd>
+				<dd class="tag_info">
+					<span class="info">Trend Now</span>
+					<span class="info">2011.07.04 </span>
+					<span class="tag_ico">tag</span>
+					<span class="tag_link"><a href="#">비비드</a>, <a href="#">봄</a>, <a href="#">크리스마스</a>, <a href="#">눈</a></span>
+				</dd>
+			</dl>
+		</li>
+	</ul>
+	<div class="search_more"><a href="#">결과 더보기</a></div>
+</div>
+<!-- // style -->
+<hr>
+<!--{/}-->
+
+<!-- frontier -->
+<!--{? categoryInfo == 'frontier' || categoryInfo == 'TOTAL'}-->
+<div class="section frontier">
+	<div class="section_title">
+		<h2>프론티어</h2>
+		<p class="section_tit_desc">(<strong>{keyword}</strong>으로 {frontierResultCnt}건의 프론티어가 검색 되었습니다.)</p>
+	</div>
+	<ul class="frontier_list">
+		<!--{@frontierList}-->
+		<li class="fli">
+			<div class="thumnail"><a href="#"><img src="http://file.revu.co.kr/review/2012/05/12/4fadef933f19c_110.jpg" alt="제목"><span class="bg_txt">라이프</span></a></div>
+			<dl>
+				<dt>
+<span class="cnt">
+<!--{? ing_cd == '1'}-->모집중
+<!--{: ing_cd == '2'}-->체험중 
+<!--{:}-->마감
+<!--{/}--> 
+</span><a href="#">{.subject}</a></dt>
+				<dd>
+					<ul class="first-child">
+						<li class="first-child"><span>인원 : </span>{.limit}명</li>
+						<li><span>기간 : </span>2012년3월20일 ~ 2012년3월26일</li>
+						<li><span>발표 : </span>2012년3월27일</li>
+						<li><span>리뷰 : </span>2012년3월20일 ~ 2012년3월26일</li>
+					</ul>
+					<ul class="last-child">
+						<li class="first-child"><span>상품분류 : </span><a href="#">{.category}</a></li>
+						<li><span>체험상품 : </span>{.frproduct}</li>
+						<li><span>전화번호 : </span>{.tel}</li>
+					</ul>
+				</dd>
+			</dl>
+		</li>
+		<!--{/}-->
+	</ul>
+	<!--<div class="search_more_bar"><a href="#"><span>더보기</span></a></div>-->
+	<div class="search_more"><a href="#">결과 더보기</a></div>
+</div>
+<!-- // frontier -->
+<hr>
+<!--{/}-->
+
+<!-- blogger -->
+<!--{? categoryInfo == 'blogger' || categoryInfo == 'TOTAL'}-->
+<!-- class blog01 : 서로 친구, blog02 : 내가 등록한 친구, blog03 : 나를 등록한 친구 -->
+<div class="section blogger">
+	<div class="section_title">
+		<h2>블로거</h2>
+		<p class="section_tit_desc">(<strong>크리스마스</strong>으로 1,211건의 블로거가 검색 되었습니다.)</p>
+	</div>
+	<ul class="blogger_list"><!-- 1,6번째에는 class nth1 -->
+		<li class="nth1 blg01"><a href="#" title="서로 친구"><img src="http://file.revu.co.kr/userimage/11/108409.jpg" width="80" height="80" alt="전봇대꼬마"><span>전봇대꼬마</span></a></li>
+		<li class="blg02"><a href="#" title="내가 등록한 친구"><img src="http://file.revu.co.kr/userimage/11/108409.jpg" width="80" height="80" alt="전봇대꼬마"><span>전봇대꼬마</span></a></li>
+		<li class="blg03"><a href="#" title="나를 등록한 친구"><img src="http://file.revu.co.kr/userimage/11/108409.jpg" width="80" height="80" alt="전봇대꼬마"><span>전봇대꼬마</span></a></li>
+		<li><a href="#"><img src="http://file.revu.co.kr/userimage/11/108409.jpg" width="80" height="80" alt="전봇대꼬마"><span>전봇대꼬마</span></a></li>
+		<li class="blg02"><a href="#" title="내가 등록한 친구"><img src="http://file.revu.co.kr/userimage/11/108409.jpg" width="80" height="80" alt="전봇대꼬마"><span>전봇대꼬마</span></a></li>
+		<li class="nth1"><a href="#"><img src="http://file.revu.co.kr/userimage/11/108409.jpg" width="80" height="80" alt="전봇대꼬마"><span>전봇대꼬마</span></a></li>
+		<li class="blg03"><a href="#" title="나를 등록한 친구"><img src="http://file.revu.co.kr/userimage/11/108409.jpg" width="80" height="80" alt="전봇대꼬마"><span>전봇대꼬마</span></a></li>
+		<li class="blg01"><a href="#" title="서로 친구"><img src="http://file.revu.co.kr/userimage/11/108409.jpg" width="80" height="80" alt="전봇대꼬마"><span>전봇대꼬마</span></a></li>
+		<li class="blg02"><a href="#" title="내가 등록한 친구"><img src="http://file.revu.co.kr/userimage/11/108409.jpg" width="80" height="80" alt="전봇대꼬마"><span>전봇대꼬마</span></a></li>
+		<li class="blg01"><a href="#" title="서로 친구"><img src="http://file.revu.co.kr/userimage/11/108409.jpg" width="80" height="80" alt="전봇대꼬마"><span>전봇대꼬마</span></a></li>
+	</ul>
+	<div class="search_more_bar"><a href="#"><span>더보기</span></a></div>
+</div>
+<!-- // blogger -->
+<hr>
+<!--{/}-->
+
+<!-- blog -->
+<!--{? categoryInfo == 'blog' || categoryInfo == 'TOTAL'}-->
+<div class="section blog">
+	<div class="section_title">
+		<h2>블로그</h2>
+		<p class="section_tit_desc">(<strong>{keyword}</strong>으로 {blogResultCnt}건의 블로그가 검색 되었습니다.)</p>
+	</div>
+	<ul class="search_txt_list">
+		<!--{@blogList}-->
+		<li>						
+			<dl>
+				<dt><a href="#" target="_blank">{.blog_nm}</a></dt>
+				<dd class="txt_inline"><a href="#" target="_blank">{.blog_url}</a></dd>
+				<dd class="txt_block"><a href="" target="_blank">{.nickname}님의 블로그입니다.</a></dd>
+			</dl>
+		</li>
+		<!--{/}-->
+	</ul>
+	<div class="search_more"><a href="#">더보기</a></div>
+	<!--<div class="search_more_bar"><a href="#"><span>더보기</span></a></div>-->
+</div>
+<!-- // blog -->
+<hr>
+<!--{/}-->

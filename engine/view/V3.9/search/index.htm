@@ -1,0 +1,293 @@
+<!--{? TOTAL_ALL > 0}-->
+
+	<!-- 리뷰 시작 -->
+	<!--{? categoryInfo == 'review' || categoryInfo == 'TOTAL'}-->
+		<!--{? reviewResultCnt > 0}-->
+		<div class="section revu_list">
+			<div class="section_title">
+				<h2>리뷰</h2>
+				<!--{? categoryInfo == "review"}-->
+					<p class="section_tit_desc">({reviewFirstPage}-{reviewLastPage} /  <b>{reviewResultFormatCnt}</b>건이 검색되었습니다.)</p>
+					<!-- 정렬 시작 -->
+					<span class="search_order">
+						<!--{? sort == "d"}-->
+						<a href="javascript:goSort('r');" class="order01">
+						<img src="images/search/order01_or.gif" alt="정확도 높은 순"></a>
+						<a href="javascript:goSort('d');" class="order02">
+						<img src="images/search/order02_on.gif" alt="최근 작성된 순"></a>
+						<!--{:}-->
+						<a href="javascript:goSort('r');" class="order01">
+						<img src="images/search/order01_on.gif" alt="정확도 높은 순"></a>
+						<a href="javascript:goSort('d');" class="order02">
+						<img src="images/search/order02_or.gif" alt="최근 작성된 순"></a>
+						<!--{/}-->
+					</span>
+					<!-- //정렬 -->
+				<!--{:}-->
+					<p class="section_tit_desc">(<b>{reviewResultFormatCnt}</b>건이 검색되었습니다.)</p>
+				<!--{/}-->
+			</div>
+	
+			<ul class="search_list">
+			<!--{@reviewList}-->
+				<li>
+					<!--{? .thumbimg_url != ''}-->
+					<div class="thumnail">
+						<a href="{.review_url}"><img src="{.thumbimg_url}" alt="{.reTitle}"></a>
+					</div>
+					<!--{/}-->
+					<dl>
+						<dt><a href="{.review_url}" target="_blank">{.title}</a></dt>
+						<dd class="desc_txt">{.contents}..</dd>
+						<!-- 태그정보
+						<dd class="tag">
+							<span class="tag_ico">tag</span>
+							<span class="tag_link"><a href="#">비비드</a>, <a href="#">봄</a>, <a href="#">크리스마스</a>, <a href="#">눈</a></span>
+						</dd>
+						-->
+						<dd class="info">
+							<!--{? .ftype == '0'}-->
+							<span class="friend  friend1">서로친구</span>
+							<!--{: .ftype == '1'}-->
+							<span class="friend  friend2">내가등록한친구</span>
+							<!--{: .ftype == '2'}-->
+							<span class="friend  friend3">나를등록한친구</span>
+							<!--{/}-->
+							<!--{? .nickname != null}-->
+							<span><a href="javascript:context.load('{.bloggerno}')">{.nickname}</a></span>
+							<!--{/}-->
+							<span>{.regdate}</span>
+							<span class="category_link">{.category}</span>
+							<em><img src="{.blog_img_url}" alt="{.blog_type}"></em>
+						</dd>
+					</dl>
+				</li>
+			<!--{/}-->
+			</ul>
+	
+			<!--{? categoryInfo == 'review'}-->
+			<div class="paging">
+				<script>
+					document.write(pageNav("gotoPage",{pageNum},{reviewPageSize},{reviewResultCnt}));	
+				</script> 
+			</div>
+			<!--{/}-->
+
+			<!--{? categoryInfo == 'TOTAL'}-->
+				<!--{? reviewResultCnt > reviewPageSize}-->
+					<div class="search_more"><a href="javascript:goCategory('review');">결과 더보기</a></div>
+				<!--{/}-->
+			<!--{/}-->
+		</div>
+		<hr>
+	<!--{/}-->
+	<!--{/}-->
+	<!-- // 리뷰 끝 -->
+
+	<!-- 프론티어 시작 -->
+	<!--{? categoryInfo == 'frontier' || categoryInfo == 'TOTAL'}-->
+		<!--{? frontierResultCnt > 0}-->
+		<div class="section frontier">
+			<div class="section_title">
+				<h2>프론티어</h2>
+				<!--{? categoryInfo == "frontier"}-->
+				<p class="section_tit_desc">({frontierFirstPage}-{frontierLastPage} / <b>{frontierResultFormatCnt}</b>건이 검색되었습니다.)</p>
+				<!--{:}-->
+				<p class="section_tit_desc">(<b>{frontierResultFormatCnt}</b>건이 검색되었습니다.)</p>
+				<!--{/}-->
+			</div>
+			<ul class="frontier_list">
+			<!--{@frontierList}-->
+				<li class="fli">
+					<div class="thumnail">
+						<a href="{.frontier_url}"><img src="{.img_url}" alt="{.subject}">
+							<!--{? .category1 != null}-->
+							<span class="bg_txt">{.category1}</span>
+							<!--{/}-->
+						</a>
+					</div>
+						<dl>
+							<dt>
+							<!--{? .ing_cd == '1'}-->
+							<span class="cnt">모집중
+							<!--{: .ing_cd == '2'}-->
+							<span class="rev">리뷰중 
+							<!--{:}-->
+							<span class="end">마감 
+							<!--{/}--> 
+							</span>
+							<a href="{.frontier_url}">{.subject}</a>
+							</dt>
+							<dd>
+								<ul class="first-child">
+									<li class="first-child"><span>인원 : </span>{.limit}명</li>
+									<li><span>기간 : </span>{.start_date} ~ {.end_date}</li>
+									<li><span>발표 : </span>{.notice_date}</li>
+									<li><span>리뷰 : </span>{.due_sdate} ~ {.due_edate}</li>
+								</ul>
+								<ul class="last-child">
+									<!--{? .category != ''}-->
+									<li class="first-child"><span>상품분류 : </span><em><a href="#">{.category}</a></em></li>
+									<!--{/}-->
+									<li><span>체험상품 : </span><em>{.frproduct}</em></li>
+									<!--{? .tel != ''}-->
+									<li><span>전화번호 : </span><em>{.tel}</em></li>
+									<!--{/}-->
+								</ul>
+							</dd>
+						</dl>
+					</li>
+				<!--{/}-->
+				</ul>
+
+			<!--{? categoryInfo == 'frontier'}-->
+			<div class="paging">
+				<script>
+					document.write(pageNav("gotoPage",{pageNum},{frontierPageSize},{frontierResultCnt}));
+				</script>
+			</div>
+			<!--{/}-->
+	
+			<!--{? categoryInfo == 'TOTAL'}
+				<!--{? frontierResultCnt > frontierPageSize}-->
+					<div class="search_more"><a href="javascript:goCategory('frontier');">결과 더보기</a></div>
+				<!--{/}-->
+			<!--{/}-->
+		</div>
+		<hr>
+	<!--{/}-->
+	<!--{/}-->
+	<!-- 프론티어 끝 -->
+
+<!-- 블로거 시작 -->
+	<!--{? categoryInfo == 'blogger' || categoryInfo == 'TOTAL'}-->
+		<!--{? bloggerResultCnt > 0}-->
+		<div class="section blogger">
+			<div class="section_title">
+				<h2>블로거</h2>
+				<!--{? categoryInfo == "blogger"}-->
+				<p class="section_tit_desc">({bloggerFirstPage}-{bloggerLastPage} / <b>{bloggerResultFormatCnt}</b>건이 검색되었습니다.)</p>
+				<!--{:}-->
+				<p class="section_tit_desc">(<b>{bloggerResultFormatCnt}</b>건이 검색되었습니다.)</p>
+				<!--{/}-->
+			<span style="padding-left:25px">
+				<img src="http://www.revu.co.kr/images/search/icon_friend.gif"/>
+			</span>
+			</div>
+			<ul class="blogger_list">
+			<!-- 1,6번째에는 class nth1 -->
+				<!--{@bloggerList}-->
+				<li class="{.fclass}">	
+				<a href="javascript:context.load('{.bloggerno}')" title="{.ftext}">
+				<img src="{.bloggerimg}" width="80" height="80" alt="{.nickname}">
+				<span>{.nickname}</span></a>
+				</li>
+				<!--{/}-->
+			</ul>
+	
+			<!--{? categoryInfo == 'blogger'}-->
+			<div class="paging">
+				<script>
+						document.write(pageNav("gotoPage",{pageNum},{bloggerPageSize},{bloggerResultCnt}));
+				</script>
+			</div>
+			<!--{/}-->
+
+			<!--{? categoryInfo == 'TOTAL'}-->
+				<!--{? bloggerResultCnt > bloggerPageSize}-->
+					<div class="search_more"><a href="javascript:goCategory('blogger');">결과 더보기</a></div>
+				<!--{/}-->
+			<!--{/}-->
+		</div>
+		<hr>
+	<!--{/}-->
+	<!--{/}-->
+	<!-- 블로거 끝 -->
+
+	<!-- 블로그 시작 -->
+	<!--{? categoryInfo == 'blog' || categoryInfo == 'TOTAL'}-->
+		<!--{? blogResultCnt > 0}-->
+		<div class="section blog">
+			<div class="section_title">
+				<h2>블로그</h2>
+				<!--{? categoryInfo == "blog"}-->
+				<p class="section_tit_desc">({blogFirstPage}-{blogLastPage} / <b>{blogResultFormatCnt}</b>건이 검색되었습니다.)</p>
+				<!--{:}-->
+				<p class="section_tit_desc">(<b>{blogResultFormatCnt}</b>건이 검색되었습니다.)</p>
+				<!--{/}-->
+			</div>
+			<ul class="search_txt_list">
+				<!--{@blogList}-->
+				<li>						
+					<dl>
+						<dt><a href="{.blog_url}" target="_blank">{.blog_nm}</a></dt>
+						<dd class="txt_inline"><a href="{.blog_url}" target="_blank">{.blog_url}</a></dd>
+						<dd class="txt_block">
+							{.nickname}님의 블로그입니다.
+						</dd>
+					</dl>
+				</li>
+				<!--{/}-->
+			</ul>
+	
+			<!--{? categoryInfo == 'blog'}-->
+			<div class="paging">
+			<script>
+					document.write(pageNav("gotoPage",{pageNum},{blogPageSize},{blogResultCnt}));
+			</script>
+			</div>
+			<!--{/}-->
+	
+			<!--{? categoryInfo == 'TOTAL'}-->
+				<!--{? blogResultCnt > blogPageSize}-->
+					<div class="search_more"><a href="javascript:goCategory('blog');">결과 더보기</a></div>
+				<!--{/}-->
+			<!--{/}-->
+		</div>
+		<hr>
+		<!--{/}-->
+		<!--{/}-->
+	<!-- 블로그 끝 -->
+
+<!--{:}-->
+<div class="section_t no_result">
+	<div class="no_result_txt">
+		<p><strong>{hilightTxt_s}</strong>에 대한 검색 결과가 없습니다.</p>
+		<ul>
+			<li>검색어가 제대로 쓰여진 것인지 확인해 보세요.</li>
+			<li>좀 더 일반적인 단어로 검색해 보세요.</li>
+			<li>두 개 이상의 단어를 검색하는 중이라면 띄어쓰기가 올바른지 다시 확인해 보세요.</li>
+			<li>특수문자를 제외하고 다시 검색해 보세요.</li>
+		</ul>
+	</div>
+</div>
+<hr>
+
+<div class="section revu_main">
+	<div class="section_title">
+		<h2>지금 레뷰에서 가장 인기 많은 리뷰들을 보여드립니다.</h2>
+	</div>
+	<div id="noticeReview1">
+  	<!--{@noticeReview.list}-->
+		<div class="m_focus_textbox">
+			<ul>
+				<li class="m_focus_thum fl">
+					<img src="{.thumbimage_url}" width="80px;" height="80px;">
+				</li>
+				<li class="m_focus_text1 fl">					<a href="javascript:common.socialbar({.rno})"><span class="gray_du_text">{.title}</span></a>
+								&nbsp;
+								<span class="red_text"></span>
+				</li>
+				<li class="m_focus_text2 fr" style="height:34px">{.content}</li> 
+				<li class="m_focus_text3 fr">
+					<img src="{IMAGES}/common/ico/ico_revuhit.gif"><span class="red_b_text">{.recom_cnt}</span>
+								&nbsp;|&nbsp;
+								<span class="gray11_l_text"><a href="javascript:context.load({.userno})">{.nickname}</a></span>
+							</li>
+			</ul>
+		</div>	
+	<!--{/}-->	
+	</div>	
+</div>
+<hr>
+<!--{/}-->

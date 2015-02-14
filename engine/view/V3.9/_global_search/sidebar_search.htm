@@ -1,0 +1,139 @@
+<style>
+.clsBannerScreen {overflow: hidden;position: relative;height: 150px;width: 224px; border:1px solid #e1e1e1; cursor:pointer; clear:both;}
+.clsBannerScreen .images {position:absolute; display:none; }
+ul, li {list-style:none; margin:0; padding:0; font-size:10pt; }
+</style>
+<script type="text/javascript" src="{JS}/jquery.banner.js"></script>
+<script type="text/javascript">
+<!--
+$(function() {
+	$("#image_list_1").jQBanner({	//롤링을 할 영역의 ID 값
+		nWidth:224,					//영역의 width
+		nHeight:90,				//영역의 height
+		nCount:{frontierbannerlistcnt},					//돌아갈 이미지 개수
+		isActType:"up",				//움직일 방향 (left, right, up, down)
+		nOrderNo:1,					//초기 이미지
+		nDelay:5000					//롤링 시간 타임 (1000 = 1초)
+		/*isBtnType:"li"*/			//라벨(버튼 타입) - 여기는 안쓰임
+		}
+	);
+	
+});
+//-->
+</script>
+			<!-- pop_keyword -->
+			<div class="rank">
+				<h3><img src="/images/search/search_rank_tit.gif" alt="인기검색어"></h3>
+				<ul>
+				<!--{@popularKwdList}-->
+				<li class="{.dp}">
+				<a href="javascript:goKwd('{.ppk}');">
+					<em>{.no}</em>{.ppk}
+					<span class="{.tagInfo}">
+						<span class="rnum">
+		<!--{? .tagNum == "new"}-->&nbsp;<!--{:}-->{.tagNum}<!--{/}-->
+						</span>
+						<!--<span class="hiding">상승</span>-->
+					</span>
+				</a>
+				</li>
+				<!--{/}-->
+				</ul>
+				<p class="rank_time"><span>{now_time}</span></p>
+			</div>
+			<!-- // pop_keyword -->
+			<hr>
+
+
+			<!-- best_revu -->
+			<div class="rank" id="bestrank">
+				<h3><img src="/images/search/best_revu_tit.gif" alt="주간 베스트리뷰"></h3>
+				<ul>
+					{@bestReview}
+						{? .index_ < 3}
+							<li class="rnp"><a href="javascript:common.socialbar({.rno})"><em>{.index_+1}</em>{.title}</a></li>	
+						{:}
+							<li class="rng"><a href="javascript:common.socialbar({.rno})"><em>{.index_+1}</em>{.title}</a></li>	
+						{/}
+					{/}					
+				</ul>
+				<p class="rank_date"><button class="prev_week" onclick="javascript:common.weekBestChange({bestPrev_wno})"><span class="hiding">이전 주 보기<span></button><em>{bestDate.sdate} - {bestDate.edate}</em><button class="next_week" onclick="javascript:common.weekBestChange({bestNext_wno})"><span class="hiding">다음주 보기<span></button></p>
+			</div>
+			<!-- // best_revu -->
+			<hr>
+
+
+
+			<!-- notice -->
+			<div class="s_notice_box">
+				<ul>
+					<li class="s_notice_title">
+						<a href="http://{conf.BLOGDOMAIN}" target="_blank"><img src="{IMAGES}/common/ico/ico_more.gif" align="right" alt="more" title="more" class="pb15"></a>
+					</li>
+					<li style="height:10px;"></li>
+					{@notice}
+					<li class="s_text_line">
+						<a href="{.url}" target="_blank" class="common_text"> {.title}</a>
+					</li>
+					<li class="gray11_l_text">{.pubdate}</li>
+					<li class="dot18_line"></li>
+					{/}
+					<li class="s_space_line"><img src="http://revu.co.kr/images/common/space.gif" height="1px;"></li>
+				</ul>
+			</div>
+			<!-- notice -->
+			<hr>
+
+			<!-- frontier -->
+			<div class="s_frontier2_box">
+				<ul>
+				<li class="s_frontier2_title"></li>
+				<li style="height:15px;"></li>
+				<li>
+  			     <!--  한 묶음 시작-->
+					<!--{@right_toplist}-->   
+					<div class="s_frontier2_textbox">
+					  <ul>
+						<!-- 프론티어 110110 이미지 비례축소 -->
+						<li class="s_frontier_thum fl"><a href="/frontier/detailview//{.frno}/"><img src="{.toplistimg}"  alt="이 프론티어 상세보기로 이동" title="프론티어 상세보기로 이동"  width="66px;" height="66px;"/></a></li>
+						<li class="s_frontier_text1 fl"><a href="/frontier/detailview//{.frno}/"><span class="gray_stitle"><font color="#999933">{.subject}</font></span></a></li>
+						 <li class="s_frontier_text2 fr"><span class="gray11_l_text">모집인원 :</span><span class="gray11_d_text"> {.peoplelimit}</span></li>
+						<li class="s_frontier_text2 fr"><span class="gray11_l_text">체험단발표 :</span><span class="gray11_d_text"> {.notice_date}</span></li>
+					  </ul>
+					</div>
+					<!--{/}-->					
+				</li>
+				<!--  한 묶음 끝-->
+				<li class="clear"></li>
+				<li class="gray21_line"></li>
+
+					<!--{@right_mainlist}-->   
+					<li class="s_text_line"><a href="/frontier/detailview//{.frno}/" target="_blank" class="common_text">{.subject}</a></li>
+					<li class="dot18_line"></li>
+					<!--{/}-->
+				</ul>
+			</div>
+			<!-- 프론티어배너 225090 -->
+			{? frontierbannerlistcnt >  "1"}
+					<div id="image_list_1">
+					<div class="clsBannerScreen">
+					<!--{@frontierbannerlist}-->   
+					<div class="images">
+					<a href="/frontier/detailview//{.frno}/"><img src="{.bannerimg}" alt="프론티어이름" title="프론티어이름"  width="224" height="90"></a>
+					</div>
+					<!--{/}-->
+					</div>		
+					</div>
+			{:}
+					<!--{@frontierbannerlist}-->   
+					<div class="images">
+					<a href="/frontier/detailview//{.frno}/"><img src="{.bannerimg}" alt="프론티어이름" title="프론티어이름"  width="224" height="90"></a>
+					</div>
+					<!--{/}-->
+			{/}		
+					<div style="margin-bottom:40px;"></div>
+
+					<!-- 제휴문의배너 225102 -->
+					<div class="s_banner_revu"><a href="/frontier/alliance" target="_blank"><img src="{IMAGES}/common/banner/banner_revu_225102.gif" alt="제휴문의" title="제휴문의" /></a></div>
+					
+					<img src="/images/common/banner/banner_powerblog_224090.gif" alt="파워블로거지원" title="파워블로거지원" onClick="common.redirect('/info/powerblog')" class="btn" />

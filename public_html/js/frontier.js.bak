@@ -1,0 +1,360 @@
+$(document).ready( function() {
+	// 분류선택
+	$('#cate1').bind('change', function () {
+		//alert("a");
+		var cate1 = $("#cate1 option:selected").val();
+		category.cate2select(cate1, "cate2", "cate3", "cate4");
+	});
+
+	$('#cate2').bind('change', function () {
+		//alert("a");
+		var cate1 = $("#cate1 option:selected").val();
+		var cate2 = $("#cate2 option:selected").val();
+		category.cate3select(cate1, cate2,  "cate3", "cate4");
+	});
+
+	//지역선택
+	$('#areaBcodeCBox1').bind('change', function () {
+		var bcode = $("#areaBcodeCBox1 option:selected").val();
+		zipcode.searchMcode(bcode, "areaMcodeCBox1", "areaScodeCBox1");
+	});
+	$('#areaMcodeCBox1').bind('change', function () {
+		var bcode = $("#areaBcodeCBox1 option:selected").val();
+		var mcode = $("#areaMcodeCBox1 option:selected").val();
+		zipcode.searchScode(bcode, mcode, "areaScodeCBox1");
+	});
+
+	// 주소검색	
+	common.setLayer("zipcodelayer");
+	$('#zipcodeBtn').bind('click', function() { common.openLayer('zipcodelayer', 400,400,200,200); /*zipcode.setForm('zipcode', 'addr1');*/ });
+	//$('#zipcodeBtn').bind('click', function() { zipcode.setForm('zipcode', 'addr1'); });
+	$('#addrzip').bind('focus', function() { common.openLayer('zipcodelayer', 400,400,200,200); }); 
+	$('#addr1').bind('focus', function() { common.openLayer('zipcodelayer', 400,400,200,200); });
+
+
+
+	// 프론티어 등록체크
+	$('#registCheck').bind('click', function() { frontierRegist(); });
+
+	
+	// 프론티어 리스트 검색
+	$('#search').bind('click', function() { frontierListsearch(); });
+
+	//제휴문의 체크
+	
+	$('#allianceCheck').bind('click', function() { allianceRegist(); });
+
+	$('#mtype1').bind('click', function() { replytoggle(talknum); });
+
+
+});
+
+
+function replycheck(num) {
+	
+	var checknum;
+	checknum = num/2;
+
+	//alert(checknum);
+
+	if(checknum < 1) {
+		$('#typeview').show();
+	}else{
+		if(checknum = 1){
+			$('#typeview').show();
+		}else{
+			$('#typeview').hide();
+		}
+	}
+
+	var num = num++;
+}
+
+function replytoggle(talknum) { 
+
+	$("#typeview"+talknum).toggle("fast"); 
+} 
+
+function replytoggle2(talknum) { 
+
+	$("#typeview3"+talknum).toggle("fast"); 
+	$("#typeview2"+talknum).toggle("fast"); 
+
+} 
+
+function replytoggle3(talknum) { 
+
+	//alert('here');
+	$("#typeview5"+talknum).toggle("fast"); 
+	$("#typeview4"+talknum).toggle("fast"); 
+
+} 
+
+function frontierRegist(){
+
+
+
+	if($('#name').val() == "") {
+		$('#dialog').html("응모자 이름을 입력하시기 바랍니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 입력사항 확인"});
+		return false;
+	}
+
+
+	
+	if($("input[name='sex']:checked").val() == undefined){
+		$('#dialog').html("응모자 성별을 선택하시기 바랍니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 선택사항 확인"});
+		return false;
+	}
+
+	if($("#birth_year > option:selected").val() == ""){
+		$('#dialog').html("응모자의 생일 년도를 선택하세요");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 선택사항 확인"});
+		return false;
+	}
+
+
+	if($("#birth_month > option:selected").val() == ""){
+		$('#dialog').html("응모자의 생일 월을 선택하세요");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 선택사항 확인"});
+		return false;
+	}
+
+	if($("#birth_day > option:selected").val() == ""){
+		$('#dialog').html("응모자의 생일 선택하세요");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 선택사항 확인"});
+		return false;
+	}
+
+
+	if($('#mobile2').val() == "") {
+		$('#dialog').html("응모자 휴대폰번호를 입력하시기 바랍니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 입력사항 확인"});
+		return false;
+	}
+
+
+	if($('#mobile3').val() == "") {
+		$('#dialog').html("응모자 휴대폰번호를 입력하시기 바랍니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 입력사항 확인"});
+		return false;
+	}
+
+	if($('#tel2').val() == "") {
+		$('#dialog').html("응모자 전화번호를 입력하시기 바랍니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 입력사항 확인"});
+		return false;
+	}
+
+	if($('#tel3').val() == "") {
+		$('#dialog').html("응모자 전화번호를 입력하시기 바랍니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 입력사항 확인"});
+		return false;
+	}
+
+	if($('#zipcode').val() == "") {
+		$('#dialog').html("응모자 우편번호를 입력하시기 바랍니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 입력사항 확인"});
+		return false;
+	}
+
+
+	if($('#addr1').val() == "") {
+		$('#dialog').html("응모자 주소를 입력하시기 바랍니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 입력사항 확인"});
+		return false;
+	}
+
+
+	if($('#addr2').val() == "") {
+		$('#dialog').html("응모자 상세주소를 입력하시기 바랍니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 입력사항 확인"});
+		return false;
+	}
+
+	if($('#editor').val() == "") {
+		$('#dialog').html("응모시 관련 토크는 필수 입력사항 입니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 입력사항 확인"});
+		return false;
+	}
+
+
+
+
+	if($("input[name='agree']:checked").val() == undefined){
+		$('#dialog').html("프론티어 응모 동의를 하시기 바랍니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 선택사항 확인"});
+		return false;
+	}
+
+
+
+	
+	
+
+	$('#RevUform').attr('method', 'post');
+	$('#RevUform').attr('action', '/frontier/frontier.entry1.proc');	
+	$('#RevUform').submit();
+	//document.forms['RevUform'].onsubmit();
+	//document.forms['RevUform'].submit();
+
+}
+
+
+
+
+function talkreplyRegist(no){
+
+	var val; 
+	//alert("#reply"+no).val();
+	//alert(no).val();
+	var talknum = no;
+	//var frname = ('#frname').val();
+	var reply = $('#reply'+no).val();
+
+	$('#replyno').val(no);
+
+
+	if($('#user_num').val() == "") {
+		$('#dialog').html("로그인 하신후 댓글을 쓰실 수가 있습니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "토크-댓글 로그인체크"});
+		return false;
+	}
+	
+
+	if($('#reply').val() == "") {
+		$('#dialog').html("내용을 입력하시기 바랍니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "토크-댓글 입력확인"});
+		return false;
+	}
+	
+	
+	$('#RevUform').attr('method', 'post');
+	$('#RevUform').attr('action', '/frontier/frontier.talkreply.proc');	
+	$('#RevUform').submit();
+	//document.forms['RevUform'].onsubmit();
+	//document.forms['RevUform'].submit();
+
+}
+
+
+
+
+function talkreplyedit(no){
+
+	var val; 
+	//alert("#reply"+no).val();
+	//alert(no).val();
+	var talknum = no;
+
+	//alert(no);
+	//var frname = ('#frname').val();
+	var replyedit = $('#replyedit'+no).val();
+	//alert(replyedit);
+	$('#replyeditno').val(no);
+
+	
+
+	if( replyedit == "") {
+		$('#dialog').html("댓글 내용을 입력하시기 바랍니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "토크-댓글 입력확인"});
+		return false;
+	}
+	
+	
+	$('#RevUform').attr('method', 'post');
+	$('#RevUform').attr('action', '/frontier/frontier.replyedit.proc');	
+	$('#RevUform').submit();
+	//document.forms['RevUform'].onsubmit();
+	//document.forms['RevUform'].submit();
+
+}
+
+
+function talkreplydel(no){
+
+	var val; 
+
+	var talknum = no;
+
+
+	$('#delreplyno').val(talknum);
+	
+	
+	
+	$('#RevUform').attr('method', 'post');
+	$('#RevUform').attr('action', '/frontier/frontier.replydel.proc');	
+	$('#RevUform').submit();
+	//document.forms['RevUform'].onsubmit();
+	//document.forms['RevUform'].submit();
+
+}
+
+
+
+function frontierListsearch(){
+
+	var val;
+	var cate1 = $('#cate1').val();
+	var cate2 = $('#cate2').val();
+	var cate3 = $('#cate3').val();
+	var stat = $('#stat').val();
+	var frname = $('#frname').val();
+
+	common.redirect("/manager/frontier.list/1/10/15/"+cate1+"/"+cate2+"/"+cate3+"/"+stat+"/"+frname);
+
+	//$('#RevUform').attr('method', 'post');
+	//$('#RevUform').attr('action', '/manager/frontier.list');	
+	//$('#RevUform').redirect();
+
+}
+
+
+
+function allianceRegist(){
+
+
+
+	if($('#company').val() == "") {
+		$('#dialog').html("회사명을 입력하셔야 합니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 제휴문의 입력사항 확인"});
+		return false;
+	}
+
+
+	if($('#rname').val() == "") {
+		$('#dialog').html("담당자명을 입력하시기 바랍니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 제휴문의 입력사항 확인"});
+		return false;
+	}
+
+
+	if($('#company_tel').val() == "") {
+		$('#dialog').html("연락가능한 전화번호를 꼭 입력하셔야 합니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 제휴문의 입력사항 확인"});
+		return false;
+	}
+
+	if($('#company_mail').val() == "") {
+		$('#dialog').html("메일주소를 입력하셔야 담당자가 관련 자료를 보내드립니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "제휴문의 메일주소 입력사항 확인"});
+		return false;
+	}
+
+	if($('#company_say').val() == "") {
+		$('#dialog').html("제휴내용을 간단하게라도 꼭 적어주시기 바랍니다.");
+		$('#dialog').dialog({ autoOpen: true, title: "프론티어 제휴내용 입력사항 확인"});
+		return false;
+	}
+
+	
+	
+
+	$('#RevUform').attr('method', 'post');
+	$('#RevUform').attr('action', '/frontier/frontier.alliance.proc');	
+	$('#RevUform').submit();
+	//document.forms['RevUform'].onsubmit();
+	//document.forms['RevUform'].submit();
+
+}

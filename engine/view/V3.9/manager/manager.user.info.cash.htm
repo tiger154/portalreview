@@ -1,0 +1,34 @@
+<link type="text/css" rel="stylesheet" href="{CSS}/_global/_style_manager.css" />
+<script type="text/javascript" src="{JS}/manager.user.js"></script>
+<table width="100%" class="table-user">
+	<tr>
+		<th width="100">캐시</th>
+		<td>{=number_format(cash.cash)}</td>
+	</tr>
+	<tr>
+		<th>출금캐시</th>
+		<td>{=number_format(cash.cash_use)}</td>
+	</tr>
+	<tr>
+		<th>캐시 적립내역</th>
+		<td valign="top">			
+			<table width="100%">
+				<tr>
+					<th>캐시타입</th>
+					<th>적립/차감</th>
+					<th>캐시</th>
+					<th>등록일</th>
+				</tr>
+				{@list}
+				<tr align="center">
+					<td>{.cash_type_text}</td>
+					<td>{.flag_sign}</td>
+					<td>{=number_format(.cash)}</td>
+					<td>{.regdate}</td>
+				</tr>
+				{/}
+			</table>					
+		</td>
+	</tr>			
+</table>
+<div class="pageno">{link}</div>

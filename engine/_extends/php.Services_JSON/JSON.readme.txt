@@ -1,0 +1,15 @@
+php에서 배열을 json포맷으로 변환해주는 클래스
+
+json포맷으로 변환할 배열이
+$arr = { "a" => 1, "b" => 2 } 일때
+
+%usage
+
+$json = new Services_JSON();
+$output = $json->encode($json);
+
+print($output);
+
+==>
+
+{ a:1 , b:2 }

@@ -1,0 +1,70 @@
+<?php
+
+function file_transact($file_path, $type,$filename="file",$filesize=0) {
+
+ 
+
+       if($type == "file") {       // 파일다운로드의 경우
+              if(eregi("(MSIE 5.5|MSIE 6.0)", $HTTP_USER_AGENT)) { // 브라우져 구분
+                     $save_file = urlencode($save_file); // 파일명이나 경로에 한글이나 공백이 포함될 경우를 고려
+                     Header("Content-Type: doesn/matter");
+                     Header("Content-Length: $filesize");   // 이부부을 넣어 주어야지 다운로드 진행 상태가 표시 됩니다.
+                     Header("Content-Disposition: inline; filename=$filename");
+                     Header("Content-Transfer-Encoding: binary");
+                     Header("Pragma: no-cache");
+                     Header("Expires: 0");
+              } else {
+                     Header("Content-type: file/unknown");
+                     Header("Content-Length: $filesize");
+                     Header("Content-Disposition: attachment; filename=$filename");
+                     Header("Content-Description: PHP3 Generated Data");
+                     Header("Pragma: no-cache");
+                     Header("Expires: 0");
+              }
+       } else {
+              header("Content-type: $type");
+              header("Pragma: no-cache");
+              header("Expires: 0");
+       }
+
+       if (is_file("$file_path")) {
+              $fp = fopen("$file_path", "r");
+              if (!fpassthru($fp))  // 서버부하를 줄이려면 print 나 echo 또는 while 문을 이용한 기타 보단 이방법이...
+                     fclose($fp);
+       } else {
+              echo "해당 파일이나 경로가 존재하지 않습니다.";
+       }
+}
+
+
+
+
+
+
+
+
+ $file_url="./down/".$filename; // 실제로 다운받을 파일이 있는 경로 
+ //echo"$file_url";exit;
+
+ $file_exist=file_exists($file_url);
+
+ if($file_exist==1)
+ {
+  $files=filesize($file_url);
+  //echo"$files";exit;
+  file_transact($file_url, "file",$filename,$files);
+ }
+ else
+ {
+  echo"
+  <script>
+   window.alert('파일이 존재하지 않습니다.');
+   history.back();
+  </script>";
+  exit;
+ }
+?>
+<script>
+ window.close();
+</script>
+

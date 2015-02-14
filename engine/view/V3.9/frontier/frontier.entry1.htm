@@ -1,0 +1,249 @@
+<script type="text/javascript" src="{JS}/_global/category.js"></script>
+<script type="text/javascript" src="{JS}/_global/zipcode.js"></script>
+<script type="text/javascript" src="{JS}/_global/input.js"></script>
+<!-- <script type="text/javascript" src="{EXTENDS}/editor.htmlarea/config/htmlarea.js"></script> -->
+<!-- <script type="text/javascript" src="{EXTENDS}/editor.htmlarea/config/htmlarea2.js"></script>-->
+<!-- <script type="text/javascript" src="{EXTENDS}/editor.htmlarea/config/editor_init.js"></script> -->
+<!-- <script type="text/javascript" src="{EXTENDS}/editor.htmlarea/config/editor_init2.js"></script> -->
+
+<script type="text/javascript" src="{EXTENDS}/editor.htmlarea/config/button_action.js"></script>
+<!-- <script type="text/javascript" src="{EXTENDS}/editor.htmlarea/config/button_action2.js"></script> -->
+
+<input type="hidden" name="frno" id="frno" value='{frno}'>
+<input type="hidden" name="frid" id="frid" value='{frid}'>
+<input type="hidden" name="userno" id="userno" value='{userno}'>
+<input type="hidden" name="userid" id="userid" value='{userid}'>
+
+
+
+<input type="hidden" name="birth_year" id="birth_year" value=''>
+<input type="hidden" name="birth_month" id="birth_month" value=''>
+<input type="hidden" name="sex" id="sex" value=''>
+<input type="hidden" name="name" id="name" value=''>
+<input type="hidden" name="phone_number" id="phone_number" value=''>
+<input type="hidden" name="mobile2" id="mobile2" value=''>
+<input type="hidden" name="mobile3" id="mobile3" value=''>
+<input type="hidden" name="tel_number" id="tel_number" value=''>
+<input type="hidden" name="tel2" id="tel2" value=''>
+<input type="hidden" name="tel3" id="tel3" value=''>
+<input type="hidden" name="zipcode" id="zipcode" value=''>
+<input type="hidden" name="addr1" id="addr1" value=''>
+<input type="hidden" name="addr2" id="addr2" value=''>
+<input type="hidden" name="option1" id="option1" value=''>
+<input type="hidden" name="editor" id="editor" value=''>
+
+	<!-- 상단 -->
+	<table border="0" width="980" cellpadding="5" cellspacing="0" >
+		<tr>
+			<!--본문-->
+			<td valign="top" bgcolor="#FFFFFF">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" height="35" border="0" bgcolor="#555555">
+							<font color="#FFFFFF">프론티어 응모하기</font>&nbsp;
+						</td>
+					</tr>
+				</table>
+
+				<table>
+
+					<!-- 응모자 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#99CC66">
+							&nbsp;이름&nbsp;<br>
+						</td>
+						<td>
+							<input type="text" name="name" id="name" value="" size="20">
+						</td>
+					</tr>
+
+
+					<!-- 성별 선택 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#99CC66">
+							&nbsp;성별&nbsp;<br>
+						</td>
+						<td>
+							<div align="left">
+								<input type="radio" name="sex" value="M" border="0"> 남자
+								<input type="radio" name="sex" value="F" border="0"> 여자
+							</div>
+						</td>
+					</tr>
+					
+					<!-- 생년월일 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#99CC66">
+							&nbsp;생년월일&nbsp;<br>
+						</td>
+						<td>
+							<select name="birth_year" id="birth_year">
+								<option value="">----</option>
+								{@ birth_year}<option value="{.value_}">{.value_}</option>{/}
+							</select>년
+
+							<select name="birth_month" id="birth_month">
+								<option value="">--</option>
+								{@ birth_month}<option value="{.value_}">{.value_}</option>{/}
+							</select>월
+
+							<select name="birth_day" id="birth_day">
+								<option value="">--</option>
+								{@ birth_day}<option value="{.value_}">{.value_}</option>{/}
+							</select>일
+						</td>
+					</tr>
+					
+					<!-- 휴대폰번호 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#99CC66">
+							&nbsp;휴대폰번호&nbsp;<br>
+						</td>
+						<td>
+							
+							<select name="mobile1" id="phone_number">
+								{@ phone_number}<option value="{.value_}">{.value_}</option>{/}
+							</select>
+							<input type="text" name="mobile2" id="mobile2" value="" size="5" maxlength="4">
+							<input type="text" name="mobile3" id="mobile3" value="" size="5" maxlength="4">
+						</td>
+					</tr>
+		
+					<!-- 전화번호 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#99CC66">
+							&nbsp;전화번호&nbsp;<br>
+						</td>
+						<td>
+							
+							<select name="tel1" id="tel_number">
+								{@ tel_number}<option value="{.value_}">{.value_}</option>{/}
+							</select>
+							<input type="text" name="tel2" id="tel2" value="" size="5" maxlength="4">
+							<input type="text" name="tel3" id="tel3" value="" size="5" maxlength="4">
+						</td>
+					</tr>
+					
+					<!-- 우편번호 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#99CC66">
+							&nbsp;우편번호&nbsp;<br>
+						</td>
+						<td>
+							
+						<input type="text" name="zipcode" id="zipcode" size="8" maxlength="6" readonly value="136252" />
+						<input type="button" id="zipcodeBtn" value="우편번호검색"/>
+						</td>
+					</tr>
+
+
+					<!-- 주소1 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#99CC66">
+							&nbsp;주소&nbsp;<br>
+						</td>
+						<td>
+							
+						<input type="text" name="addr1" id="addr1" size="40" maxlength="60" readonly value="서울 노원구 하계2동" /><br />
+						</td>
+					</tr>
+
+					<!-- 상세주소 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#99CC66">
+							&nbsp;상세주소&nbsp;<br>
+						</td>
+						<td>
+							
+						<input type="text" name="addr2" id="addr2" size="40" maxlength="60" readonly value="건달아파트" /><br />
+						</td>
+					</tr>
+
+
+					<!-- 옵션 선택 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#99CC66">
+							&nbsp;옵션선택&nbsp;<br>
+						</td>
+						<td>
+							<div align="left">
+								<select name="option1" id="option1">
+									<!-- <option value="">--1차--</option>
+									<option value="1">디지털</option>
+									<option value="2">음식</option>
+									<option value="3">여행</option> -->
+									<option value="">옵션선택</option>
+									{@ cate1_list}
+									<option value="{.cate1}">{.cate_desc}</option>
+									{/}
+								</select>
+
+							</div>
+						</td>
+					</tr>
+
+					<!-- 토크 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#99CC66">
+							&nbsp;토크&nbsp;<br>
+						</td>
+						<!-- <td align="left">
+							<textarea id="editorContent" name="editorContent" rows="10"></textarea>
+						</td> -->
+						<td align="left">
+							<textarea id="editor" name="editor" rows="10"  style=" width: 100%; overflow: visible;"></textarea>
+						</td>
+					</tr>
+
+
+
+					<!-- 동의 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#99CC66">
+							&nbsp;동의&nbsp;<br>
+						</td>
+						<!-- <td align="left">
+							<textarea id="editorContent" name="editorContent" rows="10"></textarea>
+						</td> -->
+						<td align="left">
+							<input type="checkbox" name="agree" id="agree" value="a">
+						</td>
+					</tr>
+
+
+
+
+
+				</table>			
+			</td>
+			<!-- 본문 끝 -->
+		</tr>
+	</table>
+	<!-- 버튼 -->
+	<table width="800" border="0">
+		<tr>
+			<td width="800">&nbsp;
+				<center>
+				<input type="button" id="registCheck" value="응모하기"/>
+				<input type="button" id="cancelBtn" value="취소"/>
+				</center>
+			</td>
+		</tr>
+	</table>
+	<!-- 버튼 끝 -->
+
+
+	<table width="800" border="0">
+		<tr>
+			<td width="800">&nbsp;<!-- 공백 -->
+			</td>
+		</tr>
+	</table>
+
+
+
+
+<!-- <script type="text/javascript">HTMLArea.init();</script> -->
+<!-- <script type="text/javascript">HTMLArea2.init();</script> -->
+
+</form>

@@ -1,0 +1,374 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.criticaldevelopment.net/xml/doc.php -->
+<HTML><HEAD><TITLE>XMLParser Documentation/Tutorial</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=ks_c_5601-1987">
+<STYLE>BODY {
+	FONT-FAMILY: arial; BACKGROUND-COLOR: #ffca95
+}
+.example {
+	PADDING-RIGHT: 20px; PADDING-LEFT: 20px; FONT-WEIGHT: bold; PADDING-BOTTOM: 20px; MARGIN-LEFT: 20px; PADDING-TOP: 20px; BACKGROUND-COLOR: #ffe9cf
+}
+.preexample {
+	PADDING-LEFT: 30px; FONT-WEIGHT: bold; FONT-SIZE: 10pt
+}
+.main {
+	BORDER-RIGHT: #ff912b 3px solid; PADDING-RIGHT: 10px; BORDER-TOP: #ff912b 3px solid; PADDING-LEFT: 10px; LEFT: 24%; PADDING-BOTTOM: 10px; BORDER-LEFT: #ff912b 3px solid; WIDTH: 73%; PADDING-TOP: 10px; BORDER-BOTTOM: #ff912b 3px solid; POSITION: absolute; BACKGROUND-COLOR: lightblue
+}
+.left {
+	BORDER-RIGHT: #ff912b 3px solid; PADDING-RIGHT: 10px; BORDER-TOP: #ff912b 3px solid; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: #ff912b 3px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #ff912b 3px solid; BACKGROUND-COLOR: lightblue
+}
+.lefttable {
+	LEFT: 10px; WIDTH: 22%; POSITION: absolute
+}
+</STYLE>
+
+<META content="MSHTML 6.00.2900.3314" name=GENERATOR></HEAD>
+<BODY>
+<TABLE class=lefttable>
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV class=left>
+      <H2>Get XMLParser!</H2>To get XMLParser, use the links below:<BR><A 
+      href="http://www.criticaldevelopment.net/xml/parser_php4.phps">PHP 
+      4</A><BR><A 
+      href="http://www.criticaldevelopment.net/xml/parser_php5.phps">PHP 5</A> 
+      <BR><BR>The latest version of both flavours of the parser is <B>1.3.0</B>. 
+      If your version is lower than this, you should consider upgrading. 
+      </DIV><BR></TD></TR>
+  <TR>
+    <TD>
+      <DIV class=left>
+      <H2>Changelog</H2><B>Version 1.3.0</B> <BR><I>Note: I haven't completed 
+      the documentation for the new features in 1.3.0... it should come 
+      soon!</I> 
+      <UL>
+        <LI>Added a feature to manage tags with dashes and colons 
+        <LI>Added a tag delete feature 
+        <LI>Other misc fixes </LI></UL><B>Version 1.2.0</B> 
+      <UL>
+        <LI>Added error reporting features for name conflicts. 
+      </LI></UL><B>Version 1.1.0</B> <BR><I>Version 1.1.0 is <B>NOT</B> 
+      completely backwards compatable with version 1.0.0.</I> 
+      <UL>
+        <LI>Fixed the PHP 4 reference bug which made parsing not work under PHP 
+        4. Rewrote the stack system for the PHP 4 parser. 
+        <LI>Prefaced the XMLTag members with 'tag' to minimise issues of name 
+        conflicts. </LI></UL><B>Version 1.0.0</B> 
+      <UL>
+        <LI>First release of the parser, I'm not gonna bother listing each 
+        feature. </LI></UL><BR><BR></DIV><BR></TD></TR>
+  <TR>
+    <TD>
+      <DIV class=left>
+      <H2>Using XMLParser?</H2>Are you using XMLParser? Great. I hope it's 
+      working well for you. Because, though, we all know software doesn't 
+      usually work nicely, you may need help making XMLParser work. If you do, 
+      just <A href="mailto:adamaflynn@criticaldevelopment.net">e-mail me</A> and 
+      I will give you a hand. <BR><BR>If XMLParser has helped you somehow, you 
+      might want to consider donating.<BR>
+      <CENTER>
+      <FORM action=https://www.paypal.com/cgi-bin/webscr method=post><INPUT 
+      type=hidden value=_xclick name=cmd> <INPUT type=hidden 
+      value=adamaflynn@gmail.com name=business> <INPUT type=hidden 
+      value=XMLParser name=item_name> <INPUT type=hidden value=1 name=no_note> 
+      <INPUT type=hidden value=USD name=currency_code> <INPUT type=hidden 
+      value=0 name=tax> <INPUT type=hidden value=PP-DonationsBF name=bn> <INPUT 
+      type=image alt="Make payments with PayPal - it's fast, free and secure!" 
+      src="XMLParser Documentation-Tutorial.files/x-click-but04.gif" border=0 
+      name=submit> <IMG height=1 alt="" 
+      src="XMLParser Documentation-Tutorial.files/pixel.gif" width=1 border=0> 
+      </FORM></CENTER></DIV>
+      <DIV 
+      style="PADDING-RIGHT: 8px; PADDING-LEFT: 8px; FLOAT: left; PADDING-BOTTOM: 8px; PADDING-TOP: 8px"><!-- Begin: AdBrite -->
+      <SCRIPT type=text/javascript>
+   var AdBrite_Title_Color = '0000FF';
+   var AdBrite_Text_Color = '000000';
+   var AdBrite_Background_Color = 'FFCA95';
+   var AdBrite_Border_Color = 'FF0000';
+</SCRIPT>
+
+      <SCRIPT src="" type=text/javascript></SCRIPT>
+
+      <DIV><A style="FONT-WEIGHT: bold; FONT-SIZE: 13px; FONT-FAMILY: Arial" 
+      href="http://www.adbrite.com/mb/commerce/purchase_form.php?opid=379005&amp;afsid=1" 
+      target=_top>Your Ad Here</A></DIV><!-- End: AdBrite --></DIV>
+      <DIV 
+      style="PADDING-RIGHT: 8px; PADDING-LEFT: 8px; FLOAT: right; PADDING-BOTTOM: 8px; PADDING-TOP: 8px"><!-- Begin: AdBrite -->
+      <SCRIPT type=text/javascript>
+   var AdBrite_Title_Color = '0000FF';
+   var AdBrite_Text_Color = '000000';
+   var AdBrite_Background_Color = 'FFCA95';
+   var AdBrite_Border_Color = 'FF0000';
+</SCRIPT>
+
+      <SCRIPT src="XMLParser Documentation-Tutorial.files/text_group.htm" 
+      type=text/javascript></SCRIPT>
+
+      <DIV><A style="FONT-WEIGHT: bold; FONT-SIZE: 13px; FONT-FAMILY: Arial" 
+      href="http://www.adbrite.com/mb/commerce/purchase_form.php?opid=379005&amp;afsid=1" 
+      target=_top>Your Ad 
+Here</A></DIV><!-- End: AdBrite --></DIV></TD></TR></TBODY></TABLE>
+<DIV class=main>
+<H1>XMLParser Tutorial/Documentation</H1>
+<H2>XMLParser?</H2>XMLParser was designed by me (<A 
+href="mailto:adamaflynn@criticaldevelopment.net">Adam A Flynn</A>) after 
+spending a huge amount of time messing with PHP's XML extention because a client 
+needed something that worked in both PHP 4 and PHP 5. The result of my initial 
+tinkerings was a piece of horribly hacked code which did the job of 1 line in 
+SimpleXML. I decided that before embarking on another XML project, I would write 
+a parser that could work like SimpleXML and work with both PHP 4 and PHP 5. This 
+is the result. <BR><BR>This parser comes in 2 flavours. One is for PHP 4 and one 
+is for PHP 5. Both flavours are accessed through the exact same interface, so 
+you can write code to use this parsing system and, as long as you include the 
+right flavour of the parser file (see version_compare() for how to figure out if 
+the PHP version is pre or post 5.0), everything should work perfectly under both 
+PHP versions. <BR><BR>
+<H2>Using XMLParser</H2>Because I want to draw the parallels between my parser 
+and SimpleXML (since it was designed, more or less, to mimic SimpleXML but with 
+php4 functionality), I'm going to use the same series of examples and the same 
+XML document that the SimpleXML documentation pages on php.net use. 
+<BR><BR><BR><SPAN class=preexample>Our example XML document (example.xml)</SPAN> 
+
+<DIV class=example><CODE>&lt;?xml version='1.0' standalone='yes' 
+?&gt;<BR>&lt;movies&gt;<BR>&lt;movie&gt;<BR>&lt;title&gt;PHP: Behind the 
+Parser&lt;/title&gt;<BR>&lt;characters&gt;<BR>&lt;character&gt;<BR>&lt;name&gt;Ms. 
+Coder&lt;/name&gt;<BR>&lt;actor&gt;Onlivia 
+Actora&lt;/actor&gt;<BR>&lt;/character&gt;<BR>&lt;character&gt;<BR>&lt;name&gt;Mr. 
+Coder&lt;/name&gt;<BR>&lt;actor&gt;El 
+Actor&lt;/actor&gt;<BR>&lt;/character&gt;<BR>&lt;/characters&gt;<BR>&lt;plot&gt;<BR>So, 
+this language. It's like, a programming language. Or is it a scripting language? 
+All is revealed in this thrilling horror spoof of a 
+documentary.<BR>&lt;/plot&gt;<BR>&lt;rating 
+type="thumbs"&gt;7&lt;/rating&gt;<BR>&lt;rating 
+type="stars"&gt;5&lt;/rating&gt;<BR>&lt;/movie&gt;<BR>&lt;/movies&gt;</CODE></DIV><BR>
+<H3>Getting Started</H3>To get started with the parser, you need to first load 
+the XML document you are working with. For our purposes, we're going to call the 
+document example.xml. Like SimpleXML, the XMLParser constructor takes the actual 
+XML document itself, not just the name of the file which contains it. So, what 
+this means is that we need to do the file_get_contents() call before we 
+initialise the XMLParser object. <BR><BR>Once we call XMLParser and fill it with 
+some data, we need to tell it to work its magic and actually do some parsing. 
+Doing that is as simple as calling the Parse method. <BR><BR><SPAN 
+class=preexample>Setting up the parser</SPAN> 
+<DIV class=example><CODE><SPAN style="COLOR: #000000"><BR><SPAN 
+style="COLOR: #0000bb">&lt;?php<BR></SPAN><SPAN 
+style="COLOR: #ff8000">//Get&nbsp;the&nbsp;XML&nbsp;document&nbsp;loaded&nbsp;into&nbsp;a&nbsp;variable<BR></SPAN><SPAN 
+style="COLOR: #0000bb">$xml&nbsp;</SPAN><SPAN 
+style="COLOR: #007700">=&nbsp;</SPAN><SPAN 
+style="COLOR: #0000bb">file_get_contents</SPAN><SPAN 
+style="COLOR: #007700">(</SPAN><SPAN 
+style="COLOR: #dd0000">'example.xml'</SPAN><SPAN 
+style="COLOR: #007700">);<BR></SPAN><SPAN 
+style="COLOR: #ff8000">//Set&nbsp;up&nbsp;the&nbsp;parser&nbsp;object<BR></SPAN><SPAN 
+style="COLOR: #0000bb">$parser&nbsp;</SPAN><SPAN 
+style="COLOR: #007700">=&nbsp;new&nbsp;</SPAN><SPAN 
+style="COLOR: #0000bb">XMLParser</SPAN><SPAN 
+style="COLOR: #007700">(</SPAN><SPAN style="COLOR: #0000bb">$xml</SPAN><SPAN 
+style="COLOR: #007700">);<BR><BR></SPAN><SPAN 
+style="COLOR: #ff8000">//Work&nbsp;the&nbsp;magic...<BR></SPAN><SPAN 
+style="COLOR: #0000bb">$parser</SPAN><SPAN 
+style="COLOR: #007700">-&gt;</SPAN><SPAN 
+style="COLOR: #0000bb">Parse</SPAN><SPAN 
+style="COLOR: #007700">();<BR></SPAN><SPAN 
+style="COLOR: #0000bb">?&gt;</SPAN><BR></SPAN><BR></CODE></DIV><BR>The XML 
+parser has a error handling function which should trigger a PHP error if there 
+are any issues parsing the XML document. This function is called trigger_error, 
+and is a method of the XMLParser class. Feel free to change it to display errors 
+however you would like; the arguments should be straight forward. Assuming, 
+however, we didn't get any errors, we can press forward. <BR><BR>The object 
+structure of XMLParser is really quite straight forward, however, it takes some 
+getting used to. The document root is contained in the document member of the 
+Parser. This means, in the above example, $parser-&gt;document would be the root 
+tag, regardless of the tag's name. From there, each child tag encountered is 
+assigned to an array named for the tag's name. So, 
+$parser-&gt;document-&gt;movie[0] would be the way to access the first movie 
+tag. $parser-&gt;document-&gt;movie is an <I>array</I>, not an <I>XMLTag</I> 
+object. Therefore, in most cases, trying to access the first movie object 
+through $parser-&gt;document-&gt;movie would be incorrect. 
+<H3>Working with XMLParser</H3>Now, I said I was going to try to closely follow 
+the SimpleXML documentation, and I'm not breaking that promice. Example 2 on the 
+SimpleXML documentation involves echoing the plot of the first movie, and 
+example 3 involves echoing the plot of the movie for each movie. I'm going to 
+combine example 2 and 3 into one example below. This example assumes that you've 
+already loaded and parsed the XML document (like in the above 
+example).<BR><BR><SPAN class=preexample>Getting <I>&lt;plot&gt;</I></SPAN> 
+<DIV class=example><CODE><SPAN style="COLOR: #000000"><BR><SPAN 
+style="COLOR: #0000bb">&lt;?php<BR></SPAN><SPAN 
+style="COLOR: #ff8000">//Echo&nbsp;the&nbsp;plot&nbsp;of&nbsp;the&nbsp;first&nbsp;&lt;movie&gt;<BR></SPAN><SPAN 
+style="COLOR: #007700">echo&nbsp;</SPAN><SPAN 
+style="COLOR: #0000bb">$parser</SPAN><SPAN 
+style="COLOR: #007700">-&gt;</SPAN><SPAN 
+style="COLOR: #0000bb">document</SPAN><SPAN 
+style="COLOR: #007700">-&gt;</SPAN><SPAN 
+style="COLOR: #0000bb">movie</SPAN><SPAN style="COLOR: #007700">[</SPAN><SPAN 
+style="COLOR: #0000bb">0</SPAN><SPAN style="COLOR: #007700">]-&gt;</SPAN><SPAN 
+style="COLOR: #0000bb">plot</SPAN><SPAN style="COLOR: #007700">[</SPAN><SPAN 
+style="COLOR: #0000bb">0</SPAN><SPAN style="COLOR: #007700">]-&gt;</SPAN><SPAN 
+style="COLOR: #0000bb">tagData</SPAN><SPAN 
+style="COLOR: #007700">;<BR><BR></SPAN><SPAN 
+style="COLOR: #ff8000">//Echo&nbsp;the&nbsp;plot&nbsp;of&nbsp;each&nbsp;&lt;movie&gt;<BR></SPAN><SPAN 
+style="COLOR: #007700">foreach(</SPAN><SPAN 
+style="COLOR: #0000bb">$parser</SPAN><SPAN 
+style="COLOR: #007700">-&gt;</SPAN><SPAN 
+style="COLOR: #0000bb">document</SPAN><SPAN 
+style="COLOR: #007700">-&gt;</SPAN><SPAN 
+style="COLOR: #0000bb">movie&nbsp;</SPAN><SPAN 
+style="COLOR: #007700">as&nbsp;</SPAN><SPAN 
+style="COLOR: #0000bb">$movie</SPAN><SPAN 
+style="COLOR: #007700">)<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</SPAN><SPAN 
+style="COLOR: #0000bb">$movie</SPAN><SPAN 
+style="COLOR: #007700">-&gt;</SPAN><SPAN style="COLOR: #0000bb">plot</SPAN><SPAN 
+style="COLOR: #007700">[</SPAN><SPAN style="COLOR: #0000bb">0</SPAN><SPAN 
+style="COLOR: #007700">]-&gt;</SPAN><SPAN 
+style="COLOR: #0000bb">tagData</SPAN><SPAN 
+style="COLOR: #007700">;<BR>}<BR></SPAN><SPAN 
+style="COLOR: #0000bb">?&gt;</SPAN><BR></SPAN><BR></CODE></DIV><BR>Okay, so the 
+syntax isn't <I>quite</I> as pretty as it is in SimpleXML. PHP 4 compatability 
+won't let me use __toString() to make the code easier to work with, and, after 
+all, one of the primary goals of this parser are to be PHP 4 compatable. After 
+all, if we were only deploying on PHP 5 servers, you'd probably be reading the 
+SimpleXML documentation, not this makeshift document for my XML parser, right? 
+If you feel the desire to implement a __toString() method in the PHP 5 version 
+of the parser to make outputting the tagData member happen behind the scenes 
+when you call echo to the object, go right ahead, but, for these examples, I'm 
+going to assume that you have to do things the long way. <BR><BR>So, to break 
+the above example down, basically what we did was we navigated our way through 
+the document tree to the plot object that we wanted, then we outputted its 
+tagData member. What is tagData you might ask? tagData is the value that PHP's 
+XML parser's character_data_handler is given. Because it looks like PHP parses 
+XML documents line by line, the value is concatenated, so you can have multiple 
+lines worth of character data. I've also put a trim() call in before the data is 
+sent to tagData. This prevents spaces and other whitespace characters from 
+throwing things off. So the whitespace from the start and end of each character 
+data line will be stripped. If it causes bugs for you, that's the cause. <BR>
+<H3>Reserved Names</H3>Finally, before I get into attributes (yes, of course 
+this parser handles attributes) a quick note on why I used the name tagData 
+instead of something shorter. In version 1, I used data as the name of the 
+member to hold character data, as it was shorter and easier to work with. 
+However, as I started to work with the class myself, I noticed that I used a tag 
+called &lt;data&gt; a few times; also, I got a few e-mails from people who had 
+used the class and ran into issues when they had a tag called &lt;data&gt;. This 
+becomes an issue since the parser will try to add an element to the data array 
+(or create one) over top of the already defined member, which results in a PHP 
+error and a document tree that isn't quite right. So, to fix this problem, I 
+decided to rename all of the members used internally in the XMLTag class in 
+version 1.1. They were all prefixed with tag, since I can't see any reason why 
+someone would name an XML tag &lt;tagdata&gt; or &lt;tagattrs&gt;. If, by some 
+odd chance you feel the need to use one of the names listed below as the name of 
+an XML tag, either a) don't, or b) rename the member in XMLTag and run a find 
+and replace to rename it everywhere in the class. The list of reserved names for 
+tags are: 
+<LI>tagData 
+<LI>tagParents 
+<LI>tagChildren 
+<LI>tagAttrs 
+<LI>tagName <BR>
+<H3>Attributes</H3>Attributes are very simple to work with. Every XMLTag object 
+has an associative array member called tagAttrs. In this member, the keys 
+represent the attribute name and the values represent the attribute values. I 
+don't think I need to go into much more depth than that, but I'll toss in an 
+example mirroring the SimpleXML example for attributes. <BR><BR><SPAN 
+class=preexample>Accessing Attributes</SPAN> 
+<DIV class=example><CODE><SPAN style="COLOR: #000000"><BR><SPAN 
+style="COLOR: #0000bb">&lt;?php<BR></SPAN><SPAN 
+style="COLOR: #ff8000">//For&nbsp;each&nbsp;of&nbsp;the&nbsp;&lt;rating&gt;&nbsp;tags,&nbsp;display&nbsp;them<BR></SPAN><SPAN 
+style="COLOR: #007700">foreach(</SPAN><SPAN 
+style="COLOR: #0000bb">$parser</SPAN><SPAN 
+style="COLOR: #007700">-&gt;</SPAN><SPAN 
+style="COLOR: #0000bb">document</SPAN><SPAN 
+style="COLOR: #007700">-&gt;</SPAN><SPAN 
+style="COLOR: #0000bb">movie</SPAN><SPAN style="COLOR: #007700">[</SPAN><SPAN 
+style="COLOR: #0000bb">0</SPAN><SPAN style="COLOR: #007700">]-&gt;</SPAN><SPAN 
+style="COLOR: #0000bb">rating&nbsp;</SPAN><SPAN 
+style="COLOR: #007700">as&nbsp;</SPAN><SPAN 
+style="COLOR: #0000bb">$rating</SPAN><SPAN 
+style="COLOR: #007700">)<BR>{&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff8000">//If&nbsp;the&nbsp;rating&nbsp;is&nbsp;in&nbsp;stars...<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #007700">if(</SPAN><SPAN 
+style="COLOR: #0000bb">$rating</SPAN><SPAN 
+style="COLOR: #007700">-&gt;</SPAN><SPAN 
+style="COLOR: #0000bb">tagAttrs</SPAN><SPAN style="COLOR: #007700">[</SPAN><SPAN 
+style="COLOR: #dd0000">'type'</SPAN><SPAN 
+style="COLOR: #007700">]&nbsp;==&nbsp;</SPAN><SPAN 
+style="COLOR: #dd0000">'stars'</SPAN><SPAN 
+style="COLOR: #007700">)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</SPAN><SPAN 
+style="COLOR: #0000bb">$rating</SPAN><SPAN 
+style="COLOR: #007700">-&gt;</SPAN><SPAN 
+style="COLOR: #0000bb">tagData</SPAN><SPAN style="COLOR: #007700">.</SPAN><SPAN 
+style="COLOR: #dd0000">'&nbsp;stars'</SPAN><SPAN 
+style="COLOR: #007700">;<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #ff8000">//If&nbsp;the&nbsp;rating&nbsp;is&nbsp;in&nbsp;thumbs...<BR>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="COLOR: #007700">if(</SPAN><SPAN 
+style="COLOR: #0000bb">$rating</SPAN><SPAN 
+style="COLOR: #007700">-&gt;</SPAN><SPAN 
+style="COLOR: #0000bb">tagAttrs</SPAN><SPAN style="COLOR: #007700">[</SPAN><SPAN 
+style="COLOR: #dd0000">'type'</SPAN><SPAN 
+style="COLOR: #007700">]&nbsp;==&nbsp;</SPAN><SPAN 
+style="COLOR: #dd0000">'thumbs'</SPAN><SPAN 
+style="COLOR: #007700">)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</SPAN><SPAN 
+style="COLOR: #0000bb">$rating</SPAN><SPAN 
+style="COLOR: #007700">-&gt;</SPAN><SPAN 
+style="COLOR: #0000bb">tagData</SPAN><SPAN style="COLOR: #007700">.</SPAN><SPAN 
+style="COLOR: #dd0000">'&nbsp;thumbs&nbsp;up'</SPAN><SPAN 
+style="COLOR: #007700">;<BR>}<BR></SPAN><SPAN 
+style="COLOR: #0000bb">?&gt;</SPAN><BR></SPAN><BR></CODE></DIV><BR>As you can 
+see, the attributes are accessed from tagAttrs, and, once again, the character 
+data is accessed from tagData. Pretty simple, eh? <BR>
+<H3>Setting and Comparing Values</H3>Because we aren't using any of PHP 5's hip 
+new OO features to make this parser easy to work with (once again, for PHP 4 
+compatability), setting and comparing values is much easier. In SimpleXML, you 
+need to type cast things before you are allowed to work with them like strings. 
+In XMLParser, by contrast, you don't need to type cast. Just use = or == like 
+normal and things will work fine. <I>Just make sure you are working with 
+tagData, tagAttrs, or one of the other XMLTag members. If you aren't, you're 
+trying to preform string operations on an object and will get errors out of 
+PHP.</I> <BR>
+<H3>Other Members of XMLTag</H3>Depending on how much attention you paid to the 
+sources, you probably noticed a few other members exist in the XMLTag class. 
+These members are described below: <BR><BR>
+<TABLE border=1>
+  <TBODY>
+  <TR>
+    <TD><B>Member</B></TD>
+    <TD><B>Description</B></TD></TR>
+  <TR>
+    <TD>tagChildren</TD>
+    <TD>This member is an array of references to all of the direct child tags 
+      of the given object, in order of occurance in the XML document. It is 
+      simply an alternative to accessing the children tags by their names, and 
+      is used when names are arbitrary or unknown.</TD></TR>
+  <TR>
+    <TD>tagParents</TD>
+    <TD>This member contains the number of parents this object has before the 
+      document root. This number, currently, is only used to determine how many 
+      tabs are required to nicely format the XML output.</TD></TR>
+  <TR>
+    <TD>tagName</TD>
+    <TD>This member contains the name of the current tag. Again, it is only 
+      used internally for the proper output of the XML 
+document.</TD></TR></TBODY></TABLE>
+<H3>Outputting The XML Document</H3>As if just parsing XML documents in both PHP 
+4 and PHP 5 wasn't good enough, there is also functionality in this system to 
+output the XML document. For the most part, this functionality was only used by 
+me to test to be sure that the system was properly parsing the entire XML tree 
+without having to resort to lots of difficult to read var_dump() statements, 
+however, this could also be used to modify XML data (through the document tree) 
+and output it again, or to create a whole new document tree from the ground up 
+and get the XML for that. To access this functionality, simply output the return 
+value of the GenerateXML() method on the XMLParser object. So, in the above 
+examples, it would just be something as simple as the below. <BR><BR><SPAN 
+class=preexample>Output the XML Document</SPAN> 
+<DIV class=example><CODE><SPAN style="COLOR: #000000"><SPAN 
+style="COLOR: #0000bb">&lt;?php<BR></SPAN><SPAN 
+style="COLOR: #007700">echo&nbsp;</SPAN><SPAN 
+style="COLOR: #0000bb">$parser</SPAN><SPAN 
+style="COLOR: #007700">-&gt;</SPAN><SPAN 
+style="COLOR: #0000bb">GenerateXML</SPAN><SPAN 
+style="COLOR: #007700">();<BR></SPAN><SPAN style="COLOR: #0000bb">?&gt;</SPAN> 
+</SPAN></CODE></DIV><BR>This code will start the XML generation at the root tag. 
+You can call the GetXML() method from any XMLTag object if you wish to start the 
+generation of XML from "deeper" in the document tree. <BR>
+<H3>Still Need Help?</H3>If this document didn't give you the help you need, you 
+can <A href="mailto:adamaflynn@criticaldevelopment.net">e-mail me</A> and I'd be 
+happy to help you out. </LI></DIV></BODY></HTML>

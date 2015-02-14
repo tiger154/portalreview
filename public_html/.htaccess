@@ -1,0 +1,3 @@
+RewriteEngine on
+RewriteCond $1 !^(index\.php|images|css|js|extends|facebook|crossdomain\.xml|twitter\.revu|facebook\.revu|wizwget\.api|inf\.php|2BF41F28B7D452F17EB67C522AE2D781\.txt)
+RewriteRule ^(.*)$ /index.php/$1 [L]

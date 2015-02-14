@@ -1,0 +1,145 @@
+<!-- 
+
+ /* main */  
+
+.top_banner {width:714px; height:134px; margin-bottom:40px;}
+
+
+
+#m_frontier {width:714px; height:393px; margin-bottom:40px;}
+
+#m_frontier .m_today_title {width:714px; height:30px; margin-bottom:10px;}
+
+#m_frontier .m_bigbox { width:234px; height:393px; margin-right:10px; float:left; display:inline;}
+
+.thum_m_big { width:234px; height:234px;cursor:pointer;}
+
+.text_m_big { width:224px; height:75px; padding-top:5px;}
+
+.but_m_big { width:224px; height:28px; background:url(/images/common/but/but_m_time.gif) no-repeat; margin-top:10px;}
+
+.but_m_big2 { width:112px; height:28px; background:url(/images/common/but/but_m_time.gif) no-repeat; margin-top:10px;}
+
+
+
+#m_frontier .m_smallbox {width:226px; height:393px;  float:left; display:inline;}
+
+
+
+.m_frontier2_textbox { width:226px; height:66px; margin-bottom:11px;}
+
+.m_frontier_thum { width:66px; height:66px; margin-right:10px;}
+
+.m_frontier_text1 { width:149px; height:15px; margin-bottom:10px; overflow:hidden;}
+
+.m_frontier_text2 { width:149px; height:15px; margin-bottom:5px; overflow:hidden;}
+
+.m_frontier_numbox { width:226px; height:18px; border-top:#cccccc solid 1px;border-bottom:#cccccc solid 1px; padding:3px 0; text-align:center;}
+
+
+
+#m_keyword {width:714px; height:397px; margin-bottom:40px;}
+
+#m_keyword .m_keyword_title {width:714px; height:30px; margin-bottom:10px;}
+
+.m_keyword_line_off { height:12px; padding:10px 15px; background:#f8f8f8; border-top:#aaaaaa solid 1px;border-right:#aaaaaa solid 1px;border-bottom:#aaaaaa solid 1px; float:left; display:inline;}
+
+.m_keyword_line_on { height:12px; padding:10px 15px; background:#333333; border-top:#000000 solid 1px;border-right:#000000 solid 1px;border-bottom:#000000 solid 1px;float:left; display:inline; font-weight:bold;}
+
+#m_keyword .m_big300box { width:300px; height:300px; margin:20px 20px 0 0; float:left; display:inline;}
+
+#m_keyword .m_small394box { width:394px; height:300px; margin-top:20px;float:left; display:inline;}
+
+.m_keyword_textbox { width:394px; height:125px; margin-bottom:24px;}
+
+.m_keyword_stitle { width:394px; height:30px; margin-bottom:15px; background:url(/images/main/title_reviewlist.gif) no-repeat; text-align:right;}
+
+.m_keyword2_textbox { width:394px; height:45px; margin-bottom:15px;}
+
+.m_keyword_thum { width:45px; height:45px; margin-right:10px;}
+
+.m_keyword_text1 { width:330px; height:14px; margin-bottom:10px; overflow:hidden; text-decoration:underline;}
+
+.m_keyword_text2 { width:330px; height:14px; margin-bottom:5px; overflow:hidden;}
+
+
+
+.m_chart_text1l {width:270px; height:20px;float:left; display:inline; } 
+
+.m_chart_text1r {width:65px; height:20px; background:url(/images/common/bg/bg_hit_count.gif) no-repeat; float:left; display:inline;} 
+
+.m_chart_text1r_red {padding:0 0 0 20px; line-height:1.8; text-align:left; font-weight:bold;}
+
+
+
+#m_focus {width:714px; height:auto; margin:40px 0;}
+
+#m_focus .m_focus_title {width:714px; height:30px; margin-bottom:10px;}
+
+.review_tab_title_line {width:714px; height:35px;}
+
+.review_tab_line {height:35px; float:left; display:inline;}
+
+.m_focus_line { width:714px; height:80px;}
+
+.m_focus_textbox { width:337px; height:80px; margin:0 20px 20px 0; float:left; display:inline;}
+
+.m_focus_thum { width:80px; height:80px; margin-right:15px;}
+
+.m_focus_text1 { width:242px; height:16px; margin-bottom:10px; overflow:hidden;}
+
+.m_focus_text2 { width:242px; height:30px; margin-bottom:5px; overflow:hidden;line-height:1.2;}
+
+.m_focus_text3 { width:242px; height:16px; margin-bottom:5px; overflow:hidden;}
+
+
+
+#m_weekbest {width:714px; height:190px; margin-bottom:40px;}
+
+#m_weekbest .m_weekbest_title {width:714px; height:30px; margin-bottom:10px; background:url(/images/main/title_weekbest.gif) no-repeat; text-align:right;}
+
+.m_weekbest_line { width:714px; height:150px;}
+
+.m_weekbest_textbox { width:105px; height:150px; margin-right:14px; float:left; display:inline;}
+
+.m_weekbest_thum { width:105px; height:105px;}
+
+.m_weekbest_text1 { width:105px; height:14px; margin-top:5px; overflow:hidden;}
+
+.m_weekbest_text2 { width:105px; height:14px; overflow:hidden;}
+
+
+
+#realtimeReview {width:714px; height:auto; margin-bottom:40px;}
+
+#realtimeTalk {width:714px; height:auto; margin-bottom:40px;}
+
+.m_talktime_title {width:714px; height:30px; margin-bottom:10px;}
+
+.m_talktime_title1 {width:593px; height:30px; float:left; display:inline;} 
+
+.m_talktime_title2 {width:121px; height:30px; float:right; display:inline; text-align:right;} 
+
+.m_talktime_title3 {width:714px; height:41px; background:url(/images/common/bg/line_gray_41.gif) repeat-x; clear:both;}
+
+.m_talktime_box  {width:714px; height:66px;}
+
+.m_talktime_line { width:593px; height:66px;float:left; display:inline;}
+
+.m_talktime_thum { width:66px; height:66px;float:left; display:inline;}
+
+.m_talktime_text1 { width:480px; height:14px; padding-left:15px; margin-bottom:8px; overflow:hidden; font-weight:bold;float:left; display:inline;}
+
+.m_talktime_text2 { width:480px; height:32px; padding-left:15px; overflow:hidden;float:left; display:inline;}
+
+.m_talktime_text3 { width:480px; height:14px; padding-left:15px; margin-bottom:5px; overflow:hidden;float:left; display:inline;}
+
+.m_talktime_text4 { width:480px; height:14px; padding-left:15px; overflow:hidden;float:left; display:inline;}
+
+.m_talktime_sbox { width:121px; height:66px; background:url(/images/main/bg_time.gif)  no-repeat; float:right; display:inline;}
+
+.m_talktime_dotline {width:714px; height:18px; background:url(/images/common/bg/line_dot18.gif) repeat-x; clear:both;}
+
+
+
+-->

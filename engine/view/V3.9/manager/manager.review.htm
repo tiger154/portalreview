@@ -1,0 +1,45 @@
+<script type="text/javascript" src="{JS}/_global/category.js"></script>
+<script type="text/javascript" src="{JS}/_global/input.js"></script>
+<script type="text/javascript" src="{JS}/manager.review.js"></script>
+<script>var code = "<?php echo(Module::$param[1])?>";</script>
+<h2>전체리뷰</h2>
+<form name="form1" id="form1">
+<select name="cate1" id="cate1"><option value="">1차분류선택</option></select>
+<select name="cate2" id="cate2"><option value="">2차분류선택</option></select>
+<select name="cate3" id="cate3"><option value="">3차분류선택</option></select>
+<select name="cate4" id="cate4"><option value="">4차분류선택</option></select>
+<input type="button" value="검색" id="searchReviewBtn" />* 검색DB가 구축되지 않아 카테고리와 제목/닉네임이 동시에 검색되지 않습니다.
+<br />
+<h3>검색된 리뷰는 총 {=number_format(cnt)} 건입니다.</h3>
+<hr />
+<table width="100%">
+	<tr align="center">
+		<th>리뷰번호</th>
+		<th>등록일</th>
+		<th>카테고리</th>
+		<th>이미지</th> 
+		<th>제목</th>
+		<th>닉네임</th>
+		<th>캐시</th>
+		<th>상태</th>		
+	</tr>
+	{@list}
+	<tr align="center">
+		<td>{.rno}</td>
+		<td>{.regdate}</td>
+		<td>{.cate_desc}</td>
+		<td><img src="{.thumbimage_url}" alt="{.title}" width="50" height="50" /></td>
+		<td align="left" width="350">
+			<a href="javascript:common.socialbar({.rno},'t');">{.title}</a>
+			<br />
+			<img src="{.blog_icon}" class="imgb_space" />
+		</td>
+		<td><a href="javascript:manager.user({.userno});">{.nickname}</a></td>
+		<td>{=number_format(.cash.cash)}</td>
+		<td><a href="javascript:mngreview.confirmStatus({.rno});">{.status_text}</a></td>
+	</tr>
+	{/}
+</table>
+
+<div class="pageno">{link}</div>
+</form>

@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="{EXTENDS}/editor.daum/css/editor.css" type="text/css"  charset="utf-8"/>
+<script src="{EXTENDS}/editor.daum/js/editor.js" type="text/javascript" charset="utf-8"></script>
+<script src="{EXTENDS}/editor.daum/js/editor_sample.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="{JS}/_global/editor.js"></script>
+<script type="text/javascript" src="{JS}/myrevu.review.js"></script>
+<script type="text/javascript" src="{JS}/_global/category.js"></script>
+<h2>마이레뷰-리뷰등록</h2>
+
+<input type="button" id="tabBtn1" value="내 블로그에 글등록" />
+<input type="button" id="tabBtn2" value="URL 직접입력" />
+<input type="button" id="tabBtn3" value="레뷰에 직접작성" />
+
+{? type == "blog"}
+블로그 선택
+<select name="blogList" id="blogList">
+	<option value=''>블로그를 선택하세요.</option>
+	{@ bloglist}
+	<option value='{.url}'>{.name}</option>
+	{/}
+</select>
+<input type="button" id="blogLoadBtn" value="불러오기" />
+
+<h4>* 내 블로그의 글을 선택하여 등록할 수 있습니다.</h4>
+
+<table width="100%" border="1" id="articleList">
+	<tr>
+		<th width="120">작성일</th>
+		<th>제목</th>
+		<th width="80">레뷰에등록</th>
+	</tr>
+	<tr>
+		<td colspan="3" align="center">등록된 게시물이 없습니다.</td>
+	</tr>
+</table>
+{/}
+<!--
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">내 블로그에 글등록</a></li>
+		<li><a href="#tabs-2">URL 직접입력</a></li>
+		<li><a href="#tabs-3">레뷰에 직접작성</a></li>
+	</ul>
+	<div id="tabs-1">
+		
+  		
+	</div>
+	<div id="tabs-2">
+		URL 입력 
+		<input type="text" name="feedFormURL" id="feedFormURL" value="http://" size="40" />
+		<input type="button" id="feedRegBtn" value="등록하기" /><br />
+		* RSS 피드로 불러오지 못하는 이전 글들을 등록하실 수 있습니다.<br />
+		* http:// 로 시작하는 글을 고유주소(퍼머링크)를 입력해주세요.<br />
+		* 레뷰에 등록된 본인 블로그의 글만 등록하실 수 있습니다.<br />
+	</div>
+	<div id="tabs-3">
+		<div id="contentForm"></div>
+		<br />
+		<div id="editorForm">	
+			{#editor}
+			<input type='button' value='리뷰등록' onClick='review.registReview3();' />
+			<script type="text/javascript">
+			// <![CDATA[
+			/*-------- 에디터 로드 시작 ----------*/
+			new Editor({
+				txHost: '', /* 런타임 시 리소스들을 로딩할 때 필요한 부분으로, 경로가 변경되면 이 부분 수정이 필요. ex) http://xxx.xxx.com */
+				txPath: '{EXTENDS}/editor.daum/', /* 런타임 시 리소스들을 로딩할 때 필요한 부분으로, 경로가 변경되면 이 부분 수정이 필요. ex) /xxx/xxx/ */
+				txVersion: '5.4.0', /* 수정필요없음. */
+				txService: 'sample', /* 수정필요없음. */
+				txProject: 'sample', /* 수정필요없음. 프로젝트가 여러개일 경우만 수정한다. */
+				initializedId: "", /* 대부분의 경우에 빈문자열 */
+				wrapper: "tx_trex_container"+"", /* 에디터를 둘러싸고 있는 레이어 이름(에디터 컨테이너) */
+				form: 'form1'+"", /* 등록하기 위한 Form 이름 */
+				txIconPath: "{EXTENDS}/editor.daum/images/icon/", /*에디터에 사용되는 이미지 디렉터리, 필요에 따라 수정한다. */
+				txDecoPath: "{EXTENDS}/editor.daum/images/deco/", /*본문에 사용되는 이미지 디렉터리, 서비스에서 사용할 때는 완성된 컨텐츠로 배포되기 위해 절대경로로 수정한다. */
+				canvas: {
+					styles: {
+						color: "#000000", /* 기본 글자색 */
+						fontFamily: "돋움", /* 기본 글자체 */
+						fontSize: "10pt", /* 기본 글자크기 */
+						backgroundColor: "#fff", /*기본 배경색 */
+						lineHeight: "1.5", /*기본 줄간격 */
+						padding: "8px" /* 위지윅 영역의 여백 */
+					}
+				},
+				sidebar: {
+					attacher: {
+						image: {
+						},
+						file: {
+						}
+					}
+				},
+				size: {
+					/*contentWidth: 650*/ /* 지정된 본문영역의 넓이가 있을 경우에 설정 */
+				}
+			});
+			/*-------- 에디터 로드 끝 ----------*/
+			// ]]>
+			</script>
+		</div>
+	</div>
+</div>
+-->

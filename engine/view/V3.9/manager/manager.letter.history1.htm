@@ -1,0 +1,98 @@
+
+<script type="text/javascript">
+<!--
+     function add_item(){
+          // pre_set 에 있는 내용을 읽어와서 처리..
+          var div = document.createElement('div');
+          div.innerHTML = document.getElementById('pre_set').innerHTML;
+          document.getElementById('field').appendChild(div);
+     }
+
+     function remove_item(obj){
+          // obj.parentNode 를 이용하여 삭제
+          document.getElementById('field').removeChild(obj.parentNode);
+     }
+
+
+	 //document.forms['RevUform'].onsubmit();
+	 //document.forms['RevUform'].submit();
+//-->
+
+</script>
+
+<script type="text/javascript" src="{JS}/_global/category.js"></script>
+<form name="RevUform" id="RevUform" method="post" enctype="multipart/form-data"  action="">
+<input type="hidden" name="code" id="code" value="{code}" />
+<input type="hidden" name="page" id="page" value="{page}" />
+<input type="hidden" name="page_row" id="page_row" value="{page_row}" />
+<input type="hidden" name="btitle" id="btitle" value="{btitle}" />
+<input type="hidden" name="idx" id="idx" value="" />
+<input type="hidden" name="ref_idx" id="ref_idx" value="" />
+<input type="hidden" name="passwd" id="passwd" value="" />
+<input type="hidden" name="module" id="module" value="{module}" />
+
+	<!-- 상단 -->
+	<table border="0" width="980" cellpadding="5" cellspacing="0">
+		<tr>
+			<!--본문-->
+			<td valign="top" bgcolor="#FFFFFF">
+			<table border="0" width="970">
+				<tr>
+					<td align="left" height="35" border="0" bgcolor="#808040">
+						<font color="#FFFFFF">&nbsp;<img src="{IMAGES}/admin/lyr_tit_bu.gif">&nbsp;로그><b>예약/그룹메일전송내역</b></font>&nbsp;
+
+						<br>
+						☞ 그룹메일 및 예약메일 전송 내역입니다.<br>
+					</td>
+
+
+
+				</tr>
+			</table>				
+			
+			<table width="970"  border="0" cellpadding="0" cellspacing="0" bgcolor="#C0C0C0" >
+				<tr>
+					<th>메일제목</th>
+					<th>전송일</th>
+					<th>발신자 정보</th>
+					<th>전송타입</th>
+					<th>메일구분</th>
+					<th>전송대상 그룹</th>
+					<!-- <th>대상Count</th> -->
+					<th>전송수</th>
+					<th>처리구분</th>
+				</tr>
+				<!--{@list}-->
+				<tr bgcolor="#FFFFFF" height="30" align="center">
+
+					<td>{.subject}</td>
+					<td>{.regdate}</td>
+					<td>{.sendname}</td>
+					<td>{.r_type}</td>
+					<td>{.send_type}</td>
+					<td>{.group}</td>
+					<!-- <td>{.totalcount}</td> -->
+					<td>{.sendcount}</td>
+					<td>{.sending}</td>
+				</tr>
+				<!--{/}-->
+			</table>
+
+
+		 {? size > 0} 
+		<div class="pageno">{link}</div>
+		{:}
+		<div class="nolist"></div>
+		{/}
+			
+
+			</td>
+			<!-- 본문 끝 -->
+		</tr>
+	</table>
+
+
+
+
+
+</form>

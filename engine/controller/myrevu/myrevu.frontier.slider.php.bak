@@ -1,0 +1,67 @@
+<?php
+/***************************************************************************************
+ * 마이레뷰-프론티어
+ * 
+ * 작성일 : 2011.10.7
+ * 작성자 : 박상선
+ * 히스토리 :  
+ * 
+ ***************************************************************************************/ 
+
+/**
+ * GLOBAL CLASS / VAR
+ */
+GLOBAL $TPL;
+GLOBAL $BASE;
+GLOBAL $LOGIN;
+GLOBAL $DESIGN;
+ 
+GLOBAL $FRAME; 
+$FRAME = "popup";
+
+$domain			= "http://"._DOMAIN_FILE."/frontier/list_img/";
+
+//===============================================================
+// EXTEND_CLASS
+//===============================================================
+$CLASS_PAGE = &Module::singleton("Page");
+$CLASS_FRONTIER = &Module::singleton("Frontier.Frontier");
+
+
+/**
+ * CLASS
+ */
+$CLASS_BLOG = &Module::singleton("Blog.Blog");
+
+//===============================================================
+// DB OBJECT
+//===============================================================
+$DB = &Module::loadDb("revu");
+
+
+
+// 게시물 셀렉팅
+// 내가 응모한 프론티어
+$myfron_entrylist		= $CLASS_FRONTIER->MyFrontierEntrySelect($DB, $_SESSION["userno"], "0"); 
+
+
+// 내가 응모한 프론티어 카운팅
+$myfron_entrycount	= $CLASS_FRONTIER->getListCount($DB, $code, $flag_delete, $btitle, $sch_opt, $sch_con, "B", $frname);
+for($i=0;$i<sizeof($myfron_entrylist);$i++) {
+
+	$mainimgDir	= substr($myfron_entrylist[$i]['frid'],2,4);
+	$mainlistimg	= $domain.$mainimgDir."/".$myfron_entrylist[$i]['frno'].".jpg";
+	$myfron_entrylist[$i]['Entryimg'] = $mainlistimg;
+}
+/**
+ * VAR / PROC
+ */
+		
+/**
+ * TEMPLATE VARS
+ */
+$TPL->setValue(array(
+	"type"=>$type,
+	"myfron_entrylist"=>$myfron_entrylist,
+));
+?>

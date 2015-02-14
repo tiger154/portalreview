@@ -1,0 +1,55 @@
+<div class="title_line">
+	<div class="myblog_title"><div class="myblog_info">| 총 {cnt}개의 블로그가 등록되었습니다.</div></div>
+</div>
+{@list}
+<div class="myblog_title_bg" style="margin-top:20px;">
+	<!-- 블로그 제목 -->
+	<div class="myblog_title_text">
+		<span class="black_title w20_space">{.name}</span>
+		(<a href="{.url}" target="_blank" style="text-decoration:underline;">{.url}</a>)
+		<img src="{IMAGES}/common/but/but_w_ok.gif" class="btn" align="absmiddle" onClick="common.redirect('/myrevu/blog.modify/{.blogno}');" />
+	</div>
+</div>
+<!-- 블로그 정보 박스 시작 -->
+<div class="myblog_box">
+	<div class="myblog_tbox">
+		<table width="100%" border="0" cellspacing="0">
+			<tr>
+				<td class="block_text100">등록일</td>
+				<td class="block_text195"><span class="gray_l_text"><strong>{.regdate}</strong></span></td>
+				<td class="block_text100">적립캐쉬</td>
+				<!-- 캐쉬 내역로 연결 -->
+				<td class="block_text195">총 <a href="javascript:common.redirect('/myrevu/cash');" style="text-decoration:underline">{.cash}</a> 원</td>
+			</tr>
+			<tr>
+				<td class="block_text100">총 리뷰 수</td>
+				<!-- 프론티어 리뷰로 연결 -->
+				<td class="block_text195"><a href="javascript:context.home('{_SESSION.nickname}');" style="text-decoration:underline"><span class="gray_db_text">{.review_cnt}</span></a> 건</td>
+				<td class="block_text100">총 토크 수</td>
+				<td class="block_text195"><span class="gray_db_text">{.talk_cnt}</span> 건</td>
+			</tr>
+			<tr>
+				<td class="block_text100">최근 <br />등록 리뷰</td>
+				<td class="block_text520" colspan="3">
+				<div style="width:520px; height:auto; padding-top:10px;">
+					<ul>
+						{@.review}
+						<li class="pb09 text_overlay17">
+							<a href="javascript:common.socialbar({..rno});" class="socialbar"><span class="black_text">{..title}</span></a>
+						</li>
+						{/}
+						<!-- 나의리뷰로 연결 -->
+						<li class="pt20" style="text-align:right;">
+							{*}<img src="/images/common/ico/ico_more.gif" alt="more" title="more" class="btn" onClick="context.home('{_SESSION.nickname}')" />{/*}
+							<img src="/images/common/ico/ico_more.gif" alt="more" title="more" class="btn" onClick="common.redirect('/blog/@{_SESSION.nickname}/{.blogno}')" />
+						</li>
+					</ul>
+				</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<!-- 블로그 정보 박스 끝 -->
+<div class="clear" style="height:20px;"></div>
+{/}

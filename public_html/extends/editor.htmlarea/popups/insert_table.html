@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>테이블삽입</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link rel="stylesheet" type="text/css" href="/_extends/editor.htmlarea/css/popup.css">
+<script type="text/javascript" src="/_extends/editor.htmlarea/config/popup.js"></script>
+<script type="text/javascript">
+window.resizeTo(400, 100);
+
+function Init()
+{
+	i18n = window.opener.HTMLArea.I18N.dialogs; // load the HTMLArea plugin and lang file
+	__dlg_translate(i18n);
+	__dlg_init();
+	document.getElementById("f_rows").focus();
+};
+
+function onOK()
+{
+	var required =
+	{
+		"f_rows": "행의 값은 숫자로 입력하셔야 합니다.",
+		"f_cols": "열의 값은 숫자로 입력하셔야 합니다."
+	};
+	for (var i in required)
+	{
+		var el = document.getElementById(i);
+		if (!el.value)
+		{
+			alert(required[i]);
+			el.focus();
+			return false;
+		}
+	}
+
+	var fields = ["f_rows", "f_cols", "f_width", "f_unit", "f_fixed", "f_align", "f_border", "f_spacing", "f_padding"];
+	var param = new Object();
+	for (var i in fields)
+	{
+		var id = fields[i];
+		var el = document.getElementById(id);
+		param[id] = (el.type == "checkbox") ? el.checked : el.value;
+	}
+
+	__dlg_close(param);
+	return false;
+};
+
+function onCancel()
+{
+	__dlg_close(null);
+	return false;
+};
+
+</script>
+</head>
+
+<body onload="Init()">
+<div class="title">테이블삽입</div>
+<form action="" method="get">
+<table border="0" style="padding: 0px; margin: 0px">
+<tbody>
+	<tr>
+		<td style="width: 4em; text-align: right">행 :</td>
+		<td><input type="text" name="rows" id="f_rows" size="5" title="행 갯수" value="2" /></td>
+		<td style="width: 4em; text-align: right">너비 :</td>
+		<td><input type="text" name="width" id="f_width" size="5" title="테이블 너비" value="100" /></td>
+		<td>
+		<select size="1" name="unit" id="f_unit" title="너비 단위">
+		<option value="%" selected="1">퍼센트</option>
+		<option value="px">픽셀</option>
+		<option value="em">Em(강조)</option>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td style="width: 4em; text-align: right">열 :</td>
+		<td><input type="text" name="cols" id="f_cols" size="5" title="열 갯수" value="4" /></td>
+		<td style="text-align: right"><input type="checkbox" checked="checked" name="fixed" id="f_fixed" /></td>
+		<td colspan="2"><label for="f_fixed">열 넓이 고정</label></td>
+	</tr>
+</tbody>
+</table>
+
+<p />
+
+<fieldset style="float: left; margin-left: 5px;">
+
+<legend>레이아웃</legend>
+<div class="space"></div>
+<div class="fl">정렬 :</div>
+<select size="1" name="align" id="f_align" title="테이블 위치">
+<option value="" selected="1">Not set</option>
+<option value="left">왼쪽</option>
+<option value="right">오른쪽</option>
+<option value="texttop">글자위</option>
+<option value="absmiddle">글자중간</option>
+<option value="baseline">기본</option>
+<option value="absbottom">글자아래</option>
+<option value="bottom">아래</option>
+<option value="middle">중간</option>
+<option value="top">위</option>
+</select>
+<p />
+<div class="fl">테두리 두께 :</div>
+<input type="text" name="border" id="f_border" size="5" value="1" title="빈공백으로 남겨두지 마세요." />
+<div class="space"></div>
+
+</fieldset>
+
+<fieldset style="float:right; margin-right: 5px;">
+
+<legend>여백</legend>
+<div class="space"></div>
+<div class="fr">셀 여백 :</div>
+<input type="text" name="spacing" id="f_spacing" size="5" value="1" title="인접한 셀사이의 여백" />
+<p />
+<div class="fr">셀 패딩 :</div>
+<input type="text" name="padding" id="f_padding" size="5" value="1" title="셀의 테두리와 내용사이의 여백" />
+<div class="space"></div>
+
+</fieldset>
+
+<div style="margin-top: 85px; border-top: 1px solid #999; padding: 2px; text-align: right;">
+<button type="button" name="ok" onclick="return onOK();">확인</button>
+<button type="button" name="cancel" onclick="return onCancel();">취소</button>
+</div>
+
+</form>
+
+</body>
+</html>

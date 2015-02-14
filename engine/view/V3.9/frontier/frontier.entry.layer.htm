@@ -1,0 +1,203 @@
+<script type="text/javascript" src="{JS}/_global/category.js"></script>
+<script type="text/javascript" src="{JS}/_global/zipcode.js"></script>
+<div id="zipcodelayer">{# zipcode}</div>	
+
+<script type="text/javascript" src="{JS}/_global/input.js"></script>
+<script type="text/javascript" src="{EXTENDS}/editor.htmlarea/config/button_action.js"></script>
+
+<input type="hidden" name="frno" id="frno" value='{frno}'>
+<input type="hidden" name="frid" id="frid" value='{frid}'>
+<input type="hidden" name="userno" id="userno" value='{userno}'>
+<input type="hidden" name="userid" id="userid" value='{userid}'>
+<input type="hidden" name="option_count" id="option_count" value='{option_count}'>
+
+<!-- 당첨자팝업 /사이즈500가변 -->
+<div class="pop_frontier_box">
+		<div class="pop_frontier_tbox">
+				<ul>
+						<li class="pop_frontier_title2">
+								<div  class="fr" style="width:19px; height:26px; padding-bottom:9px;"><img src="/images/common/but/but_xclose.gif" align="right" alt="닫기" title="닫기" onclick="common.closeLayer('entrylayer')"/></div>
+						</li>
+						<li class="img_frontier_entry"></li>
+						<li class="pb25"></li>
+
+{? option_count ==  0}
+						<li class="pop_entry_box_none">
+{:}
+						<li class="pop_entry_box">
+{/}
+								<!-- 블로그가 없으면 블로그가 등록되지 않았습니다. / 등록버튼 but_blogin.gif -->
+{? blogcount >  0}
+								<div class="pop_entry_line">
+										<ul>
+												<li class="fl gray_d_text" style=" width:180px; height:18px; vertical-align:middle;">블로그가 등록 되어 있습니다.</li>
+												<li class="fl" style="height:18px;"><a href="/myrevu/blog"><img src="/images/common/but/but_blogcare.gif"  alt="블로그등록관리" title="블로그등록관리" ></a></li>
+										</ul>
+								</div>
+		{:}
+								<div class="pop_entry_line">
+										<ul>
+												<li class="fl gray_d_text" style=" width:180px; height:18px; vertical-align:middle;">블로그를 등록하세요.</li>
+												<li class="fl" style="height:18px;"><a href="/myrevu/blog.register"><img src="/images/common/but/but_blogcare.gif"  alt="블로그등록관리" title="블로그등록관리" ></a></li>
+										</ul>
+								</div>
+	
+	{/}
+								<div class="clear"></div>
+								<!-- 이름 -->
+								<div class="pop_entry_line">
+										<input type="text" name="name" id="name" value="{username}" size="20" class="input_entry320">
+								</div>
+								<!-- 성별 -->
+								<div class="pop_entry_line">
+										<ul>
+												<li class="fl" style=" width:24px; height:18px;">
+														<input type="radio" name="sex" value="M"  border="0" class="h_space" {sex1}>
+												</li>
+												<li class="fl common_text" style=" width:30px; height:18px;"><strong>남자</strong></li>
+												<li class="fl" style=" width:24px; height:18px;">
+														<input type="radio" name="sex" value="F" border="0" class="h_space" {sex2}>
+												</li>
+												<li class="fl common_text" style=" width:30px; height:18px;"><strong>여자</strong></li>
+										</ul>
+								</div>
+								<!-- 생년월일 -->
+								<div class="pop_entry_line">
+									<table>
+										<tr>
+											<td>
+												<select name="birth_year" id="birth_year">
+												<option value="">----</option>
+												{@ birth_year}<option value="{.value_}" {? .value_ == birthday_year } selected {/}>{.value_}</option>{/}
+												</select>년&nbsp;
+											</td>
+											<td>
+												<select name="birth_month" id="birth_month" style="width:40px;">
+												<option value="">--</option>
+												{@ birth_month}<option value="{.value_}" {? .value_ == birthday_month } selected {/}>{.value_}</option>{/}
+												</select>월&nbsp;
+											</td>
+											<td>
+												<select name="birth_day" id="birth_day"  style="width:40px;">
+												<option value="">--</option>
+												{@ birth_day}<option value="{.value_}" {? .value_ == birthday_date } selected {/}>{.value_}</option>{/}
+												</select>일&nbsp;
+											</td>
+										</tr>
+									</table>
+								</div>
+								<!-- 휴대폰번호 -->
+								<div class="pop_entry_line">
+									<table>
+										<tr>
+											<td>
+												<select name="mobile1" id="phone_number" style="width:45px; margin-right:5px;">
+													{@ phone_number}
+													<option value="{.value_}" {? .value_ == cell_1 } selected {/}>{.value_}</option>													
+													{/}
+												
+												
+												
+												
+												</select>&nbsp;&nbsp;&nbsp;
+											</td>
+											<td>
+												<input type="text" name="mobile2" id="mobile2" value="{cell_2}" maxlength="4"  class="input_entry320" style="width:35px; margin-right:5px;">-
+												<input type="text" name="mobile3" id="mobile3" value="{cell_3}" maxlength="4"  class="input_entry320" style="width:35px; margin-right:5px;">
+											</td>
+										</tr>
+									</table>
+								</div>
+								<!-- 전화번호 -->
+								<div class="pop_entry_line">
+									<table>
+										<tr>
+											<td>
+												<select name="tel1" id="tel_number" style="width:45px; margin-right:5px;">
+													{@ tel_number}<option value="{.value_}" {? .value_ == tel_1 } selected {/}>{.value_}</option>{/}
+												</select>&nbsp;&nbsp;&nbsp;
+											</td>
+											<td>
+												<input type="text" name="tel2" id="tel2" value="{tel_2}" maxlength="4"  class="input_entry320" style="width:35px; margin-right:5px;">-
+												<input type="text" name="tel3" id="tel3" value="{tel_3}" maxlength="4"  class="input_entry320" style="width:35px; margin-right:5px;">
+											</td>
+										</tr>
+									</table>
+								</div>
+								<!--우편번호-->
+								<div class="pop_entry_line">
+										<ul>
+
+												<input type="text" name="addrzip" id="addrzip" size="8" maxlength="6" value="{zipcode}" class="input_entry320" readonly style="width:45px;">
+												<img src="/images/common/but/but_postno.gif"  id="zipcodeBtn" alt="우편번호">
+										</ul>
+								</div>
+								<!-- 주소 -->
+								<div class="pop_entry_line">
+										<input name="addr1" type="text" class="input_entry320" id="addr1" value="{addr1}" readonly>
+								</div>
+								<div class="pop_entry_line">
+										<input name="addr2" type="text" class="input_entry320" id="addr2" value="{addr2}">
+								</div>
+								<!-- 옵션 -->
+{? option_count !=  0}
+								<div class="pop_entry_line">
+									<table>
+										<tr>
+											<td>
+
+												<select name="option1" id="option1">
+													<option value="">옵션선택</option>
+													{@ option_list}
+													<option value="{.no}">{.froption}</option>
+													{/}
+												</select>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="clear"></div>
+{/}
+
+								<!-- 토크 -->
+								<div class="pop_entry_talkline">
+										<ul>
+
+{? option_count ==  0}
+
+												<li style="height:90px;">
+														<textarea  id="editor" name="editor" rows="7" class="input_entry_area"></textarea>
+												</li>
+{:}
+
+
+												<li style="height:70px;">
+														<textarea  id="editor" name="editor" rows="5" class="input_entry_area"></textarea>
+												</li>
+
+
+{/}
+												<li style="padding-top:20px;">
+														<div class="fl" style="width:30px; text-align:left;">
+																<input type="checkbox" name="agree" id="agree" value="a">
+														</div>
+														<div class="fl gray11_d_text" style="width:290px;"> 당첨 후 기간 내 리뷰를 작성하지 않으면, <br />
+																체험상품을 반납하거나 그에 맞는 캐쉬를 차감합니다.<br />
+																내용에 동의 하신 후 응모가 가능합니다.<br />
+														</div>
+												</li>
+										</ul>
+								</div>
+								<!-- 토크 끝-->
+						</li>
+						<li class="pb25"></li>
+						<li style="width:448px; height:33px; text-align:center;"><img src="/images/common/but/but_big_entry.gif" alt="응모하기" title="응모하기" id="registCheck"></li>
+				</ul>
+		</div>
+</div>
+</form>
+
+
+
+
+

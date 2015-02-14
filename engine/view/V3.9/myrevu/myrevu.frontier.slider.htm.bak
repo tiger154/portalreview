@@ -1,0 +1,110 @@
+<style type="text/css">
+     #img_list2 td { width:100px; text-align:center; }
+</style>
+
+<script type="text/javascript">
+<!--
+     var amt = 10;     // 움직임 값 (클수록 빠름)
+     var gap = 100;     // 이미지와 사이 공간의 합
+
+     var cnt = 0;
+     var init_amt = amt;
+
+	//alert(init_amt);
+     function scroll_right(){
+		// alert('right');
+          document.getElementById('img_list2').scrollLeft += amt;
+          if(cnt >= gap){
+               cnt = 0;
+               var adj = document.getElementById('img_list2').scrollLeft % gap;
+               document.getElementById('img_list2').scrollLeft -= adj;
+               amt = init_amt;
+          }
+          else{
+               amt = Math.ceil(amt / 1.2);
+               setTimeout(scroll_right, 10);
+          }
+          cnt = cnt + amt;
+     }
+
+     function scroll_left(){
+		 //alert('left');
+          document.getElementById('img_list2').scrollLeft -= amt;
+          if(cnt >= gap){
+               cnt = 0;
+               var adj = document.getElementById('img_list2').scrollLeft % gap;
+               if(adj > 0) adj = gap - adj
+               document.getElementById('img_list2').scrollLeft += adj;
+               amt = init_amt;
+          }
+          else{
+               amt = Math.ceil(amt / 1.2);
+               setTimeout(scroll_left, 10);
+          }
+          cnt = cnt + amt;
+		  //alert(cnt);
+     }
+-->
+</script>
+
+<table width="714" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="5"><img src="/images/myrevu/bg_myfrontier1.gif" width="714" height="23" /></td>
+</tr>
+	<tr>
+		<td width="35" height="244" style="background:url(/images/myrevu/bg_myfrontier_sidel.gif) repeat-y; text-align:right;"><a href="javascript:scroll_left()"><img src="/images/common/but/but_frontier_pre.gif" alt="이전보기" width="32" height="61" title="이전보기"></a></td>
+		<td width="11" height="244"><img src="/images/common/space.gif" width="11" /></td>
+		<td width="620" style="padding:0; margin:0;">
+		<!-- 슬라이드 묶음테이블 -->
+
+
+		<table width="620" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="620" height="35" colspan="5" align="center"><img src="/images/myrevu/title_myentry.gif" width="623" height="35" /></td>
+			</tr>
+			<tr>
+				<td width="620" height="20" colspan="5"><img src="/images/common/space.gif" width="20" /></td>
+			</tr>
+
+			<tr>
+				<div id="img_list2"  style="overflow:hidden;">
+			<!--{@myfron_entrylist}--> 
+				<td width="124" height="189">
+				<table width="110" height="189" border="0" cellspacing="0" cellpadding="0" align="center">
+					<tr>
+						<td width="110" height="110"><a href="/frontier/detailview//{.frno}/B" target="_blank"><img src="{.Entryimg}"  width="110" height="110"/></a></td>
+					</tr>
+					<tr>
+						<td width="110" height="22">
+						<div class="frontier_piecetitle"><a href="/frontier/detailview//{.frno}/B" target="_blank"><span class="gray_du_text">{.subject}</span></a><div>
+						</td>
+					</tr>
+					<tr>
+						<td width="110" height="18"><div class="frontier_piecetext1 gray11_l_text">모집인원 : <span class="common11_text">{.peoplelimit}명</span></div></td>
+					</tr>
+					<tr>
+						<td width="110" height="18"><div class="frontier_piecetext2 gray11_l_text">당첨자발표 : <span class="common11_text">D-3</span></div></td>
+					</tr>
+				</table>
+				</td>
+			<!--{/}-->
+				</div>
+
+			</tr>
+
+	</table>
+
+
+
+
+	</td>
+	<td width="10" height="244"><img src="/images/common/space.gif" width="10" /></td>
+	<td width="35" height="244" style="background:url(/images/myrevu/bg_myfrontier_sider.gif) repeat-y;text-align:left;"><a href="javascript:scroll_right()"><img src="/images/common/but/but_frontier_next.gif" alt="다음보기" width="32" height="61" title="다음보기" ></a></td>
+	</tr>
+	</div>
+
+	<tr>
+			<td colspan="5"><img src="/images/myrevu/bg_myfrontier2.gif" width="714" height="23" /></td>
+	</tr>
+</table>
+

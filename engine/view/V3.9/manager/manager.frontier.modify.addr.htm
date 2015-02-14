@@ -1,0 +1,62 @@
+<script type="text/javascript" src="{JS}/_global/zipcode.js"></script>
+<script type="text/javascript" src="{JS}/_global/input.js"></script>
+<form name="RevUform" id="RevUform" method="post" enctype="multipart/form-data"  action="">
+<input type="hidden" name="frno" id="frno" value="{frno}" />
+	<!-- 상단 -->
+	<table border="0" width="489" cellpadding="5" cellspacing="0" align="center">
+		<tr>
+			<!--본문-->
+			<table width="460"  border="1" cellpadding="2" cellspacing="0" bgcolor="#C0C0C0">
+
+				
+			<table width="460"  border="1" cellpadding="2" cellspacing="0" bgcolor="#C0C0C0">
+				<tr>
+					<th>프론티어 주소변경</th>
+				</tr>
+					<tr>
+						<td>
+							<div align="left">
+								<select name="area_bcode1" id="areaBcodeCBox1">		
+								<option value="00">지역선택</option>
+								{@ bcode_list}
+								<option value="{.bcode}">{.ko_desc}</option>
+								{/}
+							</select>
+							<select name="area_mcode1" id="areaMcodeCBox1">		
+								<option value="000">지역선택</option>
+							</select>
+							<select name="area_scode1" id="areaScodeCBox1">		
+								<option value="00">지역선택</option>
+							</select> <br>상세주소:<input type="text" name="addr2" id="addr2" size="46" maxlength="60" value="" />
+							</div>
+						</td>
+					</tr>
+			</table>
+
+
+			</td>
+			<!-- 본문 끝 -->
+		</tr>
+	</table>
+
+	<!-- 버튼 -->
+	<table width="100%" border="0">
+		<tr>
+			<td width="100%">&nbsp;
+				<center>
+				<input type="button" id="modifyCheck_addr" value="변경"/>
+				</center>
+			</td>
+		</tr>
+	</table>
+	<!-- 버튼 끝 -->
+
+	<table width="560" border="0">
+		<tr>
+			<td width="560">&nbsp;<!-- 공백 -->
+			</td>
+		</tr>
+	</table>
+
+
+</form>

@@ -1,0 +1,21 @@
+Daum Open Editor Licence Information
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Daum Open Editor Based on Trex ver 1.5.
+Developed by : RIA Tech Team, FT Center 
+Powered by : Daum Communication Corp
+License: GNU LGPL (Lesser General Public Licence) 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+This library is free software; 
+This source code and the demo application is distributed under the GNU Lesser General Public License.
+You can redistribute it and/or modify it under the this License;
+
+See the GNU Lesser General Public License for more details.
+http://www.gnu.org/licenses/lgpl.html
+[KO] http://korea.gnu.org/people/chsong/copyleft/lgpl.ko.html
+
+For further information visit: 
+	http://code.google.com/p/daumopeneditor/
+Do you have any questions? 
+	http://code.google.com/p/daumopeneditor/issues/list

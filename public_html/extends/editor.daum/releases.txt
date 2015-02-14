@@ -1,0 +1,95 @@
+=== Releases 5.4.0 ===
+_2010.02.22_
+* refactoring: 공통 코어 액션 Mixin 파일로 분리
+* refactoring: 의미없는 공백 selection 제거
+* refactoring:button 태그 정렬관련하여 정렬 정리
+* refactoring:테이블편집모드에서 칼럼생성시 예외처리 추가
+
+* bugfix: #55, 특정 폼에 포커스 주기 동작 안됨 (focusOnForm) 
+* bugfix: "리스트"를 삽입 후 또 다른 "리스트"를 삽입 시 커서가 이전 리스트로 이동됨
+* bugfix: FF에서 볼드 -> 엔터 -> 볼드 해제 안됨
+* bugfix: opera에서 빈 리스트 입력한 후 마우스를 클릭하면 불릿이 나타나지 않는 버그
+* bugfix: 멀티미디어를 url로 첨부시 기본 사이즈를 설정하지 못하는 버그
+* bugfix: 메뉴 IE8에서 깨짐
+* bugfix: #92, 글자 배경색 '기본색으로' 버그
+
+=== Releases 5.3.0 ===
+_2009.11.26_
+* refactoring: module 이름 변경 및 위치이동
+* refactoring: 불필요한 library 및 module 제거
+* refactoring: 암전박스(blackbox) 구조 변경
+
+* improvement: 쿠키를 이용한 자주 이용하는 글자 옵션 저장하기 (글자체, 글자색, 글자배경색)
+		각 tool의 config.useFavorite을 true로 설정하면 됨
+
+* bugfix: #55, 특정 폼에 포커스 주기 동작 안됨 (focusOnForm) 
+
+
+=== Releases 5.2.0 ===
+_2009.11.13_
+* refactoring: 버튼 CSS, 더보기 버튼 정리
+
+* improvement: 본문에 삽입된 표에 마우스 오버하면 테이블 편집 버튼 보임
+* improvement: 테이블 행/열 추가, 삭제, 병합 기능 추가
+* improvement: 테이블 디자인 기능 추가
+* improvement: 테이블 서식 기능 추가
+	help: http://editor.daum.net/help/v5/index.html?view=wrapper
+* improvement: #28, 배경 인터페이스 추가 
+		Editor.getContentWithBg()
+* improvement: #31, 사진첨부(image)에 width, height 값을 받아 기본 사이즈로
+		sidebar: {
+			attacher: {
+				image: {
+					objattr: {
+						width: 200
+					}
+				}
+			}
+		} 지정하면 사용가능(보다 큰 이미지일 경우에만 줄어듦).
+		단, 이미지를 삽입할 때 execAttach에서 이미지의 실제 width 값을 넘겨야 함.
+* improvement: 리스트(styledlist)의 메뉴 레이어에 취소 옵션을 둔다.
+
+* bugfix: @ie, 단축키로 왼쪽정렬, 가운데정렬, 오른쪽정렬 시 작동은 올바르게 하나 각각 다른 버튼이 눌려짐
+* bugfix: 표 안에서 인용구 및 글상자 삽입을 시도하면 삽입이 되지 않거나 해당 칸의 UI가 깨짐
+* bugfix: 글자색, 글자 배경색, 배경색에서 색상값을 입력하는 최초에는 동작하지 않고 "더보기" 상태로 전환하면 입력됨.
+* bugfix: @ie, URL 입력이 있는 글을 등록 후 수정으로 앞서 지정한 URL을 재입력하면 본문 전체에 링크가 걸림.
+* bugfix: Editor.getContent 시 ZERO WIDTH NON-BREAKABLE SPACE 제거
+
+=== Releases 5.1.2 ===
+_2009.10.07_
+* refactoring: 버튼, 메뉴관련 css 중복 제거
+
+* improvement: 자바스크립트 로딩하는 유틸리티(Trex.I.JSRequester) 추가
+
+* bugfix: 테이블에서 Tab, Shift+Tab로 셀 이동시 무한루프
+* bugfix: #26: 이모티콘 입력시 눈에 보이지 않는 특수문자가 같이 포함됩니다.
+
+=== Releases 5.1.1 ===
+_2009.10.01_
+* improvement: 글자색, 글자배경색 원래대로 기능 넣기 
+* improvement: iphone이나 ipod에서 접근하면 소스모드로 보이기
+
+* bugfix: #23: 글 작성 후 저장시 '내용을 입력하세요' 하는 메세지가 뜹니다.
+* bugfix: #5  ie6에서 글자 색상 팔레트에서 더보기 버튼 눌렀을 때 색깔 그라데이션 안되서 나옴 
+
+=== Releases 5.1.0 ===
+_2009.09.29_
+ * refactoring: 상세한 버전 관리를 위해 M.m.r 형식으로 변경
+ * refactoring: Trex.Ev 위치 조정 및 정리
+ * refactoring: config, message 구조 변경 
+
+ * improvement: 마우스 이벤트 발생 시 fireElements 중복되지 않게
+ * improvement: 파폭에서 링크 색과 밑줄 스타일 변경
+ * improvement: 기본 팝업창 설정 변경
+ * improvement: Editor.modify 에서 content를 필드 객체로 넘길 경우 필드 객체의 값을 로딩
+ * improvement: 이미지 경로 설정 가능케
+
+ * bugfix: 다른 페이지 이동 시 경고창 없애기
+ * bugfix: ie / 내용을 입력한 후에 더보기 버튼을 누르면 페이지이동 alert가 뜬다.
+ * bugfix: 배경색 컬러팔레트의 컬러박스가 겹쳐보이는 현상
+ * bugfix: horizontalrule의 이미지 경로가 잘못되서 고침
+ * bugfix: ie / 컬러팔레트에서 마진 안먹힘
+  
+=== Releases 1.5.1 ===
+_2009.09.16_
+ * 오픈 릴리즈 버전

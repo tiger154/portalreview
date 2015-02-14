@@ -1,0 +1,146 @@
+#!/usr/local/php5/bin/php -p
+
+
+<?php
+//#!/usr/local/php5/bin/php -q
+/***************************************************************************************
+* Module Name			:	관리자 - 뉴스 레터 발송
+* Created Date			:	2011.09.07
+* Created by				:	RevU 박상선 
+* Modify History			:   
+****************************************************************************************/
+//===============================================================
+//클론설정
+//===============================================================
+error_reporting(0);
+
+require_once "/home/revu39/engine/_sys/sys.cron.conf.php";
+require_once "/home/revu39/engine/_sys/sys.cron.module.php";
+
+
+
+
+//===============================================================
+//GLOBAL CLASS
+//===============================================================
+GLOBAL $TPL;
+GLOBAL $BASE;
+GLOBAL $LOGIN;
+
+//===============================================================
+//GLOBAL VARS
+//===============================================================
+GLOBAL $FRAME;
+
+//===============================================================
+//CLASS
+//===============================================================
+$CLASS_BASIC = &Module::singleton("Mail.Mailcla");
+
+//===============================================================
+//EXTEND_CLASS
+//===============================================================
+
+//===============================================================
+//DB OBJECT
+//===============================================================
+$DB = &Module::loadDb("revu");
+
+//===============================================================
+//VARS
+//===============================================================
+
+$nowyear			= date("Y");
+$nowmonth		= date("m");
+$nowday			= date("d");
+
+$startyear			= array();
+$startmonth		= array();
+$startday			= array();
+$startnowtime	= array();
+
+$endyear			= array();
+$endmonth		= array();
+$endday			= array();
+$endnowtime		= array();
+
+
+for($i=$nowyear; $i<=2020; $i++) {
+	$startyear[]		= $i;
+	$endyear[]		= $i;
+}
+
+for($i=1; $i<=12; $i++) {
+	$startmonth[]	= $i;
+	$endmonth[]		= $i;
+}
+
+for($i=1; $i<=31; $i++) {
+	$startday[]		= $i;
+	$endday[]			= $i;
+}
+
+for($i=1; $i<=24; $i++) {
+	$starttime[]		= $i;
+	$endtime[]		= $i;
+}
+
+$mail_list = $CLASS_BASIC->getReserveMail($DB);
+
+for($i=0; $i<sizeof($mail_list); $i++){
+	// subject, sendname, recipient, memo
+	$mno = $mail_list[$i]['no'];
+	$subject = $mail_list[$i]['subject'];
+	$sendname = $mail_list[$i]['sendname'];
+	$recipient = $mail_list[$i]['recipient'];
+	$editor = $mail_list[$i]['memo'];
+
+	//echo "subject:$subject";
+	$tomail = trim($recipient); //수신자 공백제거
+	$marr=explode(';' , $tomail); // . 를 구분자로하여 문자열을 분리, 배열로 리턴,,,
+	$tono=sizeof($marr);
+	$tonocheck = $tono-1;
+	$recipientimp= implode('|' , $marr); 
+
+	if($tonocheck == 1 || $tonocheck == 0){ //수신자가 한명일때 (찾기 : ^&^)
+
+				
+			$CLASS_EMAIL = &Module::singleton("Email");
+			$CLASS_EMAIL->from('no-reply@revu.co.kr', $sendname);
+
+			$CLASS_EMAIL->to($recipient); 
+			$CLASS_EMAIL->subject($subject);
+			$CLASS_EMAIL->message($editor);
+			$result = $CLASS_EMAIL->send();		
+			
+
+
+
+	}else{ //수신자가 여러명일때
+
+			for ($i=0 ; $i<$tono ; $i++) {
+					//$marr[$i];
+					
+					//echo "$marr[$i]<br>";
+					
+					$CLASS_EMAIL = &Module::singleton("Email");
+					$CLASS_EMAIL->from('no-reply@revu.co.kr', $sendname);
+
+					$CLASS_EMAIL->to($marr[$i]); 
+					$CLASS_EMAIL->subject($subject);
+					$CLASS_EMAIL->message($editor);
+					$result = $CLASS_EMAIL->send();			
+
+			}
+	}
+
+		$mailreserve_update = $CLASS_BASIC->ReserveMailUpdate($DB, $mno, "Y");
+
+}
+
+
+
+
+
+
+?>

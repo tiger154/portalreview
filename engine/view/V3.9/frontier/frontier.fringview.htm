@@ -1,0 +1,336 @@
+     <!-- 프론티어 상세보기 시작-->
+      <div id="frontier_view_warp">
+        <!-- 프론티어 / guid.jpg 이미지 노출 -->
+        <div class="frontier_view_img"><img src="{topimg}" /></div>
+        <!-- 프론티어 타이틀 입력 -->
+        <div class="frontier_view_title"></div>
+        <div class="frontier_view_title_text">
+          <ul>
+            <li class="fl"><span class="white_title">{subject}</span></li>
+            <li class="fr pt02"><span class="white_text">모집마감</span></li>
+          </ul>
+        </div>
+        <!-- 프론티어 기본정보박스 -->
+        <div class="frontier_info_box">
+          <ul>
+            <li class="frontier_info_bg1"></li>
+            <li class="frontier_info_bg2">
+              <div class="frontier_info_textbox">
+              <ul>
+                  <!-- 기본정보 버튼  / 응모하기형은 but_frontier_entry.gif-->
+                <li class="frontier_info_text_r"><!-- <a href="#" target="_blank"><img src="/images/frontier/but_frontier_review.gif"  alt="리뷰등록하기" title="리뷰등록하기"/></a> -->{etype}</li>
+                    <li class="frontier_detailview1">
+                      <div class="detailview_text">{cate}</div>
+                    </li>
+                    <li class="frontier_detailview2">
+                      <div class="detailview_text"><font color=red>{frproduct}</font></div>
+                    </li>
+                    <li class="frontier_detailview3">
+                      <div class="detailview_text">{jstart_date} ~ {jend_date}</div>
+                    </li>
+                    <li class="frontier_detailview4">
+                      <div class="detailview_text">{peoplelimit}명</div>
+                    </li>
+                    <li class="frontier_detailview5">
+                      <div class="detailview_text">{noticedate}</div>
+                    </li>
+                    <li class="frontier_detailview6">
+                      <div class="detailview_text">{due_sdate} ~ {due_edate}</div>
+                    </li>
+                    <li class="frontier_detailview7">
+                      <div class="detailview_text">{bestrview_notice_date}</div>
+                    </li>
+                  <li class="frontier_detailview8">
+                      <div class="detailview_text2">{bestrview_prise}</div>
+                  </li>
+                </ul>
+              </div>               
+            </li>
+            
+            <li class="clear"></li>
+            <li class="frontier_info_bg3"></li>
+          </ul>
+        </div>
+        <!-- 프론티어 기본정보박스 끝 -->
+        <div style="width:714px; height:35px;"><!-- <img src="/images/frontier/frontier_sns.gif" /><a href="#" target="_blank"><img src="/images/frontier/frontier_sns_fb.gif"  alt="페이스북" title="페이스북"/></a><a href="#" target="_blank"><img src="/images/frontier/frontier_sns_tw.gif"  alt="트위터" title="트위터"/></a><a href="#" target="_blank"><img src="/images/frontier/frontier_sns_me.gif"  alt="미투데이" title="미투데이"/></a> --></div>
+        <!-- 체험정보 시작 -->
+        <div class="frontier_detail_box">
+          <div class="frontier_detail_title"><img src="/images/frontier/title_detailview9.gif" /></div>
+          <div class="pt20"></div>
+          <table width="670" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="frontier_table_l gray_d_text">- 체험 상품</td>
+              <td class="frontier_table_r">{frproduct} </td>
+            </tr>
+            {price}
+            <!-- <tr>
+              <td class="frontier_table_l gray_d_text">- 주소</td>
+              <td class="frontier_table_r">{addr}<a href="{map}" target="_blank" class="w_space"><img src="/images/common/but/but_g_map.gif" alt="약도보기"  title="약도보기" class="imgb_space"/></a></td>
+            </tr> -->
+			{addr}
+            <tr>
+              <td class="frontier_table_l gray_d_text">- 전화번호</td>
+              <td class="frontier_table_r">{tel}&nbsp;&nbsp;{mobile}</td>
+            </tr>
+            <!-- <tr>
+              <td class="frontier_table_l gray_d_text">- 홈페이지</td>
+              <td class="frontier_table_r gray_stitle"><a href="{sitelink}" target="_blank">{sitelink}</a></td>
+            </tr> -->
+			{sitelink}
+            <tr>
+              <td class="frontier_table_l gray_d_text">- 모집 옵션</td>
+              <td class="frontier_table_r">
+    		<!--{@frontierOptionList}-->     
+
+			   {.froption}<br />
+               
+			<!--{/}-->
+   
+			   </td>
+            </tr>
+			{filelink}
+            <tr>
+              <td class="frontier_table_l gray_d_text">- 캐쉬 지급 여부</td>
+              <td class="frontier_table_r">{cashpolicy}<br />
+                <img src="/images/frontier/img_detailview_cash.gif" /></td>
+            </tr>
+            <tr>
+              <td class="frontier_table_l gray_d_text">- 비고</td>
+              <td class="frontier_table_r">{message}<br /></td>
+            </tr>
+          </table>
+          <div class="frontier_detail_line"></div>
+        </div>
+        <!-- 리뷰미션시작 -->
+        <div class="frontier_detail_box">
+          <table width="670" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="frontier_table_l"><img src="/images/frontier/title_detailview10.gif" /></td>
+              <td class="frontier_table_r">{mission}<br /></td>
+            </tr>
+          </table>
+          <div class="pt40"></div>
+        </div>
+        <!-- 리뷰키워드시작 -->
+        <div class="frontier_detail_box">
+          <table width="670" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="frontier_table_l"><img src="/images/frontier/title_detailview11.gif" /></td>
+              <td class="frontier_table_r2"><img src="/images/frontier/img_detailview_keyword1.gif" /></td>
+              <td class="frontier_table_r3">{keyword}</td>
+            </tr>
+            <tr>
+              <td class="frontier_table_l"></td>
+              <td class="frontier_table_r2"><img src="/images/frontier/img_detailview_keyword2.gif" /></td>
+              <td class="frontier_table_r3">{tagword}</td>
+            </tr>
+          </table>
+          <div class="pt40"></div>
+        </div>
+        <!-- 리뷰당첨 팁시작 -->
+        <div class="frontier_detail_box">
+          <table width="670" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="frontier_table_l"><img src="/images/frontier/title_detailview12.gif" /></td>
+              <td class="frontier_table_r">{tip} </td>
+            </tr>
+          </table>
+          <div class="frontier_detail_line"></div>
+        </div>
+        <!-- 배너코드 시작 -->
+        <!-- <div class="frontier_detail_box">
+          <div class="frontier_detail_title"><img src="/images/frontier/title_detailview13.gif" /></div>
+          <div class="pt20"></div>
+          <div class="frontier_bancode_l">{bannercode}</div>
+          <div class="frontier_bancode_r"><a href="#" target="_blank"><img src="/images/common/but/but_bancode.gif" alt="배너코드복사하기" title="배너코드복사하기" /></a></div>
+          <div class="clear"></div>
+          <div class="frontier_detail_line"><img src="/images/frontier/img_detailview_revu.gif" align="right"  style="padding-top:47px;"/></div>
+        </div>
+      </div> -->
+
+	  {bannercode}
+      <!-- 프론티어 상세보기 끝-->
+      <!-- 토크 시작 -->
+      <div class="frontier_talk_box">
+        <div class="frontier_tab_box"><img src="/images/frontier/tab_talkon.gif" /><a href="#"><img src="/images/frontier/tab_reviewoff.gif"  alt="리뷰보기" title="리뷰보기"/></a></div>
+        <div class="frontier_tab_info common11_text">전체<span class="orange11_text"><strong>19</strong></span>개의 토크가 있습니다. </div>
+        <!--  한 묶음 시작-->
+        <div class="frontier_talk_line">
+          <ul>
+            <!-- 유저 프로필이미지 비례축소 / 없을시 더미이미지 노출thum_profile_dummy1~3.gif -->
+            <li class="s_profile_thum fl"><a href="#" target="_blank"><img src="/images/common/thum/thum_profile_1.gif"  alt="유저이름" title="유저이름"  width="45px;" height="45px;"/></a></li>
+            <li class="frontier_talk_text1 fl"><span class="gray11_db_text"><a href="#" target="_blank" class="w_space" >규썬</a></span> <span class="gray11_l_text">2011.08.19 03:18:05</span>
+            <img src="/images/common/ico/ico_new.gif" class="img_space"/></li>
+            <li class="frontier_talk_text2 fr"><span class="common11_text">집에서도 멀지 않고 방문해보고 싶네요~
+              고기부페는 많이 방문해봤는데, 고기부페와 샐러드바가
+              함께 있는 곳은 방문을 안해봤거든요.
+              
+              고기부페에서 고기만 먹으면 아무래도 느끼한 면이
+              없잖아 있었는데, 샐러드바와 함께라면 맛나게
+              고기를 먹을 수 있을 것 같네요~
+              검색도 해보니까 내부도 깔끔하고^.^ 방문해서 맛난 샐러드바와 고기부페 꼭 체험해보고 싶어요 :-)
+              
+              당첨되서 다녀온다면 성실하고 멋진리뷰 남기겠습니다!^^
+              
+              http://ck3134.blog.me </span></li>
+			  <!-- 댓글을 달면 삭제버튼이 없어짐 -->
+			  <li class="frontier_talk_text2 fr"><a href="#" target="_blank"><img src="/images/common/ico/ico_del.gif" alt="삭제" title="삭제" align="right" class="img_space"/></a><a href="#" target="_blank"><img src="/images/common/ico/ico_edit.gif" alt="수정" title="수정"   align="right" /></a> </li>
+            <li class="clear"></li>
+            <li style="text-align:right;"><a href="#"><img src="/images/frontier/img_reply.gif" /></a></li>
+          </ul>
+        </div>
+        <!--  한 묶음 끝-->
+        <div class="frontier_reply_box">
+        <!-- 댓글 입렵 라인 -->
+        <div class="frontier_reply_line1">
+        <ul>
+        <li class="fl" style="width:57px; height:22px;"><img src="/images/frontier/img_talk.gif" /></li>
+        <li class="fl" style="width:527px;height:22px;"><input name="reply" type="text" class="input_reply" id="reply"/></li>
+        <li class="fl" style="width:45px; height:19px; padding-top:1px;"><a href="#"><img src="/images/common/but/but_g_ok.gif"  alt="확인" title="확인" align="right"/></a></li>
+        </ul>
+        </div>
+        <div class="frontier_reply_linebg"></div>
+        <!-- 입력된 댓글 노출 시작-->
+        <div class="frontier_reply_text1"><span class="gray11_db_text"><a href="#" target="_blank" class="w_space">규썬</a></span><span class="gray11_l_text">2011.08.19 03:18:05</span>
+            <a href="#" target="_blank"><img src="/images/common/ico/ico_edit.gif" alt="수정" title="수정" class="img_space"/></a><a href="#" target="_blank"><img src="/images/common/ico/ico_del.gif" alt="삭제" title="삭제" class="img_space"/></a></div>
+            <div class="frontier_reply_text2"><span class="common11_text">집에서도 멀지 않고 방문해보고 싶네요~
+              고기부페는 많이 방문해봤는데, 고기부페와 샐러드바가
+              함께 있는 곳은 방문을 </span></div>
+              
+              <div class="frontier_reply_linebg"></div>
+              <!-- 입력된 댓글 노출 끝-->
+         <!-- 입력된 댓글 노출 시작-->     
+        <div class="frontier_reply_text1"><span class="gray11_db_text"><a href="#" target="_blank" class="w_space">뮤즈양</a></span> <span class="gray11_l_text">2011.08.19 03:18:05</span>
+            <a href="#" target="_blank"><img src="/images/common/ico/ico_edit.gif" alt="수정" title="수정" class="img_space"/></a><a href="#" target="_blank"><img src="/images/common/ico/ico_del.gif" alt="삭제" title="삭제" class="img_space"/></a></div>
+			<!-- 댓글 수정시 -->
+            <div class="frontier_reply_text2"><input name="reply" type="text" class="input_reply" id="reply" value="음음~ 친구랑 같이 가면 딱이겠군요~ &gt;_&lt;"/><a href="#"><img src="/images/common/but/but_g_ok.gif"  alt="확인" title="확인" style="margin:0 0 -6px 10px;"/></a></div>
+              
+              <div class="frontier_reply_linebg"></div>
+              <!-- 입력된 댓글 노출 끝--> 
+              
+        </div>
+        <div class="frontier_tab_info"></div>
+        <!--  한 묶음 시작-->
+        <div class="frontier_talk_line">
+          <ul>
+                <!-- 유저 프로필이미지 비례축소 / 없을시 더미이미지 노출thum_profile_dummy1~3.gif -->
+            <li class="s_profile_thum fl"><a href="#" target="_blank"><img src="/images/common/thum/thum_profile_2.gif"  alt="유저이름" title="유저이름"  width="45px;" height="45px;"/></a></li>
+            <li class="frontier_talk_text1 fl"><span class="gray11_db_text"><a href="#" target="_blank" class="w_space" >고양이</a></span><span class="gray11_l_text">2011.08.19 03:18:05</span>
+            <img src="/images/common/ico/ico_new.gif" class="img_space"/></li>
+            <li class="frontier_talk_text2 fr"><span class="common11_text">안녕하세요~^^
+전 부천살구있구요 블로그활동두 열씨미하구있어요.
+부천이니 디테일한 위치와 성실한 리뷰 자신있어요~^^
+ </span></li>
+            <li class="clear"></li>
+            <li style="text-align:right;"><a href="#"><img src="/images/frontier/img_reply.gif" /></a></li>
+          </ul>
+        </div>
+        <!--  한 묶음 끝-->
+        <div class="frontier_reply_box"  style="display:none;">
+        <!-- 댓글 입렵 라인 -->
+        <div class="frontier_reply_line1">
+        <ul>
+        <li class="fl" style="width:57px; height:22px;"><img src="/images/frontier/img_talk.gif" /></li>
+        <li class="fl" style="width:527px;height:22px;"><input name="reply" type="text" class="input_reply" id="reply"/></li>
+        <li class="fl" style="width:45px; height:19px; padding-top:1px;"><a href="#"><img src="/images/common/but/but_g_ok.gif"  alt="확인" title="확인" align="right"/></a></li>
+        </ul>
+        </div>
+        <div class="frontier_reply_linebg"></div>
+        <!-- 입력된 댓글 노출 시작-->
+        <div class="frontier_reply_text1"><span class="gray11_db_text"><a href="#" target="_blank" class="w_space" >규썬</a></span><span class="gray11_l_text">2011.08.19 03:18:05</span>
+            <a href="#"><img src="/images/common/but/but_s_xclose.gif"  alt="삭제" title="삭제" class="imgbb_space"/></a></div>
+            <div class="frontier_reply_text2"><span class="common11_text">집에서도 멀지 않고 방문해보고 싶네요~
+              고기부페는 많이 방문해봤는데, 고기부페와 샐러드바가
+              함께 있는 곳은 방문을 안해봤거든요.
+              
+              고기부페에서 고기만 먹으면 아무래도 느끼한 면이
+              없잖아 있었는데, 샐러드바와 함께라면 맛나게
+              고기를 먹을 수 있을 것 같네요~
+              검색도 해보니까 내부도 깔끔하고^.^ 방문해서 맛난 샐러드바와 고기부페 꼭 체험해보고 싶어요 :-)
+              
+              당첨되서 다녀온다면 성실하고 멋진리뷰 남기겠습니다!^^
+              
+              http://ck3134.blog.me </span></div>
+              
+              <div class="frontier_reply_linebg"></div>
+              <!-- 입력된 댓글 노출 끝-->
+         <!-- 입력된 댓글 노출 시작-->     
+        <div class="frontier_reply_text1"><span class="gray11_db_text"><a href="#" target="_blank" class="w_space">뮤즈양</a></span><span class="gray11_l_text">2011.08.19 03:18:05</span>
+            <a href="#"><img src="/images/common/but/but_s_xclose.gif"  alt="삭제" title="삭제" class="imgb_space"/></a></div>
+            <div class="frontier_reply_text2"><span class="common11_text">음음~ 친구랑 같이 가면 딱이겠군요~ >_<</span></div>
+              
+              <div class="frontier_reply_linebg"></div>
+              <!-- 입력된 댓글 노출 끝--> 
+        </div>
+        <div class="frontier_tab_info"></div>
+        <div class="frontier_tab_box"><a href="#"><img src="/images/frontier/tab_talkoff.gif" alt="토크보기" title="토크보기"/></a><img src="/images/frontier/tab_reviewon.gif"  /></div>
+        <div class="frontier_tab_info common11_text">전체<span class="orange11_text"><strong>19</strong></span>개의 리뷰가 있습니다. </div>
+        <!--  한 묶음 시작 / 이미지 있을시-->
+        <div class="frontier_review_line">
+          <ul>
+            <!-- 리뷰 리스트 이미지 비례축소  / 엑박뜰때엔 thum_list_dummy.gif 노출-->
+            <li class="frontier_review_thum fl"><a href="#" target="_blank"><img src="/images/common/thum/thum_list_110110_1.gif" width="80px;" height="80px;"/></a></li>
+            <li class="frontier_review_title fl"><span class="orange_title"><a href="#" target="_blank" >[신림BBQ] - BBQ 참숯바베큐치킨 신림점 맛있는 파닭과 참숯</a></span></li>
+            <li class="frontier_review_text1 fl"><span class="gray11_db_text"><a href="#" target="_blank" >규썬</a></span><span class="gray11_l_text"> | 라이프 | 2011.08.19 03:18:05</span>
+            <img src="/images/common/ico/ico_new.gif"  class="img_space"/></li>
+            <li class="frontier_review_text2 fl"><span class="common_text">집에서도 멀지 않고 방문해보고 싶네요~
+              고기부페는 많이 방문해봤는데, 고기부페와 샐러드바가
+              함께 있는 곳은 방문을 안해봤거든요.
+              
+              고기부페에서 고기만 먹으면 아무래도 느끼한 면이
+              없잖아 있었는데, 샐러드바와 함께라면 맛나게
+              고기를 먹을 수 있을 것 같네요~
+              검색도 해보니까 내부도 깔끔하고^.^ 방문해서 맛난 샐러드바와 고기부페 꼭 체험해보고 싶어요 :-)
+              
+              당첨되서 다녀온다면 성실하고 멋진리뷰 남기겠습니다!^^
+              
+              http://ck3134.blog.me </span></li>
+            <li class="clear"></li>
+            <li style="text-align:right;"></li>
+          </ul>
+        </div>
+        <!--  한 묶음 끝 / 이미지 있을시-->
+        <div class="frontier_tab_info"></div>
+        <!--  한 묶음 시작 / 이미지 없을시 -->
+        <div class="frontier_review_line">
+          <ul>
+            <li class="frontier_review_notitle"><span class="orange_title"><a href="#" target="_blank" >[신림BBQ] - BBQ 참숯바베큐치킨 신림점 맛있는 파닭과 참숯</a></span></li>
+            <li class="frontier_review_notext1"><span class="gray11_db_text"><a href="#" target="_blank" >규썬</a></span><span class="gray11_l_text"> | 라이프 | 2011.08.19 03:18:05</span>
+            <img src="/images/common/ico/ico_new.gif" class="img_space"/></li>
+            <li class="frontier_review_notext2"><span class="common_text">집에서도 멀지 않고 방문해보고 싶네요~
+              고기부페는 많이 방문해봤는데, 고기부페와 샐러드바가
+              함께 있는 곳은 방문을 안해봤거든요.
+              
+              고기부페에서 고기만 먹으면 아무래도 느끼한 면이
+              없잖아 있었는데, 샐러드바와 함께라면 맛나게
+              고기를 먹을 수 있을 것 같네요~
+              검색도 해보니까 내부도 깔끔하고^.^ 방문해서 맛난 샐러드바와 고기부페 꼭 체험해보고 싶어요 :-)
+              
+              당첨되서 다녀온다면 성실하고 멋진리뷰 남기겠습니다!^^
+              
+              http://ck3134.blog.me </span></li>
+            <li class="clear"></li>
+            <li style="text-align:right;"></li>
+          </ul>
+        </div>
+        <!--  한 묶음 끝  / 이미지 없을시 -->
+        <div class="frontier_tab_info"></div>
+
+       
+     <!-- 페이지 넘버링 박스 시작 -->
+         <div id="pageNaviArea" class="pageno">
+         <a href="#" class="pre" onfocus="this.blur()"><img src="/images/common/ico/text_pre.gif" alt="이전" title="이전"/></a>
+         <a href="#">1</a>
+         <a href="#">2</a>
+         <a href="#">3</a>
+         <a href="#">4</a>
+         <a href="#">5</a>
+         <strong>6</strong> <!-- 선택시는 링크를 플코 strong 처리 -->
+         <a href="#">7</a>
+         <a href="#">8</a>
+         <a href="#">9</a>
+         <a href="#">10</a>
+         <a href="#" class="next"onfocus="this.blur()"><img src="/images/common/ico/text_next.gif" alt="다음" title="다음"/></a>        
+          </div>
+	<!-- 페이지 넘버링 박스 끝 -->        
+      </div>

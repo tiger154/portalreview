@@ -1,0 +1,312 @@
+<div class="title_line">
+	<div class="my_frontier_title"></div>
+	<!-- 프론티어관리 탭 /응모한 시작 -->
+	<div class="my_frontier_tab">
+		<ul>
+			<li><img src="/images/myrevu/tab_frontier_on1.gif" id="frontierTab1" width="116" height="29" alt="응모중인프론티어" title="응모중인프론티어" class="btn" /></li>
+			<li><img src="/images/myrevu/tab_frontier_off2.gif" id="frontierTab2" width="116" height="29" alt="당첨된프론티어" title="당첨된프론티어" class="btn" /></li>
+		</ul>
+	</div>
+	<!-- 프론티어관리 탭 끝 -->
+</div>
+
+<div class="clear" style="width:714px; height:20px;"></div>
+
+<!-- 응모한프론트어 -->
+<div id="frontierEntry" class="m_talktime2">
+	<!--해당프론티어 한줄 시작 -->
+	{? frontierEntrySize > 0}
+	{@frontierEntry}
+	<div class="m_talktime_line">
+		<!-- 프론티어이미지 비례축소 066066 -->
+		<div class="m_talktime_thum">
+			<a href="frontier/detailview//{.frno}//" target="_top"><img src="{.entryimg}"  width="66" height="66"/></a>
+			</div>
+		<div class="m_talktime_text1">
+			{.title}
+		</div>
+		<div class="m_talktime_text2">{.content}</div>
+	</div>
+	<div class="m_talktime_sbox">
+		<div style="padding:26px 0 0 34px;"><span class="orange_text">{.entrytimer}</span></div>
+	</div>
+	<div class="m_talktime_dotline"></div>
+	{/}
+	{:}
+	<div class="pt25"></div>
+	<center><U>응모</U>한 프론티어가 없습니다.</center>
+	{/}
+	<!--해당프론티어 한줄 끝 -->
+	<div style="width:714px; height:20px; padding-top:5px; text-align:right;" class="clear" >
+		<img src="/images/common/ico/ico_more.gif" id="frontierEntryMoreBtn" class="btn" />
+	</div>
+	<div style="height:25px;"></div>
+</div>
+<!-- 응모한프론트어 끝 -->
+
+<!-- 당첨된프론트어 -->
+<div id="frontierWin" class="m_talktime2">
+	<!--해당프론티어 한줄 시작 -->
+	{? frontierWinsize > 0}
+	{@myfron_winlist}
+	<div class="m_talktime_line">
+		<!-- 프론티어이미지 비례축소 066066 -->
+		<div class="m_talktime_thum">
+			<a href="frontier/detailview//{.frno}//" target="_top"><img src="{.winimg}"  width="66" height="66"/></a>
+		</div>
+		<div class="m_talktime_text1">
+			<a href="frontier/detailview//{.frno}//" target="_blank"><span class="gray_stitle">{.subject}</span></a>
+		</div>
+		<!-- 당첨된 프론티어의 리뷰가 없을때 -->
+		{?frontierreviewsize > 0}
+		<div class="m_talktime_text3">{.content}</div>
+		</div>
+		<div>
+			<div></div>
+		</div>
+		{:}
+		<div class="m_talktime_text3">본 프론티어에 <font color=#FF6666>리뷰</font>를 등록해 주세요.</div>
+		</div>
+		<div class="m_talktime_sbox">
+			<div style="padding:26px 0 0 34px;"><span class="orange_text"><a href='javascript:reviewManager.setFrontier({.frno},"{.subject}");common.openCenterLayer("entrylayer2", -1, -1, 90);'>리뷰등록</a> D-{.due_edate}</span></div>
+		</div>
+		{/}
+	<div class="m_talktime_dotline"></div>
+	{/}
+	{:}
+	<div style="height:25px;"></div>
+	<center><U>당첨</U>된 프론티어가 없습니다.</center>
+	{/}
+
+	<!--해당프론티어 한줄 끝 -->
+	<div style="width:714px; height:20px; padding-top:5px; text-align:right;" class="clear" >
+		<img src="/images/common/ico/ico_more.gif" id="frontierWinMoreBtn" class="btn" />
+	</div>
+	<div style="height:25px;"></div>
+</div>
+<!-- 응모한프론트어 끝 -->
+
+<div class="clear"></div>
+
+<!-- 리뷰관리 시작 -->
+<div class="title42_line">
+	<ul>
+		<li style="width:134px;" class="fl"><img src="/images/myrevu/title_manage_review.gif"  align="left"/></li>
+		<li style="width:265px; height:22px; padding-right:15px;text-align:right;" class="fr">
+		{*}
+			<select name="myblog_list" id="myblog_list" style="text-align:right;">
+				<option value="#" selected="selected" style="width:265px;">블로그를 선택해주세요.</option>
+				<option value="#">등록한블로그1</option>
+				<option value="#">등록한블로그1</option>
+			</select>
+		{/*}
+		</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div style="width:714px; height:auto;">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td class="table_listbg" width="120"><span class="gray_d_text"><strong>등록일</strong></span></td>
+			<td class="table_listbg" width="3"><img src="/images/common/bg/bg_table_sline.gif" /></td>
+			<td class="table_listbg" width="480"><span class="gray_d_text"><strong>리뷰 제목</strong></span></td>
+			<td class="table_listbg" width="3"><img src="/images/common/bg/bg_table_sline.gif" /></td>
+			<td class="table_listbg" width="120"><span class="gray_d_text"><strong>적립 캐쉬</strong></span></td>
+		</tr>
+		{@myreview}
+		<tr>
+			<td colspan="2" class="table12_line" align="center">
+				<div class="common_text text_overlay17">{.regdate}</div>
+			</td>
+			<td colspan="2" class="table12_line" >
+				<div class="common_text text_overlay17">
+					<a href="javascript:common.socialbar({.rno});" name="{.rno}">{.title}</a>
+					&nbsp;
+					<span class="red_text">{*}({.view_cnt}){/*}</span>
+				</div>
+			</td>
+			<td class="table12_line" align="center"><span class="red_b_text">+ {.cash}</span></td>
+		</tr>
+		{/}
+	</table>
+</div>
+
+<div style="width:714px; height:20px; padding-top:5px;margin-bottom:40px; text-align:right;" class="clear" >
+	<img src="/images/common/ico/ico_more.gif" id="reviewMoreBtn" class="btn" />
+</div>
+<div style="height:25px;"></div>
+
+<!-- 프렌즈관리 시작 -->
+<div class="title_line">
+	<div class="my_friend_title"> </div>
+	<!-- 프렌즈관리 탭 시작 -->
+	<div class="my_friend_tab">
+		<ul>
+			<li><img src="/images/myrevu/tab_friend_on1.gif" id="friendTab1" width="131" height="29" alt="서로등록한프렌즈" title="내가등록한프렌즈" class="btn" /></li>
+			<li><img src="/images/myrevu/tab_friend_off2.gif" id="friendTab2" width="131" height="29" alt="내가등록한프렌즈" title="내가등록한프렌즈" class="btn" /></li>
+			<li><img src="/images/myrevu/tab_friend_off3.gif" id="friendTab3" width="131" height="29" alt="나를등록한프렌즈" title="나를등록한프렌즈" class="btn" /></li>
+		</ul>
+	</div>
+	<!-- 프렌즈관리 탭 끝 -->
+</div>
+<div class="clear" style="width:714px; height:20px;"></div>
+
+<div id="friendList1">
+	<div class="myfriend_state">
+		<div class="myfriend_white">
+			<!--검색결과 텍스트 -->
+			<div class="my_searchtext" id="resultUser" style="display:none;"></div>
+			<div class="my_grayline2"></div>
+			<div class="my_gray2box">
+			{? friendSize1 > 0}
+			{@friendList1}
+				<div class="myfriend_EO_box">
+					<ul>
+						<li class="myfriend_thum"><img src="{.userimage}" onClick="context.load({.userno});" class="btn" /></li>
+						<li class="myfriend_text"><a href="javascript:context.load({.userno});"><span class="white11_text">{.nickname}</span></a></li>
+					</ul>
+				</div>
+				{? (.index_+1)%5 == 0}
+				<div class="my_grayline2"></div>
+				{:}
+				<div class="myfriend_space"></div>
+				{/}	
+			{/}
+			{:}
+			<div class="pt25"></div>
+			<center>등록된 친구가 없습니다.</center>
+			{/}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="friendList2">
+	<div class="myfriend_state">
+		<div class="myfriend_white">
+			<!--검색결과 텍스트 -->
+			<div class="my_searchtext" id="resultUser" style="display:none;"></div>
+			<div class="my_grayline2"></div>
+			<div class="my_gray2box">
+			{? friendSize2 > 0}
+			{@friendList2}
+				<div class="myfriend_MY_box">
+					<ul>
+						<li class="myfriend_thum"><img src="{.userimage}" onClick="context.load({.userno});" class="btn" /></li>
+						<li class="myfriend_text"><a href="javascript:context.load({.userno});"><span class="white11_text">{.nickname}</span></a></li>
+					</ul>
+				</div>
+				{? (.index_+1)%5 == 0}
+				<div class="my_grayline2"></div>
+				{:}
+				<div class="myfriend_space"></div>
+				{/}	
+			{/}
+			{:}
+			<div class="pt25"></div>
+			<center>등록된 친구가 없습니다.</center>
+			{/}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="friendList3">
+	<div class="myfriend_state">
+		<div class="myfriend_white">
+			<!--검색결과 텍스트 -->
+			<div class="my_searchtext" id="resultUser" style="display:none;"></div>
+			<div class="my_grayline2"></div>
+			<div class="my_gray2box">
+			{? friendSize3 > 0}
+			{@friendList3}
+				<div class="myfriend_ME_box">
+					<ul>
+						<li class="myfriend_thum"><img src="{.userimage}" onClick="context.load({.userno});" class="btn" /></li>
+						<li class="myfriend_text"><a href="javascript:context.load({.userno});"><span class="white11_text">{.nickname}</span></a></li>
+					</ul>
+				</div>
+				{? (.index_+1)%5 == 0}
+				<div class="my_grayline2"></div>
+				{:}
+				<div class="myfriend_space"></div>
+				{/}	
+			{/}
+			{:}
+			<div class="pt25"></div>
+			<center>등록된 친구가 없습니다.</center>
+			{/}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div style="width:714px; height:20px; padding-top:5px; margin-bottom:40px; text-align:right;" class="clear" >
+	<img src="/images/common/ico/ico_more.gif" id="friendMoreBtn" class="btn" />
+</div>
+
+<div class="title_line">
+	<div style="width:134px;" class="fl"><img src="/images/myrevu/title_manage_social.gif"  align="left"/></div>
+	<div class="socialtalk_tab">
+		<ul>
+			<li><img src="/images/myrevu/tab_socialtalk_on1.gif" id="socialTab1" width="116" height="29" alt="내가쓴토크" title="내가쓴토크" class="btn" /></li>
+			<li><img src="/images/myrevu/tab_socialtalk_off2.gif" id="socialTab2" width="116" height="29" alt="내리뷰에달린토크" title="내리뷰에달린토크" class="btn" /></li>
+		</ul>
+	</div>
+</div>
+<div class="clear" style="width:714px; height:20px;"></div>
+
+<div id="socialTalk1">
+	{@ talklist1}
+	<div class="socialtalk_list66">
+		<div class="thum66_box"><img src="{.userimage}" width="66" height="66" /></div>
+		<div class="socialtalk_text_box66">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="30" align="center" class="pop_reply_gline" valign="top"><img src="{.icon}"/></td>
+					<td width="569" class="pop_reply_gline">
+						<div class="gray11_l_text text_overlay17">{.ref} ㅣ {.regdate}</div>
+						<div class="common11_text text_overlay14"><strong>{.talk}</strong></div>
+						<div class="sns_post_line66"> 
+							<a href="javascript:common.socialbar({.review.rno});"><span class="gray_l_text" style="text-decoration:underline;">{.title}</span></a>
+						</div>
+						<!--<div class="sns_kind66 gray11_l_text">| 리뷰에 달린 토크</div>-->
+					</td>
+				</tr>				
+			</table>
+		</div>
+	</div>
+	{/}
+	<div style="width:714px; height:20px; padding-top:5px;margin-bottom:40px; text-align:right; border-top:#cccccc solid 1px;" class="clear" >
+		<a href="/myrevu/talk/1"><img src="/images/common/ico/ico_more.gif" /></a>
+	</div>
+</div>
+
+<div id="socialTalk2">
+	{@ talklist2}
+	<div class="socialtalk_list66">
+		<div class="thum66_box"><img src="{.userimage}" width="66" height="66" /></div>
+		<div class="socialtalk_text_box66">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="30" align="center" class="pop_reply_gline" valign="top"><img src="{.icon}"/></td>
+					<td width="569" class="pop_reply_gline">
+						<div class="gray11_l_text text_overlay17">{.ref} ㅣ {.regdate}</div>
+						<div class="common11_text text_overlay14"><strong>{.talk}</strong></div>
+						<div class="sns_post_line66"> 
+							<a href="javascript:common.socialbar({.review.rno});"><span class="gray_l_text" style="text-decoration:underline;">{.title}</span></a>
+						</div>
+						<!--<div class="sns_kind66 gray11_l_text">| 리뷰에 달린 토크</div>-->
+					</td>
+				</tr>				
+			</table>
+		</div>
+	</div>
+	{/}
+	<div style="width:714px; height:20px; padding-top:5px;margin-bottom:40px; text-align:right; border-top:#cccccc solid 1px;" class="clear" >
+		<a href="/myrevu/talk/0"><img src="/images/common/ico/ico_more.gif" /></a>
+	</div>
+</div>
+
+<div id="entrylayer2" style="display:none; position:absolute; ">{# entrylayer2}</div>
+<div id="reviewlayer" style="display:none; position:absolute; ">{# reviewlayer}</div>

@@ -1,0 +1,5 @@
+ /* auth */  
+.auth_text_box {width:674px; height:auto;padding:20px;background:#f8f8f8;}
+.auth_wtext_box {width:674px; height:auto;padding:20px;}
+.auth_text_line { width:630px;padding-bottom:8px;}
+.auth_context {width:714px; height:auto; float:left; display:inline;}

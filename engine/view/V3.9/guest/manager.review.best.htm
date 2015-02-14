@@ -1,0 +1,42 @@
+<script type="text/javascript" src="{JS}/manager.review.js"></script>
+<script type="text/javascript">
+var wno_now={wno}; 
+var wno_prev={wno_prev};
+</script>
+<h2>베스트리뷰 목록</h2>
+<hr>
+<table>
+	<tr>
+		<td width="340" valign="top">
+			<ul>
+			{@list}
+				<li style="height:30px;">
+				{? wno == .wno}	
+				<strong><font color='red'>{.sdate}일 ~ {.edate}일</font></strong>
+				{: wno_prev == .wno}
+				<strong><font color='blue'>{.sdate}일 ~ {.edate}일</font></strong>
+				{:}
+				{.sdate}일 ~ {.edate}일
+				{/}
+				
+				{? wno <= .wno}				
+				<input type="button" value="리뷰후보선정" onClick="mngreview.list({.wno});" />
+				{: wno_prev == .wno}
+				<input type="button" value="추천중인리뷰" onClick="mngreview.list({.wno});" />
+				{:}
+				<input type="button" value="베스트리뷰" onClick="mngreview.list({.wno});" />
+				{/}
+				</li>
+			{/}
+			</ul>
+		</td>
+		<td valign="top">
+			<h2>리뷰리스트</h2>
+			<div id="reviewList"></div>
+		</td>
+	</tr>
+</table>
+<center>
+{link}
+</center>
+<hr>

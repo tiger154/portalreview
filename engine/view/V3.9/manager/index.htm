@@ -1,0 +1,48 @@
+<script type="text/javascript" src="{JS}/manager.login.js"></script>
+<div id="login-form">
+	<div class="login-box">
+		<div class="login-box-top"></div>
+		<div class="login-box-container">
+			<img src="{IMAGES}/manager/text_login.gif" alt="LOGIN" class="login-img" />			
+			<p><span class="login-title">{SITE.NAME}관리자</span></p>
+			<div class="login-box-content">
+				<div class="bh10"></div>
+				<!--{? _SESSION.userno != "" }-->
+				<form name="loginForm" id="loginForm">
+				<div class="login-box-info">
+					<dl>
+						<dt><img src="{_SESSION.userimage}" width="80" height="60" /></dt>
+						<dd><span class="text-login">{_SESSION.nickname}</span>님</dd>
+					</dl>
+				</div>
+				<img src="{IMAGES}/manager/btn_logout.gif" id="logoutBtn" value="로그아웃" class="btn" />
+				</form>
+				<!--{:}-->
+				<form name="loginForm" id="loginForm">
+				<div class="login-box-form">
+					<dl>
+						<!--<dt>아이디</dt>-->
+						<dt><img src="{IMAGES}/manager/text_login_id.gif" alt="아이디" /></dt>
+						<dd><input type="text" class="input_trans" name="login_userid" id="login_userid" value="{_COOKIE.userid}" /><br /></dd>
+					</dl>
+					<div class="clear"></div>
+					<dl>
+						<!--<dt>비밀번호</dt>-->
+						<dt><img src="{IMAGES}/manager/text_login_pw.gif" alt="비밀번호" /></dt>
+						<dd><input type="password" class="input_trans" name="login_passwd" id="login_passwd" value="" /></dd>
+					</dl>
+					<div class="clear"></div>
+				</div>
+				<img src="{IMAGES}/manager/btn_login.gif" id="loginBtn" alt="로그인" title="로그인" class="btn" />
+				<div class="clear"></div>
+				<div class="link">
+					<input type="checkbox" name="saveid" id="saveid" value="1" {?_COOKIE.saveid == "1"}checked{/} /><span class="text-link">아이디저장</span>
+				</div>
+				</form>
+				<!--{/}-->
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="login-box-bottom"></div>
+	</div>
+</div>

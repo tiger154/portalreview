@@ -1,0 +1,130 @@
+
+<script type="text/javascript">
+<!--
+     function add_item(){
+          // pre_set 에 있는 내용을 읽어와서 처리..
+          var div = document.createElement('div');
+          div.innerHTML = document.getElementById('pre_set').innerHTML;
+          document.getElementById('field').appendChild(div);
+     }
+
+     function remove_item(obj){
+          // obj.parentNode 를 이용하여 삭제
+          document.getElementById('field').removeChild(obj.parentNode);
+     }
+
+
+	 //document.forms['RevUform'].onsubmit();
+	 //document.forms['RevUform'].submit();
+//-->
+
+</script>
+
+<script type="text/javascript" src="{JS}/_global/category.js"></script>
+<form name="RevUform" id="RevUform" method="post" enctype="multipart/form-data"  action="">
+<input type="hidden" name="code" id="code" value="{code}" />
+<input type="hidden" name="page" id="page" value="{page}" />
+<input type="hidden" name="page_row" id="page_row" value="{page_row}" />
+<input type="hidden" name="btitle" id="btitle" value="{btitle}" />
+<input type="hidden" name="idx" id="idx" value="" />
+<input type="hidden" name="ref_idx" id="ref_idx" value="" />
+<input type="hidden" name="passwd" id="passwd" value="" />
+<input type="hidden" name="module" id="module" value="{module}" />
+
+	<!-- 상단 -->
+	<table border="0" width="980" cellpadding="5" cellspacing="0">
+		<tr>
+			<!--본문-->
+			<td valign="top" bgcolor="#FFFFFF">
+			<table border="0" width="970">
+				<tr>
+					<td align="left" height="35" border="0" bgcolor="#FF9966">
+						<font color="#FFFFFF">&nbsp;<img src="{IMAGES}/admin/lyr_tit_bu.gif">&nbsp;Revu 담자자 및 관계사외 메뉴 사용 금지</font>&nbsp;
+					</td>
+				</tr>
+			</table>				
+			<table border="0" width="970" cellpadding="5" cellspacing="0" style="border:1pt solid black" bgcolor="#FFFFFF">
+				<tr>
+					
+
+					<td align="right">접속시간 : {nowtime}
+					
+
+					<!-- 출력라인 
+					<input type=text name='rowNumPerPage' value="{page_row}" size=3 maxlength=3 onKeyDown=OnlyNumber()>줄-->
+					<br> <br>&nbsp;&nbsp;
+
+
+					
+				
+
+
+
+					<!-- 검색Area -->
+
+					&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="afileregist" value="등록"/>
+					</td>
+			<?}?>
+				</tr>
+
+			</table>
+
+			<br>
+			<table width="970"  border="1" cellpadding="0" cellspacing="0" bgcolor="#C0C0C0">
+				<tr>
+					<th>순번</th>
+					<th>제목</th>
+					<th>파일명</th>
+					<th>등록일</th>
+				</tr>
+				<!--{@list}-->
+				<tr bgcolor="#FFFFFF" height="27" align="center">
+
+					<td>{.no}</td>
+					<td align="left"><a href="/frontier/detailview//{.frno}//" target="_blank">{.subject}</a></td>
+					<td>{.file}</td>
+					<td>{.regdate}</td>
+				</tr>
+				<!--{/}-->
+			</table>
+
+
+		 {? size > 0} 
+		<div class="pageno">{link}</div>
+		{:}
+		<div class="nolist"></div>
+		{/}
+			<!-- 
+			<div class="form-btn-right">
+				<span class="btn strong"><input type="button" class="btn" value="공지사항 등록" style="width:120px;" onClick="writeForm('{module}')" /></span>
+			</div>
+
+			<div class="clear"></div>
+
+			<div class="form-btn-center">
+				<select name="sch_opt" id="sch_opt" class="myboard_select">
+					<option value="">전체</option>
+					<option value="title" {? sch_opt == 'title'}selected{/}>제목</option>
+					<option value="content" {? sch_opt == 'content'}selected{/}>내용</option>
+					<option value="nickname" {? sch_opt == 'nickname'}selected{/}>필명</option>
+				</select>
+				<input name="sch_con" id="sch_con" type="text" class="myboard_input" value="{sch_con}" size="25" onKeyDown="searchEnter(event,'{module}')" />
+				<span class="small btn"><input type="button" class="btn" value="검색" style="width:60px;" onClick="searchInit('{module}');" /></span>
+			</div> -->
+
+			</td>
+			<!-- 본문 끝 -->
+		</tr>
+	</table>
+
+
+
+	<table width="800" border="0">
+		<tr>
+			<td width="800">&nbsp;<!-- 공백 -->
+			</td>
+		</tr>
+	</table>
+
+
+</form>

@@ -1,0 +1,174 @@
+<script type="text/javascript" src="{JS}/frontier.slide.js"></script>
+<style type="text/css">
+	*{
+		margin:0px;
+	}
+	
+	.slideContainer {
+		margin-left:100px;
+		padding:5px;
+		width:620px;
+		background-color:#FFFFFF;
+		overflow:hidden;
+	}
+
+	.slideContainer .slideShow {
+		position:relative;
+		padding:0px;
+		height:110px;
+		width:160px;
+		white-space:nowrap;
+	}
+
+	.slideContainer .slideShow img {
+		height:100px;
+		width:110px;
+		margin:0px;
+		padding:5px;
+	}
+</style>
+</head>
+<body>
+<div id="sub_content">
+<div class="title_line gray_l_text"><img src="/images/myrevu/title_myfrontier.gif"  align="left"/></div>
+
+<!-- 내 프론티어 박스 시작 -->
+<div class="myfrontier_redbox_bg1"></div>
+
+<div id="myfrontier_red">
+
+	
+	<div class="myfrontier_but_pre"><a href="javascript:leftMove(1)"><img src="/images/common/but/but_frontier_pre.gif" alt="이전보기" title="이전보기" /></a></div>
+	<!-- 응모한 프론티어 나열 박스-->
+	<div class="my_redbox slideContainer" align="center">
+	<!-- <div class="slideContainer"> -->
+
+			<ul>
+					<li style="width:620px; height:35px; margin-bottom:20px;"><img src="/images/myrevu/title_myentry.gif" /></li>
+					<li style="height:189px;">
+
+							<!-- <div class="frontier_piecebox slideShow">  -->
+							
+							<!--{@myfron_entrylist}-->     
+							<div class="frontier_piecebox slideShow">
+									<ul>
+											<!-- 응모한 프론티어 상세로 연결 -->
+											<li class="frontier_piecethum"><a href="#" target="_blank"><img src="{.Entryimg}" /></a></li>
+											<li class="frontier_piecetitle"><a href="#" target="_blank"><span class="gray_du_text">{.subject}</span></a></li>
+											<li class="frontier_piecetext1 gray11_l_text">모집인원 : <span class="common11_text">{.people}명</span></li>
+											<li class="frontier_piecetext2 gray11_l_text">당첨자발표 : <span class="common11_text">D-3</span></li>
+									</ul>
+							</div>
+							<!--{/}-->
+							
+					</li>
+			</ul>
+	<!-- </div> -->
+	</div>
+	<div class="myfrontier_but_next"><a href="javascript:rightMove(1)"><img src="/images/common/but/but_frontier_next.gif" alt="다음보기" title="다음보기" /></a></div>
+	
+
+</div>
+<div class="myfrontier_redbox_bg2"></div>
+<!-- 내 프론티어 박스 끝 -->
+
+
+
+<div class="clear"></div>
+<div class="title_line gray_l_text"><img src="/images/myrevu/title_winfrontier.gif"  align="left"/></div>
+<div class="frontier_cbox">
+	<!-- 리스트 묶음 박스 시작 / 디폴트 5줄 -->
+	<div class="frontier_list">
+			<!-- 프론티어 이미지 background 처리 -->
+			<div class="thum110_box" style="background:url(/images/common/thum/thum_list_110110_3.gif) no-repeat; float:left; display:inline;"></div>
+			<!-- 프론티어 내용 박스 -->
+			<div class="frontier_myrevw_box" style="float:left; display:inline;">
+					<div class="gray_title list_title_line"><a href="#">고소하고 맛있는 파스타 전문점 - 바네슈</a></div>
+					<div class="list_count_line orange11_text"><a href="#"><span style="text-decoration:underline;">리뷰 더보기</span></a> (300)</div>
+					<div class="list_dday_line red11_text"><a href="#"><span style="text-decoration:underline;">리뷰등록 </span></a>D-3</div>
+					<div class="clear"></div>
+					<!-- 해당 프론티어 리뷰 리스트 -->
+					<div class="frontier_myrevw_text">
+							<ul>
+									<li class="frontier_myrevw_titleline"><span class="common_text pl20"><a href="#" target="_blank"><strong>필리핀완전정복 - 가난하지만 그들이 행복한 이유</strong></a></li>
+									<li style="height:8px;"></li>
+									<li class="frontier_myrevw_textline">당신은 어디서 살고 싶습니까? 저에게 이런 질문을 하다면 저는 아마도 필리핀을 선택할 듯 싶습니다. 
+											그 이유는 사람 사는 재미가 있기 때문입니다. 물론 너무 많은 간섭으로 인해서 심히 힘든 것은 사실이죠. </li>
+							</ul>
+					</div>
+					<!-- 해당 프론티어 리뷰 리스트 끝-->
+			</div>
+	</div>
+	
+	<div class="clear"> </div>
+	<div  class="cbox_line"></div>
+	<!-- 리스트 묶음 박스 끝 -->
+	<!-- 리스트 묶음 박스 시작 / 디폴트 5줄 -->
+	<div class="frontier_list">
+			<!-- 프론티어 이미지 background 처리 -->
+			<div class="thum110_box" style="background:url(/images/common/thum/thum_list_110110_3.gif) no-repeat; float:left; display:inline;"></div>
+			<!-- 프론티어 내용 박스 -->
+			<div class="frontier_myrevw_box" style="float:left; display:inline;">
+					<div class="gray_title list_title_line"><a href="#">고소하고 맛있는 파스타 전문점 - 바네슈</a></div>
+					<div class="list_count_line orange11_text"><a href="#"><span style="text-decoration:underline;">리뷰 더보기</span></a> (300)</div>
+					<div class="list_dday_line red11_text"><a href="#"><span style="text-decoration:underline;">리뷰등록 </span></a>D-3</div>
+					<div class="clear"></div>
+					<!-- 해당 프론티어 리뷰 리스트 -->
+					<div class="frontier_myrevw_text">
+							<ul>
+									<li class="frontier_myrevw_titleline"><span class="common_text pl20"><a href="#" target="_blank"><strong>필리핀완전정복 - 가난하지만 그들이 행복한 이유</strong></a></li>
+									<li style="height:8px;"></li>
+									<li class="frontier_myrevw_textline">당신은 어디서 살고 싶습니까? 저에게 이런 질문을 하다면 저는 아마도 필리핀을 선택할 듯 싶습니다. 
+											그 이유는 사람 사는 재미가 있기 때문입니다. 물론 너무 많은 간섭으로 인해서 심히 힘든 것은 사실이죠. </li>
+							</ul>
+					</div>
+					<!-- 해당 프론티어 리뷰 리스트 끝-->
+			</div>
+	</div>
+	
+	<div class="clear"> </div>
+	<div  class="cbox_line"></div>
+	<!-- 리스트 묶음 박스 끝 -->
+	<!-- 리스트 묶음 박스 시작 /리뷰 등록을 안 했을시  -->
+	<div class="frontier_list">
+			<!-- 프론티어 이미지 background 처리 -->
+			<div class="thum110_box" style="background:url(/images/common/thum/thum_list_110110_3.gif) no-repeat; float:left; display:inline;"></div>
+			<!-- 프론티어 내용 박스 -->
+			<div class="frontier_myrevw_box" style="float:left; display:inline;">
+					<div class="gray_title list_title_line"><a href="#">고소하고 맛있는 파스타 전문점 - 바네슈</a></div>
+					<div class="list_count_line orange11_text"><a href="#"><span style="text-decoration:underline;">리뷰 더보기</span></a> (300)</div>
+					<div class="list_dday_line red11_text"><a href="#"><span style="text-decoration:underline;">리뷰등록 </span></a>D-3</div>
+					<div class="clear"></div>
+					<!-- 해당 프론티어 리뷰 리스트 -->
+					<div class="frontier_myrevw_text">
+							<ul>
+							<li style="height:28px; padding-top:18px; text-align:center;"><a href="#" target="_blank"><img src="/images/common/but/but_reviewin.gif"  alt="리뷰등록하기" title="리뷰등록하기" /></a></li>
+							</ul>
+					</div>
+					<!-- 해당 프론티어 리뷰 리스트 끝 /리뷰 등록을 안 했을시-->
+			</div>
+	</div>
+	
+	<div class="clear"> </div>
+	<div  class="cbox_line"></div>
+	<!-- 리스트 묶음 박스 끝 -->							
+	</div>
+ 
+ <!-- 페이지 넘버링 박스 시작 -->
+	 <div id="pageNaviArea" class="pageno">
+	 <a href="#" class="pre" onfocus="this.blur()"><img src="/images/common/ico/text_pre.gif" alt="이전" title="이전"/></a>
+	 <a href="#">1</a>
+	 <a href="#">2</a>
+	 <a href="#">3</a>
+	 <a href="#">4</a>
+	 <a href="#">5</a>
+	 <strong>6</strong> <!-- 선택시는 링크를 플코 strong 처리 -->
+	 <a href="#">7</a>
+	 <a href="#">8</a>
+	 <a href="#">9</a>
+	 <a href="#">10</a>
+	 <a href="#" class="next"onfocus="this.blur()"><img src="/images/common/ico/text_next.gif" alt="다음" title="다음"/></a>        
+	  </div>
+<!-- 페이지 넘버링 박스 끝 -->
+  </div>
+  </body>

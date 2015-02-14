@@ -1,0 +1,33 @@
+<script type="text/javascript" src="{JS}/manager.user.js"></script>
+<h2>관리자 계정정보</h2>
+<form name="form1" id="form1">
+회원번호 : <input type="text" name="userno" id="userno" size="10" maxlength="12" />
+등급 : (10<input type="text" name="grade" id="grade" size="1" maxlength="1" />)
+설명 : <input type="text" name="admin_desc" id="admin_desc" size="15" maxlength="50" />
+<input type="button" value="등록" onClick="mnguser.registAdmin();" />
+<hr />
+<table width="100%">
+	<tr align="center">		 
+		<th>회원번호</th>
+		<th>등급</th> 
+		<th>설명</th>
+		<th>아이디</th>
+		<th>이름</th>
+		<th>닉네임</th>
+		<th>삭제</th>
+	</tr>
+	{@list}
+	<tr align="center">		
+		<td>{.userno}</td>
+		<td>{.grade}</td>
+		<td>{.admin_desc}</td>
+		<td>{.user.userid}</td>
+		<td>{.user.username}</td>
+		<td>{.user.nickname}</td>
+		<td><input type="button" value="삭제" onClick="mnguser.confirmDeleteAdmin({.userno});" /></td>
+	</tr>
+	{/}
+</table>
+
+<div class="pageno">{link}</div>
+</form>

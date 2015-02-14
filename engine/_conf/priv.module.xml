@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PRIVILEGES>
+	<modules title="모듈리스트" comment="권한처리가 필요한 모듈명의 권한 리스트임.">
+		<module comment="마이레뷰" mname="myrevu" grade="1" msg="로그인이  필요한 페이지입니다." redirect="/" param="" popup="0">
+			<todo comment="쪽지리스트" tname="list" grade="1" msg="쪽지 리스트는 로그인이 필요한 페이지입니다." redirect="/" param="" popup="1"></todo>
+		</module>
+		<module comment="관리자" mname="manager" grade="0" msg="로그인이  필요한 페이지입니다." redirect="/manager" param="" popup="0">
+			<todo comment="관리자홈" tname="home" grade="105" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="회원관리" tname="user" grade="104" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="회원정보" tname="user.info" grade="105" msg="권한이 없습니다." redirect="/manager" param="" popup="1"></todo>			
+			<todo comment="회원리뷰정보" tname="user.info.review" grade="104" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="회원메모정보" tname="user.info.memo" grade="104" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="회원캐시정보" tname="user.info.cash" grade="104" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="회원포인트정보" tname="user.info.point" grade="104" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="관리자계정정보" tname="user.admin" grade="106" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="로그인정보" tname="user.info.login" grade="0" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>			
+			<todo comment="파워블로그신청자" tname="user.powerblog" grade="104" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>			
+			<todo comment="전체리뷰" tname="review" grade="104" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="리뷰검색" tname="review2" grade="104" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="리뷰베스트" tname="review.best" grade="104" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="리뷰키워드노출설정" tname="review.keyword" grade="105" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="리뷰키워드링크" tname="review.keyword.link" grade="105" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="리뷰금칙어관리" tname="review.filter" grade="105" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="프론티어메뉴" tname="frontier.list" grade="107" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="프론티어메뉴" tname="frontier.entrylist" grade="107" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="프론티어메뉴" tname="frontier.regist" grade="107" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="프론티어메뉴" tname="frontier.letter.sendreserve" grade="107" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="프론티어메뉴" tname="frontier.list.banner" grade="107" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="프론티어메뉴" tname="frontier.regist.banner" grade="107" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="리뷰메뉴" tname="frontier.review.best" grade="104" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="리뷰메뉴" tname="frontier.review.best.recom" grade="104" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="리뷰메뉴" tname="frontier.detailview.adminpopup.editor" grade="104" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="캐시출금" tname="cash.withdraw" grade="105" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="캐시출금파일정보" tname="cash.withdraw.file" grade="106" msg="권한이 없습니다." redirect="/manager" param="" popup="1"></todo>
+			<todo comment="캐시출금엑셀다운로드" tname="cash.withdraw.down" grade="106" msg="권한이 없습니다." redirect="/manager" param="" popup="1"></todo>
+			<todo comment="캐시적립현황" tname="cash.stats" grade="105" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="캐시합계내역" tname="cash.sum" grade="105" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>			
+			<todo comment="통계로그" tname="log.cout" grade="999" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>			
+			<todo comment="캐시로그" tname="log.cash" grade="999" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="포인트로그" tname="log.point" grade="999" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="트랜잭션로그" tname="log.transaction" grade="999" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+			<todo comment="크론로그" tname="log.cron" grade="999" msg="권한이 없습니다." redirect="/manager" param="" popup="0"></todo>
+		</module>
+	</modules>
+</PRIVILEGES>

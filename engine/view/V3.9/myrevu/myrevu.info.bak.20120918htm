@@ -1,0 +1,240 @@
+<script>var area1 = "{area1}";var area2 = "{area2}"; var type = "{_SESSION.type}";</script>
+<script type="text/javascript" src="{JS}/_global/area.js"></script>
+<script type="text/javascript" src="{JS}/_global/zipcode.js"></script>
+<script type="text/javascript" src="{JS}/_global/input.js"></script>
+<script type="text/javascript" src="{JS}/_global/file.js"></script>
+<script type="text/javascript" src="{JS}/myrevu.info.js"></script>
+<iframe name="frmFile" id="frmFile" width="0" height="0" frameborder="0"></iframe>
+
+<form name="form1" id="form1" enctype="multipart/form-data">
+<input type="hidden" id="tmpnickname" value="{user['nickname']}" />
+<div class="title_line gray_l_text"><img src="/images/myrevu/title_join2.gif" /></div>
+<table width="100%" border="0" cellspacing="0">
+	<tr>
+		<td class="block_text">이름</td>
+		<td class="block_text2"><span class="black_text"><strong>{user['username']}</strong></span></td>
+	</tr>
+	<tr>
+		<td class="block_text">아이디</td>
+		<td class="block_text2">
+			{? _SESSION.type == "R"}
+			<span class="black_text"><strong>{user['userid']}</strong></span>
+			{:}
+			소셜 로그인 사용자의 계정정보는  레뷰에서 보유하고 있지 않습니다.
+			{/}
+		</td>
+	</tr>
+	<tr>
+		<td class="block_text">비밀번호</td>
+		<td class="block_text2">
+			{? _SESSION.type == "R"}
+			<input type="password" name="passwd" id="passwd" class="input_common input150" maxlength="20" />
+			&nbsp;
+			<span class="common11_text">* 비밀번호는 4~20자까지 입력 가능합니다.</span>
+			{:}
+			소셜 로그인 사용자의 계정정보는  레뷰에서 보유하고 있지 않습니다.
+			{/}
+		</td>
+	</tr>
+	{? _SESSION.type == "R"}
+	<tr>
+		<td class="block_text">비밀번호 확인</td>
+		<td class="block_text2">
+			<input type="password" name="passwd_confirm" id="passwd_confirm" class="input_common input150" maxlength="20" />
+		</td>
+	</tr>
+	{/}
+	<tr>
+		<td class="block_text">닉네임</td>
+		<td class="block_text2">
+			<input type="text" name="nickname" id="nickname" class="input_common input150" maxlength="15" value="{user['nickname']}" />
+			&nbsp;
+			<img src="/images/common/but/but_g_repeat.gif" id="checkNickBtn" alt="중복확인" title="중복확인" class="btn"  style="margin-bottom:-6px;"/></a>
+		</td>
+	</tr>
+	<tr>
+		<td class="block_text">이메일</td>
+		<td class="block_text2">
+			<input type="text" name="email" id="email" class="input_common" value="{user['email']}"  style=" width:200px;"/>
+			<input type="checkbox" name="flag_email" id="flag_email" value="0" {?user['flag_email'] == "0"}checked{/} /> 이메일 수신거부			
+		</td>
+	</tr>
+	{*}
+	<!--
+	<tr>
+		<td class="block_text">추천인</td>
+		<td class="block_text2">
+			<input type="text" name="recomid" id="recomid" class="input_common input150" />
+			<input type="button" id="checkRecomIDBtn" value="추천인"/>
+		</td>
+	</tr>
+	-->
+	{/*}
+	<tr>
+		<td class="block_text">프로필 사진</td>
+		<td class="block_text2">
+			<div>
+				<ul>
+					<li class="fl">
+						<img src="{imgsrc}" id="profile_image" alt="프로필이미지" width="100" height="100" />
+					</li>
+					<li class="fl pl20 pb09">
+						<span class="common11_text">* 본인을 표현하는 사진 또는 이미지를 등록해주세요.</span> 
+					</li>
+					<li  class="fl pl20">
+						<!--<img src="/images/common/but/but_findimg.gif" alt="이미지찾기" title="이미지찾기"/>-->
+						<input type="file" name="file1" id="file1" value=""  class="input_common"/><br />
+						<input type="hidden" name="tmpimage" id="tmpimage" width="80" height="80" value="" />
+					</li>
+				</ul>
+			</div>
+		</td>
+	</tr>
+</table>
+<!-- 필수 입력 폼 끝 -->
+
+<div class="pt40"></div>
+
+<!-- 선택 입력 폼 시작 -->
+<div class="title_line gray_l_text"><img src="/images/myrevu/title_join3.gif"  align="left"/></div>
+<table width="100%" border="0" cellspacing="0">
+	<tr>
+		<td class="block_text">생년월일{birth[0]}</td>
+		<td class="block_text2">	
+			<div class="pr10 fl">
+				<select name="birth_year" id="birth_year">
+					<option value="">년도선택</option>
+					{@ birth_year}<option value="{.value_}" {? user_birthday[0] == .value_}selected{/}>{.value_}</option>{/}
+				</select>
+			</div>
+			<div class="pr10 fl">
+				<select name="birth_month" id="birth_month">
+					<option value="">월선택</option>
+					{@ birth_month}<option value="{.value_}" {? user_birthday[1] == .value_}selected{/}>{.value_}</option>{/}
+				</select>
+			</div>
+			<div class="pr10 fl">
+				<select name="birth_day" id="birth_day">
+					<option value="">일선택</option>
+					{@ birth_day}<option value="{.value_}" {? user_birthday[2] == .value_}selected{/}>{.value_}</option>{/}
+				</select>
+			</div>
+			<div class="pt05 fl">
+				<input type="radio" name="flag_lunar" value="0" {? extra.flag_lunar == "0"}checked{/}  class="h2_space"/>양력
+				<input type="radio" name="flag_lunar" value="1" {? extra.flag_lunar == "1"}checked{/}  class="h2_space"/>음력
+				&nbsp;&nbsp;&nbsp; &nbsp;
+				<span class="gray_d_text"><strong>성별</strong></span>
+				&nbsp;
+				<input type="radio" name="gender" value="M" {? extra.gender == "M"}checked{/}  class="h2_space"/>
+				<span class="common11_text">남</span>&nbsp;
+				<input type="radio" name="gender" value="F" {? extra.gender == "F"}checked{/} class="h2_space"/>
+				<span class="common11_text">여</span>
+			</div>
+			<div class="clear"></div>
+		</td>
+	</tr>
+	<tr>
+		<td class="block_text">휴대폰번호</td>
+		<td class="block_text2">
+			<select name="cell1">		
+				<option value="">번호선택</option>
+				{@ phone_number}
+				<option value="{.value_}" {? user_cell[0] == .value_}selected{/}>{.value_}</option>
+				{/}
+			</select>
+			&nbsp;-&nbsp;
+			<input type="text" name="cell2" id="cell2" size="5" maxlength="4" class="input_common" value="{user_cell[1]}" />
+			&nbsp;-&nbsp;
+			<input type="text" name="cell3" id="cell3" size="5" maxlength="4" class="input_common" value="{user_cell[2]}" />
+		</td>
+	</tr>
+	<tr>
+		<td class="block_text">전화번호</td>
+		<td class="block_text2">
+			<input type="text" name="tel1" id="tel1" size="9" maxlength="3" class="input_common" value="{user_tel[0]}" />&nbsp;-&nbsp;
+			<input type="text" name="tel2" id="tel2" size="5" maxlength="4" class="input_common" value="{user_tel[1]}" />&nbsp;-&nbsp;
+			<input type="text" name="tel3" id="tel3" size="5" maxlength="4" class="input_common" value="{user_tel[2]}" />
+		</td>
+	</tr>
+	<tr>
+		<td class="block_text">주소</td>
+		<td class="block_text2">
+			<div class="pb09">
+				<input type="text" name="addrzip" id="addrzip" size="8" maxlength="6" class="input_common" value="{extra.zipcode}" readonly />
+				&nbsp;&nbsp;
+				<img src="/images/common/but/but_postno.gif" id="zipcodeBtn" alt="우편번호" title="우편번호" class="btn"   style="margin-bottom:-6px;"/>
+			</div>
+			<div class="pb09">
+				<input type="text" name="addr1" id="addr1" size="40" maxlength="60" class="input_common" value="{extra.addr1}" readonly />
+				&nbsp;&nbsp;
+				<input type="text" name="addr2" id="addr2" size="40" maxlength="60" class="input_common" value="{extra.addr2}" />
+			</div>
+			<div class="pb09">
+				<span class="common11_text">
+					* 휴대폰/전화번호/주소 정보가 기입되지 않은 경우 이벤트 당첨에서 제외될 수 있으니, <br />
+					정확하게 입력해주세요.
+				</span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="block_text">관심지역<br />(최대2개) </td>
+		<td class="block_text2">
+			<div class="pr10 fl">
+				<select name="area_bcode1" id="areaBcodeCBox1" style="width:120px;"><option value="">지역선택</option></select>
+			</div>
+			<div class="pr10 fl">
+				<select name="area_mcode1" id="areaMcodeCBox1" style="width:120px;"><option value="">지역선택</option></select>
+				<!--<select name="area_scode1" id="areaScodeCBox1"><option value="">지역선택</option></select>-->
+			</div>
+			<div class="clear"></div>
+			<div class="pb09"></div>
+			<div class="pr10 fl">
+				<select name="area_bcode2" id="areaBcodeCBox2" style="width:120px;"><option value="">지역선택</option></select> 
+			</div>
+			<div class="pr10 fl">
+				<select name="area_mcode2" id="areaMcodeCBox2" style="width:120px;"><option value="">지역선택</option></select>
+				<!--<select name="area_scode2" id="areaScodeCBox2"><option value="">지역선택</option></select>-->
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="block_text"><p>관심분야<br />(최대2개)</p></td>
+		<td class="block_text2">
+			{@ cate1_list} 
+			<div class="pb09">
+				<input type="checkbox" name="cate[]" value="{.cate1}" {? cate1 == .cate1 || cate2 == .cate1 }checked{/}  class="h2_space"/> 
+				{.cate_desc} ({@ .cate2_list} {..cate_desc}{/} ...)
+			</div>
+			{/}
+		</td>
+	</tr>
+	{*}
+	<!--
+	<tr>
+		<td class="block_text">소셜 아이디</td>
+		<td class="block_text2">
+			<img src="/images/myrevu/img_fbline.gif" />
+			<a href="#" target="_blank"><img src="/images/common/but/but_wb_login.gif" alt="로그인하기" title="로그인하기" /></a>
+			&nbsp;&nbsp;&nbsp;
+			<img src="/images/myrevu/img_twline.gif" />
+			<a href="#" target="_blank"><img src="/images/common/but/but_wb_login.gif" alt="로그인하기" title="로그인하기" /></a><br />
+			<span class="common11_text">* 소셜 아이디를 연동해 놓으면 소셜 댓글을 편리하게 달 수 있습니다. </span>
+			<strong><a href="javascript:common.redirect('/myrevu/secede');">탈퇴하기</a></strong>
+		</td>
+	</tr>
+	-->
+	{/*}
+</table>
+
+<!-- 선택 입력 폼 끝 -->
+<div style="width:680px; height:22px; padding:10px 0 0 25px; text-align:left;">
+	<a href="javascript:common.redirect('/myrevu/secede');"><span class="gray_stitle">* 회원 탈퇴하기</span></a> 
+</div>
+<div class="pt40"></div>
+<center>	
+	<img src="/images/common/but/but_gb_save.gif" id="saveBtn" alt="저장하기" title="저장하기" class="btn" />
+</center>
+<div class="pt40"></div>
+<div id="zipcodelayer">{# zipcode}</div>	
+</form>

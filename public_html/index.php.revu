@@ -1,0 +1,15 @@
+<html>
+<head>
+<title>[공지] 레뷰 시스템 긴급 점검</title>
+<script language="JavaScript">
+<!--
+        function redirecturl() {
+                document.location.href='http://blog.revu.co.kr/2245';
+        }
+//-->
+</script>
+</head>
+<body onload="javascript:redirecturl();">
+</body>
+</html>
+

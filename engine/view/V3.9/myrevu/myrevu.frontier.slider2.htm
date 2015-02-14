@@ -1,0 +1,89 @@
+
+<!-- #### 오늘의 프론티어 롤링관련 스크립트/css START#### -->
+<!-- Slider Kit scripts -->
+<script type="text/javascript" src="{EXTENDS}/js.slider/jquery.sliderkit.1.8.min.js"></script>		
+<!-- Slider Kit launch -->
+<script type="text/javascript">
+	$(window).load(function(){ //$(window).load() must be used instead of $(document).ready() because of Webkit compatibility				
+
+
+		// Carousel > Demo #2
+		$(".carousel-demo2").sliderkit({
+			shownavitems:2,
+			scroll:1,
+			mousewheel:true,
+			circular:true,
+			start:2
+		});
+
+
+	
+	});	
+</script>
+
+<!-- Slider Kit styles -->
+<link rel="stylesheet" type="text/css" href="{EXTENDS}/js.slider/sliderkit-core.css" media="screen, projection" />
+<link rel="stylesheet" type="text/css" href="{EXTENDS}/js.slider/sliderkit-demos.css" media="screen, projection" />
+<link rel="stylesheet" type="text/css" href="{EXTENDS}/js.slider/sliderkit-site.css" media="screen, projection" />
+
+<!-- Slider Kit compatibility -->	
+<!--[if IE 6]><link rel="stylesheet" type="text/css" href="./lib/css/sliderkit-demos-ie6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" href="./lib/css/sliderkit-demos-ie7.css" /><![endif]-->
+<!--[if IE 8]><link rel="stylesheet" type="text/css" href="./lib/css/sliderkit-demos-ie8.css" /><![endif]-->
+
+<!-- Site styles -->
+
+<!-- #### 오늘의 프론티어 롤링관련 스크립트/css END#### -->
+
+
+
+<div id="sub_content">
+
+<!-- 탑배너 -->
+						<div class="top_banner"><a href="#" target="_blank"><img src="/images/common/banner/banner_m_714134.gif"  alt="#" title="#"/></a></div>
+						<div id="m_frontier">
+								<div class="m_today_title">
+										<ul>
+												<li style=" width:142px; height:30px;" class="fl"><img src="/images/main/title_today_frontier.gif" /></li>
+												<li style=" width:408px; height:30px; padding-left:10px;" class="fl"><span class="ln23"><strong>{day_nowmonth}</strong>월 <strong>{day_nowday}</strong>일 현재, 총 <strong>{frontierCnt}</strong>개 체험 신청 가능</span></li>
+												<li style=" width:82px; height:20px; padding-top:5px; text-align:right;" class="fr" ><img src="/images/common/ico/ico_more.gif" /></li>
+										</ul>
+								</div>
+								<!-- 오늘의프론티어타이틀 끝 -->
+								
+								
+								
+								<!-- #### 오늘의 프론티어 롤링 START#### -->
+								<!-- Start carousel-demo2 -->
+								<div class="sliderkit carousel-demo2">
+									<div class="sliderkit-nav">
+										<div class="sliderkit-nav-clip">
+										<ul>								
+										<!--{@frontierList}-->
+										<li>
+										<div class="m_bigbox">
+												<!-- 프로모션 썸네일은 비지 처리 각 해당 카데고리는 이미지 처리 / m_cate.text 참고 -->
+												<div class="thum_m_big"><img src="/images/common/thum/thum_224224_1.jpg" width="200" height="200"></div>
+												<div class="text_m_big">
+														<ul>
+																<li style="height:16px; padding-bottom:7px;" class="gray_title text_overlay17">{.subject}</li>
+																<li style="height:12px; padding-bottom:5px;" class="text_overlay14 gray11_l_text">모집기간 :<span class="gray11_d_text"> {.start_date} ~ {.end_date}</span></li>
+																<li style="height:12px; padding-bottom:5px;" class="text_overlay14 gray11_l_text">모집인원 : <span class="gray11_d_text"> 30명</span> / 발표 :<span class="gray11_d_text">{.notice_date}</span></li>
+																<li style="height:12px; padding-bottom:5px;" class="text_overlay14 gray11_l_text">리뷰작성기간 : <span class="gray11_d_text"> {.due_edate}까지</span></li>
+														</ul>
+												</div>
+												<!-- 시간버튼 -->
+												<div class="but_m_big">
+														<div style="padding:7px 0 0 40px;" class="fl"><span class="gray11_db_text">3시간남음</span></div>
+														<div style="padding-left:112px;" class="f1"><a href="#"><img src="/images/common/but/but_m_entry.gif" alt="응모하기" title="응모하기" /></a></div>
+												</div>
+										</div>
+										</li>
+										<!--{/}-->
+										</ul>
+										</div>
+									</div>
+								</div>
+								<!-- // end of carousel-demo2 -->
+								<!-- #### 오늘의 프론티어 롤링 END#### -->
+

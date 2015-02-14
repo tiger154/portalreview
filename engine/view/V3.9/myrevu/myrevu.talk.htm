@@ -1,0 +1,55 @@
+<script type="text/javascript" src="{JS}/myrevu.talk.js"></script>
+<div class="title_line">
+	<div class="socialtalk_title"></div>
+	<!-- 댓글 탭 시작 -->
+	<div class="socialtalk_tab">
+		<ul>
+			<li><img src="/images/myrevu/tab_socialtalk_{?type=='0'}on{:}off{/}1.gif" onClick="common.redirect('/myrevu/talk/0');" width="116" height="29" alt="내가쓴토크" title="내가쓴토크" class="btn" /></li>
+			<li><img src="/images/myrevu/tab_socialtalk_{?type=='1'}on{:}off{/}2.gif" onClick="common.redirect('/myrevu/talk/1');" width="116" height="29" alt="내리뷰에달린토크" title="내리뷰에달린토크" class="btn" /></li>
+		</ul>
+	</div>
+	<!-- 리뷰관리 탭 끝 -->
+</div>
+<!-- 상단 상태 라인 -->
+<div class="review_manage_state">
+	<div class="review_manage_stater"><span class="gray_db_text">총 {=number_format(cnt)} 건</span></div>
+</div>
+
+{@ list}
+<div class="socialtalk_list">
+	<div class="thum80_box"><img src="{.userimage}" width="80" height="80" /></div>
+	<div class="socialtalk_text_box">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="{? .index_%2 == 0}pop_reply_gline{:}pop_reply_line{/}">
+			<tr>
+				<td width="30" align="center" valign="top"><img src="{.icon}"/></td>
+				<td width="569">
+					<div class="gray11_l_text text_overlay17">
+						{.ref} ㅣ {.regdate}
+						<img src="/images/common/ico/ico_del.gif" align="absmiddle" alt="삭제" title="삭제" class="btn" onClick="mytalk.deleteTalk({.tno})" />
+					</div>
+					<div class="common11_text"><b>{.talk}</b></div>
+					<div class="sns_post_line"> <a href="javascript:common.socialbar({.review.rno});"><span  class="gray_l_text"><u>{.title}</u></span></a></div>
+					
+					<!--<div class="sns_kind gray11_l_text">| 리뷰에 달린 토크</div>-->
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+{/}
+
+{? size > 0} 
+<div class="pageno">{link}</div>
+{:}
+<div class="nolist">등록된 토크가 없습니다.</div>
+{/}
+
+
+
+
+
+
+
+
+
+

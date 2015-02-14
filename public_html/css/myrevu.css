@@ -1,0 +1,163 @@
+ /* myrevu */  
+.myrevu_text_box {width:674px; height:auto;padding:20px;background:#f8f8f8;}
+.myrevu_wtext_box {width:674px; height:auto;padding:20px;}
+.myrevu_text_line { width:630px;padding-bottom:8px;}
+.myrevu_context {width:714px; height:auto; float:left; display:inline;}
+
+.agree_title_box {width:674px; height:150px;padding:20px; border-bottom:#666666 dashed 1px; border-top:#666666 dashed 1px;background:#f8f8f8;}
+
+.mycash_box { width:714px; height:130px; margin-bottom:40px; background:url(/images/myrevu/bg_mycash.gif) 0 0 no-repeat;}
+.mycash_bg {width:339px; height:auto;background:url(/images/myrevu/bg_mycash.gif) 0 0 no-repeat;margin-bottom:40px; float:left; display:inline;}
+.mycash_bg_text {width:339px; height:18px; padding-bottom:12px; text-align:right;}
+.mycash_bg_but {width:84px; height:22px; padding:108px 0 0 0;margin-bottom:40px;text-align:right;float:right; display:inline;}
+
+.review_manage_title {width:168px; height:29px; background:url(/images/myrevu/title_reviewmanage.gif) no-repeat; float:left; display:inline;}
+.review_manage_state { width:714px; height:40px; border-bottom:#cccccc solid 1px; margin-bottom:20px;}
+.review_manage_statel {width:520px; height:15px; padding:12px 0 0 12px; float:left; display:inline; overflow:hidden;}
+.review_manage_statel li { padding:0 6px; float:left; display:inline;}
+.review_manage_stater {width:120px; height:15px; padding:20px 0 0 12px; text-align:right;float:right; display:inline; overflow:hidden;}
+.review_manage_state_make { width:690px; height:22px;padding:12px; border-bottom:#cccccc solid 1px; text-align:right;}
+.review_manage_state_group { width:690px; padding:12px; background:#f8f8f8;border-bottom:#cccccc solid 1px; overflow:hidden;}
+.review_manage_state_group li {height:11px;padding:5px;float:left; display:inline;*word-break:break-all;-ms-word-break:break-all;}
+.review_manage_tab {width:351px; height:31px; float:right; display:inline;}
+.review_manage_tab  li { width:117px; height:31px; float:left; display:inline;}
+.review_list {width:714px; height:128px; clear:both;}
+
+.check_box {width:17px; height:60px; padding:50px 10px 0 0;float:left; display:inline; }
+.thum110_box {width:110px; height:110px; padding-right:15px;float:left; display:inline; overflow:hidden;}
+
+
+.review_text_box {width:399px; height:110px; padding-right:20px;float:left; display:inline;}
+.review_title_line{ width:297px;height:18px;padding-bottom:8px;overflow:hidden;float:left; display:inline; line-height:1.9;}
+.review_title_ico{ width:50px;height:14px;padding:5px 10px 12px 0;float:left; display:inline;}
+.review_title_but{ width:40px;height:14px;padding:10px 0 0 0; text-align:right;float:right; display:inline;}
+.review_cate_line{ width:297px;height:16px;padding-bottom:8px;overflow:hidden; float:left; display:inline;}
+.review_cate_day{ width:70px;height:16px;padding-bottom:8px;float:left; display:inline;}
+.review_cate_cash{ width:56px;height:16px;padding-bottom:8px;background:url(/images/common/ico/ico_cash.gif) no-repeat;float:right; display:inline;}
+.review_text { width:389px; height:32px;padding:8px; margin-top:4px;background:#f8f8f8;overflow:hidden;line-height:1.6;}
+.review_notext_box {width:525px; height:110px; padding-right:20px;float:left; display:inline;}
+.review_notitle_line{ width:410px;height:18px;padding-bottom:8px;overflow:hidden;float:left; display:inline; line-height:1.9;}
+.review_notitle_ico{ width:50px;height:14px;padding:5px 10px 12px 0;float:left; display:inline;}
+.review_notitle_but{ width:40px;height:14px;padding:10px 0 0 0; text-align:right;float:right; display:inline;}
+.review_nocate_line{ width:410px;height:16px;padding-bottom:8px;overflow:hidden; float:left; display:inline;}
+.review_nocate_day{ width:70px;height:16px;padding-bottom:8px;float:left; display:inline;}
+.review_nocate_cash{ width:56px;height:16px;padding-bottom:8px;background:url(/images/common/ico/ico_cash.gif) no-repeat;float:right; display:inline;}
+.review_notext { width:515px; height:32px;padding:8px; margin-top:4px;background:#f8f8f8;overflow:hidden;line-height:1.6; clear:both;}
+.review_sns_box {width:112px; height:110px; padding-left:20px; border-left:#eeeeee solid 1px;float:right; display:inline;}
+.review_dot_line { width:714px; height:18px; background:url(/images/common/bg/line_dot18.gif) repeat-x; clear:both;}
+
+/* mymanage */
+.my_frontier_title {width:134px; height:29px; background:url(/images/myrevu/title_manage_frontier.gif) no-repeat; float:left; display:inline;}
+.my_frontier_tab {width:232px; height:29px; float:right; display:inline;}
+.my_frontier_tab  li { width:116px; height:29px; float:left; display:inline;}
+.my_friend_title {width:134px; height:29px; background:url(/images/myrevu/title_manage_friend.gif) no-repeat; float:left; display:inline;}
+.my_friend_tab {width:393px; height:29px; float:right; display:inline;}
+.my_friend_tab  li { width:131px; height:29px; float:left; display:inline;}
+
+.my_post_title {width:134px; height:29px; background:url(/images/myrevu/title_mypost_in.gif) no-repeat; float:left; display:inline;}
+.my_post_tab {width:262px; height:29px; float:right; display:inline;}
+.my_post_tab  li { width:131px; height:29px; float:left; display:inline;}
+
+.m_talktime2 {width:714px; height:auto; margin-bottom:40px;}
+.m_talktime_box  {width:714px; height:66px;}
+.m_talktime_line { width:593px; height:66px;float:left; display:inline;}
+.m_talktime_thum { width:66px; height:66px;float:left; display:inline;}
+.m_talktime_text1 { width:480px; height:20px; padding-left:15px; margin-bottom:8px; overflow:hidden; font-weight:bold;float:left; display:inline;}
+.m_talktime_text2 { width:480px; height:32px; padding-left:15px; overflow:hidden;float:left; display:inline;}
+.m_talktime_text3 { width:440px; height:32px; padding-left:15px; margin-left:15px; background:url(/images/common/ico/ico_or_arrow.gif) no-repeat;margin-bottom:5px; overflow:hidden;float:left; display:inline;}
+.m_talktime_text4 { width:480px; height:14px; padding-left:15px; overflow:hidden;float:left; display:inline;}
+.m_talktime_sbox { width:121px; height:66px; background:url(/images/main/bg_time.gif)  no-repeat; float:right; display:inline;}
+.m_talktime_dotline {width:714px; height:18px; background:url(/images/common/bg/line_dot18.gif) repeat-x; clear:both;}
+
+.my_friend_linebox {width:672px; height:115px; border:#999999 solid 1px; padding:20px;}
+.my_friend_linebox2 {width:672px; height:115px; border-right:#999999 solid 1px;border-bottom:#999999 solid 1px;border-left:#999999 solid 1px;padding:20px;}
+
+.friend_piece_textbox { width:296px; height:115px; margin-bottom:15px; float:left; display:inline;}
+.friend_piece_nonebox { width:296px; height:45px; margin-bottom:15px; background:#f8f8f8; float:left; display:inline; text-align:center;}
+.friend_piece_thum_i { width:45px; height:45px; border:#b8d302 solid 3px; margin-right:10px;}
+.friend_piece_thum_me { width:45px; height:45px; border:#1ea1f1 solid 3px; margin-right:10px;}
+.friend_piece_thum_each { width:45px; height:45px; border:#ff4a00 solid 3px; margin-right:10px;}
+.friend_piece_text1 { width:234px; height:14px; margin-bottom:10px; overflow:hidden;}
+.friend_piece_text2 { width:234px; height:14px; margin-bottom:5px; overflow:hidden;}
+.friend_piece_text3 { width:234px; height:14px; margin-bottom:5px; overflow:hidden;}
+.friend_piece_dotline { width:294px; height:31px; background:url(/images/common/bg/line_dot31.gif) repeat-x; clear:both;}
+.friend_piece_title { width:65px; height:45px; margin-right:10px;}
+.friend_piece_text3 { width:220px; height:14px; margin-bottom:5px; overflow:hidden;}
+.friend_piece_text4 { width:220px; height:14px; margin-bottom:5px; overflow:hidden;}
+
+/* myfriend */  
+.friend_text_box {width:426px; height:110px; padding-right:20px;float:left; display:inline;}
+.friend_title_line{ width:324px;height:18px;padding-bottom:8px;overflow:hidden;float:left; display:inline; line-height:1.9;}
+.friend_cate_line{ width:324px;height:16px;padding-bottom:8px;overflow:hidden; float:left; display:inline;}
+.friend_cate_name{ width:90px;height:16px;padding:0 12px 8px 0; text-align:left;float:left; display:inline;}
+.friend_text { width:416px; height:32px;padding:8px; margin-top:4px;background:#f8f8f8;overflow:hidden;line-height:1.6;}
+.friend_notext_box {width:552px; height:110px; padding-right:20px;float:left; display:inline;}
+.friend_notitle_line{ width:437px;height:18px;padding-bottom:8px;overflow:hidden;float:left; display:inline; line-height:1.9;}
+.friend_nocate_line{ width:324px;height:16px;padding-bottom:8px;overflow:hidden; float:left; display:inline;}
+.friend_nocate_name{ width:90px;height:16px;padding:0 12px 8px 0;text-align:left;float:left;display:inline; }
+.friend_notext { width:542px; height:32px;padding:8px; margin-top:4px;background:#f8f8f8;overflow:hidden;line-height:1.6; clear:both;}
+
+.myblog_box { width:694px;height:auto; background:#e8e8e8; padding:10px;}
+.myblog_tbox { width:672px;height:auto; border:#aaaaaa solid 1px; padding:10px 10px 25px 10px; background:#ffffff;}
+.myblog_title {width:714px; height:29px; background:url(/images/myrevu/title_myblog.gif) no-repeat;}
+.myblog_info {width:500px; height:14px; padding:7px 0 0 170px; text-align:left;}
+.myblog_title_bg {width:714px; height:39px; background:url(/images/myrevu/bg_myblog.gif) no-repeat;}
+.myblog_title_text {width:670px; height:18px; padding:10px 0 0 36px; text-align:left;}
+
+.myfrontier_redbox_bg1 {width:714px; height:23px; background:url(/images/myrevu/bg_myfrontier1.gif) no-repeat;margin-top:30px;}
+.myfrontier_redbox_bg2 {width:714px; height:23px; background:url(/images/myrevu/bg_myfrontier2.gif) no-repeat;margin-bottom:40px;}
+
+#myfrontier_red {width:708px; height:244px; border-left:#ee382d solid 3px;border-right:#ee382d solid 3px;}
+#myfrontier_red .myfrontier_but_pre { width:32px; height:61px; padding:88px 12px 95px 0; float:left; display:inline;}
+#myfrontier_red .myfrontier_but_next { width:32px; height:61px; padding:88px 0 95px 12px; float:left; display:inline;}
+#myfrontier_red .my_redbox {width:620px; height:244px;float:left; display:inline; overflow:hidden;}
+
+.frontier_piecebox {width:110px; height:189px;margin-left:14px; float:left; display:inline;}
+.frontier_piecethum {width:110px; height:110px; margin-bottom:15px; overflow:hidden;}
+.frontier_piecetitle {width:110px; height:18px; text-align:left;overflow:hidden;}
+.frontier_piecetext1 {width:110px; height:14px; text-align:left; overflow:hidden;}
+.frontier_piecetext2 {width:110px; height:14px; text-align:left;overflow:hidden;}
+
+.myfriend_state { width:714px; padding:10px 0 0 0; margin:10px 0;}
+.myfriend_statel {width:440px; height:22px;padding:0;float:left; display:inline; background:url(/images/myrevu/title_search_friend.gif) no-repeat; }
+.myfriend_stater {width:274px; height:22px; padding:0;text-align:right;float:right; display:inline;}
+.myfriend_gray {width:684px; height:auto; padding:15px; background:#f8f8f8;border-top:#999999 solid 2px;}
+.myfriend_gray .my_graybox {width:684px; height:121px; background:#f8f8f8; }
+.myfriend_gray .my_grayline {width:684px; height:41px; clear:both;}
+.myfriend_white {width:684px; height:auto; padding:15px; border-top:#999999 solid 2px;}
+.myfriend_white .my_gray2box {width:684px; height:121px; }
+.myfriend_white .my_grayline2 {width:684px; height:41px; clear:both;}
+.myfriend_white .my_searchtext {width:684px; margin:20px 0 20px 0; padding: 0 0 20px 0; font-size:14px;text-align:center;clear:both;}
+.myfriend_search_box {width:100px; height:121px; background-color:#EEE; float:left; display:inline;}
+.myfriend_MY_box {width:100px; height:121px; background:url(/images/myrevu/bg_i_friend.gif) no-repeat;float:left; display:inline;}
+.myfriend_ME_box {width:100px; height:121px; background:url(/images/myrevu/bg_me_friend.gif) no-repeat;float:left; display:inline;}
+.myfriend_EO_box {width:100px; height:121px; background:url(/images/myrevu/bg_each_friend.gif) no-repeat;float:left; display:inline;}
+.myfriend_space {width:46px; height:121px;float:left; display:inline;}
+.myfriend_thum {width:80px; height:80px; overflow:hidden; margin:10px 10px 7px 10px;}
+.myfriend_text {width:80px; height:14px; overflow:hidden; margin:0 10px 10px 10px; font-weight:bold;}
+
+.myblog_step1 {width:714px; height:291px; background:url(/images/myrevu/bg_myblog_step1.gif) no-repeat;}
+.myblog_step2 {width:714px; height:338px; background:url(/images/myrevu/bg_myblog_step2.gif) no-repeat;}
+.myblog_step3 {width:714px; height:291px; background:url(/images/myrevu/bg_myblog_step3.gif) no-repeat;}
+
+/* socialtalk */ 
+.socialtalk_list {width:714px; height:100px;}
+.socialtalk_text_box {width:619px; height:80px;float:left; display:inline;}
+.socialtalk_title {width:168px; height:29px; background:url(/images/myrevu/title_socialtalk.gif) no-repeat; float:left; display:inline;}
+.socialtalk_tab {width:232px; height:29px; float:right; display:inline;}
+.socialtalk_tab  li { width:116px; height:29px; float:left; display:inline;}
+.thum80_box {width:80px; height:80px; padding-right:15px;float:left; display:inline; overflow:hidden;}
+.sns_post_line{ width:344px;height:15px;padding-top:6px;overflow:hidden;float:left; display:inline; line-height:1.4;}
+.sns_kind{ width:112px;height:15px;padding:6px 10px 0 0;overflow:hidden;float:right; display:inline; line-height:1.4; text-align:right;}
+
+.sns_ico{ width:16px;height:16px;padding:0 10px 6px 0;float:left; display:inline;}
+.sns_name_line{ width:344px;height:16px;padding-bottom:6px;overflow:hidden;float:left; display:inline; line-height:1.4;}
+.sns_text { width:456px; height:20px;padding:0 8px; margin-top:4px;background:#f8f8f8;overflow:hidden;line-height:1.6;}
+.sns_time_box {width:112px; height:50px;padding:30px 0 0 10px; border-left:#eeeeee solid 1px;float:right; display:inline; text-align:center;}
+
+.socialtalk_list66 {width:714px; height:86px;}
+.socialtalk_text_box66 {width:633px; height:66px;float:left; display:inline;}
+.thum66_box {width:66px; height:66px; padding-right:15px;float:left; display:inline; overflow:hidden;}
+.sns_post_line66{ width:358px;height:15px;padding-top:6px;overflow:hidden;float:left; display:inline; line-height:1.4;}
+.sns_kind66{ width:112px;height:15px;padding:6px 10px 0 0;overflow:hidden;float:right; display:inline; line-height:1.4; text-align:right;}
+

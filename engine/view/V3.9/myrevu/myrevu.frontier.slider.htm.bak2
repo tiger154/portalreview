@@ -1,0 +1,100 @@
+<head>
+	
+
+	<!-- Slider Kit scripts -->
+	<script type="text/javascript" src="{EXTENDS}/js.slider/jquery.sliderkit.1.8.min.js"></script>		
+
+	<!-- Slider Kit launch -->
+	<script type="text/javascript">
+		$(window).load(function(){ //$(window).load() must be used instead of $(document).ready() because of Webkit compatibility				
+
+
+			// Carousel > Demo #5
+			$("#carousel-demo5").sliderkit({
+				auto:true,
+				autospeed:4000,
+				shownavitems:3,
+				circular:false,
+				fastchange:false,
+				scrolleasing:"easeOutExpo", //"easeOutBounce, easeOutBack"
+				scrollspeed:1000
+			});	
+		});	
+	</script>
+	
+	<!-- Slider Kit styles -->
+	<link rel="stylesheet" type="text/css" href="{EXTENDS}/js.slider/sliderkit-core.css" media="screen, projection" />
+	<link rel="stylesheet" type="text/css" href="{EXTENDS}/js.slider/sliderkit-demos.css" media="screen, projection" />
+	
+	<!-- Slider Kit compatibility -->	
+	<!--[if IE 6]><link rel="stylesheet" type="text/css" href="./lib/css/sliderkit-demos-ie6.css" /><![endif]-->
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" href="./lib/css/sliderkit-demos-ie7.css" /><![endif]-->
+	<!--[if IE 8]><link rel="stylesheet" type="text/css" href="./lib/css/sliderkit-demos-ie8.css" /><![endif]-->
+
+	<!-- Site styles -->
+	<link rel="stylesheet" type="text/css" href="{EXTENDS}/js.slider/sliderkit-site.css" media="screen, projection" />
+	
+</head>
+
+<body>
+<div id="carousel-demo5" class="sliderkit">
+<div class="sliderkit-nav">
+<table width="714" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="5"><img src="/images/myrevu/bg_myfrontier1.gif" width="714" height="23" /></td>
+</tr>
+	<tr>
+		<td width="35" height="244" style="background:url(/images/myrevu/bg_myfrontier_sidel.gif) repeat-y; text-align:right;"><div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-prev"><a href="#" title="Scroll to the left"><span><img src="/images/common/but/but_frontier_pre.gif" alt="이전보기" width="32" height="61" title="이전보기"></span></a></div></td>
+		<td width="11" height="244"><img src="/images/common/space.gif" width="11" /></td>
+		<td width="620" style="padding:0; margin:0;">
+		<!-- 슬라이드 묶음테이블 -->
+
+
+		<table width="620" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="620" height="35" colspan="5" align="center"><img src="/images/myrevu/title_myentry.gif" width="623" height="35" /></td>
+			</tr>
+			<tr>
+				<td width="620" height="20" colspan="5"><img src="/images/common/space.gif" width="20" /></td>
+			</tr>
+
+			<tr>
+			
+				
+
+
+					<div class="sliderkit-nav-clip">
+					<ul>
+					<!--{@myfron_entrylist}--> 
+						<li>
+							<a href="/frontier/detailview//{.frno}/B" target="_blank"><img src="{.Entryimg}"  width="110" height="110"/></a>
+							<h3><a href="/frontier/detailview//{.frno}/B" target="_blank"><span class="gray_du_text">{.subject}</span></a></h3>
+							<p><div class="frontier_piecetext1 gray11_l_text">모집인원 : <span class="common11_text">{.peoplelimit}명</span></div><div class="frontier_piecetext2 gray11_l_text">당첨자발표 : <span class="common11_text">D-3</span></div></p>
+						</li>
+					<!--{/}-->
+					</ul>
+
+					</div>
+
+
+
+			</tr>
+
+	</table>
+
+
+
+
+	</td>
+	<td width="10" height="244"><img src="/images/common/space.gif" width="10" /></td>
+	<td width="35" height="244" style="background:url(/images/myrevu/bg_myfrontier_sider.gif) repeat-y;text-align:left;"><div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-next"><a href="#" title="Scroll to the right"><span><img src="/images/common/but/but_frontier_next.gif" alt="다음보기" width="32" height="61" title="다음보기" ></span></a></div></td>
+	</tr>
+	</div>
+
+	<tr>
+			<td colspan="5"><img src="/images/myrevu/bg_myfrontier2.gif" width="714" height="23" /></td>
+	</tr>
+</table>
+</div>
+</div>
+</body>

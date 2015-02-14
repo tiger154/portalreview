@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <Module>
+   <ModulePrefs title="RevuWidget __UP_BlogURL__" height="300" author="Won,jeon-hwan" author_email="junhwen@naver.com" description="RevuAD"/>
+    <UserPref name="BlogURL" display_name="BlogURL" required="true" />
+    <Content type="url" href="http://www.revu.co.kr/facebook/wizwget.api.php" /> 
+ </Module>

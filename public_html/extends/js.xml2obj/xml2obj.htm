@@ -1,0 +1,86 @@
+<html> 
+<head> 
+<meta http-equiv="content-type" content="text/html; charset=euc-kr"> 
+<title>xml2obj.js</title> 
+<script type="text/javascript"> 
+/** 
+* @xml2obj.js 
+* @projectDescription Jindo Json Extend 
+* @copyright NHN corp. <http://www.nhncorp.com> 
+* @author AjaxUI Team (gony) 
+* @version 0.1 
+* @since 0.2.9 <jindo.do.js> 
+*/ 
+
+var JINDO = new Object(); 
+JINDO.xml2obj = function(xml)  
+{ 
+    
+var obj = {}, que = [], depth = 0; 
+ 
+ 
+    
+// attribute를 해석하기 위한 함수     
+    
+var parse_attr = function(oobj, str) { 
+        
+str.replace(/([^=\s]+)\s*=\s*"([^"]*)"/g, function(a0,a1,a2) { 
+oobj[a1] = a2; 
+}); 
+} 
+ 
+// 주석, XML선언, 태그 사이 공백 등의 의미 없는 코드를 삭제 
+xml = xml.replace(/<(\?|\!-)[^>]*>/g,'').replace(/>\s+</g, '><'); 
+// 하위 노드가 없는 태그는 하나의 닫힌 태그로 수정 
+xml = xml.replace(/<([^!][^ >]+)(\s[^>]*)?><\/\1>/g, '<$1$2 />').replace(/^\s+|\s+$/g, ''); 
+// 함수 객체를 정규 표현식 처리의 인자로 줘서 iterator로 사용 
+xml = xml.replace(/<\/?([^\!][^ >]*)(\s[^>]*)?>(<\/$1>|<\!\[CDATA\[(?:(.|\s)*?)\]\]>|[^<>]*)/g, function(a0,a1,a2,a3) 
+{ 
+// IE에서 일치하는 내용이 없으면 undefined로 전달되므로 
+// 빈 문자열로 변경해 다른 브라우저와의 호환성을 맞춤 
+if (typeof a1 == 'undefined') a1 = ''; 
+if (typeof a2 == 'undefined') a2 = ''; 
+if (typeof a3 == 'undefined') a3 = ''; 
+if (a0.substr(1,1) == '/') { // 현재 태그가 닫는 태그라면, 
+// 깊이를 1만큼 감소 
+depth--; 
+} else if (que.length == 0) { // 객체 큐에 객체가 없다면, 
+que[depth] = obj; // 초기의 객체를 큐에 넣고 
+parse_attr(obj, a2); // attribute를 해석 
+} else { 
+var k  = a1, o = {}, is_closed = false; 
+is_closed = (a2.substr(-1,1) == '/'); 
+if (a3.length > 0 || is_closed) { // 텍스트 노드가 있다면 
+o = a3; // 추가할 객체는 문자열 객체 
+// CDATA라면 전달받은 그대로 리턴하고 
+// 그렇지 않다면 decode 해서 리턴 
+if (o.substr(0,9) == '<![CDATA[' && o.substr(-3,3) == ']]>') o = o.substring(9, o.length-3); 
+else o = o.replace(/</g, '<').replace(/>/g, '>').replace(/&/g, '&'); 
+}    
+// 객체를 할당하기 전에 태그 이름이 이미 존재하는지 살펴보고 
+// 이전에 존재하는 태그라면, 배열로 만든다. 이미 배열이라면 현재의 객체를 배열에 추가 
+if (typeof que[depth][k] == 'undefined') { 
+que[depth][k] = o; 
+} else {    
+var v = que[depth][k]; 
+if (que[depth][k].constructor != Array) que[depth][k] = [v]; 
+que[depth][k].push(o); 
+}    
+// attribute를 해석 
+parse_attr(o, a2); 
+if (!is_closed) que[++depth] = o; 
+} 
+return ''; 
+}); 
+return obj; 
+} 
+var xml = "<?xml version=\"1.0\" encoding=\"euc-kr\" ?><root><a><b>bbb</b></a><name>hello</name></root>"; 
+var oo = JINDO.xml2obj(xml); 
+//debugger 
+alert(oo.a.b + ' ' + oo.name); 
+</script> 
+</head> 
+<body> 
+hello 
+</body> 
+</html>

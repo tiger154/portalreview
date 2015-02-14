@@ -1,0 +1,21 @@
+<div id="container">{# container}</div>
+<div id="sidebar">
+	{# sidebar}	
+	<!-- 공지사항 -->
+	<div class="s_notice_box">
+		<ul>
+			<li class="s_notice_title">
+				<a href="http://{conf.BLOGDOMAIN}" target="_blank"><img src="/images/common/ico/ico_more.gif" align="right" alt="more" title="more" class="pb15"/></a>
+			</li>
+			<li style="height:10px;"></li>
+			{@notice}
+			<li class="s_text_line">
+				<a href="{.url}" target="_blank" class="common_text"> {.title}</a>
+			</li>
+			<li class="gray11_l_text">{.pubdate}</li>
+			<li class="dot18_line"></li>
+			{/}
+			<li class="s_space_line"><img src="/images/common/space.gif"  height="1px;"/></li>
+		</ul>
+	</div>
+</div>

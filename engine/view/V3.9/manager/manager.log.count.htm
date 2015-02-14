@@ -1,0 +1,64 @@
+<style type="text/css">@import "{EXTENDS}/js.jquery.datepick/jquery.datepick.css";</style>
+<script type="text/javascript" src="{EXTENDS}/js.jquery.datepick/jquery.datepick.js"></script> 
+<script type="text/javascript" src="{EXTENDS}/js.jquery.datepick/jquery.datepick-ko.js"></script> 
+<script type="text/javascript" src="{JS}/_global/input.js"></script>
+<script type="text/javascript" src="{JS}/manager.log.js"></script>
+<h2>통계로그</h2>
+<form name="form1" id="form1">
+<hr />
+<h3>전체통계</h3>
+<table width="100%">	
+	<tr>
+		<th>회원수</th>
+		<td align="right">{=number_format(stats.user_tcnt-stats.secede_tcnt)} 명</td>
+		<th>가입수</th>
+		<td align="right">{=number_format(stats.user_tcnt)} 명</td>
+		<th>탈퇴수</th>
+		<td align="right">{=number_format(stats.secede_tcnt)} 명</td>
+		<th>캐시</th>
+		<td align="right">{=number_format(stats.cash)} 캐시</td>
+		<th>적립캐시</th>
+		<td align="right">{=number_format(stats.cash_save)} 캐시</td>
+		<th>사용캐시</th>
+		<td align="right">{=number_format(stats.cash_use)} 캐시</td>
+	</tr>
+</table>
+<h3>검색통계</h3>
+<input type="text" name="sdate" id="sdate" size="10" maxlength="10" value="{sdate}" /> 
+~
+<input type="text" name="edate" id="edate" size="10" maxlength="10" value="{edate}" />
+<input type="button" value="검색" id="searchCountLogBtn" />
+<table width="100%">	
+	<tr>
+		<th>가입수</th>
+		<td align="right">{=number_format(stats2.user_tcnt)} 명</td>
+		<th>탈퇴수</th>
+		<td align="right">{=number_format(stats2.secede_tcnt)} 명</td>
+		<th>적립캐시</th>
+		<td align="right">{=number_format(stats2.cash_save)} 캐시</td>
+		<th>사용캐시</th>
+		<td align="right">{=number_format(stats2.cash_use)} 캐시</td>
+	</tr>
+</table>
+<hr />
+<table width="100%">
+	<tr>
+		<th>통계일</th> 
+		<th>회원가입수</th>
+		<th>회원탈퇴수</th>
+		<th>캐시적립</th>
+		<th>캐시사용</th>
+	</tr>
+	{@list}
+	<tr align="center">
+		<td>{.date}</td>
+		<td>{=number_format(.user_cnt)} 명</td>
+		<td>{=number_format(.secede_cnt)} 명</td>
+		<td>{=number_format(.cash_save)} 캐시</td>
+		<td>{=number_format(.cash_use)} 캐시</td>
+	</tr>
+	{/}
+</table>
+
+<div class="pageno">{link}</div>
+</form>

@@ -1,0 +1,150 @@
+<h2>관리자 홈</h2>
+<h4>
+MYSQL_EVENT_SCHEDULER = {var[1]}
+{? var[1] == "OFF"} Warning!!! 이벤트 스케쥴러가 꺼져있습니다. 개발팀에 얘기하세요!!! {/}
+</h4>
+<div class="clear"></div>
+
+{? _SESSION.grade > 104}
+<div class="home-box">
+	<h3>총 통계</h3>
+	<table width="100%">
+		<tr>
+			<th width="120">구분</th>
+			<th width="150">수치</th>
+			<th>비고</th>
+		</tr>
+		<tr>
+			<th>회원수</th>
+			<td align="right">{=number_format(stats.user_tcnt-stats.secede_tcnt)} 명</td>
+			<td>* 현재 회원수</td>
+		</tr>
+		<tr>
+			<th>가입수</th>
+			<td align="right">{=number_format(stats.user_tcnt)} 명</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>탈퇴수</th>
+			<td align="right">{=number_format(stats.secede_tcnt)} 명</td>
+			<td>*오픈이후 탈퇴수</td>
+		</tr>
+		<tr>
+			<th>캐시</th>
+			<td align="right">{=number_format(stats.cash)} 캐시</td>
+			<td>*실제회원 총 캐시와 다름</td>
+		</tr>
+		<tr>
+			<th>적립캐시</th>
+			<td align="right">{=number_format(stats.cash_save)} 캐시</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>사용캐시</th>
+			<td align="right">{=number_format(stats.cash_use)} 캐시</td>
+			<td></td>
+		</tr>
+	</table>
+</div>
+<div class="home-box-blank">&nbsp;</div>
+<div class="home-box">
+	<h3>캐시로그</h3>
+	<table width="100%">
+		<tr>
+			<th width="120">구분</th>
+			<th width="100">적립캐시</th>
+			<th width="100">지급캐시</th>
+		</tr>
+		<tr>
+			<th>{cashLog.pday.date}</th>
+			<td align="right">{=number_format(cashLog.pday.cash_save)} 캐시</td>
+			<td align="right">{=number_format(cashLog.pday.cash_use)} 캐시</td>
+		</tr>
+		<tr>
+			<th>{cashLog.nday.date}</th>
+			<td align="right">{=number_format(cashLog.nday.cash_save)} 캐시</td>
+			<td align="right">{=number_format(cashLog.nday.cash_use)} 캐시</td>
+		</tr>
+		<tr>
+			<th>{cashLog.pmonth.date}</th>
+			<td align="right">{=number_format(cashLog.pmonth.cash_save)} 캐시</td>
+			<td align="right">{=number_format(cashLog.pmonth.cash_use)} 캐시</td>
+		</tr>
+		<tr>
+			<th>{cashLog.nmonth.date}</th>
+			<td align="right">{=number_format(cashLog.nmonth.cash_save)} 캐시</td>
+			<td align="right">{=number_format(cashLog.nmonth.cash_use)} 캐시</td>
+		</tr>
+	</table>
+	
+</div>
+<div class="clear"></div>
+
+<div class="home-box">
+	<h3>제휴문의</h3>
+	<ul>
+		{*}no, company, homepage, rname, tel, mail, memo, file, confirm, confirm_name, regdate{/*}	
+		{@allianceList}	
+		<li><a href="/manager/frontier.partner">{.memo}[{.company}]</a> | {.regdate}</li>
+		{/}
+	</ul>	
+</div>
+<div class="home-box-blank">&nbsp;</div>
+<div class="home-box">
+	<h3>파워블로그 신청</h3>
+	<ul>
+		{@powerblogList}
+		<li>
+			<a href="/manager/user.powerblog">{.user.nickname}</a> - {.regdate}<br />
+			{.cate1_text} | {.cate2_text} | {.cate3_text} | {.cate4_text} | {.cate5_text}
+		</li>
+		{/}
+	</ul>	
+</div>
+<div class="clear"></div>
+{/}
+
+{? _SESSION.grade > 106}
+<div class="home-box">
+	<h3>트랜잭션 에러로그</h3>
+	<ul>
+		{@errorList}
+		<li>{.content} - {.regdate}</li>
+		{/}
+	</ul>
+</div>
+<div class="home-box-blank">&nbsp;</div>
+<div class="home-box">
+	<h3>최근크론로그</h3>
+	<ul>
+		{@logList}
+		<li>{.content} - {.regdate}</li>
+		{/}
+	</ul>
+</div>
+<div class="clear"></div>
+
+<div class="home-box">
+	<h3>최근 베스트리뷰 지급현황 | {bestdate.sdate}~{bestdate.edate}</h3>
+	<ol>
+		{@best}
+		<li>
+			{.title}<br />
+			{.user.nickname} > {? .cash > 0}{.cash}캐시 지급{/}
+			<hr />
+		</li>
+		{/}
+	</ol>
+</div>
+<div class="home-box-blank">&nbsp;</div>
+<div class="home-box">
+	<h3>회원등급산정표 | 산정일 {@gradeLogList}{.regdate}{/}</h3>
+	<ul>
+		{@gradeList}
+		<li>{.grade}등급 - {.spoint} ~ {.epoint} [{.usernum}명]</li>
+		{/}
+	</ul>
+</div>
+<div class="clear"></div>
+{/}
+<br />

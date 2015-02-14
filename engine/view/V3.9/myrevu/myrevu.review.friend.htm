@@ -1,0 +1,92 @@
+<div class="title_line">
+	<div class="review_manage_title"></div>
+	<!-- 리뷰관리 탭 시작 -->
+	<div class="review_manage_tab">
+		<ul>
+			<li><img src="/images/myrevu/tab_myrevu_off1.gif" width="117" height="31" alt="나의리뷰" title="나의리뷰" onClick="common.redirect('/myrevu/review');" class="btn" /></li>
+			<li><img src="/images/myrevu/tab_myrevu_on2.gif" width="117" height="31" alt="마이프렌즈리뷰" title="마이프렌즈리뷰" onClick="common.redirect('/myrevu/review.friend');" class="btn" /></li>
+			<li><img src="/images/myrevu/tab_myrevu_off3.gif" width="117" height="31" alt="내가추천한리뷰" title="내가추천한리뷰" onClick="common.redirect('/myrevu/review.recom');" class="btn" /></li>
+		</ul>
+	</div>
+	<!-- 리뷰관리 탭 끝 -->
+</div>
+
+<!-- 상단 상태 라인 -->
+<div class="review_manage_state">
+	<!-- 친구분류별 소트 -->
+	<div class="review_manage_state_group">
+		<ul>
+			<li class="black_text"><strong>친구분류</strong></li>
+			<li style="padding:0 5px; text-align:center;">|</li>			
+			<li class="gray_stitle"><a href="/myrevu/review.friend">전체</a></li>
+			{@grouplist}
+			<li style="padding:0 5px; text-align:center;">|</li>
+			<li><a href="javascript:common.redirect('/myrevu/review.friend/1/{.groupno}')">{?groupno == .groupno}<strong><u>{.gdesc}</u></strong>{:}{.gdesc}{/}</a></li>
+			{/}											
+		</ul>
+	</div>
+	<div class="review_manage_stater"><span class="gray_db_text">총 {=number_format(cnt)} 건</span></div>
+</div>
+
+<!-- 마이프렌즈 리스트 한묶음 시작  / 디폴트 10줄-->
+{@list}
+<div class="review_list">
+
+	<!-- 리뷰의 썸네일 110110이상일경우 잘라내기 -->
+	<div class="thum110_box">
+		<img src="{.thumbimage_url}" width="110" height="110" />
+	</div>
+	<!-- 블로그별 포스트 박스 시작 -->
+	<div class="friend_text_box">
+		<ul>
+			<li style="width:426px; height:32px;">
+				<div class="review_title_ico"><img src="{.blog_icon}" /></div>
+				<div class="friend_title_line gray_title">
+					<a href="javascript:common.socialbar({.rno})" name="{.rno}">{.title}</a> 
+				</div>
+			</li>
+			<li style="width:426px; height:24px;">
+				<div class="friend_cate_name gray_d_text">
+					<a href="javascript:context.load({.userno})">{.nickname}</a>&nbsp;
+					{*}<img src="/images/common/ico/ico_arrowbox.gif" alt="자세히보기" title="자세히보기" class="h2_space"/>{/*}
+				</div>
+				<div class="friend_cate_line gray11_l_text">
+					{.cate_desc}&nbsp;&nbsp;|&nbsp;&nbsp;
+					{.regdate}
+				</div>
+			</li>
+			<li style="width:426px; height:54px;">
+				<div class="friend_text">{.content}</div>
+			</li>
+		</ul>
+	</div>
+	<!-- 블로그별 포스트 박스 끝 -->
+	
+	<!-- sns 박스 시작-->
+	<div class="review_sns_box">
+		<ul>
+			<!-- 페이스북 버튼 삽입  / 보류 -->
+			<li class="pt10" style="height:20px;"></li>
+			<!-- 레뷰추천 버튼 삽입 / 최대999  -->
+			<li class="pt20">
+				<div class="revu_hit_box">
+					<div class="revu_hit_boxl">
+						<img src="/images/common/but/but_revuhit.gif" alt="추천" title="추천" class="btn" onClick="socialbar.recomView({.rno})"/>
+					</div>
+					<div class="revu_hit_boxr">
+						<div class="revu_hit_text" style="display:block;">
+							<span class="red11t_text">{.recom_cnt}</span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<!-- 트워터 버튼 삽입 / 보류 -->
+			<li class="pt10" ></li>
+		</ul>
+	</div>
+	<!-- sns 박스 끝-->
+	<div class="review_dot_line"></div>
+</div>
+{/}
+<!-- 마이프렌즈 리스트 한묶음 끝 -->
+<div class="pageno">{link}</div>

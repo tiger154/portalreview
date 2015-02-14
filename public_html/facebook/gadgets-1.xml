@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <Module>
+   <ModulePrefs title="RevuWidget __UP_BlogURL__" height="300" author="Won,jeon-hwan" author_email="junhwen@naver.com" description="RevuAD"/>
+    <UserPref name="BlogURL" display_name="BlogURL" required="true" />
+   <Content type="html">
+    <![CDATA[
+      <script type="text/javascript">
+        <!--
+      function popup_windows()
+       {
+         window.open( "http://www.revu.co.kr", "myWindow",
+         "status = 1, height = 800, width = 600, toolbar = 1, resizable = 1")
+      }
+      //-->
+    </script> 
+       <body>
+     <br>
+       <form>
+        <input type="button" onClick="popup_windows()" value="Visit IBM.com!">
+      </form>
+       <p onClick="popup_windows()">Go to Revu!</p>
+       </body>
+     ]]>
+   </Content>
+ </Module>

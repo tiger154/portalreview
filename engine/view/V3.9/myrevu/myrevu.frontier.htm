@@ -1,0 +1,86 @@
+<div id="sub_content ">
+<div class="title_line gray_l_text"><img src="/images/myrevu/title_myfrontier.gif"  align="left"/></div>
+
+
+<br>		
+<iframe src="http://www.revu.co.kr/myrevu/frontier.slider" frameborder="0" width="100%" height="310" scrolling="no" align="center" name="iframe_test" align="center"></iframe>
+
+
+<div class="clear"></div>
+<div class="title_line gray_l_text"><img src="/images/myrevu/title_winfrontier.gif"  align="left"/></div>
+<div class="frontier_cbox">
+<!--{@myfron_winlist}--> 
+	
+	<!-- 리스트 묶음 박스 시작 / 디폴트 5줄 -->
+	<div class="frontier_list">
+			<!-- 프론티어 이미지 background 처리 -->
+			<div class="thum110_box" style="background:url({.winimg}) no-repeat; float:left; display:inline;"></div>
+			<!-- 프론티어 내용 박스 -->
+			<div class="frontier_myrevw_box" style="float:left; display:inline;">
+					<div class="gray_title list_title_line"><a href="/frontier/detailview//{.frno}/B">{.subject}</a></div>
+					<div class="list_count_line orange11_text">
+		{? .reviewcnt < 1 }
+		
+					<span style="text-decoration"><font color="#669966">등록리뷰없음</font></span>({.reviewcnt})</div>
+		{:}
+					<!-- <a href="/frontier/detailview//{.frno}//"><span style="text-decoration:underline;">리뷰 더보기</span></a> ({.reviewcnt})</div> -->
+					<span>등록 리뷰</span>({.reviewcnt})</div>
+		{/}
+					
+
+					<div class="list_dday_line red11_text"><a href='javascript:reviewManager.setFrontier({.frno},"{.subject}");common.openCenterLayer("entrylayer2", -1, -1, 90);'><span style="text-decoration:underline;">리뷰등록 </span></a>D-{.due_edate}</div>
+					<div class="clear"></div>
+
+		{? .view == "Y"} 
+
+					<!-- 해당 프론티어 리뷰 리스트 -->
+					<div class="frontier_myrevw_text">
+							<ul>
+									<li class="frontier_myrevw_titleline"><span class="common_text pl20"><a href="javascript:common.socialbar({.rno})"><strong>{.content.title}</strong></a></li>
+									<li style="height:8px;"></li>
+									<li class="frontier_myrevw_textline">{.content.content}</li>
+							</ul>
+					</div>
+					<!-- 해당 프론티어 리뷰 리스트 끝-->
+		{:}
+
+					<div class="frontier_myrevw_text">
+							<ul>
+									<li style="height:8px;"></li>
+									<li class="frontier_myrevw_textline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#977EB6">등록된 리뷰가 없습니다.</font></li>
+							</ul>
+					</div>
+
+		{/}
+
+			</div>
+	</div>
+	
+	<div class="clear"> </div>
+	<div  class="cbox_line"></div>
+	<!-- 리스트 묶음 박스 끝 -->
+<!--{/}-->	
+			
+</div>
+ 
+ <!-- 페이지 넘버링 박스 시작 -->
+{? size > 0} 
+<div class="pageno">{link}</div>
+{:}
+<div class="nolist">
+<table>
+		<tr>
+			<td width='720' height='35' colspan='5' align='center'><img src='/images/myrevu/img_nonewinner.gif'  width='230' height='189'></td>
+		</tr>
+		<tr>
+			<td width='720' height='80' colspan='5' align='center'></td>
+		</tr>
+</table>
+</div>
+{/}
+<!-- 페이지 넘버링 박스 끝 -->
+  </div>
+  </body>
+
+<div id="entrylayer2" style="display:none; position:absolute; ">{# entrylayer2}</div>
+<div id="reviewlayer" style="display:none; position:absolute; ">{# reviewlayer}</div>

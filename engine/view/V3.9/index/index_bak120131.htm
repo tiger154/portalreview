@@ -1,0 +1,363 @@
+<script type="text/javascript" src="{EXTENDS}/js.slider/jquery.easing.1.3.min.js"></script>		
+<script type="text/javascript" src="{EXTENDS}/js.slider/jquery.mousewheel.min.js"></script>		
+<script type="text/javascript" src="{EXTENDS}/js.slider/jquery.sliderkit.1.8.min.js"></script>		
+<!-- Slider Kit launch -->
+<script type="text/javascript">
+$(document).ready(function(){ //$(window).load() must be used instead of $(document).ready() because of Webkit compatibility				
+	// Carousel > Demo #2
+	$(".carousel-demo2").sliderkit({
+		shownavitems:2,
+		scroll:1,
+		mousewheel:true,
+		circular:true,
+		start:2
+	});
+});	
+</script>
+
+<!-- Slider Kit styles -->
+<link rel="stylesheet" type="text/css" href="{EXTENDS}/js.slider/sliderkit-core.css" media="screen, projection" />
+<link rel="stylesheet" type="text/css" href="{EXTENDS}/js.slider/sliderkit-demos.css" media="screen, projection" />
+<!-- Slider Kit styles/ -->
+
+<!-- 메인 중앙 랜덤 배너 -->
+<div class="top_banner">{banner_main_link}</div>
+<!-- 프론티어 타이틀 -->
+<div class="m_today_title">
+	<ul>
+		<li style=" width:142px; height:30px;" class="fl"><img src="/images/main/title_today_frontier.gif" /></li>
+		<li style=" width:408px; height:30px; padding-left:10px;" class="fl"><span class="ln23"><strong>{day_nowmonth}</strong>월 <strong>{day_nowday}</strong>일 현재, 총 <strong>{frontierCnt}</strong>개 체험 신청 가능</span></li>
+	</ul>
+</div>
+
+<!-- <div class="clear" style="height:8px;"></div> -->
+
+<!-- 프론티어 전체 박스 시작-->
+<table width="714" height="353" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="488"><!--프론티어 빅슬라이트 박스 시작 -->
+			<table width="488" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+				<td>
+				<!-- #### 오늘의 프론티어 롤링 START#### -->
+				<!-- Start carousel-demo2 -->
+				<div class="sliderkit carousel-demo2">
+					<div class="sliderkit-nav">
+						<div class="sliderkit-nav-clip">
+						<ul>
+						<!--{@frontierList}-->		
+						<li>
+							<div class="m_bigbox">
+								<!-- 프로모션 썸네일은 비지 처리 각 해당 카데고리는 이미지 처리 / m_cate.text 참고 -->
+								<div class="thum_m_big"><a href="/frontier/detailview/1/{.frno}/A/"><img src="{.toplistimg}" width="224" height="224"></a></div>
+								<div style="width:224px; height:16px; padding:2px 0 5px 0;" class="gray_title text_overlay17">
+								<a href="/frontier/detailview/1/{.frno}/A/">{.subject}</a></div>
+								<p>
+								<div style=" width:224px; height:12px; padding:0 0 3px 0; text-align:left;" class="text_overlay14 gray11_l_text">&nbsp;&nbsp;모집기간 : <span class="common11_text">{.start_date} ~ {.end_date}</span>
+								</div>
+								<div style=" width:224px; height:12px; padding:0 0 3px 0; text-align:left;" class="text_overlay14 gray11_l_text">&nbsp;&nbsp;모집인원 : <span class="common11_text">{.peoplelimit}명</span>/ 발표 :<span class="gray11_d_text">{.notice_date}</span></div>
+								<div style=" width:224px; height:12px; padding:0 0 3px 0; text-align:left;" class="text_overlay14 gray11_l_text">&nbsp;&nbsp;리뷰작성기간 : <span class="gray11_d_text"> {.due_edate} 까지</span></div>
+								<!-- 스타일 문제로 버튼 벌어짐 -->
+								<div class="but_m_big2 fl">
+								<div style="padding:7px 0 0 30px;" ><span class="gray11_db_text">{.remaincount}</span></div></div>
+								<div style="width:70px; height:28px; margin:10px 0 0 -60px;" class="fl"><a href="/frontier/detailview/1/{.frno}/A/"><img src="/images/common/but/but_m_entry.gif" alt="상세보기 응모페이지로 이동" title="상세보기 응모페이지로 이동" /></a></div>
+							</div>
+						</li>
+						<!--{/}-->
+						</ul>
+						</div>
+					</div>
+				</div>
+				</td>
+				</tr>
+			</table>
+			</td>
+			<td width="226">
+			<!--프론티어 4개 리스트 시작 -->
+			<table width="226" border="0" cellspacing="0" cellpadding="0" align="right">
+				<tr>
+					<td>
+						<div class="m_smallbox">
+							<!--  응모중 또는 리뷰중 프론티어 리스트-->
+							<!--{@frontierfourlist}-->
+							<div class="m_frontier2_textbox">
+								<ul>
+									<!-- 프론티어 110110 이미지 비례축소  / 종료된 프론티어는 066066 원사이즈 사용-->
+									<li class="m_frontier_thum fl">{.fourlink}<img src="{.listimg}"  alt="프론티어 상세보기로 이동" title="프론티어 상세보기로 이동"  width="66px;" height="66px;"/></a></li>
+									<li class="m_frontier_text1 fl">{.fourlink}<span class="gray_stitle">{.subject}</span></a></li>
+									<li class="m_frontier_text2 fr"><span class="gray11_l_text">모집인원 :</span><span class="gray11_d_text"> {.peoplelimit}명</span></li>
+									<li class="m_frontier_text2 fr"><span class="gray11_l_text">체험단발표 :</span><span class="gray11_d_text">{.notice_date}</span></li>
+								</ul>
+							</div>
+							<!--{/}-->
+							<div class="m_frontier_numbox" style="text-align:right;">
+							<a href="/frontier"><img src="/images/common/ico/ico_more.gif"  alt="more" title="more"  style="padding-bottom:3px;"/></a>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<!--프론티어 4개 리스트  끝 -->
+			</td>
+	</tr>
+</table>
+<!-- 프론티어 전체 박스 끝 -->
+
+<div class="clear"></div>
+<div style="height:40px";></div>
+
+
+<!-- 키워드리뷰 시작 -->
+<div id="m_keyword">
+	<div class="m_keyword_title" style="text-align:left;"><img src="{IMAGES}/main/title_keyword.gif" /></div>
+	{@keyword}
+	<div id="keywordBox{.index_+1}"><span id="keywordText{.index_+1}">{.keyword}</span></div>
+	{/}
+	<div class="clear"></div>
+	{@keywordReview}
+	<div id="keywordReview{.index_+1}">
+		<!-- 리뷰 빅썸네일 -->
+		<div class="m_big300box">
+			<img src="{.list[0].thumbimage_url}" width="300" height="300" />
+			<!-- <img src="*/ReviewImage/174DDB39-FA19-4385-B2CD-D9B3D33EDC5E/174DDB39-FA19-4385-B2CD-D9B3D33EDC5E[0000].jpg" width="300" height="300" /> -->
+		</div>
+		<div class="m_small394box">
+			<!-- 스펙트럼 박스 -->
+			<div class="m_keyword_textbox">
+				<ul>
+					<li style="height:18px; margin-bottom:15px;" class="text_overlay17">
+						<a href="javascript:common.socialbar({.list[0].rno})"><span class="gray_title">{.list[0].title}</span></a>
+						&nbsp;
+						<span class="red_text">({.list[0].talk_cnt})</span>
+					</li>
+					<li class="m_chart_text1l">
+						<!-- 추천 스펙트럼 조절 -->
+						<div><img src="{IMAGES}/common/bg/bg_chart.gif" width="{.list[0].size}%" height="20px"/></div>
+					</li>
+					<li class="m_chart_text1r">
+						<!-- 추천 카운터 표시 -->
+						<div class="red_text"><span class="m_chart_text1r_red">{.list[0].recom_cnt}</span></div>
+					</li>
+					<li class="clear"><img src="{IMAGES}/common/space.gif" height="12px;" /></li>
+					<li style="height:32px; margin-bottom:12px;" class="text_overlay32">
+						<span class="gray_d_text">{.list[0].content}</span>
+					</li>
+					<li style="height:15px; margin-bottom:8px;" class="text_overlay17"><span class="common11_text"><a href="javascript:context.load({.list[0].userno})">{.list[0].nickname}</a> 님 | {.list[0].regdate}</span></li>
+				</ul>
+			</div>
+			<!-- 관련리뷰리스트 시작 -->
+			<div class="m_keyword_stitle">
+				{*}
+				<a href="#"><img src="{IMAGES}/common/ico/ico_prev.gif" alt="이전" title="이전"  class="pt05"/></a>
+				<a href="#"><img src="{IMAGES}/common/ico/ico_next.gif" alt="다음" title="다음"  class="pt05"/></a>
+				<img src="{IMAGES}/common/but/but_tx_more.gif" class="btn" onClick="" />
+				{/*}
+			</div>
+			<!--  한 묶음 시작-->
+			<div class="m_keyword2_textbox">
+				<ul>
+					<!-- 리뷰이미지 비례축소 -->
+					<li class="m_keyword_thum fl">
+						<img src="{.list[1].thumbimage_url}" width="45px;" height="45px;"/>
+					</li>
+					<li class="m_keyword_text1 fl">
+						<div class="gray_d_text fl" style="width:240px; overflow:hidden;">
+							<a href="javascript:common.socialbar({.list[1].rno})">{.list[1].title}</a>
+						</div>
+						<div class="red11_text fl" style="width:80px; text-decoration:none;">({.list[1].talk_cnt})</div>
+					</li>
+					<li class="m_keyword_text2 fl"><span class="common11_text">{.list[1].content}</span></li>
+				</ul>
+			</div>
+			<!--  한 묶음 시작-->
+			<div class="m_keyword2_textbox">
+				<ul>
+					<!-- 리뷰이미지 비례축소 -->
+					<li class="m_keyword_thum fl">
+						<img src="{.list[2].thumbimage_url}"  alt="#" title="#"  width="45px;" height="45px;"/>
+					</li>
+					<li class="m_keyword_text1 fl">
+						<div class="gray_d_text fl" style="width:240px; overflow:hidden;">
+							<a href="javascript:common.socialbar({.list[2].rno})">{.list[2].title}</a>
+						</div>
+						<div class="red11_text fl" style="width:80px; text-decoration:none;">({.list[2].talk_cnt})</div>
+					</li>
+					<li class="m_keyword_text2 fl"><span class="common11_text">{.list[2].content}</span></li>
+				</ul>
+			</div>
+			<!-- 관련리뷰리스트 끝 -->
+		</div>
+	</div>
+	{/}
+	<div class="clear"></div>
+</div>
+<!-- 키워드리뷰 끝 -->
+
+<!-- 주목이리뷰 시작 -->
+<div id="m_focus">
+	<div class="m_focus_title"><img src="{IMAGES}/main/title_focus.gif" /></div>
+	<!-- 각 카데고리명 표시 -->
+	<div class="review_tab_title_line fl">
+		<ul>
+			<!-- 카테고리별 텝 시작 / 전체가 디폴트 / 선택시 파일명 on으로 변경 -->
+			<li class="review_tab_line" style="width:59px;"><img src="{IMAGES}/review/tab_review_on1.gif" id="noticeCate1" class="btn" alt="전체" title="전체" /></li>
+			<li class="review_tab_line" style="width:59px;"><img src="{IMAGES}/review/tab_review_off2.gif" id="noticeCate2" class="btn" alt="맛집" title="맛집" /></li>
+			<li class="review_tab_line" style="width:59px;"><img src="{IMAGES}/review/tab_review_off3.gif" id="noticeCate3" class="btn" alt="여행" title="여행" /></li>
+			<li class="review_tab_line" style="width:59px;"><img src="{IMAGES}/review/tab_review_off4.gif" id="noticeCate4" class="btn" alt="패션" title="패션" /></li>
+			<li class="review_tab_line" style="width:59px;"><img src="{IMAGES}/review/tab_review_off5.gif" id="noticeCate5" class="btn" alt="요리" title="요리" /></li>
+			<li class="review_tab_line" style="width:67px;"><img src="{IMAGES}/review/tab_review_off6.gif" id="noticeCate6" class="btn" alt="화장품" title="화장품" /></li>
+			<li class="review_tab_line" style="width:59px;"><img src="{IMAGES}/review/tab_review_off7.gif" id="noticeCate7" class="btn" alt="IT" title="IT" /></li>
+			<li class="review_tab_line" style="width:59px;"><img src="{IMAGES}/review/tab_review_off8.gif" id="noticeCate8" class="btn" alt="영화" title="영화" /></li>
+			<li class="review_tab_line" style="width:68px;"><img src="{IMAGES}/review/tab_review_off9.gif" id="noticeCate9" class="btn" alt="프론티어" title="프론티어" /></li>
+			<li class="review_tab_line" style="text-align:right; padding:0 0 10px 105px;"><img src="{IMAGES}/common/ico/ico_more.gif" id="noticeReviewMoreBtn" class="btn" /></li>			
+		</ul>
+	</div>
+	<div class="clear pt25"></div>
+
+	{@noticeReview}
+	<div id="noticeReview{.index_+1}">
+		{@list}
+		<div class="m_focus_textbox">
+			<ul>
+				<!-- 리뷰이미지 080080 이미지 비례축소 / 첫머리 카테고리표시 -->
+				<li class="m_focus_thum fl">
+					<img src="{..thumbimage_url}" width="80px;" height="80px;"/>
+				</li>
+				<li class="m_focus_text1 fl">{*}{..cate_desc}&nbsp;{/*}
+					<a href="javascript:common.socialbar({..rno})"><span class="gray_du_text">{..title}</span></a>
+					&nbsp;
+					<span class="red_text">{*}({..view_cnt}){/*}</span>
+				</li>
+				<li class="m_focus_text2 fr">{..content}</li>
+				<li class="m_focus_text3 fr">
+					<img src="{IMAGES}/common/ico/ico_revuhit.gif" /><span class="red_b_text">{..recom_cnt}</span>
+					&nbsp;|&nbsp;
+					<span class="gray11_l_text"><a href="javascript:context.load({..userno})">{..nickname}</a></span>
+				</li>
+			</ul>
+		</div>
+		{? ..index_ % 2 == 1}<div class="clear"></div>{/}
+		{/}
+	</div>
+	<div class="clear"></div>
+	{/}
+</div>
+<!-- 주목이리뷰 끝 -->
+
+<!-- 주간베스트 시작 -->
+<div id="m_weekbest">
+	<div class="m_weekbest_title">
+		{*}<span class="common_title">{bestDate.sdate}~{bestDate.edate}</span>{/*}
+		<strong>{bestDate.sdate} ~ {bestDate.edate}</strong>
+		&nbsp;<img src="{IMAGES}/common/ico/ico_more.gif" id="bestReviewMoreBtn" class="btn" />
+		{*}
+		&nbsp;<a href="#"><img src="{IMAGES}/common/ico/ico_prev.gif" alt="이전" title="이전"  class="pt10"/></a><a href="#"><img src="{IMAGES}/common/ico/ico_next.gif" alt="다음" title="다음"  class="pt10"/></a>
+		{/*}
+	</div>
+	<div class="m_weekbest_line">
+		<!-- 베스트 한묶음 시작 /1위 -->
+		{@bestReview}
+		<div class="m_weekbest_textbox">
+			<div class="m_weekbest_thum">
+				<img src="{IMAGES}/main/thum_best{.index_+1}.png" style="position:absolute;"/>
+				<img src="{.thumbimage110_url}" width="105" height="105" />
+			</div>
+			<div class="m_weekbest_text1">
+				<span class="gray11_db_text"><a href="javascript:common.socialbar({.rno})">{.title}</a></span>
+			</div>
+			<div class="m_weekbest_text2">
+				<div style="width:60px; overflow:hidden;" class="gray11_l_text fl">
+					<a href="javascript:context.load({.userno})">{.nickname}</a>
+					&nbsp;|&nbsp;
+				</div>
+				<div style="width:45px; overflow:hidden;"class="red11_text fl">
+					<img src="{IMAGES}/common/ico/ico_revuhit.gif" />{.best_recom_cnt}
+				</div>
+			</div>
+		</div>
+		{/}
+		<!-- 베스트 한묶음 끝 -->
+	</div>
+	<div class="clear"></div>
+</div>
+<!-- 주간베스트 끝 -->
+
+<div class="m_talktime_title">
+	<img src="{IMAGES}/main/title_reviewtime_on.gif" id="realtimeReviewBtn" alt="실시간리뷰" title="실시간리뷰" class="btn" />
+	<img src="{IMAGES}/main/title_talktime_off.gif" id="realtimeTalkBtn" alt="실시간토크" title="실시간토크" class="btn" />
+</div>
+
+<!-- 실시간리뷰 시작 -->
+<div id="realtimeReview">
+	<div style="height:10px;"></div>
+	<!-- 각 카데고리명 표시 -->
+	<div class="review_tab_title_line fl">
+		<ul>
+			<!-- 카테고리별 텝 시작 / 전체가 디폴트 / 선택시 파일명 on으로 변경 -->
+			<li class="review_tab_line" style="width:59px;"><img src="{IMAGES}/review/tab_review_on1.gif" id="realtimeCate1" class="btn" alt="전체" title="전체" /></li>
+			<li class="review_tab_line" style="width:59px;"><img src="{IMAGES}/review/tab_review_off2.gif" id="realtimeCate2" class="btn" alt="맛집" title="맛집" /></li>
+			<li class="review_tab_line" style="width:59px;"><img src="{IMAGES}/review/tab_review_off3.gif" id="realtimeCate3" class="btn" alt="여행" title="여행" /></li>
+			<li class="review_tab_line" style="width:59px;"><img src="{IMAGES}/review/tab_review_off4.gif" id="realtimeCate4" class="btn" alt="패션" title="패션" /></li>
+			<li class="review_tab_line" style="width:59px;"><img src="{IMAGES}/review/tab_review_off5.gif" id="realtimeCate5" class="btn" alt="요리" title="요리" /></li>
+			<li class="review_tab_line" style="width:67px;"><img src="{IMAGES}/review/tab_review_off6.gif" id="realtimeCate6" class="btn" alt="화장품" title="화장품" /></li>
+			<li class="review_tab_line" style="width:59px;"><img src="{IMAGES}/review/tab_review_off7.gif" id="realtimeCate7" class="btn" alt="IT" title="IT" /></li>
+			<li class="review_tab_line" style="width:59px;"><img src="{IMAGES}/review/tab_review_off8.gif" id="realtimeCate8" class="btn" alt="영화" title="영화" /></li>
+			<li class="review_tab_line" style="width:68px;"><img src="{IMAGES}/review/tab_review_off9.gif" id="realtimeCate9" class="btn" alt="프론티어" title="프론티어" /></li>
+		</ul>
+	</div>
+	<div class="clear pt20"></div>
+	{*}
+	<div style=" width:593px;height:20px;" class="gray_d_text fl">
+		{=date("Y")}년 {=date("m")}월 {=date("d")}일 현재 총 <strong><span class="orange_text" id="reviewCount">{reviewCount}</span>건</strong>의 리뷰가 등록되어 있습니다.
+		<img src="{IMAGES}/common/ico/ico_f5.gif" id="refreshReviewCountBtn" alt="새로고침" title="새로고침" class="h2_space btn" />
+	</div>
+	<div class="m_talktime_title3"></div>
+	{/*}
+
+	{@realtimeReview}
+	<div id="realtimeReview{.index_+1}">
+		{@list}
+		<div class="m_talktime_line">
+			<!-- 리뷰 이미지비례축소 066066 -->
+			<div class="m_talktime_thum">
+				<img src="{..thumbimage110_url}"  width="66" height="66"/>
+			</div>
+			<div class="m_talktime_text1">
+				<span class="gray_stitle"><a href="javascript:common.socialbar({..rno})">{..title}</a></span>
+				<span class="red_text">({..talk_cnt})</span>
+			</div>
+			<div class="m_talktime_text3">{..content}</div>
+			<div class="m_talktime_text4"><span class="gray11_l_text"><a href="javascript:context.load({..userno})">{..nickname}</a></span></div>
+		</div>
+		<div class="m_talktime_sbox">
+			<div style="padding:30px 0 0 34px;"><span class="orange_text">{..pasttime}</span></div>
+		</div>
+		<div class="m_talktime_dotline"></div>
+		{/}
+	</div>
+	{/}
+</div>
+<!-- 실시간리뷰 끝 -->
+
+<!-- 실시간토크 끝 -->
+<div id="realtimeTalk">	
+	<div style="height:1px;"></div>
+	<div class="m_talktime_title3"></div>
+	{@realtimeTalk}
+	<div class="m_talktime_line">
+		<!-- 회원 프로필 비례축소 066066 -->
+		<div class="m_talktime_thum">
+			<img src="{.userimage}" width="66" height="66"/></a>
+		</div>
+		<div class="m_talktime_text1">
+			<a href="javascript:context.load({.userno})">{.nickname}</a>
+		</div>
+		<div class="m_talktime_text2">{.content}</div>
+	</div>
+	<div class="m_talktime_sbox">
+		<div style="padding:30px 0 0 34px;"><span class="orange_text">{.pasttime}</span></div>
+	</div>
+	<div class="m_talktime_dotline"></div>								
+	{/}
+</div>
+<!-- 실시간토크 끝 -->

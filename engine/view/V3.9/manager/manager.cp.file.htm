@@ -1,0 +1,73 @@
+
+<form name="RevUform" id="RevUform" method="post" enctype="multipart/form-data"  action="">
+
+	<!-- 상단 -->
+	<table border="0" width="980" cellpadding="5" cellspacing="0">
+		<tr>
+			<!--본문-->
+			<td valign="top" bgcolor="#FFFFFF">
+			<table border="0" width="970">
+				<tr>
+					<td align="left" height="35" border="0" bgcolor="#FF9966">
+						<font color="#FFFFFF">&nbsp;<img src="{IMAGES}/admin/lyr_tit_bu.gif">&nbsp;Revu 담자자 및 관계사외 메뉴 사용 금지</font>&nbsp;
+					</td>
+				</tr>
+			</table>				
+			<table border="0" width="970" cellpadding="5" cellspacing="0" style="border:1pt solid black" bgcolor="#FFFFFF">
+				<tr>
+					
+
+					<td align="right">접속시간 : {nowtime}
+					
+					&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="afileregist" value="등록"/>
+					</td>
+				</tr>
+
+			</table>
+
+			<br>
+			<table width="970"  border="1" cellpadding="0" cellspacing="0" bgcolor="#C0C0C0">
+				<tr>
+					<th>순번</th>
+					<th>제목</th>
+					<th>파일명</th>
+					<th>등록일</th>
+					<th>삭제</th>
+				</tr>
+				<!--{@list}-->
+				<tr bgcolor="#FFFFFF" height="27" align="center">
+
+
+
+					<td>{.no}</td>
+					<td align="left">{.title}</td>
+					<!-- <td><a href="/manager/cp.file/d/{.no}">{.file}</a></td> -->
+					<td><a href="{DOMAIN_FILE}/partner/{.file}">{.file}</a></td>
+					<td>{.regdate}</td>
+					<td><img src='/images/common/ico/ico_del.gif' alt='삭제' title='삭제' class='img_space' style='cursor:hand' onclick='AfileDel("{.file}","{.no}")'></a></td>
+				</tr>
+				<!--{/}-->
+			</table>
+
+		<!-- 
+		 {? size > 0} 
+		<div class="pageno">{link}</div>
+		{:}
+		<div class="nolist"></div>
+		{/} -->
+			</td>
+			<!-- 본문 끝 -->
+		</tr>
+	</table>
+
+
+
+	<table width="800" border="0">
+		<tr>
+			<td width="800">&nbsp;<!-- 공백 -->
+			</td>
+		</tr>
+	</table>
+
+
+</form>

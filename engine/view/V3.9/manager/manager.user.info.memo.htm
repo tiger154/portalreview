@@ -1,0 +1,19 @@
+<link type="text/css" rel="stylesheet" href="{CSS}/_global/_style_manager.css" />
+<script type="text/javascript" src="{JS}/manager.user.js"></script>
+<table width="100%" class="table-user">
+	<tr>
+		<th>일련번호</th>
+		<th>메모</th>
+		<th>등록자</th>
+		<th>등록일</th>
+	</tr>
+	{@list}
+	<tr align="center">
+		<td width="60">{.mno}</td>
+		<td align="left">{=nl2br(.memo)}</td>
+		<td width="100">{.user.username}({.user.nickname})</td>
+		<td width="120">{.regdate}</td>
+	</tr>
+	{/}
+</table>
+<div class="pageno">{link}</div>

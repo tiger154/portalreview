@@ -1,0 +1,181 @@
+{*}
+<link rel="stylesheet" href="{EXTENDS}/editor.daum/css/editor.css" type="text/css"  charset="utf-8"/>
+<script src="{EXTENDS}/editor.daum/js/editor.js" type="text/javascript" charset="utf-8"></script>
+<script src="{EXTENDS}/editor.daum/js/editor_sample.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="{JS}/_global/editor.js"></script>
+{/*}
+<script type="text/javascript" src="{JS}/_global/input.js"></script>
+<script type="text/javascript" src="{JS}/_global/category.js"></script>
+<script type="text/javascript" src="{JS}/_global/zipcode.js"></script>
+<script type="text/javascript" src="{JS}/_global/review.manager.js"></script>
+<script type="text/javascript" src="{JS}/myrevu.review.register.js"></script>
+
+<!--{? type == "blog"}-->
+<div class="title_line">
+	<div class="my_post_title"></div>
+	<!-- 포스트 등록 시작 -->
+	<div class="my_post_tab">
+		<ul>
+			<li>
+				<img src="/images/myrevu/tab_mypost_on1.gif" id="tabBtn1" width="131" height="29" class="btn" />
+			</li>
+			<li>
+				<img src="/images/myrevu/tab_mypost_off2.gif" id="tabBtn2" width="131" height="29" class="btn" />
+			</li>
+		</ul>
+	</div>
+	<!-- 포스트등록 탭 끝 -->
+</div>
+<div class="clear" style="width:714px; height:20px;"></div>
+
+<div style="width:680px; height:22px; padding-left:34px; margin-bottom:40px; text-align:right;">
+	<ul>
+		<li style="width:430px; height:22px; padding:0 15px 0 150px; text-align:right;" class="fl">
+			<div class="fl pt05"><span class="gray11_l_text">* 내 블로그의 글을 선택하여 등록할 수 있습니다.</span></div>
+			<div class="pl15 fl">
+				<select name="blogList" id="blogList">
+					<option value=''>블로그를 선택하세요.</option>
+					{@ bloglist}
+					<option value='{.url}'>{.name}</option>
+					{/}
+				</select>
+			</div>
+		</li>
+		<li style="width:79px; height:19px;" class="fl">
+			<img src="/images/common/but/but_g_call.gif" id="blogLoadBtn" alt="불러오기" title="불러오기" class="btn" />		
+		</li>
+	</ul>
+</div>
+<div class="clear"></div>
+
+<table id="articleList" width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="table_listbg" width="120"><span class="gray_d_text"><strong>작성일</strong></span></td>
+		<td class="table_listbg" width="3"><img src="/images/common/bg/bg_table_sline.gif" /></td>
+		<td class="table_listbg" width="110"><span class="gray_d_text"><strong>이미지</strong></span></td>
+		<td class="table_listbg" width="3"><img src="/images/common/bg/bg_table_sline.gif" /></td>
+		<td class="table_listbg" width="370"><span class="gray_d_text"><strong>제 목</strong></span></td>
+		<td class="table_listbg" width="3"><img src="/images/common/bg/bg_table_sline.gif" /></td>
+		<td class="table_listbg" width="120"><span class="gray_d_text"><strong>레뷰에 등록</strong></span></td>
+	</tr>
+	<tr>
+		<td colspan="7" height="50" align="center">등록된 게시물이 없습니다.</td>
+	</tr>
+</table>
+<br /><br />
+<!--{/}-->
+
+<!--{? type == "url"}-->
+<div class="title_line">
+	<div class="my_post_title"></div>
+	<!-- 포스트 등록 시작 -->
+	<div class="my_post_tab">
+		<ul>
+			<li>
+				<img src="/images/myrevu/tab_mypost_off1.gif" id="tabBtn1" width="131" height="29" class="btn" />
+			</li>
+			<li>
+				<img src="/images/myrevu/tab_mypost_on2.gif" id="tabBtn2" width="131" height="29" class="btn" />
+			</li>
+		</ul>
+	</div>
+	<!-- 포스트등록 탭 끝 -->
+</div>
+<div class="clear" style="width:714px; height:20px;"></div>
+
+<div style="width:714px; height:22px; margin:40px 0; text-align:right;">
+	<ul>
+		<li style="width:79px; height:19px;" class="fr">
+			<img src="/images/common/but/but_gb_in.gif" id="feedRegBtn" alt="등록하기" title="등록하기" class="btn" />
+		</li>
+		<li style="width:580px; height:22px; padding-right:15px; text-align:right;" class="fr">
+			<span class="gray_d_text" style="font-weight:bold">URL 입력</span>
+			&nbsp;&nbsp;
+			<input type="text" name="feedFormURL" id="feedFormURL" value="http://" size="40" style="width:480px;" class="input_common" />
+		</li>
+		<li class="clear" style="height:12px;"></li>
+		<li style="width:680px; height:19px; padding-left:130px; text-align:left;">
+			<span class="common11_text">* RSS 피드로 불러오지 못하는 이전 글들을 등록하실 수 있습니다.</span>
+		</li>
+		<li style="width:680px; height:19px; padding-left:130px; text-align:left;">
+			<span class="common11_text">* http:// 로 시작하는 글을 고유주소(퍼머링크)를 입력해주세요.</span>
+		</li>
+		<li style="width:680px; height:19px; padding-left:130px; text-align:left;">
+			<span class="common11_text">* 레뷰에 등록된 본인 블로그의 글만 등록하실 수 있습니다.</span>
+		</li>
+	</ul>						
+</div>
+<div style="width:714px; height:20px;margin-bottom:80px;" class="clear" ></div>
+<!--{/}-->
+
+<!--{? type == "revu"}-->
+{*}
+<div class="title_line">
+	<div class="my_post_title"></div>
+	<!-- 포스트 등록 시작 -->
+	<div class="my_post_tab">
+		<ul>
+			<li>
+				<img src="/images/myrevu/tab_mypost_off1.gif" id="tabBtn1" width="131" height="29" class="btn" />
+			</li>
+			<li>
+				<img src="/images/myrevu/tab_mypost_on2.gif" id="tabBtn2" width="131" height="29" class="btn" />
+			</li>
+		</ul>
+	</div>
+	<!-- 포스트등록 탭 끝 -->
+</div>
+<div class="clear" style="width:714px; height:20px;"></div>
+
+<form name="form2" id="form2" action="/myrevu/review.register.proc" target="frm" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+<div id="contentForm"></div>
+<br />		
+<div id="editorForm">	
+	{#editor}
+	<input type="button" value="리뷰등록" onClick="reviewManager.registReview3();" />
+	<script type="text/javascript">
+	// <![CDATA[
+	/*-------- 에디터 로드 시작 ----------*/
+	new Editor({
+		txHost: '', /* 런타임 시 리소스들을 로딩할 때 필요한 부분으로, 경로가 변경되면 이 부분 수정이 필요. ex) http://xxx.xxx.com */
+		txPath: '{EXTENDS}/editor.daum/', /* 런타임 시 리소스들을 로딩할 때 필요한 부분으로, 경로가 변경되면 이 부분 수정이 필요. ex) /xxx/xxx/ */
+		txVersion: '5.4.0', /* 수정필요없음. */
+		txService: 'sample', /* 수정필요없음. */
+		txProject: 'sample', /* 수정필요없음. 프로젝트가 여러개일 경우만 수정한다. */
+		initializedId: "", /* 대부분의 경우에 빈문자열 */
+		wrapper: "tx_trex_container"+"", /* 에디터를 둘러싸고 있는 레이어 이름(에디터 컨테이너) */
+		form: 'form2'+"", /* 등록하기 위한 Form 이름 */
+		txIconPath: "{EXTENDS}/editor.daum/images/icon/", /*에디터에 사용되는 이미지 디렉터리, 필요에 따라 수정한다. */
+		txDecoPath: "{EXTENDS}/editor.daum/images/deco/", /*본문에 사용되는 이미지 디렉터리, 서비스에서 사용할 때는 완성된 컨텐츠로 배포되기 위해 절대경로로 수정한다. */
+		canvas: {
+			styles: {
+				color: "#000000", /* 기본 글자색 */
+				fontFamily: "돋움", /* 기본 글자체 */
+				fontSize: "10pt", /* 기본 글자크기 */
+				backgroundColor: "#fff", /*기본 배경색 */
+				lineHeight: "1.5", /*기본 줄간격 */
+				padding: "8px" /* 위지윅 영역의 여백 */
+			}
+		},
+		sidebar: {
+			attacher: {
+				image: {
+				},
+				file: {
+				}
+			}
+		},
+		size: {
+			/*contentWidth: 650*/ /* 지정된 본문영역의 넓이가 있을 경우에 설정 */
+		}
+	});
+	/*-------- 에디터 로드 끝 ----------*/
+	reviewManager.setForm3();
+	// ]]>
+	</script>
+</div>
+</form>
+{/*}
+<!--{/}-->
+
+<div id="reviewlayer" style="display:none;background-color: #FFF;padding:20px;">{#reviewlayer}</div>

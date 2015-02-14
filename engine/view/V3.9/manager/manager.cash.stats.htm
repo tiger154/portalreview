@@ -1,0 +1,51 @@
+<script type="text/javascript" src="{JS}/_global/input.js"></script>
+<script type="text/javascript" src="{JS}/manager.cash.js"></script>
+<h2>캐시적립현황</h2>
+<form name="form1" id="form1">
+<input type="radio" name="flag" value="all" {?param[1]=='all' || param[1]==''}checked{/} />전체
+<input type="radio" name="flag" value="0" {?param[1]=='0'}checked{/} />적립
+<input type="radio" name="flag" value="1" {?param[1]=='1'}checked{/} />사용
+<select name="opt" id="opt">
+	<option value="">==검색==</option>
+	<option value="nickname" {? param[2]=='nickname'}selected{/}>닉네임</option>
+	<option value="userid" {? param[2]=='userid'}selected{/}>아이디</option>
+	<option value="userno" {? param[2]=='userno'}selected{/}>회원번호</option>
+</select>
+<input type="text" name="keyword" id="keyword" value="{param[3]}" />
+<input type="button" value="검색" id="searchCashLogBtn" />
+&nbsp;
+<strong>| 총 <font color="red">{=number_format(cnt)}</font>건이 검색되었습니다.</strong>
+<hr />
+<table width="100%">
+	<tr>
+		<th>일련번호</th> 
+		<th>아이디</th>
+		<th>닉네임</th>
+		<th>이름</th>
+		<th>캐시구분</th>
+		<th>캐시타입</th>
+		<th>캐시</th>
+		<th>적용전캐시</th>
+		<th>적용후캐시</th>
+		<th>리뷰</th>
+		<th>등록일</th>
+	</tr>
+	{@list}
+	<tr align="center">
+		<td>{.idx}</td>
+		<td>{.user.userid}</td>
+		<td><a href="javascript:manager.user({.userno});">{.user.nickname}</a></td>
+		<td>{.user.username}</td>
+		<td>{.flag_sign_text}</td>
+		<td>{.cash_type_text}</td>
+		<td>{=number_format(.cash)}</td>
+		<td>{=number_format(.cash_before)}</td>
+		<td>{=number_format(.cash_after)}</td>
+		<td>{.rno}</td>
+		<td>{.regdate}</td>
+	</tr>
+	{/}
+</table>
+
+<div class="pageno">{link}</div>
+</form>

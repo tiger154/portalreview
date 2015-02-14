@@ -1,0 +1,140 @@
+ /* frontier */  
+.frontier_sbox {width:694px; height:auto;padding:20px 10px 0 10px; border-bottom:#666666 solid 1px;background:#f9f9f9;}
+.frontier_sbox_inglist {width:694px; height:auto;padding:20px 10px 0 10px;background:#f9f9f9;}
+.sbox_line {width:694px; height:20px;}
+.sbox_line_inglist {width:694px; height:41px; background:url(/images/common/bg/line_sbox_41.gif) repeat-x;}
+.frontier_cbox {width:694px; padding:20px 10px;background:#ffffff;}
+.cbox_line {width:694px; height:41px; background:url(/images/common/bg/line_gray_41.gif) repeat-x;}
+.frontier_list {width:694px; height:110px;}
+
+.thum110_box {width:110px; height:110px; padding-right:15px;}
+.them_text_r { width:40px; height:15px; background:#ee382d; overflow:hidden; margin-top:95px;}
+.them_text_g { width:40px; height:15px; background:#333333;filter:alpha(opacity=60);-moz-opacity: 0.60; opacity:0.60; overflow:hidden; margin-top:95px;}
+.frontier_text_box {width:440px; height:110px; padding-right:10px;}
+.frontier_text_box2 {width:480px; height:110px; padding-right:10px;}
+.frontier_text_sl { width:210px; height:78px; padding-right:10px; border-right:#eeeeee solid 1px;}
+.frontier_text_sr { width:209px; height:78px; padding-left:10px;}
+.frontier_text_sr2 { width:249px; height:78px; padding-left:10px;}
+.frontier_text_line {height:16px; padding-bottom:2px; overflow:hidden;}
+.text_sr_150 { width:150px; height:14px; overflow:hidden;padding-bottom:2px;}
+.text_sr_180 { width:180px; height:13px; overflow:hidden;padding-bottom:2px;}
+.frontier_sns_box {width:107px; height:110px; padding-left:11px; border-left:#eeeeee solid 1px;}
+
+#frontier_view_warp {width:714px;}
+#frontier_view_warp .frontier_view_img {width:712;border:#999999 solid 1px;} 
+#middle-container .frontier_view_title {width:714px;height:30px;background:#000;filter:alpha(opacity=50);-moz-opacity: 0.50;opacity:0.50;position:absolute;top:169px;}
+.frontier_view_title_text {width:682px; height:18px; padding:4px 15px 0 15px;position:absolute;top:169px; font-weight:bold;}
+
+
+.frontier_info_box {width:714px; height:auto;}
+.frontier_info_bg1 {width:714px; height:34px; background:url(/images/frontier/bg_frontier_box1.gif) no-repeat;}
+.frontier_info_bg2 {width:714px; min-height:180px; background:url(/images/frontier/bg_frontier_box2.gif) repeat-y; padding:0 22px 15px 22px;}
+.frontier_info_bg3 {width:714px; height:19px; background:url(/images/frontier/bg_frontier_box3.gif) no-repeat;}
+
+.frontier_info_textbox {width:670px;min-height:180px;}
+.frontier_info_text_l {}
+.frontier_info_text_l li {width:486px;float:left; display:inline; min-height:28px;}
+.frontier_detailview1 { background:url(/images/frontier/title_detailview1.gif) no-repeat;}
+.frontier_detailview2 { background:url(/images/frontier/title_detailview2.gif) no-repeat;}
+.frontier_detailview3 { background:url(/images/frontier/title_detailview3.gif) no-repeat;}
+.frontier_detailview4 { background:url(/images/frontier/title_detailview4.gif) no-repeat;}
+.frontier_detailview5 { background:url(/images/frontier/title_detailview5.gif) no-repeat;}
+.frontier_detailview6 { background:url(/images/frontier/title_detailview6.gif) no-repeat;}
+.frontier_detailview7 { background:url(/images/frontier/title_detailview7.gif) no-repeat;}
+.frontier_detailview8 { background:url(/images/frontier/title_detailview8.gif) no-repeat;}
+
+.detailview_text {width:362px; height:14px; padding:14px 0 0 124px; overflow:hidden;}
+.detailview_text2 {width:362px; min-height:14px; padding:14px 0 0 124px;}
+
+.frontier_info_text_r { width:174px;height:159px;float:right; display:inline;}
+
+.frontier_detail_box {width:670px; padding:0 22px;}
+.frontier_detail_title {width:670px;height:15px; text-align:left;}
+.frontier_detail_line {width:670px;height:62px; background:url(/images/common/bg/line_gray_62.gif) repeat-x;}
+.frontier_table_l {width:124px; padding:6px 0 8px 0; font-weight:bold; text-align:left; vertical-align:top;}
+.frontier_table_r {width:546px; padding:6px 0 8px 0; text-align:left; vertical-align:top; line-height:1.8;}
+.frontier_table_r2 {width:211px; padding:6px 0 8px 0; text-align:left; vertical-align:top;}
+.frontier_table_r3 {width:335px; padding:6px 0 8px 0; text-align:left; vertical-align:top; line-height:1.8;}
+
+.frontier_bancode_l {width:534px; height:60px; padding:10px; background:#f8f8f8; line-height:1.8; float:left; display:inline;}
+.frontier_bancode_r {width:76px; height:76px; padding:0 10px 10px 15px; float:left; display:inline;}
+
+.frontier_talk_box {width:674px; padding-bottom:20px;}
+.frontier_tab_box {width:674px; height:32px; background:url(/images/common/bg/bg_tab32.gif) repeat-x; text-align:left; margin-bottom:40px;}
+.frontier_tab_info {width:674px; height:41px; background:url(/images/common/bg/line_gray_41.gif) repeat-x; text-align:left;}
+.frontier_talk_line {width:674px;}
+.frontier_talkme_line {width:674px; background:#f7fafd;}
+.frontier_talk_text1 { width:619px; height:14px; padding-bottom:2px; overflow:hidden;}
+.frontier_talk_text2 { width:619px; height:auto;padding:4px 0 12px 0;}
+.frontier_reply_box { width:599px; height:auto;padding:15px; background:#f8f8f8; margin-left:45px;}
+.frontier_reply_line1 { width:599px; height:22px;}
+.frontier_reply_linebg {width:599px; height:41px; background:url(/images/common/bg/line_sbox_41.gif) repeat-x;}
+.frontier_reply_text1 { width:599px; height:14px; padding-bottom:2px; overflow:hidden;}
+.frontier_reply_text2 { width:599px; height:auto;padding:4px 0 12px 0;}
+
+.frontier_review_line {width:674px;}
+.frontier_review_thum { width:80px; height:80px; margin-right:15px;}
+.frontier_review_title { width:579px; height:18px; padding-bottom:8px; overflow:hidden;}
+.frontier_review_text1 { width:579px; height:14px; padding-bottom:2px; overflow:hidden;}
+.frontier_review_text2 { width:579px; height:32px; padding-top:4px; overflow:hidden;}
+
+.frontier_revw_box {width:529px; height:110px;}
+.frontier_revw_text { width:529px; height:74px; margin-top:6px;}
+.frontier_revw_titleline {width:529px; height:18px; background:url(/images/common/ico/ico_or_arrow.gif) no-repeat;}
+.frontier_revw_textline {width:519px; height:36px; padding:3px 5px; overflow:hidden; background:#f8f8f8; line-height:1.6;}
+
+.frontier_review_notitle { width:674px; height:18px; padding-bottom:8px; overflow:hidden;}
+.frontier_review_notext1 { width:674px; height:14px; padding-bottom:2px; overflow:hidden;}
+.frontier_review_notext2 { width:674px; height:32px; padding-top:4px; overflow:hidden;}
+
+.frontier_ad_box {width:714px;}
+.frontier_ad_img {width:714px; height:285px; background:url(/images/frontier/frontier_ad_img.gif) no-repeat;}
+.frontier_ad_input { width:714px; height:60px; background:url(/images/common/bg/bg_ad714060.gif) no-repeat;}
+.frontier_ad_text {width:100px; height:22px; padding:30px 0 0 42px; font-size:13px; font-weight:bold; float:left; display:inline;}
+.frontier_ad_text2 {width:542px; height:22px; padding:22px 0 0 30px; float:left; display:inline;}
+.frontier_ad_input2 { width:714px; height:62px; background:url(/images/common/bg/bg_ad714062.gif) no-repeat;}
+.frontier_ad_area { width:714px; height:404px;}
+.frontier_ad_area_r {width:100px; height:200px; padding:204px 0 0 42px; font-size:13px; font-weight:bold; float:left; display:inline; background:#f8f8f8;}
+.frontier_ad_area_l {width:542px; height:360px; padding:22px 0 22px 30px; float:left; display:inline; background:#ffffff;}
+
+
+.thum110_nbox {width:110px; height:110px; padding-right:15px; float:left; display:inline; overflow:hidden;}
+.them_text_nr {width:40px;height:15px;background:#ee382d;overflow:hidden;position:absolute; margin-top:95px;}
+.them_text_ng { width:40px; height:15px; background:#333333;filter:alpha(opacity=60);-moz-opacity: 0.60; opacity:0.60; overflow:hidden;position:absolute;margin-top:95px;}
+
+.title_line p.ad_btn {float:right; margin:-7px 0 0 ;}
+.frontier_ad_box .frontier_adList_img {background:url('/images/frontier/frontier_adList_img.gif') no-repeat 11px 46px; width:714px; height:285px; border-bottom:1px solid #666;text-indent:-9999px;}
+.frontier_ad_box .frontier_adList {width:100%; float:left; margin:30px 0 35px;}
+.frontier_ad_box .frontier_adList ul{width:694px; float:left; margin:0 0 26px 20px;}
+.frontier_ad_box .frontier_adList li {margin:0 12px 12px 0; width:134px; height:100px; border:1px solid #E0E4E8; float:left; background:url('/images/frontier/ad_title.gif') no-repeat -1px -818px;}
+.frontier_ad_box .frontier_adList li.first {margin-left:94px;}
+.frontier_ad_box .frontier_adList li.fashion {background:url('/images/frontier/ad_title.gif') no-repeat 0 0;border:none; width:230px;}
+.frontier_ad_box .frontier_adList li.beauty {background:url('/images/frontier/ad_title.gif') no-repeat 0 -103px;border:none; width:230px;}
+.frontier_ad_box .frontier_adList li.food {background:url('/images/frontier/ad_title.gif') no-repeat 0 -205px;border:none; width:230px;}
+.frontier_ad_box .frontier_adList li.life {background:url('/images/frontier/ad_title.gif') no-repeat 0 -307px;border:none; width:230px;}
+.frontier_ad_box .frontier_adList li.digital {background:url('/images/frontier/ad_title.gif') no-repeat 0 -409px;border:none; width:230px;}
+.frontier_ad_box .frontier_adList li.medication {background:url('/images/frontier/ad_title.gif') no-repeat 0 -511px;border:none; width:230px;}
+.frontier_ad_box .frontier_adList li.car {background:url('/images/frontier/ad_title.gif') no-repeat 0 -613px;border:none; width:230px;}
+.frontier_ad_box .frontier_adList li.education {background:url('/images/frontier/ad_title.gif') no-repeat 0 -715px;;border:none; width:230px;}
+
+#frontier_view_warp .frontier_view_info {width:694px; float:left; border:10px solid #666 !important; margin-bottom:30px;}
+#frontier_view_warp .frontier_view_info .thum{width:224px; padding:30px 39px 0 30px; border-right:1px solid #ddd; float:left; text-align:center;}
+#frontier_view_warp .frontier_view_info .thum img {width:224px; hiehgt:224px; }
+#frontier_view_warp .frontier_view_info .thum .time{width:100%; text-align:center;}
+#frontier_view_warp .frontier_view_info .thum .time span{background:url('/images/frontier/icon_time.gif') no-repeat 0 0; padding:7px 0 3px 30px; display:inline-block; margin:13px 0; font-size:11px; color:black; color:#DF473C;}
+#frontier_view_warp .frontier_view_info .info{width:400px; padding:33px 0 0 0;  float:left;}
+#frontier_view_warp .frontier_view_info .info p.title{font-size:16px; color:black; font-weight:bold; width:340px; margin-bottom:12px; padding-left:30px;}
+#frontier_view_warp .frontier_view_info .info p{font-size:11px;color:#666; margin-bottom:8px;padding-left:30px; }
+#frontier_view_warp .frontier_view_info .info p label{font-size:12px;color:#949494; display:inline-block; width:44px;}
+#frontier_view_warp .frontier_view_info .info p strong{font-size:12px; font-weight:normal;}
+#frontier_view_warp .frontier_view_info .info div.sns{width:100%; float:left; border-top:1px solid #ddd; padding:13px 0; margin-top:20px;}
+#frontier_view_warp .frontier_view_info .info div.sns span{font-size:11px; color:#5D7DAC; padding:0 0 0 29px; display:inline-block; width:160px;float:left; }
+#frontier_view_warp .frontier_view_info .info ul.sns{width:200px;float:left; padding-left:10px;}
+#frontier_view_warp .frontier_view_info .info ul.sns li{width:80px;float:left; padding:0; text-align:left; }
+#frontier_view_warp .frontier_view_info .info ul.sns li.twitter{ }
+#frontier_view_warp .frontier_view_info .info ul.sns li.facebook{margin-left:-15px; }
+#frontier_view_warp .frontier_view_img {border:1px solid #ccc !important; clear:both; }
+.frontier_info_box div.sns{width:680px;border:2px solid #FBD7D5; border-top:0; float:left; padding:15px 15px 12px 15px; margin-bottom:37px;}
+.frontier_info_box div.sns span{color:#5D7DAC; display:inline-block; width:400px;float:left; line-height:24px;}
+.frontier_info_box ul.sns{width:200px;float:left; padding-left:10px;}
+.frontier_info_box ul.sns li{width:95px;float:left; }

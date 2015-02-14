@@ -1,0 +1,35 @@
+<div class="title_line gray_l_text">
+	{*}<img src="/images/myrevu/title_cash.gif" align="left"/>{/*}
+	<h2>마이레뷰 > 포인트</h2>
+</div>
+
+<div class="clear"></div>
+
+<!-- 적립내역 시작 -->
+<div class="title32_line"><img src="/images/myrevu/title_cashlist.gif"  align="left"/></div>
+<div style="width:714px; height:auto;">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td class="table_listbg" width="120"><strong>날짜</strong></td>
+			<td class="table_listbg" width="3"><img src="/images/common/bg/bg_table_sline.gif" /></td>
+			<td class="table_listbg" width="480"><span class="gray_d_text"><strong>내용</strong></span></td>
+			<td class="table_listbg" width="3"><img src="/images/common/bg/bg_table_sline.gif" /></td>
+			<td class="table_listbg" width="120"><span class="gray_d_text"><strong>포인트</strong></span></td>
+		</tr>
+		{@list}
+		<tr>
+			<td colspan="2" class="table12_line" align="center">
+				<div class="common_text text_overlay17">{.regdate}</div>
+			</td>
+			<td colspan="2" class="table12_line" ><a href="#">
+				<div class="common_text text_overlay17">{.point_explain} <a href="javascript:common.socialbar({.rno});" class="socialbar">{.title}</a></div>
+			</td>
+			<td class="table12_line" align="center">
+				<span class="{.span_class}">{.sign} {=number_format(.point)}</span>
+			</td>
+		</tr>
+		{/}
+	</table>
+</div>
+<div class="clear"></div>
+<div class="pageno">{link}</div>

@@ -1,0 +1,36 @@
+<script type="text/javascript" src="{JS}/_global/input.js"></script>
+<script type="text/javascript" src="{JS}/manager.log.js"></script>
+<h2>크론로그</h2>
+<form name="form1" id="form1">
+<input type="radio" name="flag" value="all" {?param[1]=='all' || param[1]==''}checked{/} />전체
+<select name="opt" id="opt">
+	<option value="">==검색==</option>
+	<option value="name" {? param[2]=='name'}selected{/}>크론명</option>
+</select>
+<input type="text" name="keyword" id="keyword" value="{param[3]}" />
+<input type="button" value="검색" id="searchCronLogBtn" />
+&nbsp;
+<strong>| 총 <font color="red">{=number_format(cnt)}</font>건이 검색되었습니다.</strong>
+<hr />
+* 특수문자때문에 검색안됨 - 차후에 수정할 예정 <hr />
+<table width="100%">
+	<tr>
+		<th>일련번호</th> 
+		<th>크론명</th>
+		<th>크론파일</th>
+		<th>내용</th>
+		<th>등록일</th>
+	</tr>
+	{@list}
+	<tr align="center">
+		<td>{.idx}</td>
+		<td>{.cron_name}</td>
+		<td align="right">{.cron_src}</td>
+		<td>{.content}</td>
+		<td>{.regdate}</td>
+	</tr>
+	{/}
+</table>
+
+<div class="pageno">{link}</div>
+</form>

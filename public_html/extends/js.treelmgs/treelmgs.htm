@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>DHTML Tree samples. dhtmlXTree - Initialize object on page</title>
+</head>
+<style>
+body {font-size:12px}
+.{font-family:arial;font-size:12px}
+h1 {cursor:hand;font-size:16px;margin-left:10px;line-height:10px}
+xmp {color:green;font-size:12px;margin:0px;font-family:courier;background-color:#e6e6fa;padding:2px}
+</style>
+<link rel="stylesheet" type="text/css" href="dhtmlXtree.css" />
+<script type="text/javascript" src="dhtmlXCommon.js"></script>
+<script type="text/javascript" src="dhtmlXTree.js"></script>
+<body>
+<h1>Initialize object on page</h1>
+
+<table>
+	<tr>
+		<td>
+			<div id="treeboxbox_tree" style="width:250; height:418;background-color:#f5f5f5;border :1px solid Silver;; overflow:auto;"/></div>
+		</td>
+		<td rowspan="2" style="padding-left:25" valign="top"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+<hr>
+
+<script>
+tree=new dhtmlXTreeObject("treeboxbox_tree","100%","100%",0);
+tree.setImagePath("http://ver2.webshop.kr/plugin/js.treelmgs/images/");  //이미지 경로
+tree.loadXML("treelmgs.xml") //xml파일 지정
+</script>
+<br><br>
+
+<!--
+<div id="tree_list" style="overflow:auto;"/></div>
+<script>
+tree=new dhtmlXTreeObject("tree_list","100%","100%",0);
+tree.setOnClickHandler(doOnClick);
+tree.enableTreeLines(false); // 라인 숨기기
+tree.enableDragAndDrop(true); // DragAndDrop
+tree.loadXML("./tree.php"); //xml파일 지정
+
+// 텍스트설정
+tree.setItemText(id, "aaa");
+// 하위아이템삭제
+tree.deleteChildItems(id);
+// 아이템 삭제
+tree.deleteItem(id);
+// 새로운 아이템 입력
+tree.insertNewItem(parentId,itemId,itemText,itemActionHandler,image1,image2,image3,optionStr,childs);
+tree.insertNewItem("0","10000001","안녕하세영",'',"/plugin/js.treelmgs/images/books_close.gif","/plugin/js.treelmgs/images/tombs.gif","/plugin/js.treelmgs/images/tombs.gif","OPEN","0");
+
+function doOnClick(name)
+{
+    var link= "tree.php?loc="+name;
+    document.contentFrame.location = link;
+}
+</script>
+-->
+
+</body>
+</html>

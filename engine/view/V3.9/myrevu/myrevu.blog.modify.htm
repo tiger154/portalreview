@@ -1,0 +1,38 @@
+<script type="text/javascript" src="{JS}/myrevu.blog.js"></script>
+<div class="title_line">
+	<div class="myblog_title"><div class="myblog_info"></div></div>
+</div>
+
+<div class="myblog_title_bg" style="margin-top:20px;">
+	<!-- 블로그 제목 -->
+	<div class="myblog_title_text">
+		블로그명 : <input type="text" id="blogName" maxlength="100" size="30" value="{blog.name}" />
+		(<a href="{blog.url}" target="_blank" style="text-decoration:underline;">{blog.url}</a>)
+		<img src="{IMAGES}/common/but/but_w_edit.gif" class="btn" align="absmiddle" onClick="myblog.modifyBlog({blog.blogno});" />
+		<img src="{IMAGES}/common/but/but_w_del.gif" class="btn" align="absmiddle" onClick="myblog.deleteBlog({blog.blogno});" />
+	</div>
+</div>
+<!-- 블로그 정보 박스 시작 -->
+<div class="myblog_box">
+	<div class="myblog_tbox">
+		<table width="100%" border="0" cellspacing="0">
+			<tr>
+				<td class="block_text100">등록일</td>
+				<td class="block_text520" colspan="3"><span class="gray_l_text"><strong>{blog.regdate}</strong></span></td>
+			</tr>
+			<tr>
+				<td class="block_text100">총 리뷰 수</td>
+				<!-- 프론티어 리뷰로 연결 -->
+				<td class="block_text195"><a href="javascript:common.redirect('/blog/@{nickname}/{blog.blogno}');" style="text-decoration:underline"><span class="gray_db_text">{blog.review_cnt}</span></a> 건</td>
+				<td class="block_text100">총 토크 수</td>
+				<td class="block_text195"><span class="gray_db_text">{blog.talk_cnt}</span>건</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<!-- 블로그 정보 박스 끝 -->
+<div class="clear" style="height:20px;"></div>
+<center>
+	<img src="{IMAGES}/common/but/but_gb_pre.gif" class="btn" onClick="common.redirect('/myrevu/blog');" />
+</center>
+

@@ -1,0 +1,85 @@
+<script type="text/javascript" src="{JS}/_global/input.js"></script>
+<script type="text/javascript" src="{JS}/manager.powerblog.js"></script>
+<h2>파워블로그 신청자</h2>
+<form name="form1" id="form1">
+{*}
+<select name="opt" id="opt">
+	<option value="">==검색==</option>
+	<option value="nickname" {? param[3]=='nickname'}selected{/}>닉네임</option>
+	<option value="userid" {? param[3]=='userid'}selected{/}>아이디</option>
+	<option value="username" {? param[3]=='username'}selected{/}>이름</option>
+	<option value="email" {? param[3]=='email'}selected{/}>이메일</option>
+</select>
+<input type="text" name="keyword" id="keyword" value="{param[4]}" />
+{/*}
+<select name="cate" id="cate">
+	<option value="">==분야==</option>
+	{*}
+	{@ cate}
+	<option value="{.key_}">{.value_}</option>
+	{/}
+	{/*}
+	<option value="1" {?param[2] == '1'}selected{/}>디지털/가전/휴대폰</option>
+	<option value="2" {?param[2] == '2'}selected{/}>맛집/요리</option>
+	<option value="3" {?param[2] == '3'}selected{/}>여행</option>
+	<option value="4" {?param[2] == '4'}selected{/}>영화/TV/연극/공연</option>
+	<option value="5" {?param[2] == '5'}selected{/}>스포츠</option>
+	<option value="6" {?param[2] == '6'}selected{/}>자동차/바이크/자전거</option>
+	<option value="7" {?param[2] == '7'}selected{/}>패션/인테리어</option>
+	<option value="8" {?param[2] == '8'}selected{/}>도서</option>
+	<option value="9" {?param[2] == '9'}selected{/}>음악</option>
+	<option value="10" {?param[2] == '10'}selected{/}>시사</option>
+	<option value="11" {?param[2] == '11'}selected{/}>육아/와이프로거</option>
+	<option value="12" {?param[2] == '12'}selected{/}>레포츠/레저</option>
+	<option value="13" {?param[2] == '13'}selected{/}>화장품/미용</option>
+	<option value="14" {?param[2] == '14'}selected{/}>애완동물</option>
+	<option value="15" {?param[2] == '15'}selected{/}>취미/게임</option>
+</select>
+<input type="radio" name="flag" value="all" {?param[1]=='all' || param[1]==''}checked{/} />전체
+<input type="radio" name="flag" value="0" {?param[1]=='0'}checked{/} />심사중
+<input type="radio" name="flag" value="1" {?param[1]=='1'}checked{/} />파워블로그선정
+<input type="radio" name="flag" value="2" {?param[1]=='2'}checked{/} />거절
+<input type="button" value="검색" id="searchBtn" />
+&nbsp;
+<strong>| 총 <font color="red">{=number_format(cnt)}</font>명의 회원이 검색되었습니다.</strong>
+<hr />
+<table width="100%">
+	<tr>
+		<th>회원번호</th>
+		<th>아이디</th>
+		<th>닉네임</th>
+		<th>이름</th>
+		<th>심사상태</th>
+		<th>처리</th>
+		<th>분야1</th>
+		<th>분야2</th>
+		<th>분야3</th>
+		<th>분야4</th>
+		<th>분야5</th>
+		<th>가입일</th> 
+	</tr>
+	{@list}
+	<tr align="center">
+		<td>{.user.userno}</td>
+		<td>{.user.userid}</td>
+		<td><a href="javascript:manager.user({.userno});">{.user.nickname}</a></td>
+		<td>{.user.username}</td>
+		<td>{.flag_text}</td>
+		<td>
+			{? .flag_app == "0"}
+			<input type="button" value="선정" onClick="mngpowerblog.proc('{.ano}', '1', '{.user.nickname}');" />
+			<input type="button" value="거절" onClick="mngpowerblog.proc('{.ano}', '2', '{.user.nickname}');" />
+			{/}
+		</td>
+		<td>{.cate1_text}</td>
+		<td>{.cate2_text}</td>
+		<td>{.cate3_text}</td>
+		<td>{.cate4_text}</td>
+		<td>{.cate5_text}</td>
+		<td>{.regdate}</td>
+	</tr>
+	{/}
+</table>
+
+<div class="pageno">{link}</div>
+</form>

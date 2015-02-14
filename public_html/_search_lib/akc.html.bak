@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Stencil 01type 검색어 자동완성 목록 페이지</title>
+<script language='javascript' src='../js/akc.js'></script>
+<link rel="stylesheet" type="text/css" href="../css/search.css">
+</head>
+
+<body class="noscript" OnContextMenu="return false;" onload="akc_init()">
+<!--<div id="AKCResult" name="AKCResult" style="visibility:visible">-->
+<div class="autocomplete_wrap">
+        <div id="AKCIDiv" class="acl_lbox" name="AKCIDiv">
+        </div>
+        <div class="acl_bar">
+   		  	<div class="tlink_box">
+				<span class="tlink"><a href="#" class="tlink" id="akc_chk" onfocus="this.blur()" onclick="akc_setCookie()">
+				<p class="func_control" id="onoffText">기능끄기</div>
+				</a></span>
+             </div>
+        </div>
+</div>
+</body>
+</html>
+

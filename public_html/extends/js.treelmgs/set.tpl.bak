@@ -1,0 +1,226 @@
+<script type="text/javascript" src="/js/common/select.js"></script>
+<script type="text/javascript" src="/js/common/input.js"></script>
+<script type="text/javascript" src="/plugin/js.treelmgs/dhtmlXTree.js"></script>
+<script type="text/javascript" src="/plugin/js.treelmgs/dhtmlXCommon.js"></script>
+<link rel="stylesheet" type="text/css" href="/plugin/js.treelmgs/dhtmlXtree.css" />
+
+<form name="form1" id="form1" method="post">
+
+<div class="title-head"><h3>카테고리관리</h3></div>
+<p class="title-head-desc">웹사이트의 카테고리를 관리합니다.</p>
+
+<div id="menu-tree" style="width:250px; height:100%; background-color:#f5f5f5;border :1px solid Silver;"/></div>
+<script>
+tree=new dhtmlXTreeObject("menu-tree","250","100%",0);
+tree.setImagePath("http://ver2.webshop.kr/plugin/js.treelmgs/images/");
+tree.loadXML("http://ver2.webshop.kr/hosts/ver2.webshop.kr/conf/menu.xml");
+tree.enableDragAndDrop(true);
+tree.setOnClickHandler(menuSelect);
+
+/*
+function doOnClick(id)
+{
+	//tree.setItemText(id, "aaa");
+	//tree.deleteChildItems(id);
+	//tree.deleteItem(id);
+	//tree.insertNewItem(parentId,itemId,itemText,itemActionHandler,image1,image2,image3,optionStr,childs);
+	//tree.insertNewItem("0","10000001","안녕하세영",'',"/plugin/js.treelmgs/images/books_close.gif","/plugin/js.treelmgs/images/tombs.gif","/plugin/js.treelmgs/images/tombs.gif","OPEN","0");
+}
+*/
+
+function menuSelect(id)
+{
+	alert(tree);
+	/*
+	var url = getModuleUrl("manager.menu.setproc");
+	var pars =  "mCode=" + id;
+	var myAjax = new Ajax.Request(url, 
+	{
+		method: 'POST', 
+		parameters: pars, 
+		onComplete: menuSelectRequest
+	});
+	menuTypeHide();
+	showMsg("msg-layer", 300, 100, "메뉴정보를 로딩중입니다.")	
+	*/
+}
+
+function menuSelectRequest(originalRequest)
+{
+	var response = JSON.parse(originalRequest.responseText);
+	var result = response.result;
+	if(result == "success") {
+		changeMsg("msg-layer", 300, 100, "메뉴정보가 로드되었습니다.");		
+		hideMsg("msg-layer");
+		$('mCode').value = response.mCode;
+		radioChecked("mType", response.mType);
+		$('mStype').value = response.mStype;
+		$('mVar').value = response.mVar;
+		$('mName').value = response.mName;
+		$('mDesc').value = response.mDesc;
+		checkboxChecked("mPriv", response.mPriv, "|");		
+		$('mField').value = response.mField;
+		radioChecked("useYn", response.useYn);
+		menuTypeShow(response.mType);
+	} else {
+		changeMsg("msg-layer", 300, 100, "메뉴정보를 로드 할 수 없습니다.");
+	}
+}
+
+function menuTypeHide()
+{
+	$('menu-'+'BU').hide();
+	$('menu-'+'WP').hide();
+	$('menu-'+'LK').hide();
+}
+
+function menuTypeShow(mType)
+{	
+	if(mType != "") {
+		$("menu-"+mType).show();
+		switch(mType)
+		{
+			case "BU" : 
+				radioChecked("mStypeBU", $F('mStype'));
+				$('mVarArrayBU').value = $F('mVar');
+				selectOptionAddArray("mVarBU", $F('mVar'), $F('mVar'));
+				break;
+			case "WP" : 
+				alert("웹페이지 메뉴는 현재 업데이트 중입니다.");
+				break;
+			case "LK" : 
+				radioChecked("mStypeLK", $F('mStype'));
+				break;
+		}
+	}
+}
+
+function menuSave(mType)
+{
+}
+
+</script>
+
+<div id="menu-info">
+
+	<div class="con-head"><h3>현재메뉴</h3></div>
+
+	<div id="menu-basic">	
+		<ul>
+			<li class="title">메뉴코드</li>
+			<li>
+				<input name="mCode" id="mCode" type="text"  value="" disabled readonly />
+			</li>
+			<li class="title">메뉴타입</li>
+			<li>
+				<input name="mType" id="mType" type="radio" value="BU" disabled /> 게시판
+				<input name="mType" id="mType" type="radio" value="WP" disabled /> 웹페이지
+				<input name="mType" id="mType" type="radio" value="LK" disabled /> 링크
+			</li>
+			<li class="title">메뉴명</li>
+			<li>
+				<input name="mName" id="mName" type="text" value="" size="20" maxlength="20" />
+			</li>
+			<li class="title">설명</li>
+			<li>
+				<textarea name="mDesc" id="mDesc" cols="70" rows="4"></textarea>
+			</li>
+			<li class="title">권한</li>
+			<li>
+				<input name="mPriv" id="mPriv" type="checkbox" value="G" /> 손님
+				<input name="mPriv" id="mPriv" type="checkbox" value="M" /> 회원
+				<input name="mPriv" id="mPriv" type="checkbox" value="A" /> 관리자
+			</li>
+			<li class="title">사용여부</li>
+			<li>
+				<input name="useYn" id="useYn" type="radio" value="Y" /> 사용
+				<input name="useYn" id="useYn" type="radio" value="N" /> 사용안함
+			</li>
+			<li>
+				<!-- 사용될 히든값 -->
+				<input name="mStype" id="mStype" type="hidden" value="" />
+				<input name="mVar" id="mVar" type="hidden" value="" />
+				<input name="mField" id="mField" type="hidden" value="" />
+				<input name="mDepth" id="mDepth" type="hidden" value="" />
+				<input name="mOrder" id="mOrder" type="hidden" value="" />
+			</li>
+		</ul>
+	</div>
+
+	<div id="menu-BU" style="display:none;">
+		<div class="con-head"><h3>게시판 설정</h3></div>
+		<ul>
+			<li class="title">게시판타입</li>
+			<li>
+				<input name="mStypeBU" id="mStypeBU" type="radio" value="BLG" /> 블로그형
+				<input name="mStypeBU" id="mStypeBU" type="radio" value="ART" /> 일반형
+				<input name="mStypeBU" id="mStypeBU" type="radio" value="WEB" /> 웹진형
+				<input name="mStypeBU" id="mStypeBU" type="radio" value="ALB" /> 앨범형
+			</li>
+			<li class="title">머리말</li>
+			<li>
+				<p>
+					<select name="mVarBU" id="mVarBU" size="5" style="width:380px;height:60px" onChange="selectOptionResult('mVarBU', 'mVarArrayBU');"></select>
+					<input name="mVarArrayBU" id="mVarArrayBU" type="hidden" value="">
+					<p>
+						<input type="text" name="mVarTextBU" id="mVarTextBU" size="15" maxlength="20" />
+						<span class="sbutton" onClick="selectOptionAdd('mVarBU', 'mVarTextBU', 'mVarArrayBU', $F('mVarTextBU'));">추가</span>						
+						<span class="sbutton" onClick="selectOptionUp('mVarBU', 'mVarArrayBU');">▲</span>
+						<span class="sbutton" onClick="selectOptionDown('mVarBU', 'mVarArrayBU');">▼</span>
+						<span class="sbutton" onClick="selectOptionDel('mVarBU', 'mVarArrayBU');">삭제</span>
+					</p>
+				</p>
+			</li>
+		</ul>
+	</div>
+
+	<div id="menu-WP" style="display:none;">
+		<div class="con-head"><h3>웹페이지 설정</h3></div>
+		<ul>
+			<li class="title">웹페이지타입</li>
+			<li>
+				<input name="mStypeWP" id="mStypeWP" type="radio" value="HTM" /> HTML
+				<input name="mStypeWP" id="mStypeWP" type="radio" value="TXT" /> TEXT
+				<input name="mStypeWP" id="mStypeWP" type="radio" value="EXL" /> EXCEL
+				<input name="mStypeWP" id="mStypeWP" type="radio" value="WRD" /> WORD
+			</li>
+			<li class="title">소스</li>
+			<li>
+				업데이트중....
+			</li>
+		</ul>
+	</div>
+
+	<div id="menu-LK" style="display:none;">
+		<div class="con-head"><h3>링크 설정</h3></div>
+		<ul>
+			<li class="title">링크타입</li>
+			<li>
+				<input name="mStypeLK" id="mStypeLK" type="radio" value="_self" /> 자신
+				<input name="mStypeLK" id="mStypeLK" type="radio" value="_blank" /> 새창
+				<input name="mStypeLK" id="mStypeLK" type="radio" value="_top" /> 최상위
+				<input name="mStypeLK" id="mStypeLK" type="radio" value="" /> 프레임
+			</li>
+			<li class="title">주소</li>
+			<li>
+				<input name="mVarLK" id="mVarLK" type="text" value="" size="70" /> 자신
+			</li>
+		</ul>
+	</div>
+
+	<hr size="0" class="hr" />
+
+	<p align="center">
+		<span class="button" onClick="alert('저장하기')">저장</span>
+		<span class="button" onClick="historyGo(-1);">취소</span>
+	</p>
+
+</div>
+
+<p align="center">
+	<!-- <span class="button" onClick="registerInfo('form1');">XML생성 및 메뉴적용</span> -->
+</p>
+
+<div class="clear"></div>
+
+</form>

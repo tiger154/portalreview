@@ -1,0 +1,235 @@
+<html>
+<head>
+<title>그림삽입</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link rel="stylesheet" type="text/css" href="/_extends/editor.htmlarea/css/popup.css">
+<script type="text/javascript" src="/_extends/editor.htmlarea/config/popup.js"></script>
+<script type="text/javascript" src="/js/_common/file.js"></script>
+<script type="text/javascript">
+
+window.resizeTo(400, 100);
+
+var imgObj = new Object();
+
+function Init()
+{
+	__dlg_init();
+	var param = window.dialogArguments;
+	if (param)
+	{
+		document.getElementById("f_url").value = param["f_url"];
+		document.getElementById("f_alt").value = param["f_alt"];
+		document.getElementById("f_border").value = param["f_border"];
+		document.getElementById("f_align").value = param["f_align"];
+		document.getElementById("f_vert").value = param["f_vert"];
+		document.getElementById("f_horiz").value = param["f_horiz"];
+		window.ipreview.location.replace(getURL(param.f_url));		
+	}
+	document.getElementById("f_url").focus();
+};
+
+function getURL(url)
+{
+	if (!/^https?:\/\//i.test(url) && !/^\//.test(url))
+	{
+		var base = window.opener.document.URL;
+		base = base.replace(/\/([^\/]+)$/, '/');
+		url = base + url;
+	}
+	return url;
+};
+
+function onOK()
+{
+	var required = { "f_url": "이미지를 선택하세요." };
+	for (var i in required)
+	{
+		var el = document.getElementById(i);
+		if (!el.value)
+		{
+			alert(required[i]);
+			el.focus();
+			return false;
+		}
+	}
+
+	var fields = ["f_url", "f_alt", "f_align", "f_border", "f_horiz", "f_vert"];
+	var param = new Object();
+	for (var i in fields)
+	{
+		var id = fields[i];
+		var el = document.getElementById(id);
+		param[id] = el.value;
+	}
+
+	imgObj = param; // 파일정보를 전역변수로 저장
+	var form = document.form1;
+	var mCode = opener.document.form1.mCode.value;	
+	var uploadFrame = document.getElementById("uploadFrame");
+	try { var editorType = opener.document.form1.editorType.value; }
+	catch (e) { var editorType = "" }
+
+	// 업로드 타입별로 처리함
+	switch(editorType) 
+	{
+		case "page" : form.action = "/?_module=category.editor.uploadFile.proc";  break;
+		default : form.action = "/?_module=board.image.upload.proc"; break;
+	}	
+	form.submit();	
+	return false;
+};
+
+// 이미지객체의 경로변경, 이미지명 추가
+function onUpload(domain, f_url, img_name, img_size, img_type)
+{
+	var tmpImg = opener.document.form1.tmpImg;
+	if(tmpImg.value == "") {
+		tmpImg.value += img_name + "@" + img_size + "@" + img_type;
+	} else {
+		tmpImg.value += "|" + img_name + "@" + img_size + "@" + img_type;
+	}
+	
+	imgObj['f_url'] = "http://" + domain + f_url;
+	__dlg_close(imgObj);
+	return false;
+}
+
+// 관리자 페이지제작시 에디터일때 파일리스트 갱신
+function onFileList(code)
+{
+	var code = opener.document.form1.code.value;
+	opener.getFileList(code);
+}
+
+function onOK_20100827()
+{
+	var required = { "f_url": "이미지를 선택하세요." };
+	for (var i in required)
+	{
+		var el = document.getElementById(i);
+		if (!el.value)
+		{
+			alert(required[i]);
+			el.focus();
+			return false;
+		}
+	}
+
+	var fields = ["f_url", "f_alt", "f_align", "f_border", "f_horiz", "f_vert"];
+	var param = new Object();
+	for (var i in fields)
+	{
+		var id = fields[i];
+		var el = document.getElementById(id);
+		param[id] = el.value;
+	}
+	__dlg_close(param);
+	return false;
+};
+
+function onCancel()
+{
+	__dlg_close(null);
+	return false;
+};
+
+function onPreview()
+{
+	var f_url = document.getElementById("f_url");
+	var url = f_url.value;
+	if (!url)
+	{
+		alert("이미지를 선택하세요.");
+		f_url.focus();
+		return false;
+	}
+	window.ipreview.location.replace(getURL(url));
+	return false;
+};
+</script>
+</head>
+
+<body onload="Init()">
+<iframe id="uploadFrame" name="uploadFrame" width="0" height="0"></iframe>
+<div class="title">그림삽입</div>
+<!--- new stuff --->
+<form name="form1" action="" method="post" enctype="multipart/form-data" target="uploadFrame">
+<table border="0" width="100%" style="padding: 0px; margin: 0px">
+<tbody>
+	<tr>
+		<td style="width: 7em; text-align: right">이미지 :</td>
+		<td>
+			<!--
+			<input type="text" name="url" id="f_url" style="width:75%" title="이미지 URL를 입력하세요." />
+			<button name="preview" onclick="return onPreview();" title="이미지 미리보기">미리보기</button>
+			-->
+			<input type="file" name="f_url" id="f_url" style="width:75%" title="이미지를 선택하세요." onChange="fileUploadPreview(this, 'pimg')" />			
+		</td>
+	</tr>
+	</tr>
+	<tr>
+		<td style="width: 7em; text-align: right">이미지 설명:</td>
+		<td>
+			<input type="text" name="alt" id="f_alt" style="width:100%" title="브라우가 이미지를 인식하지 못할때 설명" />
+		</td>
+	</tr>
+</tbody>
+</table>
+
+<p />
+
+<fieldset style="float: left; margin-left: 5px;">
+
+<legend>레이아웃</legend>
+<div class="space"></div>
+<div class="fl">정렬 :</div>
+<select size="1" name="align" id="f_align" title="Positioning of this image">
+<option value="">Not set</option>
+<option value="left">왼쪽</option>
+<option value="right">오른쪽</option>
+<option value="texttop">글자위</option>
+<option value="absmiddle">글자중간</option>
+<option value="baseline" selected="1">기본</option>
+<option value="absbottom">글자아래</option>
+<option value="bottom">아래</option>
+<option value="middle">중간</option>
+<option value="top">위</option>
+</select>
+<p />
+<div class="fl">테두리 두께 :</div>
+<input type="text" name="border" id="f_border" size="5" title="공백으로 남겨두지 마세요." />
+<div class="space"></div>
+
+</fieldset>
+
+<fieldset style="float:right; margin-right: 5px;">
+
+<legend>여백</legend>
+<div class="space"></div>
+<div class="fr">수평여백 :</div>
+<input type="text" name="horiz" id="f_horiz" size="5" title="수평 패딩" />
+<p />
+<div class="fr">수직여백 :</div>
+<input type="text" name="vert" id="f_vert" size="5" title="수직패딩" />
+<div class="space"></div>
+
+</fieldset>
+
+<br clear="all" />
+
+<table width="100%" style="margin-bottom: 0.2em">
+	<tr>
+		<td valign="bottom">미리보기:<br />
+			<!--<iframe name="ipreview" id="ipreview" frameborder="0" style="border : 1px solid gray;" height="200" width="300" src=""></iframe>-->
+			<div id="pimg" class="pimg" title="이미지 미리보기" style="width:300px;height:200px;background-color:#FFF "></div>
+		</td>
+		<td valign="bottom" style="text-align: right">
+		<button type="button" name="ok" onclick="return onOK();">업로드</button><br>
+		<button type="button" name="cancel" onclick="return onCancel();">취소</button>
+		</td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

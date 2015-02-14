@@ -1,0 +1,24 @@
+http://www.JSON.org/js.html
+
+AJAX통신에서 responseText를 받을때 responseText가 JSON포멧일때
+responseText를 오브젝트로 만들어주는 스크립트
+
+일부에서 
+
+var result = eval("(" + responseText+ ")"); 
+
+이런식으로 사용하지말라고 권고함
+
+1. 위의 방식은 특정한 방식에 의해서 실행(?)될 수 있으므로 보안상 권장하지 않음
+-> 나중에 찾아보시오.
+
+2. eval함수는 메모리 리소스를 많이 잡아 먹으므로 권장하지않음
+
+
+위의 함수 사용법
+
+%usage
+
+var result = JSON.parse(responseText);
+
+위와 같이 단순하게 사용하면 됨

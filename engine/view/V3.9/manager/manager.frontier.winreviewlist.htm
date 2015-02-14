@@ -1,0 +1,65 @@
+
+<script type="text/javascript" src="{JS}/_global/category.js"></script>
+<form name="RevUform" id="RevUform" method="post" enctype="multipart/form-data"  action="">
+<input type="hidden" name="code" id="code" value="{code}" />
+
+<input type="hidden" name="frname" id="frname" value="{title}" />
+<input type="hidden" name="event_no" id="event_no" value="{event_no}" />
+
+<input type="hidden" name="count" id="count" value="{entry_count}" />
+
+
+
+<input type="hidden" name="page" id="page" value="{page}" />
+<input type="hidden" name="page_row" id="page_row" value="{page_row}" />
+<input type="hidden" name="btitle" id="btitle" value="{btitle}" />
+<input type="hidden" name="idx" id="idx" value="" />
+<input type="hidden" name="ref_idx" id="ref_idx" value="" />
+<input type="hidden" name="passwd" id="passwd" value="" />
+<input type="hidden" name="module" id="module" value="{module}" />
+
+	<!-- 상단 -->
+	<table border="0" width="560" cellpadding="5" cellspacing="0" align="center">
+		<tr>
+			<!--본문-->
+			<table width="560"  border="1" cellpadding="2" cellspacing="0" bgcolor="#C0C0C0">
+
+				
+
+			<table width="560"  border="1" cellpadding="2" cellspacing="0" bgcolor="#C0C0C0">
+				<tr>
+					<th>리뷰URL</th>
+					<th>RevU연동</th>
+				</tr>
+				<!--{@reviewlist}-->
+				<tr bgcolor="#FFFFFF" height="25" align="center">
+
+					<td><a href="{.url}" target="_blank"><font color=blue><U>{.title}</U></font></a></td>
+					{? .frno == 0} 
+					<td width="80"><font color=blue><a href="javascript:frontierReviewReg('{event_no}','{.enurl}','{.userno}');">등록</a></font></td>
+					{:}
+					<td width="80"></font></td>
+					{/}
+				</tr>
+				<!--{/}-->
+
+
+			</table>
+
+
+			</td>
+			<!-- 본문 끝 -->
+		</tr>
+	</table>
+
+
+
+	<table width="560" border="0">
+		<tr>
+			<td width="560">&nbsp;<!-- 공백 -->
+			</td>
+		</tr>
+	</table>
+
+
+</form>

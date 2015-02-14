@@ -1,0 +1,101 @@
+<script>var code = "<?php echo(Module::$param[1])?>";</script>
+<!-- 각 카데고리명 표시 -->
+<div class="review_category">
+	<img src="{IMAGES}/review/title_review.gif" align="left"/>
+	<ul>
+		<li class="pl25">&nbsp;</li>
+		<!-- 카테고리별 텝 시작 / 전체가 디폴트 / 선택시 파일명 on으로 변경 -->
+		<li><img src="{IMAGES}/review/tab_review_off1.gif" id="rcate1" class="btn" alt="전체" title="전체" /></li>
+		<li><img src="{IMAGES}/review/tab_review_off2.gif" id="rcate2" class="btn" alt="맛집" title="맛집" /></li>
+		<li><img src="{IMAGES}/review/tab_review_off3.gif" id="rcate3" class="btn" alt="여행" title="여행" /></li>
+		<li><img src="{IMAGES}/review/tab_review_off4.gif" id="rcate4" class="btn" alt="패션" title="패션" /></li>
+		<li><img src="{IMAGES}/review/tab_review_off5.gif" id="rcate5" class="btn" alt="요리" title="요리" /></li>
+		<li><img src="{IMAGES}/review/tab_review_off6.gif" id="rcate6" class="btn" alt="화장품" title="화장품" /></li>
+		<li><img src="{IMAGES}/review/tab_review_off7.gif" id="rcate7" class="btn" alt="IT" title="IT" /></li>
+		<li><img src="{IMAGES}/review/tab_review_off8.gif" id="rcate8" class="btn" alt="영화" title="영화" /></li>
+		<li><img src="{IMAGES}/review/tab_review_off9.gif" id="rcate9" class="btn" alt="프론티어" title="프론티어" /></li>
+	</ul>
+</div>
+<div class="clear"></div>
+<br />
+
+<!-- 리스트 묶음 박스 시작  / 한페이지에 10개 나열-->
+<div class="review_list">
+	{@list}
+	<ul>
+		{? .is_thumb == "1"}
+		<li class="thumb110_box">
+		<!-- 리스트 이미지 -->
+			<img src="{.thumbimage110_url}" alt="{.title}" width="110" height="110" />			
+		</li>
+		{/}
+		{? .is_thumb == "1"}
+		<li class="review_text_box">
+			<!-- 리뷰 내용 박스 -->
+			<div class="list_title_line gray_title">
+				<a href="javascript:common.socialbar({.rno});" name="{.rno}" class="socialbar">{.title}</a>
+			</div>
+			<!-- 소셜토크 없으면 히든처리 -->
+			<div class="review_title_talk red11_text">({.talk_cnt})</div>
+			<div class="clear"></div>
+			<div class="review_text_line">{.content}</div>
+			<!-- 블로그 타입이미지 삽입  / daum, egloos, naver,tistory / 그 이외의것 etc -->
+			<div class="review_text_line2 gray11_l_text">
+				<a href="javascript:context.load({.userno});" class="context-user">{.nickname}</a>
+				&nbsp;&nbsp;|&nbsp;&nbsp;
+				{.regdate}
+				&nbsp;&nbsp;|&nbsp;&nbsp;
+				{.cate_desc}
+				<img src="{.blog_icon}" class="imgb_space" />
+			</div>
+		</li>
+		{: .is_thumb == "0"}
+		<li class="review_text_box2">
+			<!-- 리뷰 내용 박스 -->
+			<div class="list_title_bline gray_title">
+				<a href="javascript:common.socialbar({.rno});" name="{.rno}" class="socialbar">{.title}</a>
+			</div>
+			<!-- 소셜토크 없으면 히든처리 -->
+			<div class="review_title_talk red11_text">({.talk_cnt})</div>
+			<div class="clear"></div>
+			<div class="review_text_bline">{.content}</div>
+			<!-- 블로그 타입이미지 삽입  / daum, egloos, naver,tistory / 그 이외의것 etc -->
+			<div class="review_text_bline2 gray11_l_text">
+				<a href="javascript:context.load({.userno});" class="context-user">{.nickname}</a>
+				&nbsp;&nbsp;|&nbsp;&nbsp;
+				{.regdate}
+				&nbsp;&nbsp;|&nbsp;&nbsp;
+				{.cate_desc}
+				<img src="{.blog_icon}" class="imgb_space" />
+			</div>
+		</li>
+		{/}
+		<li class="review_sns_box">
+			<!--  sns 박스 -->
+			<!-- 레뷰추천 버튼 삽입 / 최대999  -->
+			<div class="pt40"></div>
+			<div class="revu_hit_box">
+				<div class="revu_hit_boxl">
+					<img src="{IMAGES}/common/but/but_revuhit.gif" onClick="common.socialbarRecom({.rno})" alt="추천" title="추천" class="btn" />
+				</div>
+				<div class="revu_hit_boxr">
+					<div class="revu_hit_text" style="display:block;"><span class="red11t_text" id="recom_cnt{.rno}">{.recom_cnt}</span></div>
+				</div>
+			</div>
+			<div class="pt10"></div>
+			<img src="{IMAGES}/common/but/but_b_tweet.gif" onClick="twitter.todo('tweet', {.rno});" class="btn" />
+			<img src="{IMAGES}/common/but/but_b_facebook.gif" onClick="facebook.todo('wall', {.rno});" class="btn" />
+			<!-- sns 박스 끝-->
+		</li>
+	</ul>
+	<div class="clear"></div>
+	<div class="cbox_line"></div>
+	{/}
+</div>
+<!-- 리스트 묶음 박스 끝 -->
+<div class="clear"></div>
+{? size > 0} 
+<div class="pageno">{link}</div>
+{:}
+<div class="nolist">등록된 리뷰가 없습니다.</div>
+{/}

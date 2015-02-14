@@ -1,0 +1,155 @@
+<script type="text/javascript" src="{JS}/_global/input.js"></script>
+<script type="text/javascript" src="{EXTENDS}/editor.htmlarea/config/button_action.js"></script>
+<form name="RevUform" id="RevUform" method="post" enctype="multipart/form-data" action="">
+
+	<!-- 상단 -->
+	<table border="0" width="980" cellpadding="5" cellspacing="0" >
+		<tr>
+			<!--본문-->
+			<td valign="top" bgcolor="#FFFFFF">
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" height="35" border="0" bgcolor="#666699">
+							<font color="#FFFFFF">&nbsp;<img src="{IMAGES}/admin/lyr_tit_bu.gif">&nbsp;메일관리><b>회원그룹메일</b></font>&nbsp;
+						</td>
+					</tr>
+				</table>
+
+				<table>
+
+					<!-- 메일 타이틀 제목 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#B5E7FF">
+							&nbsp;제목&nbsp;<br>
+						</td>
+						<td>
+							<input type="text" name="subject" id="subject" value="" size="80">
+						</td>
+					</tr>
+					<!-- 메일 발신자 표시명-->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#B5E7FF">
+							&nbsp;발신자 표시명&nbsp;<br>
+						</td>
+						<td>
+							<input type="text" name="sendname" id="sendname" value="" size="80">
+						</td>
+					</tr>
+
+
+
+					<!-- <tr>
+						<td align="left" width="120" border="0" bgcolor="#B5E7FF">
+							&nbsp;타입 선택&nbsp;<br>
+						</td>
+						<td bgcolor="#FFFFFF"> <div align="left"><font color="#BEDFB5">&nbsp;&nbsp;&nbsp;</font><font color="#666666"> 
+							<input type=radio name=mtype value="E"  id="mtype1" checked> 개별발송
+							<input type=radio name=mtype value="A"  id="mtype2"> 그룹발송
+							<input type=radio name=mtype value="B"  id="mtype3"> 프론티어당첨발송
+						</font></div></td>
+					</tr> -->
+
+
+					
+
+					
+					<!-- 수신그룹 -->
+	
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#AAAAAA">
+							&nbsp;수신그룹&nbsp;<br>
+						</td>
+						<td>
+							<select name="mailgroup" id="mailgroup" >		
+								<option value="A">전체회원</option>
+								<option value="B">남성회원</option>
+								<option value="C">여성회원</option>
+								<option value="D">블랙리스트회원</option>
+							</select>
+						</td>
+					</tr>		
+					
+					
+
+					<!-- 본문내용 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#B5E7FF">
+							&nbsp;내용&nbsp;<br>
+						</td>
+						<td>
+							<textarea id="editor" name="editor" rows="10"  style=" width: 100%; overflow: visible;"></textarea>
+						</td>
+					</tr>			
+					<!-- 발송시간 -->
+					<tr>
+						<td align="left" width="120" border="0" bgcolor="#B5E7FF">
+							&nbsp;발송&nbsp;<br>
+						</td>
+						<td>
+							<input type=radio name=sending value="R"  id="sending2" checked> 예약발송
+							<input type=radio name=sending value="N"  id="sending1" > 즉시발송
+						</td>
+					</tr>								
+
+					
+					<!-- 예약시간-->
+					<tr id=reserved>
+						<td align="left" width="120" border="0" bgcolor="#AAAAAA">
+							&nbsp;예약발송 시간설정&nbsp;<br>
+						</td>
+						<td>
+								<select name="reserve_year" id="reyear">
+									<option value="">----</option>
+									{@ startyear}<option value="{.value_}">{.value_}년</option>{/}
+								</select>
+								<select name="reserve_month" id="remonth">
+									<option value="">--</option>
+									{@ startmonth}<option value="{.value_}">{.value_}월</option>{/}
+								</select>
+								<select name="reserve_date" id="redate">
+									<option value="">--</option>
+									{@ startday}<option value="{.value_}">{.value_}일</option>{/}
+								</select>		
+								<select name="reserve_time" id="retime">
+									<option value="">--</option>
+									{@ starttime}<option value="{.value_}">{.value_}시</option>{/}
+								</select>		
+																
+						</td>
+					</tr>
+
+		</tr>
+	</table>
+	<!-- 버튼 -->
+	<table width="800" border="0">
+		<tr>
+			<td width="800">&nbsp;
+				<center>
+				<input type="button" id="sendmail" value="등록"/>
+				<input type="button" id="cancelBtn" value="취소"/>
+				</center>
+			</td>
+		</tr>
+	</table>
+	<!-- 버튼 끝 -->
+
+
+	<table width="800" border="0">
+		<tr>
+			<td width="800">&nbsp;<!-- 공백 -->
+			</td>
+		</tr>
+	</table>
+
+<input type="hidden" name="command" value="input">
+
+
+<!-- //**********************************************************************************//	
+//	메일종류코드  N : 뉴스레터, E : 이벤트알림, W : 이벤트 당첨							//
+// 전송타입  E : 개별발송, A : 그룹발송, B : 프론티어 당첨 발송							//
+// 수신그룹 A : 전체, B : 남성회원, C : 여성회원,  D : 블랙리스트회원					//
+// 전송구분 : R : 예약발송, N : 즉시발송															//
+//*********************************************************************************// -->
+<input type="hidden" name="mtype" value="A">
+
+</form>

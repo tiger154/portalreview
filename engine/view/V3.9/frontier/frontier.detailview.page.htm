@@ -1,0 +1,321 @@
+<form name="RevUform" id="RevUform" method="post" enctype="multipart/form-data" action="">
+<link href="{CSS}/myrevu.css" rel="stylesheet" type="text/css" />
+{scroll}
+      <!-- 프론티어 상세보기 시작-->
+      <div id="frontier_view_warp">
+        <!-- 프론티어 / guid.jpg 이미지 노출 -->
+        <div class="frontier_view_img">
+        	<div class="clear"></div>        	
+        	<img src="{topimg}" width="712">
+        	<div class="etc">{etc_table}</div>
+        </div>		
+        <!-- 프론티어 타이틀 입력 -->
+        <div class="frontier_view_title"></div>
+        <div class="frontier_view_title_text">
+          <ul>
+            <li class="fl"><span class="white_title">{subject}</span></li>
+            <li class="fr pt02"><span class="white_text">{remain_message}</span></li>
+          </ul>
+        </div>
+        <!-- 프론티어 기본정보박스 -->
+        <div class="frontier_info_box">
+          <ul>
+            <li class="frontier_info_bg1"></li>
+            <li class="frontier_info_bg2">
+              <div class="frontier_info_textbox">
+              <ul>
+                  <!-- 기본정보 버튼  / 응모하기형은 but_frontier_entry.gif-->
+                <li class="frontier_info_text_r">{etype}</li>
+                    <li class="frontier_detailview1">
+                      <div class="detailview_text">{cate}</div>
+                    </li>
+                    <li class="frontier_detailview2">
+                      <div class="detailview_text"><font color=red>{frproduct}</font></div>
+                    </li>
+                    <li class="frontier_detailview3">
+                      <div class="detailview_text">{jstart_date} ~ {jend_date}</div>
+                    </li>
+                    <li class="frontier_detailview4">
+                      <div class="detailview_text">{peoplelimit}명</div>
+                    </li>
+                    <li class="frontier_detailview5">
+                      <div class="detailview_text">{noticedate}</div>
+                    </li>
+                    <li class="frontier_detailview6">
+                      <div class="detailview_text">{due_sdate} ~ {due_edate}</div>
+                    </li>
+					{bestrview_notice_date}
+
+{? bestrview_prise !=  ""}
+
+                  <li class="frontier_detailview8">
+                      <div class="detailview_text2">{bestrview_prise}</div>
+                  </li>
+{/}
+
+                </ul>
+              </div>               
+            </li>
+            
+            <li class="clear"></li>
+            <li class="frontier_info_bg3"></li>
+          </ul>
+        </div>
+        <!-- 프론티어 기본정보박스 끝 -->
+        <div style="width:714px; height:35px;"></div>
+        <!-- 체험정보 시작 -->
+        <div class="frontier_detail_box">
+          <div class="frontier_detail_title"><img src="/images/frontier/title_detailview9.gif" /></div>
+          <div class="pt20"></div>
+          <table width="670" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="frontier_table_l gray_d_text">- 체험 상품</td>
+              <td class="frontier_table_r">{frproduct} </td>
+            </tr>
+            {price}
+
+
+{? address !=  ""}
+
+			<tr>
+			  <td class='frontier_table_l gray_d_text'>- 주소</td>
+			  <td class='frontier_table_r'>{address}&nbsp;
+			  
+			  {? map != ""}
+
+				<a href='{map}' target='_blank' class='w_space'><img src='/images/common/but/but_g_map.gif' alt='약도보기'  title='약도보기' class='imgb_space'/></a>
+			  {/}
+			  
+			  </td>
+			</tr>
+{/}
+
+{? telcheck ==  "F" && mobilecheck != "F"}
+            <tr>
+          <td class="frontier_table_l gray_d_text">- 휴대폰번호</td>
+          <td class="frontier_table_r">{mobile}</td>
+        </tr>
+{/}
+
+
+{? telcheck !=  "F" && mobilecheck == "F"}
+            <tr>
+          <td class="frontier_table_l gray_d_text">- 전화번호</td>
+          <td class="frontier_table_r">{tel}</td>
+        </tr>
+{/}
+
+{? telcheck !=  "F" && mobilecheck != "F"}
+            <tr>
+          <td class="frontier_table_l gray_d_text">- 전화번호/휴대폰</td>
+          <td class="frontier_table_r">{tel}&nbsp;&nbsp;{mobile}</td>
+        </tr>
+{/}
+
+			{sitelink}
+{? froption !=  ""}
+
+            <tr>
+          <td class="frontier_table_l gray_d_text">- 모집 옵션</td>
+          <td class="frontier_table_r">
+		<!--{@frontierOptionList}-->     
+
+		   {.froption}<br />
+           
+		<!--{/}-->
+   
+			   </td>
+        </tr>
+{/}
+			{filelink}
+
+{? cashpolicy !=  ""}
+
+            <tr>
+          <td class="frontier_table_l gray_d_text">- 캐쉬 지급 여부</td>
+          <td class="frontier_table_r">{cashpolicy}<br />
+            <img src="/images/frontier/img_detailview_cash.gif" /></td>
+        </tr>
+{/}
+{? message !=  ""}
+
+
+            <tr>
+          <td class="frontier_table_l gray_d_text">- 비고</td>
+          <td class="frontier_table_r">{message}<br /></td>
+        </tr>
+
+{/}
+          </table>
+          <div class="frontier_detail_line"></div>
+        </div>
+        <!-- 리뷰미션시작 -->
+        <div class="frontier_detail_box">
+          <table width="670" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="frontier_table_l"><img src="/images/frontier/title_detailview10.gif" /></td>
+              <td class="frontier_table_r">{mission}<br /></td>
+            </tr>
+          </table>
+          <div class="pt40"></div>
+        </div>
+        <!-- 리뷰키워드시작 -->
+        <div class="frontier_detail_box">
+          <table width="670" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="frontier_table_l"><img src="/images/frontier/title_detailview11.gif" /></td>
+              <td class="frontier_table_r2"><img src="/images/frontier/img_detailview_keyword1.gif" /></td>
+              <td class="frontier_table_r3">{keyword}</td>
+            </tr>
+            <tr>
+              <td class="frontier_table_l"></td>
+              <td class="frontier_table_r2"><img src="/images/frontier/img_detailview_keyword2.gif" /></td>
+              <td class="frontier_table_r3">{tagword}</td>
+            </tr>
+          </table>
+          <div class="pt40"></div>
+        </div>
+
+        <!-- 리뷰당첨 팁시작 -->
+{? tip !=  ""}
+
+        <div class="frontier_detail_box">
+          <table width="670" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="frontier_table_l"><img src="/images/frontier/title_detailview12.gif" /></td>
+              <td class="frontier_table_r">{tip} </td>
+            </tr>
+          </table>
+          <div class="frontier_detail_line"><!-- <img src="/images/frontier/img_detailview_revu.gif" align="right"  style="padding-top:47px;"/> --></div>
+        </div>
+{/}
+	  {bannercode}
+
+	<div id="tabs">
+		<ul>
+			<li><a href="#tabs-1">토크보기</a></li>
+			<li><a href="#tabs-2">리뷰보기</a></li>
+		</ul>
+
+		<div id="tabs-1">
+		<!-- ##### 토크시작 #####-->
+
+
+		<div class="frontier_talk_box">
+        <div class="frontier_tab_info common11_text">전체<span class="orange11_text"><strong>{talkDataCnt}</strong></span>개의 토크가 있습니다. </div>
+        
+		<input type="hidden" name="user_num" id="user_num" value='{user_num}'>
+		<input type="hidden" name="frno" id="frno" value='{frno}'>
+		<input type="hidden" name="replyno" id="replyno" value=''>
+		<input type="hidden" name="replyeditno" id="replyeditno" value=''>
+		<input type="hidden" name="delreplyno" id="delreplyno" value=''>
+
+
+
+		<!--  토크리스트 시작-->
+		<!--{@talkData}-->
+		<div class="frontier_talk_line">
+          <ul>
+            <!-- 유저 프로필이미지 비례축소 / 없을시 더미이미지 노출thum_profile_dummy1~3.gif -->
+            <li class="s_profile_thum fl"><img src="{.userimg}"  alt="유저이름" title="유저이름"  width="45px;" height="45px;"/></li>
+            <li class="frontier_talk_text1 fl"><span class="gray11_db_text"><a href="javascript:context.load({.userno})">{.nickname}</a></span> <span class="gray11_l_text">{.regdate}</span>
+			{.talk_button}</li>
+			<div class="frontier_reply_text2"  id='typeview5{.no}'  style="display: inline"><span class="common11_text">{.content}</span></div>
+			<div class="frontier_reply_text2"  id='typeview4{.no}'  style="display: none"><input type="text" id="replyedit{.no}" name="replyedit{.no}" value="{.content}" class="input_reply">&nbsp;<img src="/images/common/but/but_g_ok.gif"  alt="토크수정" title="토크수정" style="margin:0 0 -6px 10px; cursor:hand;" onclick="talkreplyedit({.no})"/></div>
+			<li class="clear"></li>
+            <li style="text-align:right;"><a href="javascript:replytoggle('{.no}')"><img src="/images/frontier/img_reply2.gif" /></a></li>
+          </ul>
+        </div>
+
+		<div class="frontier_reply_box" id='typeview{.no}' style="display: none">
+		<!-- 댓글 시작 -->
+			<div class="frontier_reply_line1">
+			<ul>
+			<li class="fl" style="width:57px; height:22px;"><img src="/images/frontier/img_talk.gif" /></li>
+			<li class="fl" style="width:485px;height:22px;"><input name="reply{.no}" type="text" class="input_reply" id="reply{.no}"></li>
+			<li class="fl" style="width:45px; height:19px; padding-top:1px;"><img src="/images/common/but/but_g_ok.gif"  alt="댓글입력" title="댓글입력" align="right" style="cursor:hand" onclick="talkreplyRegist({.no})"></li>
+			</ul>
+			</div>
+			<div class="frontier_reply_linebg"></div>
+		<!-- 댓글 끝-->
+
+
+			<!-- 입력된 댓글 노출 시작-->
+			<!--{@replytalk}-->
+			<div class="frontier_reply_text1">
+				<span class="gray11_db_text"><a href="javascript:context.load({..userno})">{..nickname}</a></span><span class="gray11_l_text">{..regdate}</span>
+				{..reply_button}
+			</div>
+			<div class="frontier_reply_text2"  id='typeview3{..no}'  style="display: inline"><span class="common11_text">{..content}</span></div>
+			<div class="frontier_reply_text2"  id='typeview2{..no}'  style="display: none"><input type="text" id="replyedit{..no}" name="replyedit{..no}" value="{..content}" class="input_reply">&nbsp;<img src="/images/common/but/but_g_ok.gif"  alt="확인" title="확인" style="margin:0 0 -6px 10px; cursor:hand" onclick="talkreplyedit({..no})"/></div>
+
+			<div class="frontier_reply_linebg"></div>
+
+			<!--{/}-->
+			  <!-- 입력된 댓글 노출 끝-->  
+        </div>
+		 <div style="padding-bottom:10px;"></div> 
+		<!--{/}-->
+        <!--  토크리스트 끝-->
+
+
+
+        <div class="frontier_tab_info"></div>
+        <!--  한 묶음 시작-->
+
+		</div>
+		{? size > 0} 
+		<div class="pageno">{link}</div>
+		{:}
+		<!-- <div class="nolist">등록된 토크가 없습니다.</div> -->
+		{/}
+
+
+		<!--##### 토크끝 #####-->
+		</div>
+
+
+
+		<div id="tabs-2">
+
+		<!--##### 리뷰시작 #####-->
+        <div class="frontier_tab_info common11_text">전체<span class="orange11_text"><strong>{reviewDataCnt}</strong></span>개의 리뷰가 있습니다. </div>
+        <!--  한 묶음 시작 / 이미지 있을시-->
+   		<!--{@reviewData}-->
+		<div class="frontier_review_line">
+          <ul>
+            <!-- 리뷰 리스트 이미지 비례축소  / 엑박뜰때엔 thum_list_dummy.gif 노출-->
+            <li class="frontier_review_thum fl"><a href="javascript:common.socialbar({.rno})"><img src="{.imgurl}" width="80px;" height="80px;"/></a></li>
+            <li class="frontier_review_title fl"><span class="orange_title"><a href="javascript:common.socialbar({.rno})">{.review.title}</a></span></li>
+            <li class="frontier_review_text1 fl"><span class="gray11_db_text"><a href="javascript:context.load({.userno})">{.review_nickname}</a></span><span class="gray11_l_text"> | 라이프 | {.regdate}</span>
+            <img src="/images/common/ico/ico_new.gif"  class="img_space"/></li>
+            <li class="frontier_review_text2 fl"><span class="common_text">{.review.content} </span></li>
+            <li class="clear"></li>
+            <li style="text-align:right;"></li>
+          </ul>
+        </div>
+		<div class="frontier_tab_info"></div>
+		<!--{/}-->
+
+		  <div id="pageNaviArea" class="pageno">
+         		{? size2 > 0} 
+			<div class="pageno">{link2}</div>
+			{:}
+			<!-- <div class="nolist">등록된 토크가 없습니다.</div> -->
+			{/}    
+          </div>
+
+		<!--##### 리뷰 끝#####-->
+		</div>
+	</div>
+
+	<script>
+	$( "#tabs" ).tabs({ selected: common.getCookie('cookieTab') });
+	</script>
+
+	<table><tr><td height='60'></td></tr></table>
+<div id="entrylayer" style="display:none; position:absolute; ">{# entrylayer}</div>
+<div id="entrylayer2" style="display:none; position:absolute; ">{# entrylayer2}</div>
+<div id="reviewlayer" style="display:none; position:absolute; ">{# reviewlayer}</div>
+
+</form>

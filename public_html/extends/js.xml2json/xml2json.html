@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<html xmlns="http://schemas.microsoft.com/intellisense/html-401">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+ <title>XML2JSON</title>
+ <script type="text/javascript" src="xml2json.js"></script>
+ <script type="text/javascript"> 
+  
+  window.onload= function ()
+  {
+   var orgXml ;
+   
+   /*
+   orgXml ='<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema">' +
+   '<SOAP-ENV:Body>' +
+   '<ns1:doSpellingSuggestionResponse xmlns:ns1="urn:GoogleSearch" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">'+
+   '<return xsi:type="xsd:string">britney spears</return>'+
+   '</ns1:doSpellingSuggestionResponse>'+
+   '</SOAP-ENV:Body>'+
+   '</SOAP-ENV:Envelope>';
+   */
+
+   orgXml ='<method><title>ggg</title></method>';
+   
+   var xmlDoc;
+   
+   
+   if (window.DOMParser)
+   {
+    var parser=new DOMParser();
+    xmlDoc=parser.parseFromString(orgXml,"text/xml");
+    
+   }
+   else if (window.ActiveXObject)
+   {
+    xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+    xmlDoc.async="false";
+    xmlDoc.loadXML(orgXml);
+    
+   }
+
+   
+   
+   var jsonStr = xml2json(xmlDoc,false,false);
+   
+   var jsonObj = eval("("+ jsonStr +")");
+   //{ "SOAP-ENV:Envelope":{"SOAP-ENV:Body":{"ns1:doSpellingSuggestionResponse":{"return":{"#text":"britney spears"}}}} }
+   document.getElementById("xmlsrc").value = orgXml;
+   document.getElementById("jsonStr").innerHTML = jsonStr;
+   document.getElementById("result").innerHTML = 
+         jsonObj["SOAP-ENV:Envelope"]["SOAP-ENV:Body"]
+         ["ns1:doSpellingSuggestionResponse"]["return"]["#text"];
+   
+  }
+  
+  
+
+ 
+ 
+  </script>
+  <style type="text/css">
+<!--
+DIV P {
+ CLEAR: left; 
+ PADDING-RIGHT: 0px; 
+ PADDING-LEFT: 0px; 
+ PADDING-BOTTOM: 4px; 
+ MARGIN: 0px; 
+ FONT: bold 26px/26px Georgia, serif; 
+ COLOR: #7e9e50; 
+ PADDING-TOP: 15px; BORDER-BOTTOM: #c5dea1 1px dotted
+
+}
+
+DIV#jsonStr{
+ MARGIN-TOP: 10px; FONT-SIZE: 11px; MARGIN-LEFT: 10px; COLOR: #444; LINE-HEIGHT: 1.7
+}
+DIV#result {
+ MARGIN-TOP: 10px; FONT-SIZE: 11px; MARGIN-LEFT: 10px; COLOR: #444; LINE-HEIGHT: 1.7
+}
+
+ 
+
+DIV#info {
+ WIDTH: 750px;
+ margin-bottom:10px;
+ 
+}
+
+
+textarea#xmlsrc {
+ padding-left:10px;
+ width:400px;height:200px;
+ MARGIN-RIGHT: 10px;
+ BORDER-RIGHT: #e8a400 2px dashed;
+ BORDER-LEFT: #e8a400 2px dashed;
+ BORDER-TOP: #e8a400 2px dashed;
+ BORDER-BOTTOM: #e8a400 2px dashed;
+}
+
+
+-->
+</style>
+</head>
+<body>
+<div>
+ <p>변환할 XML 텍스트</p>
+ <textarea id=xmlsrc style=""></textarea>
+    <p>JSON 변환결과</p>
+    <div id=jsonStr></div>
+    <p>리턴 텍스트</p>
+    <div id=result></div>
+</div>
+</body>
+</html>
+

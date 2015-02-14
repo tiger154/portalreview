@@ -1,0 +1,61 @@
+body { margin: 0; padding: 0; background:rgb(247,247,247); }
+img { border : 0; vertical-align: middle; }
+div {font-size: 8pt; line-height: 15pt;}
+h2 { margin: 10px 0 10px 0; padding: 10px; border: 1px solid #CCC; font-family: '돋움,dotum'; font-size:14pt; font-weight: bold; }
+h3 { margin: 10px 0 10px 0; padding: 10px; border: 1px solid #CCC; font-family: '돋움,dotum'; font-size:11pt; font-weight: bold; }
+hr { margin: 3px; padding: 0px; width: 100%; height: 0px; border-top: 1px dotted #CCC; border-bottom: 0px; border-left: 0px; border-right: 0px; }
+table { margin: 0; padding: 0; }
+th { margin: 0; padding: 10px; background-color: #DDD; border-bottom: 1px solid #CCC; }
+td { margin: 0; padding: 5px; border-bottom: 1px solid #CCC; }
+.table-user { margin: 0; padding: 0; }
+.table-user th { margin: 0; padding: 3px; background-color: #DDD; border-bottom: 1px solid #CCC; }
+.table-user td { margin: 0; padding: 1px; border-bottom: 1px solid #CCC; }
+
+textarea { border: 1px solid #C0C0C0; font-size: 8pt; font-family: "verdana"; color: #4F4F4F; }
+ 
+.clear { clear: both; }
+.btn { cursor: pointer; vertical-align: middle; }
+.bh5 { height: 5px; }
+.bh10 { height: 10px; }
+.bh20 { height: 20px; }
+.bh30 { height: 30px; }
+.bh50 { height: 50px; }
+
+.box { margin: 0; padding: 0; border: 1px solid #CCC; }
+
+/* 모듈메세지 */
+.module-msg { margin: 20px 0 0 0; padding: 20px; width: 100%; border: 1px solid #BBB; font-size: 8pt; line-height: 15pt; }
+.module-msg h3{ font-size: 14pt; font-weight: bold; line-height: 18pt; }
+
+/* 로그인 */
+.login-box { margin: 50px auto; padding: 0; width: 381px; }
+.login-box form { margin: 0; padding: 0; }
+.login-box .text-login { margin: 0; padding: 0; font-size: 10pt; font-weight: bold; color: #ED145B; }
+.login-box .text-link { margin: 0 0 0 2px; padding: 0; font-size: 8pt; }
+.login-box .login-box-top { overflow: hidden; margin: 0; padding: 0; width: 381px; height: 14px; background-image: url('/images/manager/login_box_top.gif');background-repeat: no-repeat; }
+.login-box .login-box-bottom { overflow: hidden; margin: 0; padding: 0; width: 381px; height: 14px; background-image: url('/images/manager/login_box_bottom.gif'); background-repeat: no-repeat; }
+.login-box .login-box-container { overflow: hidden; margin: 0; padding: 10px; width: 361px; height: 143px; background-image: url('/images/manager/login_box_center.gif'); background-repeat: repeat-y; }
+.login-box .login-box-container .login-title { margin: 0 3px 0 10px; padding: 0; font-weight: bold; font-size: 12pt; color: #ED145B; line-height: 12pt; vertical-align: middle; }
+.login-box .login-box-container .login-img { margin: 0 0 0 10px; padding: 0; }
+.login-box .login-box-content { margin: 0; padding: 0; width: 361px; height: 100%; }
+.login-box-content .link { margin: 0 0 0 80px; padding: 0; line-height: 8pt; }
+.login-box-container .login-box-info { float: left; margin: 0; padding: 0; width: 271px; height: 100%; }
+.login-box-info dl { margin: 0; padding: 0; width: 271px; }
+.login-box-info dt { float: left; margin: 0; padding: 0; width: 91px; line-height: 13pt; text-align: right; }
+.login-box-info dd { float: left; margin: 0 0 0 10px; padding: 0; width: 160px; line-height: 16pt; text-align: left; }
+.login-box-info dt img { margin: 0; padding: 3px; border: dotted #CCC 1px; vertical-align: middle; }
+.login-box-container .login-box-form { float: left; margin: 0; padding: 0; width: 271px; height: 100%; }
+.login-box-form dl { margin: 0; padding: 0; width: 271px; }
+.login-box-form dt { float: left; margin: 0; padding: 0; width: 71px; height: 30px; text-align: right; }
+.login-box-form dd { float: left; margin: 0 0 0 10px; padding: 0; width: 180px; height: 30px; text-align: left; }
+
+/* 페이징 */
+.pageno{padding:15px 0; margin-top:30px;text-align:center;}
+.pageno a,
+.pageno normal{ _position:relative; display:inline-block; margin-right:-6px; padding:2px 10px; color:#999999;line-height:1.4; font:bold 12px ;}
+.pageno strong{_position:relative; display:inline-block;font:bold 13px ;line-height:1.4;color:#333333 !important;margin-right:-6px; padding:2px 10px;text-decoration:underline;}
+.pageno a:hover,
+.pageno a:active,
+.pageno a:focus{ background-color:#ffffff;}
+.pageno a.pre { background-color:#ffffff; padding-top:3px;text-decoration:none;padding:2px 0 1px 0;}
+.pageno a.next { background-color:#ffffff;padding-top:3px;text-decoration:none;padding:2px 0 1px 0;}

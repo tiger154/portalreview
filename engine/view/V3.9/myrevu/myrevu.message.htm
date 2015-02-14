@@ -1,0 +1,34 @@
+<form name="form1" id="form1">
+<input type="hidden" name="page" id="page" value="{page}" />
+<input type="hidden" name="page_row" id="page_row" value="{page_row}" />
+<input type="hidden" name="module" id="module" value="{module}" />
+
+
+<h2>쪽지 총 갯수 : {cnt}개 > 전송된 파라미터 {param[0]} / {param[1]}</h2>
+<table border="1" width="100%">
+	<tr>
+		<td>보낸회원</td>
+		<td>받은회원</td>
+		<td>제목</td>
+		<td>내용</td>
+		<td>보낸일</td>
+	</tr>
+	{@ list}
+	<tr>
+		<td>{.sender}</td>
+		<td>{.receiver} </td>
+		<td>{.title}</td>
+		<td>{.content}</td>
+		<td>{.regdate}</td>
+	</tr>
+	{/}
+</table>
+
+
+<!--{? cnt < 1}-->	
+<div class="myboard_nolist">등록된 게시물이 없습니다.</div>
+<!--{:}-->
+<div class="myboard_paging">{link}</div>
+<!--{/}-->
+	
+</form>

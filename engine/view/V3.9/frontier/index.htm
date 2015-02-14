@@ -1,0 +1,158 @@
+
+    <div id="sub_content">
+
+      <div class="title_line gray_l_text"><img src="/images/frontier/title_frontier_all.gif"  align="left"/><span class="ln23"><strong>{nowmonth}</strong>월 <strong>{nowday}</strong>일 현재, 총 <strong>{frontierCount}</strong>개 체험 신청 가능</span></div>
+      <!-- 스페셜 박스 시작  / 있으면 최소 2개-->
+      {? cssblank !=  "Y"}
+
+
+	  
+	  <div class="frontier_sbox">
+        <!-- ###리스트 묶음 박스 시작 ###-->
+		<!--{@toplist}-->
+        <div class="frontier_list">
+          <!-- 프론티어 이미지 background 처리 / 해당 카데고리명 입력 -->
+         <!--  <div class="thum110_box" style="background:url({.toplistimg}) no-repeat; float:left; display:inline;">
+            <div  class="them_text_r white11_text" style="text-align:center;">{.b_cate}</div>
+          </div> -->
+
+		<!-- <div class="thum110_box" style="background:url(/images/common/thum/thum_list_110110_1.gif) no-repeat; float:left; display:inline;">
+            <div  class="them_text_r white11_text" style="text-align:center;">패션</div>
+          </div> -->
+
+			<div class="thum110_nbox">
+				<div class="them_text_nr white11_text" style="text-align:center;">{.b_cate}</div>
+					<img src="{.toplistimg}" width="110" height="110" />
+				</div>
+          <!-- 프론티어 내용 박스 -->
+				
+
+          <div class="frontier_text_box2 fl">
+            <div class="gray_title list_title_line_index"><a href="/frontier/detailview/1/{.frno}/A/">{.subject}</a></div>
+            <div class="frontier_text_sl fl">
+              <ul>
+                <li class=" frontier_text_line fl"><span class="gray11_l_text">인원:&nbsp;</span></li>
+                <li class=" frontier_text_line fl"><span class="red11_text"> {.peoplelimit}명</span></li>
+                <li class="clear"></li>
+                <li class=" frontier_text_line fl"><span class="gray11_l_text">기간:&nbsp;</span></li>
+                <li class=" frontier_text_line fl"><span class="red11_text"> {.start_date} ~ {.end_date}</span></li>
+                <li class="clear"></li>
+                <li class=" frontier_text_line fl"><span class="gray11_l_text">발표:&nbsp;</span></li>
+                <li class=" frontier_text_line fl"><span class="common11_text"> {.notice_date}</span></li>
+                <li class="clear"></li>
+                <li class=" frontier_text_line fl"><span class="gray11_l_text">리뷰:&nbsp;</span></li>
+                <li class=" frontier_text_line fl"><span class="common11_text"> {.due_sdate} ~ {.due_edate}</span></li>
+              </ul>
+            </div>
+			
+
+            <div class="frontier_text_sr2 fl">
+              <ul>
+                <li class=" frontier_text_line fl"><span class="gray11_l_text">상품 분류:&nbsp;</span></li>
+                <li class="text_sr_150 fl"><span class="common11_text">{.cate}</span></li>
+                <li class="clear"></li>
+                <li class=" frontier_text_line fl"><span class="gray11_l_text">체험 상품:&nbsp;</span></li>
+                <li class="text_sr_180 fl"><span class="red11_text"> {.frproduct}</span></li>
+                <li class="clear"></li>
+                <li class=" frontier_text_line fl"><span class="gray11_l_text">위치 정보:&nbsp;</span></li>
+                <li class="text_sr_150 fl"><span class="common11_text"> {.address}</span></li>
+                <li class="clear"></li>
+                <li class=" frontier_text_line fl"><span class="gray11_l_text">전화 번호:&nbsp;</span></li>
+                <li class="text_sr_150 fl"><span class="common11_text"> {.tel}</span></li>
+              </ul>
+            </div>
+          </div>
+          <!-- 프론티어 sns 박스 -->
+         <!--  <div class="frontier_sns_box fl">
+            <ul>
+              <li class="pt28"><img src="/images/common/but/but_facebook.gif" /></li>
+              <li class="pt20"><img src="/images/common/but/but_twitter.gif" /></li>
+            </ul>
+          </div> -->
+          <!-- 프론티어 sns 박스 끝-->
+        </div>
+		<div  class="sbox_line"></div>
+		<!--{/}-->
+        <!-- ###리스트 묶음 박스 끝 ###-->
+
+
+		
+
+
+      </div>
+{/}
+
+
+
+       <div class="clear"> </div>
+     
+	  
+	  <!-- 일반 박스 시작  / 있는 프론티어는 전부 나열-->
+      <div class="frontier_cbox">
+        <!-- 리스트 묶음 박스 시작 -->
+  		<!--{@mainlist}-->     
+		<div class="frontier_list">
+          <!-- 프론티어 이미지 background 처리 / 해당 카데고리명 입력 -->
+          <!-- <div class="thum110_box" style="background:url({.mainlistimg}) no-repeat; float:left; display:inline;">
+            <div  class="them_text_g white11_text" style="text-align:center;">{.b_cate}</div>
+          </div> -->
+          <div class="thum110_nbox">
+			<div class="them_text_ng white11_text" style="text-align:center;">{.b_cate}</div>
+			<img src="{.mainlistimg}" width="110" height="110" />
+			</div>
+         
+		  <!-- 프론티어 내용 박스 -->
+          <div class="frontier_text_box2 fl">
+            <div class="gray_title list_title_line_index"><a href="/frontier/detailview/1/{.frno}/A/">{.subject}</a></div>
+            <div class="frontier_text_sl fl">
+              <ul>
+                <li class=" frontier_text_line fl"><span class="gray11_l_text">인원:&nbsp;</span></li>
+                <li class=" frontier_text_line fl"><span class="gray11_d_text"> {.peoplelimit}명</span></li>
+                <li class="clear"></li>
+                <li class=" frontier_text_line fl"><span class="gray11_l_text">기간:&nbsp;</span></li>
+                <li class=" frontier_text_line fl"><span class="gray11_d_text"> {.start_date} ~ {.end_date}</span></li>
+                <li class="clear"></li>
+                <li class=" frontier_text_line fl"><span class="gray11_l_text">발표:&nbsp;</span></li>
+                <li class=" frontier_text_line fl"><span class="common11_text"> {.notice_date}</span></li>
+                <li class="clear"></li>
+                <li class=" frontier_text_line fl"><span class="gray11_l_text">리뷰:&nbsp;</span></li>
+                <li class=" frontier_text_line fl"><span class="common11_text"> {.due_sdate} ~ {.due_edate}</span></li>
+              </ul>
+            </div>
+            <div class="frontier_text_sr2 fl">
+              <ul>
+                <li class=" frontier_text_line fl"><span class="gray11_l_text">상품 분류:&nbsp;</span></li>
+                <li class="text_sr_150 fl"><span class="common11_text">{.cate}</span></li>
+                <li class="clear"></li>
+                <li class=" frontier_text_line fl"><span class="gray11_l_text">체험 상품:&nbsp;</span></li>
+                <li class="text_sr_180 fl"><span class="gray11_d_text"> {.frproduct}</span></li>
+                <li class="clear"></li>
+                <li class=" frontier_text_line fl"><span class="gray11_l_text">위치 정보:&nbsp;</span></li>
+                <li class="text_sr_150 fl"><span class="common11_text"> {.address}</span></li>
+                <li class="clear"></li>
+                <li class=" frontier_text_line fl"><span class="gray11_l_text">전화 번호:&nbsp;</span></li>
+                <li class="text_sr_150 fl"><span class="common11_text">{.tel}</span></li>
+              </ul>
+            </div>
+          </div>
+          <!-- 프론티어 sns 박스 -->
+          <!-- <div class="frontier_sns_box fl">
+            <ul>
+              <li class="pt28"><img src="/images/common/but/but_facebook.gif" /></li>
+              <li class="pt20"><img src="/images/common/but/but_twitter.gif" /></li>
+            </ul>
+          </div> -->
+          <!-- 프론티어 sns 박스 끝-->
+        </div>
+        <div class="clear"> </div>
+        <div  class="cbox_line"></div>
+        
+
+		<!--{/}-->
+        <!-- 리스트 묶음 박스 끝 -->
+
+
+
+      </div>
+      <!-- 일반 박스 끝 -->
+    </div>

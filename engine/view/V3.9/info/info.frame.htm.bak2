@@ -1,0 +1,81 @@
+{? type == "review1"}	
+<div class="helplayer-info">
+	<div class="title_guidereview1">
+	<div style="width:26px; height:26px; padding:23px 19px 0 0;" class="fr">
+			<img src="{IMAGES}/common/but/but_gb_xclose.gif" alt="닫기" title="닫기" onClick="parent.info.close('{type}')" class="btn" />
+		</div>
+	</div>
+</div>	
+<div class="clear"></div>
+<div class="helplayer-box">	
+	1321
+	<img src="{IMAGES}/info/img1_guidereview1.gif" width="748" height="907" />
+	<img src="{IMAGES}/info/img1_guidereview2.gif" width="748" height="936" />
+	<img src="{IMAGES}/info/img1_guidereview3.gif" width="748"  height="624" />
+</div>
+{: type == "review7"}
+<div class="helplayer-info">
+	<div class="title_guidereview7">
+	<div style="width:26px; height:26px; padding:23px 19px 0 0;" class="fr">
+			<img src="{IMAGES}/common/but/but_gb_xclose.gif" alt="닫기" title="닫기" onClick="parent.info.close('{type}')" class="btn" />
+		</div>
+	</div>
+</div>	
+<div class="clear"></div>
+<div class="helplayer-box">	
+	<img src="{IMAGES}/info/img7_guidereview1.gif"  width="748" height="488" />
+	<img src="{IMAGES}/info/img7_guidereview2.gif"  width="748" height="406" />
+	<img src="{IMAGES}/info/img7_guidereview3.gif"  width="748" height="417" />
+</div>
+{: type == "cash1"}
+<div class="helplayer-info">
+	<div class="title_guidecash1">
+	<div style="width:26px; height:26px; padding:23px 19px 0 0;" class="fr">
+			<img src="{IMAGES}/common/but/but_gb_xclose.gif" alt="닫기" title="닫기" onClick="parent.info.close('{type}')" class="btn" />
+		</div>
+	</div>
+</div>	
+<div class="clear"></div>
+<div class="helplayer-box">	
+	<img src="{IMAGES}/info/img1_guidecash2.gif"  width="748" height="346"/>
+	<div style="width:160px; height:3px;padding-left:72px;">
+		<a href="#" target="_blank"><img src="{IMAGES}/common/but/but_gb_bestreview.gif" width="160" height="30" alt="주간베스트리뷰보러가기" title="주간베스트리뷰보러가기" /></a>
+	</div>
+	<img src="{IMAGES}/info/img1_guidecash3.gif"  width="748" height="109"/>
+	<div style="width:129px; height:3px;padding-left:72px;">
+		<a href="#" target="_blank"><img src="{IMAGES}/common/but/but_gb_frontier.gif" width="129" height="30" alt="프론티어보러가기" title="프론티어보러가기"/></a>
+	</div>
+	<img src="{IMAGES}/info/img1_guidecash4.gif"  width="748" height="225"/>
+	<div style="width:148px; height:3px;padding-left:72px;">
+		<a href="#" target="_blank"><img src="{IMAGES}/common/but/but_gb_revucash.gif" width="148" height="30" alt="캐쉬지급신청하러가기" title="캐쉬지급신청하러가기" /></a>
+	</div>
+	<img src="{IMAGES}/info/img1_guidecash5.gif"  width="748" height="453"/>
+</div>
+{: type == "frontier1"}
+<div class="helplayer-info">
+	<div class="title_guidefrontier1">
+	<div style="width:26px; height:26px; padding:23px 19px 0 0;" class="fr">
+			<img src="{IMAGES}/common/but/but_gb_xclose.gif" alt="닫기" title="닫기" onClick="parent.info.close('{type}')" class="btn" />
+		</div>
+	</div>
+</div>	
+<div class="clear"></div>
+<div class="helplayer-box">	
+	<img src="{IMAGES}/info/img1_guidefrotier2.gif"  width="748" height="507"/>
+</div>
+{: type == "myrevu1"}
+<div class="helplayer-info">
+	<div class="title_guidemyrevu1">
+	<div style="width:26px; height:26px; padding:23px 19px 0 0;" class="fr">
+			<img src="{IMAGES}/common/but/but_gb_xclose.gif" alt="닫기" title="닫기" onClick="parent.info.close('{type}')" class="btn" />
+		</div>
+	</div>
+</div>	
+<div class="clear"></div>
+<div class="helplayer-box">	
+	<img src="{IMAGES}/info/img1_guidemyrevu1.gif" width="748" height="525" />
+	<img src="{IMAGES}/info/img1_guidemyrevu2.gif" width="748" height="705" />
+	<img src="{IMAGES}/info/img1_guidemyrevu3.gif" width="748" height="575" />
+	<img src="{IMAGES}/info/img1_guidemyrevu4.gif" width="748" height="500" />
+</div>
+{/}
