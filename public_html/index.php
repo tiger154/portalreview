@@ -8,7 +8,7 @@
 //ob_start("ob_gzhandler");
 
 /**
- * 시스템 파일 
+ * 시스템 파일.
  */
 $_DOC_ROOT = substr($_SERVER['DOCUMENT_ROOT'], 0, strrpos($_SERVER['DOCUMENT_ROOT'], "/"));
 require_once $_DOC_ROOT."/engine/_sys/sys.conf.php";
