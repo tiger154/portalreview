@@ -4,8 +4,9 @@
 //exit;
 /**
  * 버퍼저장
+ * 
  */
-//ob_start("ob_gzhandler");
+//ob_start("ob_gzhandler"); 
 
 /**
  * 시스템 파일..
